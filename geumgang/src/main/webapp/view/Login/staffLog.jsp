@@ -21,7 +21,7 @@
 	</div>
 </div>
 <div class="w3-container">
-	<form:form class="w3-ontainer w3-card-4 w3-light-grey" commandName="gwanriLogCommand">
+	<form:form class="w3-ontainer w3-card-4 w3-light-grey" action="gwanriJoinAction" commandName="gwanriLogCommand">
 	  	<h2>관리부 로그인</h2> 
 	  	<p><label>아이디</label>
 	  	<form:input path="gwanRiId" class="w3-input w3-border"/></p>
