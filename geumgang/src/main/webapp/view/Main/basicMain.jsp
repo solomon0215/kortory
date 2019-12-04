@@ -12,9 +12,9 @@
 <div class="w3-container w3-white">
  <div class="w3-bar w3-sand">
   <a href="#" class="w3-bar-item w3-button">Home</a>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button"></a>
   <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  <a href="staff/login" class="w3-bar-item w3-button">직원 로그인</a>
 </div>
 </div>
 
