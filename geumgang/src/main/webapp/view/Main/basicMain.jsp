@@ -19,7 +19,7 @@
 </div>
 
 <div class="w3-container">
-  <p>The w3-container class can be used to display headers.</p>
+  <p>컨텐츠</p>
 </div>
 
 <div class="w3-container w3-teal">
