@@ -12,21 +12,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form class="w3-container w3-card-4 w3-light-grey">
-  <h2>관리부 로그인</h2>
-  <p><label>아이디</label>
-  <form:input path="first" type="text" class="w3-input w3-border"/></p>
+<div class="w3-container w3-white">
+	<div class="w3-bar w3-sand">
+	  <a href="#" class="w3-bar-item w3-button">Home</a>
+	  <a href="#" class="w3-bar-item w3-button"></a>
+	  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+	  <a href="staff/login" class="w3-bar-item w3-button">직원 로그인</a>
+	</div>
+</div>
+<div class="w3-container">
+	<form:form class="w3-ontainer w3-card-4 w3-light-grey" commandName="gwanriLogCommand">
+	  	<h2>관리부 로그인</h2> 
+	  	<p><label>아이디</label>
+	  	<form:input path="gwanRiId" class="w3-input w3-border"/></p>
+	
+	  	<p><label>비밀번호</label>
+	  	<form:input class="w3-input w3-border" path="gwanRiPw" type="text"/></p>
+	</form:form>
 
-  <p><label>비밀번호</label>
-  <form:input class="w3-input w3-border" path="last" type="text"/></p>
-</form:form>
-<form:form class="w3-container w3-card-4 w3-light-grey">
-  <h2>인사부</h2>
-  <p><label>아이디</label>
-  <form:input path="first" type="text" class="w3-input w3-border"/></p>
+	<form:form class="w3-container w3-card-4 w3-light-grey" commandName="insaLogCommand">
+	  	<h2>인사부</h2>
+	  	<p><label>아이디</label>
+	  	<form:input path="inSaId" class="w3-input w3-border"/></p>
+	
+	  	<p><label>비밀번호</label>
+	  	<form:input class="w3-input w3-border" path="inSaPw" /></p>
+	</form:form>
+</div>
 
-  <p><label>비밀번호</label>
-  <form:input class="w3-input w3-border" path="last" type="text"/></p>
-</form:form>
 </body>
 </html>

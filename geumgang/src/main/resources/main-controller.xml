@@ -5,4 +5,5 @@
 	    http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
 	<bean class="Controller.Main.MainController"/>
+	<bean class="Controller.StaffLog.StaffLogController"/>
 </beans>
