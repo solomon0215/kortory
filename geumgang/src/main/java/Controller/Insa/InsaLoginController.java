@@ -21,7 +21,9 @@ public class InsaLoginController {
 	@RequestMapping(method=RequestMethod.POST)
 	public String loginPro(InsaLogCommand insaLogCommand, Errors errors, HttpSession session) {
 		new InsaLoginCommandValidator().validate(insaLogCommand, errors);
-		if(errors.hasErrors())
+		if(errors.hasErrors()) {
+			
+		}
 			return "Login/staffLog";   //작업
 	}
 	@RequestMapping(method=RequestMethod.GET) 
