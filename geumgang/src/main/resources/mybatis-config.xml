@@ -4,17 +4,5 @@
 	
 <configuration>
 	<typeAliases>
-		<typeAlias type="Model.DTO.MemberDTO" alias ="memDTO"/>
-		<typeAlias type="Model.DTO.CommentDTO" alias ="comment"/>
-		<typeAlias type="Model.DTO.PasswordChangeDTO" alias ="pwchg"/>
-		<typeAlias type="Model.DTO.StartEndPageDTO" alias ="startEnd"/>
-		<typeAlias type="Command.ListCommand" alias ="listcmd"/>
-		<typeAlias type="Model.DTO.CommentDTO" alias ="commentDTO"/>
-		<typeAlias type="Model.DTO.CommentReplyDTO" alias ="CommentReply"/>
-		<typeAlias type="Model.DTO.ReplyDTO" alias ="replyDTO"/>
-		<typeAlias type="Model.DTO.UserCommentDTO" alias ="CommentUser"/>
-		<typeAlias type="Model.DTO.MemberDTO" alias ="memberDTO"/>
-		<typeAlias type="Model.DTO.BDTO" alias ="bdto"/>
-		
 	</typeAliases>
 </configuration>

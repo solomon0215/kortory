@@ -19,12 +19,12 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd"
 
 <mvc:resources location="/**" mapping="/view/" cache-period="14400"/>
 
-<mvc:interceptors>
+<!-- <mvc:interceptors>
 	<mvc:interceptor>
 		<mvc:mapping path="/edit/**"/>
 		<bean class="Interceptor.AuthCheckInterceptor"/>
 	</mvc:interceptor>
-</mvc:interceptors>
+</mvc:interceptors> -->
 
 <bean id="messageSource" 
 class = "org.springframework.context.support.ResourceBundleMessageSource"
