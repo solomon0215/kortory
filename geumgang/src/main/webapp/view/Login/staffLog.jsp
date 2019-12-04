@@ -25,9 +25,10 @@
 	  	<h2>관리부 로그인</h2> 
 	  	<p><label>아이디</label>
 	  	<form:input path="gwanRiId" class="w3-input w3-border"/></p>
-	
+		
 	  	<p><label>비밀번호</label>
 	  	<form:input class="w3-input w3-border" path="gwanRiPw" type="text"/></p>
+	  	<input type="submit" value="로그인">
 	</form:form>
 
 	<form:form class="w3-container w3-card-4 w3-light-grey" commandName="insaLogCommand">
@@ -37,6 +38,7 @@
 	
 	  	<p><label>비밀번호</label>
 	  	<form:input class="w3-input w3-border" path="inSaPw" /></p>
+	  	<input type="submit" value="로그인">
 	</form:form>
 </div>
 

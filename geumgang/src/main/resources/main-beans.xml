@@ -4,7 +4,14 @@
 	   xsi:schemaLocation = "http://www.springframework.org/schema/beans 
 	    http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
+	
+	<!-- Service  -->
       <bean id = "mainService" class ="Service.Main.MainService"/>
+      <bean id = "userLoginServie" class ="Service.User.UserLoginServie"/>
+      
+      
+    <!-- Repositopry -->
+      <bean id = "userRepository" class ="Repository.User.UserRepository"/>
 </beans>
 
 

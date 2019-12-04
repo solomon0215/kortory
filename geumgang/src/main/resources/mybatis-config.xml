@@ -4,5 +4,6 @@
 	
 <configuration>
 	<typeAliases>
+		<typeAlias type="Model.Gwanri.DTO.GwanriDTO" alias ="gwanriDTO"/>
 	</typeAliases>
 </configuration>
