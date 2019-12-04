@@ -27,6 +27,6 @@ public class InsaLoginController {
 	@RequestMapping(method=RequestMethod.GET) 
 	public String loginPro() {
 		return "redirect:../main"; // .. 은 상위 폴더로 이동
-	}
+	} 
 
 }
