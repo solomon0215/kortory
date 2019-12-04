@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,20 +15,16 @@
 
 <div class="w3-container w3-white">
  <div class="w3-bar w3-sand">
-  <a href="#" class="w3-bar-item w3-button">Home</a>
-  <a href="#" class="w3-bar-item w3-button"></a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="main" class="w3-bar-item w3-button">Home</a>
+  <a href="intro" class="w3-bar-item w3-button">회사소개</a>
+  <a href="event/list" class="w3-bar-item w3-button">행사상품</a>
+  <a href="user/login" class="w3-bar-item w3-button">회원로그인</a>
   <a href="staff/login" class="w3-bar-item w3-button">직원 로그인</a>
 </div>
 </div>
 
 <div class="w3-container">
-  <p>컨텐츠</p>
-</div>
-
-<div class="w3-container w3-teal">
-  <h5>Footer</h5>
-  <p>Footer information goes here</p>
+  	<jsp:include page="${pageName}"/>
 </div>
 </body>
 </html>

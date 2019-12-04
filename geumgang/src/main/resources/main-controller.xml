@@ -6,4 +6,5 @@
 >
 	<bean class="Controller.Main.MainController"/>
 	<bean class="Controller.StaffLog.StaffLogController"/>
+	<bean class="Controller.User.UserLogController"/>
 </beans>
