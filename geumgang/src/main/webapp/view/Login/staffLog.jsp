@@ -10,37 +10,62 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#gwan").click(function(){
+		$.ajax({
+			type:"POST",
+			url : "gwanLog",
+			datatype : "html",
+			success : function(data1){
+				$("#staff").html(data1);
+			}
+		});
+	});
+	$("#young").click(function(){
+		$.ajax({
+			type:"POST",
+			url : "youngLog",
+			datatype : "html",
+			success : function(data1){
+				$("#staff").html(data1);
+			}
+		});
+	});
+	$("#in").click(function(){
+		$.ajax({
+			type:"POST",
+			url : "inLog",
+			datatype : "html",
+			success : function(data1){
+				$("#staff").html(data1);
+			}
+		});
+	});
+	$("#ki").click(function(){
+		$.ajax({
+			type:"POST",
+			url : "kiLog",
+			datatype : "html",
+			success : function(data1){
+				$("#staff").html(data1);
+			}
+		});
+	});
+});
+</script>
 </head>
 <body>
-<div class="w3-container w3-white">
-	<div class="w3-bar w3-sand">
-	  <a href="#" class="w3-bar-item w3-button">Home</a>
-	  <a href="#" class="w3-bar-item w3-button"></a>
-	  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-	  <a href="staff/login" class="w3-bar-item w3-button">직원 로그인</a>
+<div class="w3-container w3-half w3-display-middle" >
+	<div class="w3-center w3-margin"> 
+		<button class="w3-button w3-white w3-border w3-border-yellow" id="gwan">관리부 로그인</button>
+		<button class="w3-button w3-white w3-border w3-border-red" id="young">영업부 로그인</button>
+		<button class="w3-button w3-white w3-border w3-border-blue" id="in">인사부 로그인</button>
+		<button class="w3-button w3-white w3-border w3-border-black" id="ki">기획부 로그인</button>
 	</div>
+	<div id="staff" class="w3-margin"></div>
 </div>
-<div class="w3-container">
-	<form:form class="w3-ontainer w3-card-4 w3-light-grey" action="gwanriJoinAction" commandName="gwanriLogCommand">
-	  	<h2>관리부 로그인</h2> 
-	  	<p><label>아이디</label>
-	  	<form:input path="gwanRiId" class="w3-input w3-border"/></p>
-		
-	  	<p><label>비밀번호</label>
-	  	<form:input class="w3-input w3-border" path="gwanRiPw" type="text"/></p>
-	  	<input type="submit" value="로그인">
-	</form:form>
-
-	<form:form class="w3-container w3-card-4 w3-light-grey" commandName="insaLogCommand">
-	  	<h2>인사부</h2>
-	  	<p><label>아이디</label>
-	  	<form:input path="inSaId" class="w3-input w3-border"/></p>
-	
-	  	<p><label>비밀번호</label>
-	  	<form:input class="w3-input w3-border" path="inSaPw" /></p>
-	  	<input type="submit" value="로그인">
-	</form:form>
-</div>
-
 </body>
 </html>
