@@ -10,8 +10,6 @@ import Command.Company.CompanyFormCommand;
 public class CompanyFormController {
 	@RequestMapping("/user/companyForm")
 	public String companyForm(Model model,CompanyFormCommand companyFormCommand) { //업체가 등록하는 페이지가기
-		System.out.println("-------------------------------------");
-		model.addAttribute("pageName", "../Company/companyForm");
-		return "Main/basicMain";
+		return "Company/companyForm";
 	}
 }

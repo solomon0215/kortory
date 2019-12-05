@@ -16,11 +16,11 @@
 	  	<h2>인사부 로그인</h2>
 	  	<label>아이디 Name</label> 
 	  	<div class="w3-center">
-	  	  	<form:input path="inSaId" class="w3-input"/></p>
+	  	  	<form:input path="inSaId" class="w3-input"/>
 		</div>
 		<label>비밀번호</label>
 		<div class="w3-center">
-			<form:input path="inSaPw" class="w3-input"/></p>
+			<form:input path="inSaPw" class="w3-input"/>
 		</div>  	
 	  	<input type="submit" value="로그인">
 	</form:form>
