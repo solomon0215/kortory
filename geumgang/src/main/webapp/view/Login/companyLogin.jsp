@@ -27,7 +27,7 @@
 	</form:form>
 	<div class="w3-margin w3-center">
 		<span class="w3-tag w3-xlarge w3-padding w3-blue w3-round-small" style="transform:rotate(+2deg)">
-	 		<a href="user/companyJoin" >Do You Wanna Join Partner?</a>
+	 		<a href="companyForm" >Do You Wanna Join Partner?</a>
 		</span>	
 	</div>
 </body>
