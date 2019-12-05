@@ -1,5 +1,52 @@
 package Service.Insa;
 
-public class InsaLoginService {
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import Command.Insa.InsaLogCommand;
+import Encrypt.Encrypt;
+import Model.InsaDTO.InsaAuthInfo;
+import Model.InsaDTO.InsaDTO;
+import Repository.Insa.InsaRepository;
+
+public class InsaLoginService {
+	@Autowired
+	InsaRepository insaRepository;
+
+	public Integer loginPro(HttpSession session, InsaLogCommand insaLogCommand, HttpServletResponse response) {
+		Integer result = 0;
+		InsaDTO insa = new InsaDTO();
+		insa.setInsaId(insaLogCommand.getInsaId());
+		insa = insaRepository.userCheck(insa);
+		InsaAuthInfo authInfo = null;
+		if(insa == null) {
+			result = 0;
+		} else {
+			if(insa.getInsaPw().equals(Encrypt.getEncryption(insaLogCommand.getInsaPw()))) {
+				authInfo = new InsaAuthInfo(insa.getInsaId(),insa.getInsaEmail(),insa.getInsaPw(),insa.getInsaName());
+				session.setAttribute("insaAuthInfo", authInfo);
+				setCookie(insaLogCommand, response);
+				result = 1;
+			}else {
+				result = 1;
+			}
+		}
+		return result;
+	}
+	
+	public void setCookie( InsaLogCommand insaLogCommand,
+			HttpServletResponse response) {
+		Cookie cookie = 
+				new Cookie("idStore",insaLogCommand.getInsaId());
+		if(insaLogCommand.getInsaIdStore()) {
+			cookie.setMaxAge(60*60*24*30);
+		}else {
+			cookie.setMaxAge(0);
+		}
+
+	}
 }
+

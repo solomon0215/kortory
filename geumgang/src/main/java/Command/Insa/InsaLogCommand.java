@@ -1,19 +1,26 @@
 package Command.Insa;
 
 public class InsaLogCommand {
-	String inSaId;
-	String inSaPw;
-	public String getInSaId() {
-		return inSaId;
+	String insaId;
+	String insaPw;
+	boolean insaIdStore;
+	public String getInsaId() {
+		return insaId;
 	}
-	public void setInSaId(String inSaId) {
-		this.inSaId = inSaId;
+	public void setInsaId(String insaId) {
+		this.insaId = insaId;
 	}
-	public String getInSaPw() {
-		return inSaPw;
+	public String getInsaPw() {
+		return insaPw;
 	}
-	public void setInSaPw(String inSaPw) {
-		this.inSaPw = inSaPw;
+	public void setInsaPw(String insaPw) {
+		this.insaPw = insaPw;
+	}
+	public boolean getInsaIdStore() {
+		return insaIdStore;
+	}
+	public void setInsaIdStore(boolean insaIdStore) {
+		this.insaIdStore = insaIdStore;
 	}
 	
 }
