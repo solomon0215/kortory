@@ -7,4 +7,6 @@
 	<bean class="Controller.Main.MainController"/>
 	<bean class="Controller.StaffLog.StaffLogController"/>
 	<bean class="Controller.User.UserLogController"/>
+	<bean class="Controller.User.LogController"/>
+	<bean class="Controller.User.CompanyFormController"/> 
 </beans>

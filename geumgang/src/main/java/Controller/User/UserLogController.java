@@ -10,11 +10,5 @@ import Service.User.UserLoginServie;
 
 @Controller
 public class UserLogController {
-	@Autowired
-	UserLoginServie userLoginServie;
-	@RequestMapping("user/login")
-	public String userLogin(UserLogCommnand userLogCommnand, Model model) {
-		model.addAttribute("pageName", "../Login/userLogin.jsp");
-		return "Main/basicMain";
-	}
+
 }
