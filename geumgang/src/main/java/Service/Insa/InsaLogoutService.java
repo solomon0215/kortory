@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class InsaLogoutService {
 
 	public void logout(HttpSession session, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+		session.invalidate();
 		
 	}
 

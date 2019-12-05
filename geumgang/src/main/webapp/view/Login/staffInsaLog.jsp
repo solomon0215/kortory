@@ -12,7 +12,7 @@
 </head>
 <body>
 	<!-- 인사부 -->
-	<form:form class="w3-ontainer" commandName="insaLogCommand">
+	<form:form class="w3-ontainer" action="inLogPro" commandName="insaLogCommand">
 	  	<h2>인사부 로그인</h2>
 	  	<label>아이디 Name</label> 
 	  	<div class="w3-center">

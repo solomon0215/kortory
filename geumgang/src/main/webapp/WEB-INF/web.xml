@@ -21,6 +21,8 @@
   			classpath:main-jdbc.xml
   			classpath:main-beans.xml
   			classpath:main-mail-config.xml
+  			classpath:insa-beans.xml
+  			classpath:insa-controller.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>

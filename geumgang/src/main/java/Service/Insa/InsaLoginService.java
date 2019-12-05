@@ -21,6 +21,7 @@ public class InsaLoginService {
 		InsaDTO insa = new InsaDTO();
 		insa.setInsaId(insaLogCommand.getInSaId());
 		insa = insaRepository.userCheck(insa);
+		
 		InsaAuthInfo authInfo = null;
 		if(insa == null) {
 			result = 0;
@@ -40,7 +41,7 @@ public class InsaLoginService {
 	public void setCookie( InsaLogCommand insaLogCommand,
 			HttpServletResponse response) {
 		Cookie cookie = 
-				new Cookie("idStore",insaLogCommand.getInSaId());
+				new Cookie("inSaIdStore",insaLogCommand.getInSaId());
 		if(insaLogCommand.getInSaIdStore()) {
 			cookie.setMaxAge(60*60*24*30);
 		}else {
