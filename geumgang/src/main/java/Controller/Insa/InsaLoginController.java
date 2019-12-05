@@ -14,7 +14,7 @@ import Service.Insa.InsaLoginService;
 import Validator.Insa.InsaLoginCommandValidator;
 
 @Controller
-@RequestMapping("/Login/staffLog")
+@RequestMapping("/staff/inLogPro")
 public class InsaLoginController {
 	@Autowired
 	InsaLoginService insaLoginService;
@@ -24,15 +24,15 @@ public class InsaLoginController {
 			HttpServletResponse response) {
 		new InsaLoginCommandValidator().validate(insaLogCommand, errors);
 		if(errors.hasErrors()) 
-			return "Main/main";
+			return "Login/login";
 		Integer i = insaLoginService.loginPro(
 				session, insaLogCommand,response);
 		if(i == 0 ) {
-			errors.rejectValue("insaId", "notId");
-			return "Main/main";
+			errors.rejectValue("inSaId", "notId");
+			return "Login/login";
 		}else if(i == -1) {
-			errors.rejectValue("insaPw", "wrong");
-			return "Main/main";
+			errors.rejectValue("inSaPw", "wrong");
+			return "Login/login";
 		}
 		return "redirect:../main";
 	}

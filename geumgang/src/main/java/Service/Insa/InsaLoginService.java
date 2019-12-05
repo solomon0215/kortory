@@ -19,13 +19,14 @@ public class InsaLoginService {
 	public Integer loginPro(HttpSession session, InsaLogCommand insaLogCommand, HttpServletResponse response) {
 		Integer result = 0;
 		InsaDTO insa = new InsaDTO();
-		insa.setInsaId(insaLogCommand.getInsaId());
+		insa.setInsaId(insaLogCommand.getInSaId());
 		insa = insaRepository.userCheck(insa);
+		
 		InsaAuthInfo authInfo = null;
 		if(insa == null) {
 			result = 0;
 		} else {
-			if(insa.getInsaPw().equals(Encrypt.getEncryption(insaLogCommand.getInsaPw()))) {
+			if(insa.getInsaPw().equals(Encrypt.getEncryption(insaLogCommand.getInSaPw()))) {
 				authInfo = new InsaAuthInfo(insa.getInsaId(),insa.getInsaEmail(),insa.getInsaPw(),insa.getInsaName());
 				session.setAttribute("insaAuthInfo", authInfo);
 				setCookie(insaLogCommand, response);
@@ -40,8 +41,8 @@ public class InsaLoginService {
 	public void setCookie( InsaLogCommand insaLogCommand,
 			HttpServletResponse response) {
 		Cookie cookie = 
-				new Cookie("idStore",insaLogCommand.getInsaId());
-		if(insaLogCommand.getInsaIdStore()) {
+				new Cookie("inSaIdStore",insaLogCommand.getInSaId());
+		if(insaLogCommand.getInSaIdStore()) {
 			cookie.setMaxAge(60*60*24*30);
 		}else {
 			cookie.setMaxAge(0);
