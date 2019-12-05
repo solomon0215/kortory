@@ -14,16 +14,16 @@
 <body>
 
 <div class="w3-container w3-white">
- <div class="w3-bar w3-sand">
-  <a href="main" class="w3-bar-item w3-button">Home</a>
-  <a href="intro" class="w3-bar-item w3-button">회사소개</a>
-  <a href="event/list" class="w3-bar-item w3-button">행사상품</a>
-  <a href="user/login" class="w3-bar-item w3-button">회원로그인</a>
-  <a href="staff/login" class="w3-bar-item w3-button">직원 로그인</a>
-</div>
+	<div class="w3-bar w3-sand">
+	  <a href="main" class="w3-bar-item w3-button">Home</a>
+	  <a href="intro" class="w3-bar-item w3-button">회사소개</a>
+	  <a href="event/list" class="w3-bar-item w3-button">행사상품</a>
+	  <a href="user/login" class="w3-bar-item w3-button">회원로그인</a>
+	  <a href="staff/login" class="w3-bar-item w3-button">직원 로그인</a>
+	</div>
 </div>
 
-<div class="w3-container">
+<div class="w3-containerr">
   	<jsp:include page="${pageName}"/>
 </div>
 </body>
