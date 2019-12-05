@@ -6,5 +6,6 @@
 >
 
 <bean class="Controller.Insa.InsaLoginController"/>
+<bean class="Controller.Insa.InsaLogoutController" />
 	
 </beans>
