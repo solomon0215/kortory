@@ -11,9 +11,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- 일반회원 로그인 -->
-	<form:form class="w3-ontainer" commandName="userLogCommnand">
-	  	<h2>일반회원 로그인</h2>
+	<!-- 가이드 로그인 -->
+	<form:form class="w3-ontainer" commandName="guideLogCommand">
+	  	<h2>협력가이드 로그인</h2>
 	  	<label>아이디 Name</label> 
 	  	<div class="w3-center">
 	  	  	<form:input path="userId" class="w3-input"/></p>

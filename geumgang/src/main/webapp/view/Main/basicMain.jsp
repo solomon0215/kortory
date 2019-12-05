@@ -10,6 +10,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+</style>
 </head>
 <body>
 
@@ -23,8 +25,10 @@
 	</div>
 </div>
 
-<div class="w3-containerr">
-  	<jsp:include page="${pageName}"/>
-</div>
+
+	<div class="bgimg-1 w3-containerr">
+	  	<jsp:include page="${pageName}"/>
+	</div>
+
 </body>
 </html>
