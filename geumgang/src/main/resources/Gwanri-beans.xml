@@ -4,7 +4,9 @@
 	   xsi:schemaLocation = "http://www.springframework.org/schema/beans 
 	    http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
-      
+<bean id = "gwanriJoinService" class ="Service.Gwanri.GwanriJoinService"/>  
+<bean id = "budgetBillListService" class ="Service.Gwanri.BudgetBillListService"/>
+<bean id = "budgetBillWriteService" class ="Service.Gwanri.BudgetBillWriteService"/>
 </beans>
 
 
