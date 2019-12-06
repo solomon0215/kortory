@@ -6,15 +6,14 @@
 <cache />
 
 	<sql id="company">
-		GWAN_RI,NUM, GWAN_RI_ID, GWAN_RI_PW, GWAN_RI_BIRTH, GWAN_RI_NAME, GWAN_RI_GENDER,
-		GWAN_RI_PH, GWAN_RI_REGIST, GWAN_RI_EMAIL
+		COMPANY_ID,COMPANY_REG_NUM,COMPANY_PW,COMPANY_NAME,COMPANY_ADDR,COMPANY_PH,COMPANY_TYPE,COMPANY_EMAIL,COMPANY_PER_APP,COMPANY_AGG_APP
 	</sql>
 	<select id="idConfirm" parameterType="string" resultType="string">
-		SELECT COMPANY_ID FROM COMPANY  WHERE COMPANY_ID = #{} UNION 
-		SELECT user_id FROM KORTORY_USER WHERE user_id = #{} UNION 
-		SELECT gwan_ri_id FROM GWAN_RI WHERE gwan_ri_id = #{}  UNION 
-		SELECT in_sa_id FROM IN_SA WHERE in_sa_id = #{} UNION 
-		SELECT ki_hoek_id FROM KI_HOEK WHERE ki_hoek_id = #{} UNION 
-		SELECT young_up_id FROM YOUNG_UP WHERE young_up_id = #{}
+		SELECT COMPANY_ID FROM COMPANY  WHERE COMPANY_ID = #{userId} UNION 
+		SELECT user_id FROM KORTORY_USER WHERE user_id = #{userId} UNION 
+		SELECT gwan_ri_id FROM GWAN_RI WHERE gwan_ri_id = #{userId}  UNION 
+		SELECT in_sa_id FROM IN_SA WHERE in_sa_id = #{userId} UNION 
+		SELECT ki_hoek_id FROM KI_HOEK WHERE ki_hoek_id = #{userId} UNION 
+		SELECT young_up_id FROM YOUNG_UP WHERE young_up_id = #{userId}
 	</select>
 </mapper>

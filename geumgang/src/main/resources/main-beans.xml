@@ -13,7 +13,7 @@
       
     <!-- Repositopry -->
       <bean id = "userRepository" class ="Repository.User.UserRepository"/>
-      <bean id = "companyBasicRepository" class ="Repository.Company.CompanyBasicRepository"/><!-- 업체의 로그인 , 가입 등 기초적 업무 -->
+      <bean id = "companySelectRepository" class ="Repository.Company.CompanySelectRepository"/><!-- 업체의 로그인 , 가입 등 기초적 업무 -->
       
 </beans>
 
