@@ -6,12 +6,15 @@
 >
 	
 	<!-- Service  -->
-      <bean id = "mainService" class ="Service.Main.MainService"/>
-      <bean id = "userLoginServie" class ="Service.User.UserLoginServie"/>
+      <bean id = "mainService" class ="Service.Main.MainService"/> <!-- main구별 서비스 -->
+      <bean id = "userLoginServie" class ="Service.User.UserLoginServie"/> <!-- user 로긍니 서비스 -->
+      <bean id = "companyFormService" class ="Service.Company.CompanyFormService"/> <!-- company 가입시 중복확인 및 insert 서비스 -->
       
       
     <!-- Repositopry -->
       <bean id = "userRepository" class ="Repository.User.UserRepository"/>
+      <bean id = "companyBasicRepository" class ="Repository.Company.CompanyBasicRepository"/><!-- 업체의 로그인 , 가입 등 기초적 업무 -->
+      
 </beans>
 
 
