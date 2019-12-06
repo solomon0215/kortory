@@ -37,7 +37,16 @@
 			});
 		});
 		$("#send").click(function(){
-			$("#frm").submit();
+			$("#frm").submit(function(){
+				if($("input:radio[id='aggApp']").is(":checked") == false){
+					alert("업체의 정보 제공에 동의 하셔야 합니다.")
+					return false;
+				}
+				if($("input:radio[id='perApp']").is(":checked") == false){
+					alert("개인 정보 수집 절차에 동의 하셔야 합니다.")
+					return false;
+				}
+			});
 		});
 	});
 </script>
@@ -94,10 +103,6 @@
 		    
 		</div>
 		<br>
-		<div class="w3-center">
-			<form:errors class="w3-red" path="companyPerApp"/>
-			<form:errors class="w3-red" path="companyAggApp"/>
-		</div>
 		<div class="w3-row w3-section w3-center">
 		    	<label>공기업 이신가요?</label><br>
 		    	<label>NO</label><form:radiobutton class="w3-radio" path="companyType" value="N" checked="checked"/>
@@ -106,12 +111,14 @@
 		<div class="w3-row w3-section w3-center">
 			<label>개인정보 보호법의 시행에 따라 정보수집의 절차에 동의 하십니까?</label><br>
 		    <label>NO</label><form:radiobutton class="w3-radio" path="companyPerApp" value="N" checked="checked"/>
-			<label>YES</label><form:radiobutton class="w3-radio" path="companyPerApp" value="Y" />
+			<label>YES</label><form:radiobutton class="w3-radio" path="companyPerApp" id="perApp" value="Y" />
+			<form:errors class="w3-red" path="companyPerApp"/>
 		</div>
 		<div class="w3-row w3-section w3-center">
 			<label>업체의 정보제공에 동의 하십니까?</label><br>
-		    <label>NO</label><form:radiobutton class="w3-radio" path="companyAggApp" value="N" checked="checked"/>
-			<label>YES</label><form:radiobutton class="w3-radio" path="companyAggApp" value="Y" />
+		    <label>NO</label><form:radiobutton class="w3-radio" path="companyAggApp"  value="N" checked="checked"/>
+			<label>YES</label><form:radiobutton class="w3-radio" path="companyAggApp" id="aggApp" value="Y" />
+			<form:errors class="w3-red" path="companyAggApp"/>
 		</div>
 		<br>
 		<button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding" id="send">Send</button>

@@ -26,6 +26,7 @@ public class CompanyFormController {
 	//업체등록
 	@RequestMapping(value="/user/companyInsert", method=RequestMethod.POST)
 	public String companyInsert(CompanyFormCommand companyFormCommand,Errors errors) { 
+		System.out.println("-------------------------------------------------------------------" + companyFormCommand.getCompanyAggApp());
 		new CompanyFormCommandValidator().validate(companyFormCommand, errors);
 		if(errors.hasErrors()) {
 			return "Company/companyForm";

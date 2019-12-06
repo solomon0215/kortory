@@ -6,5 +6,6 @@
 	<typeAliases>
 		<typeAlias type="Model.GwanriDTO.GwanriDTO" alias ="gwanriDTO"/>
 		<typeAlias type="Model.InsaDTO.InsaDTO" alias ="insaDTO"/>
+		<typeAlias type="Model.CompanyDTO.CompanyDTO" alias ="comDTO"/>
 	</typeAliases>
 </configuration>

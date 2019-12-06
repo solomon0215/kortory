@@ -67,12 +67,9 @@ public class CompanyFormCommandValidator implements Validator{
 				errors.rejectValue("companyPw", "companyPwNoMatch");
 			}
 		}
-		//동의 여부
-		if(comcom.getCompanyAggApp().contentEquals("N")) {
-			ValidationUtils.rejectIfEmpty(errors, "companyAggApp", "aggNoApp");
-		}
-		if(comcom.getCompanyPerApp().contentEquals("N")) {
-			ValidationUtils.rejectIfEmpty(errors, "companyPerApp", "perNoApp");
+		//아이디 Ajax무시 하고 전송시 
+		if(comcom.getConfirmNum() != 0) {
+			errors.rejectValue("companyId", "companyId");
 		}
 	}
 
