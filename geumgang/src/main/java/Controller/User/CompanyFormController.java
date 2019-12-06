@@ -16,17 +16,25 @@ public class CompanyFormController {
 	@Autowired
 	CompanyFormService companyFormService;
 	
+	//신청서 작성 페이지 가기
 	@RequestMapping("/user/companyForm")
-	public String companyForm(Model model,CompanyFormCommand companyFormCommand) { //업체가 등록하는 페이지가기
+	public String companyForm(Model model,CompanyFormCommand companyFormCommand) { 
 		return "Company/companyForm";
 	}
-	@RequestMapping("/user/companyIdConfirm")
-	public String companyIdConfirm(@RequestParam("userId") String userId,Errors errors,CompanyFormCommand companyFormCommand) { //업체가 등록하는 페이지가기
+	
+	//업체등록
+	@RequestMapping("/user/companyInsert")
+	public String companyInsert(@RequestParam("userId") String userId,Errors errors,CompanyFormCommand companyFormCommand) { 
 		new CompanyFormCommandValidator().validate(companyFormCommand, errors);
 		if(errors.hasErrors()) {
 			return "Company/companyForm";
 		}
-		companyFormService.idConfirm(userId,errors);
 		return "Company/companyForm";
+	}
+	
+	//중복확인 
+	@RequestMapping("/user/companyIdConfirm")
+	public String companyIdConfirm(@RequestParam("userId") String userId) {
+		return companyFormService.idConfirm(userId);
 	}
 }

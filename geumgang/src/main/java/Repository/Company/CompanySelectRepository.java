@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class CompanySelectRepository {
 	@Autowired
 	private SqlSession sqlSession;
-	private final String namespace = "CompanySelectMapper";
+	private final String namespace = "companySelectMapper";
 	
 	public Integer idConfirm(String userId) {
 		String statement = namespace + ".idConfirm";

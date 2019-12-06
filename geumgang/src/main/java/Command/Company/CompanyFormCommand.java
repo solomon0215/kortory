@@ -12,7 +12,14 @@ public class CompanyFormCommand {
 	String companyEmail;
 	String companyPerApp;
 	String companyAggApp;
+	Integer confirmNum;
 	
+	public Integer getConfirmNum() {
+		return confirmNum;
+	}
+	public void setConfirmNum(Integer confirmNum) {
+		this.confirmNum = confirmNum;
+	}
 	public String getCompanyPwCon() {
 		return companyPwCon;
 	}

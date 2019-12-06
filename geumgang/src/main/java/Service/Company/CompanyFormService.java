@@ -16,12 +16,13 @@ public class CompanyFormService {
 		return null;
 	}
 	
-	public void idConfirm(String userId,Errors errors) { //아이디 중복확인 메소드
+	public String idConfirm(String userId) { //아이디 중복확인 메소드
 		Integer confirm = companySelectRepository.idConfirm(userId);
+		System.out.println("------------------------------------------------------------------------------" +confirm);
 		if(confirm > 0) {
-			errors.rejectValue("companyId", "companyIdConfirm1"); //아이디가 있을때
+			return "Company/confrimId1";//아이디 존재
 		}else {
-			errors.rejectValue("companyId", "companyIdConfirm2"); //아이디가 없을때
+			return "Company/confrimId2"; // 사용가능
 		}
 	}
 }
