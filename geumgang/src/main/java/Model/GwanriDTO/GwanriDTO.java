@@ -1,4 +1,4 @@
-package Model.Gwanri.DTO;
+package Model.GwanriDTO;
 
 public class GwanriDTO {
 

@@ -4,7 +4,7 @@
 	
 <configuration>
 	<typeAliases>
-		<typeAlias type="Model.Gwanri.DTO.GwanriDTO" alias ="gwanriDTO"/>
+		<typeAlias type="Model.GwanriDTO.GwanriDTO" alias ="gwanriDTO"/>
 		<typeAlias type="Model.InsaDTO.InsaDTO" alias ="insaDTO"/>
 	</typeAliases>
 </configuration>
