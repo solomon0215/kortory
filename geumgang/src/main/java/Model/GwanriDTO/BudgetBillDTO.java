@@ -1,7 +1,6 @@
 package Model.GwanriDTO;
 
 import java.io.Serializable;
-
 import java.sql.Date;
 
 @SuppressWarnings("serial")

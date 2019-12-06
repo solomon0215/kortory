@@ -6,5 +6,6 @@
 >
 	<bean class="Controller.Main.MainController"/>
 	<bean class="Controller.Gwanri.GwanriLogController"/>
+	<bean class="Controller.Gwanri.GwanriLogoutController"/>
 	<bean class="Controller.Gwanri.BudgetBillController"/>
 </beans>

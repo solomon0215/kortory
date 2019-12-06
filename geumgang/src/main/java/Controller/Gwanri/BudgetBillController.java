@@ -28,7 +28,6 @@ public class BudgetBillController {
 			method = RequestMethod.POST)
 	public String write(BoardCommand boardCommand,
 			HttpServletRequest request , HttpSession session ) {
-		System.out.println();
 		budgetBillWriteService.boardWrite(boardCommand , request, session);
 		return "redirect:/board/budgetBillList";
 	}
