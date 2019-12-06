@@ -8,5 +8,8 @@
 	<sql id="company">
 		COMPANY_ID,COMPANY_REG_NUM,COMPANY_PW,COMPANY_NAME,COMPANY_ADDR,COMPANY_PH,COMPANY_TYPE,COMPANY_EMAIL,COMPANY_PER_APP,COMPANY_AGG_APP
 	</sql>
-	<insert id=""></insert>
+	<insert id="companyInsert" parameterType="comDTO">
+		insert into company(<include refid="company"/>)
+		values(#{companyId},#{companyRegNum},#{companyPw},#{companyName},#{companyAddr},#{companyPh},#{companyType},#{companyEmail},#{companyPerApp},#{companyAggApp})
+	</insert>
 </mapper>
