@@ -23,6 +23,8 @@
   			classpath:main-mail-config.xml
   			classpath:insa-beans.xml
   			classpath:insa-controller.xml
+  			classpath:gwanri-beans.xml
+  			classpath:gwanri-controller.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>

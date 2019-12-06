@@ -20,5 +20,4 @@ public class GwanriLogoutController {
 		gwanriLogoutService.logout(session, response);
 		return "redirect:../main";
 	}
-
 }

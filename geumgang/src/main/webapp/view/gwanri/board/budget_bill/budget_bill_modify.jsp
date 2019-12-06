@@ -5,41 +5,58 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type = "text/javascript">
-	function modifyboard(){
-		frm.submit();
-	}
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script type="text/javascript" 
+	src="http://code.jquery.com/jquery-latest.js" ></script>
+<script type="text/javascript" >
+
+</script>	
 </head>
 <body>
-<div>${msg }</div>
-<form action = "answerBoardModify.ab" method="post" name="frm">
-<input type = "hidden" name="boardNum" value="${board.boardNum }" />
-	<table width=50% border="1" cellpadding="0" cellspacing="0">
-	<tr align="center" valign="middle">
-			<td style="font-size: 12" height="16">글쓴이</td>
-			<td style="font-size: 12"><input type = "text" name = "boardName" value="${board.boardName }"></td>
-		</tr>
-		<tr align="center" valign="middle">
-			<td style="font-size: 12" height="16">제목</td>
-			<td style="font-size: 12"><input type = "text" name = "boardSubject" value="${board.boardSubject }"></td>
-		</tr>
-		<tr align="center" valign="middle">
-			<td style="font-size: 12" height="16">내용</td>
-			<td style="font-size: 12"><textarea rows="15" cols="50" name="boardContent">${board.boardContent }</textarea></td>
-		</tr>
-		<tr align="center" valign="middle">
-			<td style="font-size: 12" height="16">비밀번호</td>
-			<td style="font-size: 12"><input type="password" name="boardPass" /></td>
-		</tr>
-		<tr align="center" valign="middle">
-		<td colspan="2">
-		<font size=2>
-		<a href = "javascript:modifyboard()">[수정]</a>&nbsp;&nbsp;
-		<a href = "javascript:history.go(-1)">[뒤로]</a>&nbsp;&nbsp;
-		</font>
-	</table>
+<dvi class =" w3-container">
+		<center><h2>예산안 보고서 상세내역</h2></center><br/>
+			
+<form:form name ="frm" id ="frm" method = "post" 
+	commandName = "memberCommand" action ="memberModifyPro">
+<table border = 1  width = 600 align = "center" cellpadding = 3 >
+		<tr><td >번호<spring:message code="userId.userPw" /></td>
+		<td >&nbsp;</td></tr>
+	<tr><td>총 예산금액<spring:message code="userModify" /></td>
+		<td><input type="password" id="pw" name ="userPw" />원<br />
+	        <form:errors path ="userPw"/>
+		  </td>
+	<tr><td>인건비 비율<spring:message code="password" /></td>
+		<td><input type="password" id="pw" name ="userPw" />%<br />
+	        <form:errors path ="userPw"/>
+		  </td>
+	</tr>
+	<tr><td >인건비 금액<spring:message code="defaultInfo" /></td>
+		<td><input type="password" id="pw" name ="userPw" />원<br />
+	        <form:errors path ="userPw"/>
+		  </td>
+	<tr><td>희망상품 금액<spring:message code="name" /></td>
+		<td><input type="password" id="pw" name ="userPw" />원<br />
+	        <form:errors path ="userPw"/>
+		  </td>
+	</tr>
+	<tr><td>작성일<spring:message code="birth.gender" /></td>
+		<td >&nbsp;</td></tr>
 	
-</form>
+	
+	
+
+		
+			
+</table>
+<br />
+  <div class="w3-container" align="center">
+   <a href="#" class="w3-btn w3-blue">수정</a>
+    <a href="#" class="w3-btn w3-blue">삭제</a>
+</div>
+</form:form>
+
+</dvi>
 </body>
+
 </html>

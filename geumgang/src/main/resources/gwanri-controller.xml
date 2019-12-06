@@ -4,7 +4,7 @@
 	   xsi:schemaLocation = "http://www.springframework.org/schema/beans 
 	    http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
-	<bean class="Controller.Main.MainController"/>
+	<bean class="Controller.Gwanri.GwanriMainController"/>
 	<bean class="Controller.Gwanri.GwanriLogController"/>
 	<bean class="Controller.Gwanri.GwanriLogoutController"/>
 	<bean class="Controller.Gwanri.BudgetBillController"/>

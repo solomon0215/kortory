@@ -12,7 +12,7 @@
 </head>
 <body>
 	<!-- 관리부 -->
-	<form:form class="w3-ontainer" action="gwanriJoinAction" commandName="gwanriLogCommand">
+	<form:form class="w3-ontainer" action="gwanLogPro" commandName="gwanriLogCommand">
 	  	<h2>관리부 로그인</h2>
 	  	<label>아이디 Name</label> 
 	  	<div class="w3-center">
