@@ -26,69 +26,78 @@
 					if(data1 == 0){
 						$("#confirm").attr('class','w3-center w3-text-green');
 						$("#confirm").html("YES!");
-					}else{
+					}else if(data1 == 1){
 						$("#confirm").attr('class','w3-center w3-text-red');
-						$("#confirm").html("NO");
+						$("#confirm").html("Already Have");
+					}else{
+						$("#confirm").attr('class','w3-center w3-text-yellow');
+						$("#confirm").html("Pattern Bad");
 					}
 				}
 			});
 		});
-		
+		$("#send").click(function(){
+			$("#frm").submit();
+		});
 	});
 </script>
 </head>
 <body>
 	<!-- 업체등록 신청서 작성 페이지 -->
 	<div class="w3-container w3-display-middle w3-col m8">
-		<form:form class="w3-container w3-light-grey w3-text-dark-gray w3-margin" commandName="companyFormCommand">
+		<form:form class="w3-container w3-light-grey w3-text-dark-gray w3-margin" commandName="companyFormCommand" id="frm" action="companyInsert" method="POST">
 		<h2 class="w3-center w3-text-gray">업체등록 신청서</h2>
 		 
 		<div class="w3-row w3-section w3-col m10 w3-margin">
-			<div class="w3-col m10">
-				<form:input path="companyId" class="w3-input w3-border"  placeholder="아이디"/>
-				<form:errors path="companyId"/>
+			<div class="w3-col m9">
+				<form:input path="companyId" class="w3-input w3-border"  placeholder="아이디 영어 소문자/숫자 6~16자리"/>
+				<form:errors class="w3-red" path="companyId"/>
 				<form:hidden path="confirmNum" id="confirmNum" value="3"/>				
 			</div>
-			<div class="w3-col m2">
+			<div class="w3-col m3">
 				<div id="confirm" class="w3-center"></div>
 			</div>
 		</div>
 		<div class="w3-row w3-section">
 				<div class="w3-container w3-col m6">
-					<form:input path="companyPw" class="w3-input w3-border"  placeholder="비밀번호"/>
-					<form:errors path="companyPw"/>
+					<form:input path="companyPw" class="w3-input w3-border"  placeholder="비밀번호 영어 소문자/숫자 6~16자리"/>
+					<form:errors class="w3-red" path="companyPw"/>
 				</div>
 				<div class="w3-container w3-col m6">
-					<form:input path="companyPwCon" class="w3-input w3-border"  placeholder="비밀번호 확인"/>
-					<form:errors path="companyPwCon"/>
+					<form:input path="companyPwCon" class="w3-input w3-border"  placeholder="비밀번호 확인 영어 소문자/숫자 6~16자리"/>
+					<form:errors class="w3-red" path="companyPwCon"/>
 				</div>	
 		</div>
 		<div class="w3-row w3-section">
 			<div class="w3-container w3-col m6">
 			    <form:input path="companyRegNum" class="w3-input w3-border"  placeholder="사업자 번호"/>
-			    <form:errors path="companyRegNum"/>
+			    <form:errors class="w3-red" path="companyRegNum"/>
 			</div>
 			<div class="w3-container w3-col m6">
 			    <form:input path="companyName" class="w3-input w3-border"  placeholder="업체  이름"/>
-			    <form:errors path="companyName"/>
+			    <form:errors class="w3-red" path="companyName"/>
 			</div>
 		</div>
 		<div class="w3-row w3-section w3-col m10 w3-margin">
 	      	<form:input path="companyAddr" class="w3-input w3-border"  placeholder="업체  주소지"/>
-	      	<form:errors path="companyAddr"/>
+	      	<form:errors class="w3-red" path="companyAddr"/>
 		</div>
 		<div class="w3-row w3-section">
 			<div class="w3-container w3-col m6">
 		    	<form:input path="companyPh" class="w3-input w3-border"  placeholder="업체 전화번호"/>
-		    	<form:errors path="companyPh"/>
+		    	<form:errors class="w3-red" path="companyPh"/>
 			</div>
 		    <div class="w3-container w3-col m6">
 			    <form:input path="companyEmail" class="w3-input w3-border"  placeholder="업체  이메일주소"/>
-			    <form:errors path="companyEmail"/>
+			    <form:errors class="w3-red" path="companyEmail"/>
 		    </div>
 		    
 		</div>
 		<br>
+		<div class="w3-center">
+			<form:errors class="w3-red" path="companyPerApp"/>
+			<form:errors class="w3-red" path="companyAggApp"/>
+		</div>
 		<div class="w3-row w3-section w3-center">
 		    	<label>공기업 이신가요?</label><br>
 		    	<label>NO</label><form:radiobutton class="w3-radio" path="companyType" value="N" checked="checked"/>
@@ -105,7 +114,7 @@
 			<label>YES</label><form:radiobutton class="w3-radio" path="companyAggApp" value="Y" />
 		</div>
 		<br>
-		<button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">Send</button>
+		<button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding" id="send">Send</button>
 		</form:form>		
 	</div>
 </body>

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import Command.Company.CompanyFormCommand;
@@ -23,13 +24,13 @@ public class CompanyFormController {
 	}
 	
 	//업체등록
-	@RequestMapping("/user/companyInsert")
-	public String companyInsert(@RequestParam("userId") String userId,Errors errors,CompanyFormCommand companyFormCommand) { 
+	@RequestMapping(value="/user/companyInsert", method=RequestMethod.POST)
+	public String companyInsert(CompanyFormCommand companyFormCommand,Errors errors) { 
 		new CompanyFormCommandValidator().validate(companyFormCommand, errors);
 		if(errors.hasErrors()) {
 			return "Company/companyForm";
 		}
-		return "Company/companyForm";
+		return "Company/companyFormPro";
 	}
 	
 	//중복확인 

@@ -14,6 +14,9 @@ public class CompanyFormCommand {
 	String companyAggApp;
 	Integer confirmNum;
 	
+	public boolean isPwEqualToPwCon() {
+		return this.companyPw.equals(this.companyPwCon);
+	}
 	public Integer getConfirmNum() {
 		return confirmNum;
 	}
