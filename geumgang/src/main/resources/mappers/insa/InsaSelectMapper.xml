@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="InsaSelectMapper">
+<mapper namespace="InsaMapper">
 	
 <cache />
+<sql id="basecolumn">
+		IN_SA_NUM, IN_SA_ID, IN_SA_PW, IN_SA_BIRTH, IN_SA_NAME,
+		IN_SA_GENDER, IN_SA_PH, IN_SA_EMAIL, IN_SA_REGIST
+	</sql>
+	<resultMap type="insaDTO" id="baseMember">
+	    
+		<id column="IN_SA_NUM" jdbcType="VARCHAR" property="insaNum"/>
+		<result column="IN_SA_ID" jdbcType="VARCHAR" property="insaId"/>
+		<result column="IN_SA_PW" jdbcType="VARCHAR" property="insaPw"/>
+		<result column="IN_SA_BIRTH" jdbcType = "DATE" property="insaBirth"/>
+		<result column="IN_SA_NAME" jdbcType="VARCHAR" property="insaName"/>		
+		<result column="IN_SA_GENDER" jdbcType="CHAR" property="insaGender"/>
+		<result column="IN_SA_PH" jdbcType="VARCHAR" property="insaPh"/>
+		<result column="IN_SA_EMAIL" jdbcType="VARCHAR" property="insaEmail"/>
+		<result column="IN_SA_REGIST" jdbcType="DATE" property="insaRegist"/>		
+	</resultMap>
+
+<select id="insaCheck" parameterType = "insaDTO" resultMap="baseMember" >
+		select 
+			<include refid="basecolumn" />
+		from in_sa
+		<trim prefix="where" prefixOverrides="AND |OR ">
+			<if test="insaPw != null">
+			IN_SA_PW = #{insaPw}
+			</if>
+			and IN_SA_ID = #{insaId} 
+		</trim>
+	</select>
 
 </mapper>

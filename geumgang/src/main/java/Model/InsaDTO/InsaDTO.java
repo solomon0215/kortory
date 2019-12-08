@@ -6,6 +6,7 @@ import java.sql.Timestamp;
 
 @SuppressWarnings("serial")
 public class InsaDTO implements Serializable {
+	String insaNum;
 	String insaName; 
 	Date insaBirth;
 	String insaEmail;
@@ -62,6 +63,12 @@ public class InsaDTO implements Serializable {
 	}
 	public void setInsaRegist(Date insaRegist) {
 		this.insaRegist = insaRegist;
+	}
+	public String getInsaNum() {
+		return insaNum;
+	}
+	public void setInsaNum(String insaNum) {
+		this.insaNum = insaNum;
 	}
 	
 

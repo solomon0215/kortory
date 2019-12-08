@@ -34,11 +34,11 @@ public class InsaLoginController {
 			errors.rejectValue("inSaPw", "wrong");
 			return "Login/login";
 		}
-		return "redirect:../main";
+		return "insa/insaMain";
 	}
 	@RequestMapping(method=RequestMethod.GET) 
 	public String loginPro() {
-		return "redirect:../main"; // .. 은 상위 폴더로 이동
+		return "redirect:../main"; // .. �� �긽�쐞 �뤃�뜑濡� �씠�룞
 	} 
 
 }

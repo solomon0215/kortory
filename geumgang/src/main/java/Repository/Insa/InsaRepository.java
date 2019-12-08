@@ -2,9 +2,10 @@ package Repository.Insa;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import Model.InsaDTO.InsaDTO;
-
+@Repository
 public class InsaRepository {
 	@Autowired
 	private SqlSession sqlSession;
