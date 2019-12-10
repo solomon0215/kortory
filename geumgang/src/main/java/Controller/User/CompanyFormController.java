@@ -25,7 +25,7 @@ public class CompanyFormController {
 	
 	//업체등록
 	@RequestMapping(value="/user/companyInsert", method=RequestMethod.POST)
-	public String companyInsert(CompanyFormCommand companyFormCommand,Errors errors) { 
+	public String companyInsert(CompanyFormCommand companyFormCommand,Errors errors,Model model) { 
 		System.out.println("-------------------------------------------------------------------" + companyFormCommand.getCompanyAggApp());
 		new CompanyFormCommandValidator().validate(companyFormCommand, errors);
 		if(errors.hasErrors()) {
@@ -34,6 +34,7 @@ public class CompanyFormController {
 		Integer i = companyFormService.insert(companyFormCommand);
 		if(i != null) {
 			if(i>0) {
+				model.addAttribute("command", companyFormCommand);
 				return "Company/welcomeCompany";//등록완료
 			}
 		}

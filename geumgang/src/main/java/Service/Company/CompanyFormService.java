@@ -39,8 +39,6 @@ public class CompanyFormService {
 		dto.setCompanyType(companyFormCommand.getCompanyType());//업체 유형
 		dto.setCompanyEmail(companyFormCommand.getCompanyEmail()); //업체 이메일주소
 		
-		companyInsertRepository.companyInsert(dto);
-		
 		return companyInsertRepository.companyInsert(dto);
 	}
 	
