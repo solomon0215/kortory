@@ -19,14 +19,14 @@ public class CompanyFormController {
 	
 	//신청서 작성 페이지 가기
 	@RequestMapping("/user/companyForm")
-	public String companyForm(Model model,CompanyFormCommand companyFormCommand) { 
-		return "Company/companyForm";
+	public String companyForm(Model model,CompanyFormCommand companyFormCommand) {
+		model.addAttribute("pageName", "../Company/companyForm.jsp");
+		return "Main/basicMain";
 	}
 	
 	//업체등록
 	@RequestMapping(value="/user/companyInsert", method=RequestMethod.POST)
 	public String companyInsert(CompanyFormCommand companyFormCommand,Errors errors,Model model) { 
-		System.out.println("-------------------------------------------------------------------" + companyFormCommand.getCompanyAggApp());
 		new CompanyFormCommandValidator().validate(companyFormCommand, errors);
 		if(errors.hasErrors()) {
 			return "Company/companyForm";//입력 문제

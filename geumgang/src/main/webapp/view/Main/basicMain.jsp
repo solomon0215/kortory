@@ -17,17 +17,17 @@
 
 <div class="w3-container w3-white">
 	<div class="w3-bar w3-sand">
-	  <a href="main" class="w3-bar-item w3-button">Home</a>
-	  <a href="intro" class="w3-bar-item w3-button">회사소개</a>
-	  <a href="event/list" class="w3-bar-item w3-button">행사상품</a>
-	  <a href="user/login" class="w3-bar-item w3-button">회원로그인</a>
-	  <a href="staff/login" class="w3-bar-item w3-button">직원 로그인</a>
+	  <a href="http://localhost:8080/geumgang/main"  class="w3-bar-item w3-button">Home</a>
+	  <a href="http://localhost:8080/geumgang/intro" class="w3-bar-item w3-button">회사소개</a>
+	  <a href="http://localhost:8080/geumgang/event/list" class="w3-bar-item w3-button">행사상품</a>
+	  <a href="http://localhost:8080/geumgang/user/login" class="w3-bar-item w3-button">회원로그인</a>
+	  <a href="http://localhost:8080/geumgang/staff/login" class="w3-bar-item w3-button">직원 로그인</a>
 	</div>
 </div>
 
-
-	<div class="bgimg-1 w3-containerr">
-	  	<jsp:include page="${pageName}"/>
+	
+	<div class="bgimg-1 w3-container w3-content" style="height:80%;">
+	  	<jsp:include page="${pageName}" />
 	</div>
 
 </body>

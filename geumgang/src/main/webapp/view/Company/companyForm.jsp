@@ -53,7 +53,7 @@
 </head>
 <body>
 	<!-- 업체등록 신청서 작성 페이지 -->
-	<div class="w3-container w3-display-middle w3-col m8">
+	<div class="w3-container w3-display-middle w3-col m8" style="max-height:80%;">
 		<form:form class="w3-container w3-light-grey w3-text-dark-gray w3-margin" commandName="companyFormCommand" id="frm" action="companyInsert" method="POST">
 		<h2 class="w3-center w3-text-gray">업체등록 신청서</h2>
 		 

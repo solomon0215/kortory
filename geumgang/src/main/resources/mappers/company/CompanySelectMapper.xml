@@ -8,6 +8,18 @@
 	<sql id="company">
 		COMPANY_ID,COMPANY_REG_NUM,COMPANY_PW,COMPANY_NAME,COMPANY_ADDR,COMPANY_PH,COMPANY_TYPE,COMPANY_EMAIL,COMPANY_PER_APP,COMPANY_AGG_APP
 	</sql>
+	<resultMap type="comDTO" id="companyInfo"> <!-- CompanyDTO에 담는resultMap -->
+		<id column="COMPANY_ID" jdbcType="VARCHAR" property="companyId"/>
+		<result column="COMPANY_REG_NUM" jdbcType="VARCHAR" property="companyRegNum"/>
+		<result column="COMPANY_PW" jdbcType = "VARCHAR" property="companyPw"/>
+		<result column="COMPANY_NAME" jdbcType="VARCHAR" property="companyName"/>
+		<result column="COMPANY_ADDR" jdbcType="VARCHAR" property="companyAddr"/>
+		<result column="COMPANY_PH" jdbcType="VARCHAR" property="companyPh"/>
+		<result column="COMPANY_TYPE" jdbcType="VARCHAR" property="companyType"/>
+		<result column="COMPANY_EMAIL" jdbcType="VARCHAR" property="companyEmail"/>
+		<result column="COMPANY_PER_APP" jdbcType="VARCHAR" property="companyPerApp"/>
+		<result column="COMPANY_AGG_APP" jdbcType="VARCHAR" property="companyAggApp"/>
+	</resultMap>
 	<select id="idConfirm" parameterType="string" resultType="string">
 		SELECT COMPANY_ID FROM COMPANY  WHERE COMPANY_ID = #{userId} UNION 
 		SELECT user_id FROM KORTORY_USER WHERE user_id = #{userId} UNION 
@@ -15,5 +27,12 @@
 		SELECT in_sa_id FROM IN_SA WHERE in_sa_id = #{userId} UNION 
 		SELECT ki_hoek_id FROM KI_HOEK WHERE ki_hoek_id = #{userId} UNION 
 		SELECT young_up_id FROM YOUNG_UP WHERE young_up_id = #{userId}
+	</select>
+	<select id="companyLogin" parameterType="comDTO"  resultMap="companyInfo"><!-- 로그인 정보 대조하기 위해서 검색하는 select -->
+		select <include refid="company"/> 
+		from company 
+		<where>
+			COMPANY_ID = #{companyId} and COMPANY_PW = #{companyPw}
+		</where>
 	</select>
 </mapper>

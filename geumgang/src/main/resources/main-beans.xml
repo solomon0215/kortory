@@ -9,6 +9,7 @@
       <bean id = "mainService" class ="Service.Main.MainService"/> <!-- main구별 서비스 -->
       <bean id = "userLoginServie" class ="Service.User.UserLoginServie"/> <!-- user 로그인 서비스 -->
       <bean id = "companyFormService" class ="Service.Company.CompanyFormService"/> <!-- company 가입시 중복확인 및 insert 서비스 -->
+      <bean id = "companyLogService" class ="Service.Company.CompanyLogService"/> <!-- 업체 로그인 서비스 -->
       
       
     <!-- Repositopry -->

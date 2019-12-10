@@ -20,6 +20,7 @@ public class LogController {
 	//companyLog form to Ajax
 	@RequestMapping("user/companyLogin")
 	public String companyLogin(CompanyLogCommand companyLogCommand) {
+		System.out.println("---------------------------"+companyLogCommand.getCompanyId());
 		return "Login/companyLogin";
 	}
 	//userLog form to Ajax	
