@@ -10,33 +10,38 @@ import org.springframework.validation.Errors;
 import Command.Company.CompanyFormCommand;
 import Encrypt.Encrypt;
 import Model.CompanyDTO.CompanyDTO;
+import Repository.Company.CompanyInsertRepository;
 import Repository.Company.CompanySelectRepository;
 
 @Service
 public class CompanyFormService {
 	@Autowired
-	CompanySelectRepository companySelectRepository;
+	CompanySelectRepository companySelectRepository;//select 레포지토리
 	@Autowired
+	CompanyInsertRepository companyInsertRepository;//insert 레포지토리
 	
 	private static final String id = "[a-z0-9]{6,16}"; //아이디작성 패턴
 	private Pattern pattern;
+	
+	
 	public Integer insert(CompanyFormCommand companyFormCommand) { // 업체 등록 메소드
 		//DTO에 담기
 		CompanyDTO dto = new CompanyDTO();
-		dto.setCompanyId(companyFormCommand.getCompanyId());
+		dto.setCompanyId(companyFormCommand.getCompanyId()); //아아디
 		String companyPw = Encrypt.getEncryption(companyFormCommand.getCompanyPw());//비밀번호 암호화
-		dto.setCompanyPw(companyPw);
-		dto.setCompanyAddr(companyFormCommand.getCompanyAddr());
-		dto.setCompanyPh(companyFormCommand.getCompanyPh());
-		dto.setCompanyRegNum(companyFormCommand.getCompanyRegNum());
-		dto.setCompanyName(companyFormCommand.getCompanyName());
-		dto.setCompanyAggApp(companyFormCommand.getCompanyAggApp());
-		dto.setCompanyPerApp(companyFormCommand.getCompanyPerApp());
-		dto.setCompanyType(companyFormCommand.getCompanyType());
-		dto.setCompanyEmail(companyFormCommand.getCompanyEmail());
+		dto.setCompanyPw(companyPw);//비밀번호
+		dto.setCompanyAddr(companyFormCommand.getCompanyAddr());//주소
+		dto.setCompanyPh(companyFormCommand.getCompanyPh());//전화번호
+		dto.setCompanyRegNum(companyFormCommand.getCompanyRegNum()); //사업자번호
+		dto.setCompanyName(companyFormCommand.getCompanyName());//업체명
+		dto.setCompanyAggApp(companyFormCommand.getCompanyAggApp());//업체정보 제공 여부
+		dto.setCompanyPerApp(companyFormCommand.getCompanyPerApp()); //개인정보 보호 절차 동의 여부
+		dto.setCompanyType(companyFormCommand.getCompanyType());//업체 유형
+		dto.setCompanyEmail(companyFormCommand.getCompanyEmail()); //업체 이메일주소
 		
+		companyInsertRepository.companyInsert(dto);
 		
-		return null;
+		return companyInsertRepository.companyInsert(dto);
 	}
 	
 	public String idConfirm(String userId) { //아이디 중복확인 메소드

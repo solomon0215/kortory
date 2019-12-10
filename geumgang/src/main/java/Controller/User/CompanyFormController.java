@@ -29,9 +29,15 @@ public class CompanyFormController {
 		System.out.println("-------------------------------------------------------------------" + companyFormCommand.getCompanyAggApp());
 		new CompanyFormCommandValidator().validate(companyFormCommand, errors);
 		if(errors.hasErrors()) {
-			return "Company/companyForm";
+			return "Company/companyForm";//입력 문제
 		}
-		return "Company/companyFormPro";
+		Integer i = companyFormService.insert(companyFormCommand);
+		if(i != null) {
+			if(i>0) {
+				return "Company/welcomeCompany";//등록완료
+			}
+		}
+		return "Company/failedPage"; //에러페이지
 	}
 	
 	//중복확인 
