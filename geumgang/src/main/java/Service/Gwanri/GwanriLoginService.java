@@ -11,12 +11,12 @@ import Command.Gwanri.GwanriLogCommand;
 import Encrypt.Encrypt;
 import Model.GwanriDTO.GwanriAuthInfo;
 import Model.GwanriDTO.GwanriDTO;
-import Repository.Gwanri.GwanriRepository;
+import Repository.Gwanri.GwanriSelectRepository;
 
 @Service
 public class GwanriLoginService {
 	@Autowired
-	GwanriRepository gwanriRepository;
+	GwanriSelectRepository gwanriRepository;
 	public Integer loginPro(HttpSession session, 
 			GwanriLogCommand loginCommand,HttpServletResponse response) {
 		Integer result= 0;

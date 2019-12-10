@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import Validator.Gwanri.GwanriLoginCommandValidator;
 @Controller
 @RequestMapping("/staff/gwanLogPro")
 public class GwanriLogController {
+	
 	@Autowired
 	GwanriLoginService gwanriLoginService;	
 	
@@ -36,7 +38,7 @@ public class GwanriLogController {
 			return "Login/login";
 		}else if(i == -1) {
 			errors.rejectValue("gwanRiPw", "wrong");
-			return "Login/login";
+			return "Main/gwanriMain";
 		}
 		return "redirect:../main";
 	}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="GwanriInsertMapper">
+	
+<cache />
+<insert id = "BudgetBillInsert">
+	INSERT INTO BUDGET_BILL(BUDGET_BILL_NUM,
+	BUDGET_BILL_PRICE_SUM, BUDGET_BILL_LABOR_RATIO,
+	BUDGET_BILL_LABOR_PRICE, BUDGET_BILL_GOODS_PRICE,
+	BUDGET_BILL_DATE, GWAN_RI_NUM)
+	
+	VALUES(BUDGET_BILL_SEQ.NEXTVAL,
+	#{budget_bill_price_sum},
+	#{budget_bill_labor_ratio},
+	#{budget_bill_labor_price},
+	#{budget_bill_goods_price},
+	#{budget_bill_date},
+	#{gwan_ri_num} )
+</insert>
+
+</mapper>

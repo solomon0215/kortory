@@ -5,16 +5,17 @@
 	    http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
 	<!-- Service  -->
-<bean id = "gwanriMainService" class ="Service.Gwanri.GwanriMainService"/> 
 <bean id = "gwanriLoginService" class ="Service.Gwanri.GwanriLoginService"/> 
 <bean id = "gwanriLogoutService" class ="Service.Gwanri.GwanriLogoutService"/>
 <bean id = "budgetBillListService" class ="Service.Gwanri.BudgetBillListService"/>
 <bean id = "budgetBillWriteService" class ="Service.Gwanri.BudgetBillWriteService"/>
 
    <!-- Repositopry -->
-<bean id = "gwanriRepository" class ="Repository.Gwanri.GwanriRepository"/>
-   
-   
+<bean id = "gwanriDeleteRepository" class ="Repository.Gwanri.GwanriDeleteRepository"/>
+<bean id = "gwanriInsertRepository" class ="Repository.Gwanri.GwanriInsertRepository"/>
+<bean id = "gwanriSelectRepository" class ="Repository.Gwanri.GwanriSelectRepository"/>
+<bean id = "gwanriUpdateRepository" class ="Repository.Gwanri.GwanriUpdateRepository"/>
+
 </beans>
 
 

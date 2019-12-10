@@ -13,7 +13,48 @@
 
 </script>	
 </head>
-<body>
+<body><body>
+<dvi class =" w3-container">
+		<center><h2>예산안 보고서 상세내역</h2></center><br/>
+    <div class="big_title">공지사항 수정/삭제/추가</div>
+    <div class="big_contents">
+    <form id="notice_form">
+    <input type="hidden" id="notice_id" name="notice_id" value="${notice.notice_id }">
+        <div class="title">
+            <div>
+                제목
+            </div>
+            <div>
+                <input type="text" id="notice_title" name="notice_title" value="${notice.notice_title}">
+            </div>
+        </div>
+         
+        <div class="contents">
+            <div>
+                내용
+            </div>
+            <div>
+                <textarea id="notice_coments" name="notice_coments">${notice.notice_coments}</textarea>
+            </div>
+        </div>
+    </form>
+         
+        <div class="footer">
+             
+            <c:if test="${null eq notice }">
+                <input type="button" id="notice_regist" value="등록">
+            </c:if>
+            <c:if test="${null ne notice }">
+                <input type="button" id="notice_edit" value="수정">
+            </c:if>       
+            <input type="button" id="notice_backPage" value="뒤로">
+            <input type="button" id="notice_delete" value="삭제">
+        </div>
+         
+    </div>
+     
+     
+</body>
 <dvi class =" w3-container">
 		<center><h2>예산안 보고서 상세내역</h2></center><br/>
 			
