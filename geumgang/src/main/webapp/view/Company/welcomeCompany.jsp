@@ -1,3 +1,4 @@
+<%@page import="javax.websocket.SendResult"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -32,6 +33,13 @@
 	<div class="w3-container w3-lobster">
 	  <p class="w3-xlarge">언제나 더 좋은 파트너가 되기 위해<br> 노력하는 Kortory가 되겠습니다. </p>
 	</div>
+	<br>
+	<br>
+	<div class="w3-container w3-lobster">
+	  <p class="w3-xlarge"><a href="../main">메인으로 가기</a></p>
+	</div>
+	
 </div>
+
 </body>
 </html>

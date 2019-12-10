@@ -34,6 +34,7 @@ public class CompanyFormController {
 		Integer i = companyFormService.insert(companyFormCommand);
 		if(i != null) {
 			if(i>0) {
+				companyFormService.infoEmail(companyFormCommand); //메일 보내기
 				model.addAttribute("command", companyFormCommand);
 				return "Company/welcomeCompany";//등록완료
 			}

@@ -1,10 +1,16 @@
 package Service.Company;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Errors;
 
 import Command.Company.CompanyFormCommand;
@@ -16,44 +22,62 @@ import Repository.Company.CompanySelectRepository;
 @Service
 public class CompanyFormService {
 	@Autowired
-	CompanySelectRepository companySelectRepository;//select ·¹Æ÷ÁöÅä¸®
+	CompanySelectRepository companySelectRepository;// select ë ˆí¬ì§€í† ë¦¬
 	@Autowired
-	CompanyInsertRepository companyInsertRepository;//insert ·¹Æ÷ÁöÅä¸®
-	
-	private static final String id = "[a-z0-9]{6,16}"; //¾ÆÀÌµğÀÛ¼º ÆĞÅÏ
+	CompanyInsertRepository companyInsertRepository;// insert ë ˆí¬ì§€í† ë¦¬
+	@Autowired
+	private JavaMailSender mailSender;
+
+	private static final String id = "[a-z0-9]{6,16}"; // ì•„ì´ë””ì‘ì„± íŒ¨í„´
 	private Pattern pattern;
-	
-	
-	public Integer insert(CompanyFormCommand companyFormCommand) { // ¾÷Ã¼ µî·Ï ¸Ş¼Òµå
-		//DTO¿¡ ´ã±â
+
+	public Integer insert(CompanyFormCommand companyFormCommand) { // ì—…ì²´ ë“±ë¡ ë©”ì†Œë“œ
+		// DTOì— ë‹´ê¸°
 		CompanyDTO dto = new CompanyDTO();
-		dto.setCompanyId(companyFormCommand.getCompanyId()); //¾Æ¾Æµğ
-		String companyPw = Encrypt.getEncryption(companyFormCommand.getCompanyPw());//ºñ¹Ğ¹øÈ£ ¾ÏÈ£È­
-		dto.setCompanyPw(companyPw);//ºñ¹Ğ¹øÈ£
-		dto.setCompanyAddr(companyFormCommand.getCompanyAddr());//ÁÖ¼Ò
-		dto.setCompanyPh(companyFormCommand.getCompanyPh());//ÀüÈ­¹øÈ£
-		dto.setCompanyRegNum(companyFormCommand.getCompanyRegNum()); //»ç¾÷ÀÚ¹øÈ£
-		dto.setCompanyName(companyFormCommand.getCompanyName());//¾÷Ã¼¸í
-		dto.setCompanyAggApp(companyFormCommand.getCompanyAggApp());//¾÷Ã¼Á¤º¸ Á¦°ø ¿©ºÎ
-		dto.setCompanyPerApp(companyFormCommand.getCompanyPerApp()); //°³ÀÎÁ¤º¸ º¸È£ ÀıÂ÷ µ¿ÀÇ ¿©ºÎ
-		dto.setCompanyType(companyFormCommand.getCompanyType());//¾÷Ã¼ À¯Çü
-		dto.setCompanyEmail(companyFormCommand.getCompanyEmail()); //¾÷Ã¼ ÀÌ¸ŞÀÏÁÖ¼Ò
-		
+		dto.setCompanyId(companyFormCommand.getCompanyId()); // ì•„ì•„ë””
+		String companyPw = Encrypt.getEncryption(companyFormCommand.getCompanyPw());// ë¹„ë°€ë²ˆí˜¸ ì•”í˜¸í™”
+		dto.setCompanyPw(companyPw);// ë¹„ë°€ë²ˆí˜¸
+		dto.setCompanyAddr(companyFormCommand.getCompanyAddr());// ì£¼ì†Œ
+		dto.setCompanyPh(companyFormCommand.getCompanyPh());// ì „í™”ë²ˆí˜¸
+		dto.setCompanyRegNum(companyFormCommand.getCompanyRegNum()); // ì‚¬ì—…ìë²ˆí˜¸
+		dto.setCompanyName(companyFormCommand.getCompanyName());// ì—…ì²´ëª…
+		dto.setCompanyAggApp(companyFormCommand.getCompanyAggApp());// ì—…ì²´ì •ë³´ ì œê³µ ì—¬ë¶€
+		dto.setCompanyPerApp(companyFormCommand.getCompanyPerApp()); // ê°œì¸ì •ë³´ ë³´í˜¸ ì ˆì°¨ ë™ì˜ ì—¬ë¶€
+		dto.setCompanyType(companyFormCommand.getCompanyType());// ì—…ì²´ ìœ í˜•
+		dto.setCompanyEmail(companyFormCommand.getCompanyEmail()); // ì—…ì²´ ì´ë©”ì¼ì£¼ì†Œ
+
 		return companyInsertRepository.companyInsert(dto);
 	}
-	
-	public String idConfirm(String userId) { //¾ÆÀÌµğ Áßº¹È®ÀÎ ¸Ş¼Òµå
+
+	public String idConfirm(String userId) { // ì•„ì´ë”” ì¤‘ë³µí™•ì¸ ë©”ì†Œë“œ
 		Integer confirm = companySelectRepository.idConfirm(userId);
 		pattern = Pattern.compile(id);
-		Matcher matcher = pattern.matcher(userId); 
+		Matcher matcher = pattern.matcher(userId);
 		System.out.println(matcher);
-		if(!matcher.matches()) {
-			return "Company/confrimId3"; //ÆĞÅÏÀÌ ¸ÂÁö ¾ÊÀ½
+		if (!matcher.matches()) {
+			return "Company/confrimId3"; // íŒ¨í„´ì´ ë§ì§€ ì•ŠìŒ
 		}
-		if(confirm > 0) {
-			return "Company/confrimId1";//¾ÆÀÌµğ Á¸Àç
-		}else {
-			return "Company/confrimId2"; // »ç¿ë°¡´É
+		if (confirm > 0) {
+			return "Company/confrimId1";// ì•„ì´ë”” ì¡´ì¬
+		} else {
+			return "Company/confrimId2"; // ì‚¬ìš©ê°€ëŠ¥
+		}
+	}
+
+	@Transactional
+	public void infoEmail(CompanyFormCommand companyFormCommand) {//ì•ˆë‚´ ë©”ì¼ ë³´ë‚´ê¸°
+		String subject = "Kortoryë¥¼ ì„ íƒí•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.";
+		String content = "<body><h2>Kortoryë¥¼ ì„ íƒí•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.</h2>"
+				+ "<p>ì €í¬ Kortoryì—ì„œ ì •í™•í•œ íŒŒíŠ¸ë„ˆì‰½ì„ ìœ„í•´ì„œ ì¼ì£¼ì¼ ì´ë‚´ì— ë‹´ë‹¹ìê°€ ë°©ë¬¸í•  ì˜ˆì •ì…ë‹ˆë‹¤.</p></body>";
+		MimeMessage msg = mailSender.createMimeMessage();
+		try {
+			msg.setHeader("content-type", "text/html; charset=UTF-8");
+			msg.setContent(content, "text/html; charset=UTF-8");
+			msg.setSubject(subject);
+			msg.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(companyFormCommand.getCompanyEmail()));
+			mailSender.send(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }
