@@ -4,8 +4,9 @@
 	   xsi:schemaLocation = "http://www.springframework.org/schema/beans 
 	    http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
-	<bean class="Controller.Gwanri.GwanriMainController"/>
-	<bean class="Controller.Gwanri.GwanriLogController"/>
-	<bean class="Controller.Gwanri.GwanriLogoutController"/>
-	<bean class="Controller.Gwanri.BudgetBillController"/>
+	<bean class="Controller.Gwanri.GwanriMainController"/> <!--메인 컨트롤러 -->
+	<bean class="Controller.Gwanri.GwanriLogController"/> <!--로그인 컨트롤러 -->
+	<bean class="Controller.Gwanri.GwanriLogoutController"/> <!--로그아웃 컨트롤러 -->
+	<bean class="Controller.Gwanri.BudgetBillController"/> <!--예산안조건안 컨트롤러 -->
+	<bean class="Controller.Gwanri.AgreementConditionController"/> <!--협약조건안 컨트롤러 -->
 </beans>

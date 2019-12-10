@@ -16,7 +16,12 @@ public class BudgetBillListService{
 
 	@Autowired
 	GwanriSelectRepository gwanriSelectRepository;
-
-	     }
+	
+	public void getBoardList(Model model, Integer page) {
+		
+	}
+	
+	
+ }
 
 	

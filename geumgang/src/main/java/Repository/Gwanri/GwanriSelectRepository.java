@@ -18,10 +18,16 @@ public class GwanriSelectRepository {
 	private SqlSession sqlSession;	
 	private final String namespace = "GwanriSelectMapper";
 	
-	public GwanriDTO gwanriCheck(GwanriDTO gwanri) {
-		String statement =  namespace + ".gwanriCheck";
-		return sqlSession.selectOne(statement, gwanri);
-	}
+	public Integer idConfirm(String gwanRiId) {
+		String statement = namespace + ".idConfirm";
+		String id = sqlSession.selectOne(statement, gwanRiId) ;
+		if(id != null) {
+			return 1;
+		}
+		return 0;
+		
+	}		
+	
 	/** 예산안 보고서 게시판 - 목록 조회  */
     public List<BudgetBillDTO> boardList(BudgetBillDTO dto){
     	String statement =  namespace + ".boardList";

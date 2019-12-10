@@ -8,33 +8,7 @@
 		GWAN_RI_NUM, GWAN_RI_ID, GWAN_RI_PW, GWAN_RI_BIRTH, GWAN_RI_NAME,
 		GWAN_RI_GENDER, GWAN_RI_PH, GWAN_RI_REGIST, GWAN_RI_EMAIL
 	</sql>
-	<resultMap type="gwanriDTO" id="baseMember">
-	    <!-- 
-	    	MemberDTO memDTO = new MemberDTO();
-	    	memDTO.setUserId(rs.gertString("USER_ID"));
-	     -->
-		<id column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/>
-		<!-- memDTO.setUserPw(rs.getString("USER_PW")); -->
-		<result column="GWAN_RI_ID" jdbcType="VARCHAR" property="gwanRiId"/>
-		<result column="GWAN_RI_PW" jdbcType="VARCHAR" property="gwanRiPw"/>
-		<result column="GWAN_RI_BIRTH" jdbcType = "DATE" property="gwanRiBirth"/>
-		<result column="GWAN_RI_NAME" jdbcType="VARCHAR" property="gwanRiName"/>		
-		<result column="GWAN_RI_GENDER" jdbcType="CHAR" property="gwanRiGender"/>
-		<result column="GWAN_RI_PH" jdbcType="VARCHAR" property="gwanRiPh"/>
-		<result column="GWAN_RI_REGIST" jdbcType="DATE" property="gwanRiRegist"/>		
-		<result column="GWAN_RI_EMAIL" jdbcType="VARCHAR" property="gwanRiEmail"/>
-	</resultMap>
-
-<select id="gwanriCheck" parameterType = "gwanriDTO" resultMap="baseMember" >
-		select 
-			<include refid="basecolumn" />
-		from gwan_ri
-		<trim prefix="where" prefixOverrides="AND |OR ">
-			<if test="gwanRiPw != null">
-			GWAN_RI_PW = #{gwanRiPw}
-			</if>
-			and GWAN_RI_ID = #{gwanRiId} 
-		</trim>
+	<select id="idConfirm" parameterType="string" resultType="string">
+		SELECT gwan_ri_id FROM GWAN_RI WHERE gwan_ri_id = #{gwanRiId} 
 	</select>
-
 </mapper>

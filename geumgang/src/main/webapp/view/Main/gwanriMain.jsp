@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <style>
 .menu a{cursor:pointer;}
@@ -32,14 +36,11 @@ $(document).ready(function(){
 </head>
 <body>
 <div class="w3-bar w3-black">
-<c:if test="${!empty authInfo}">
-${authInfo.name }님 환영합니다.<br />
-</c:if>
   <a href="#" class="w3-bar-item w3-button">메인으로</a>
   <a href="#" class="w3-bar-item w3-button">인사부</a>
   <a href="#" class="w3-bar-item w3-button">영업부</a>
   <a href="#" class="w3-bar-item w3-button">기획부</a>
-    <a href="#" class="w3-bar-item w3-button">로그아웃</a>
+    <a href="logout" class="w3-bar-item w3-button">로그아웃</a>
 </div>
 <!-- Sidebar -->
 <div class="w3-sidebar w3-black w3-bar-block" style="width:15%">
@@ -58,7 +59,7 @@ ${authInfo.name }님 환영합니다.<br />
         <li class="menu">
             <a href="#tabContent02" style="text-decoration:none" ><h3>기획안 관련 업무</h3></a>
             <ul class="hide">
-                <li><a href="budgetBill">예산안보고서 목록</a></li>
+                <li><a href="budgetBillList">예산안보고서 목록</a></li>
             </ul>
         </li>
          <li class="menu">
