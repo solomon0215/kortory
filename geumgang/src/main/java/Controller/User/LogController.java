@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import Command.Company.CompanyLogCommand;
 import Command.Guide.GuideLogCommand;
-import Command.User.UserLogCommnand;
+import Command.User.UserLogCommand;
 
 @Controller
 public class LogController {
@@ -25,7 +25,7 @@ public class LogController {
 	}
 	//userLog form to Ajax	
 	@RequestMapping("user/userLogin")
-	public String userLogin(UserLogCommnand userLogCommnand) {
+	public String userLogin(UserLogCommand userLogCommnand) {
 		return "Login/userLogin";
 	}
 	

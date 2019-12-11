@@ -4,5 +4,33 @@
 <mapper namespace="UserSelectMapper">
 	
 <cache />
-
+	<sql id="user">
+		USER_ID,USER_PW,USER_EMAIL,USER_PH,USER_ADDR,USER_NAME,USER_BIRTH,USER_GENDER
+	</sql>
+	<resultMap type="userDTO" id="userInfo"> <!-- UserDTO에 담는resultMap -->
+		<id column="USER_ID" jdbcType="VARCHAR" property="userId"/>
+		<result column="USER_PW" jdbcType = "VARCHAR" property="userPw"/>
+		<result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail"/>
+		<result column="USER_PH" jdbcType="VARCHAR" property="userPh"/>
+		<result column="USER_ADDR" jdbcType="VARCHAR" property="userAddr"/>
+		<result column="USER_NAME" jdbcType="VARCHAR" property="userName"/>
+		<result column="USER_BIRTH" jdbcType="DATE" property="userBirth"/>
+		<result column="USER_GENDER" jdbcType="CHAR" property="userGender"/>
+		
+	</resultMap>
+	<select id="idConfirm" parameterType="string" resultType="string">
+		SELECT COMPANY_ID FROM COMPANY  WHERE COMPANY_ID = #{userId} UNION 
+		SELECT user_id FROM KORTORY_USER WHERE user_id = #{userId} UNION 
+		SELECT gwan_ri_id FROM GWAN_RI WHERE gwan_ri_id = #{userId}  UNION 
+		SELECT in_sa_id FROM IN_SA WHERE in_sa_id = #{userId} UNION 
+		SELECT ki_hoek_id FROM KI_HOEK WHERE ki_hoek_id = #{userId} UNION 
+		SELECT young_up_id FROM YOUNG_UP WHERE young_up_id = #{userId}
+	</select>
+	<select id="userLogin" parameterType="userDTO"  resultMap="userInfo"><!-- 로그인 정보 대조하기 위해서 검색하는 select -->
+		select <include refid="user"/> 
+		from kortory_user 
+		<where>
+			USER_ID = #{userId} and USER_PW = #{userPw}
+		</where>
+	</select>
 </mapper>

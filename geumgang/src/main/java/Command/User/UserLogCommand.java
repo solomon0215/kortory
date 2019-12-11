@@ -1,6 +1,6 @@
 package Command.User;
 
-public class UserLogCommnand {
+public class UserLogCommand {
 	String userId;
 	String userPw;
 	public String getUserId() {

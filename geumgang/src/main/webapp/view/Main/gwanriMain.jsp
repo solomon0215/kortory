@@ -36,52 +36,59 @@ $(document).ready(function(){
 </head>
 <body>
 <div class="w3-bar w3-black">
-  <a href="#" class="w3-bar-item w3-button">메인으로</a>
+  <a href="aaaa" class="w3-bar-item w3-button">메인으로</a>
   <a href="#" class="w3-bar-item w3-button">인사부</a>
   <a href="#" class="w3-bar-item w3-button">영업부</a>
   <a href="#" class="w3-bar-item w3-button">기획부</a>
     <a href="logout" class="w3-bar-item w3-button">로그아웃</a>
 </div>
+<div class="w3-row">
 <!-- Sidebar -->
 <div class="w3-sidebar w3-black w3-bar-block" style="width:15%">
     <h2 class="w3-bar-item">관리부 메뉴</h2>
-<div>
-    <ul>
-        <li class="menu">
-             <a href="#tabContent01" style="text-decoration:none" ><h3>협력업체 관련 업무</h3></a>
-            <ul class="hide">
-                <li>협약조건안 목록</li>
-                <li>협약조건보고서 목록</li>
-                <li>계약 위반처리</li>
-                <li>협력업체계약서 목록</li>
-            </ul>
-        </li> 
-        <li class="menu">
-            <a href="#tabContent02" style="text-decoration:none" ><h3>기획안 관련 업무</h3></a>
-            <ul class="hide">
-                <li><a href="budgetBillList">예산안보고서 목록</a></li>
-            </ul>
-        </li>
-         <li class="menu">
-             <a href="#tabContent03" style="text-decoration:none"  ><h3>정산 관련 업무</h3></a>
-            <ul class="hide">
-                <li>정산</li>
-            </ul>
-        </li>
-         <li class="menu">
-             <a href="#tabContent04" style="text-decoration:none" ><h3>영수처리 관련업무</h3></a>
-            <ul class="hide">
-                <li>신청서 목록</li>
-            </ul>
-        </li>
-         <li class="menu">
-             <a href="#tabContent05" style="text-decoration:none" ><h3>세금 관련 업무</h3></a>
-            <ul class="hide">
-                <li>세금 신고서 목록
-            </ul>
-        </li>
-    </ul>
+	<div>
+	    <ul>
+	        <li class="menu">
+	             <a href="#tabContent01" style="text-decoration:none" ><h3>협력업체 관련 업무</h3></a>
+	            <ul class="hide">
+	                <li>협약조건안 목록</li>
+	                <li>협약조건보고서 목록</li>
+	                <li>계약 위반처리</li>
+	                <li>협력업체계약서 목록</li>
+	            </ul>
+	        </li> 
+	        <li class="menu">
+	            <a href="#tabContent02" style="text-decoration:none" ><h3>기획안 관련 업무</h3></a>
+	            <ul class="hide">
+	                <li><a href="http://localhost:8080/geumgang/gwanri/budgetBillList">예산안보고서 목록</a></li>
+	            </ul>
+	        </li>
+	         <li class="menu">
+	             <a href="#tabContent03" style="text-decoration:none"  ><h3>정산 관련 업무</h3></a>
+	            <ul class="hide">
+	                <li>정산</li>
+	            </ul>
+	        </li>
+	         <li class="menu">
+	             <a href="#tabContent04" style="text-decoration:none" ><h3>영수처리 관련업무</h3></a>
+	            <ul class="hide">
+	                <li>신청서 목록</li>
+	            </ul>
+	        </li>
+	         <li class="menu">
+	             <a href="#tabContent05" style="text-decoration:none" ><h3>세금 관련 업무</h3></a>
+	            <ul class="hide">
+	                <li>세금 신고서 목록
+	            </ul>
+	        </li>
+	    </ul>
+	</div>
 </div>
+<div class="w3-container" style="margin-left:15%">
+	<jsp:include page="${pageName}"></jsp:include>
 </div>
+
+</div>
+
 </body>
 </html>

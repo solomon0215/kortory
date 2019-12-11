@@ -15,10 +15,11 @@ public class BudgetBillController {
 	@Autowired
 	BudgetBillListService bbls;
 	
-	@RequestMapping("staff/budgetBillList")
+	@RequestMapping("gwanri/budgetBillList")
 	public String boardList(@RequestParam(value="page" ,
 	required = false) Integer page, Model model){
 		bbls.getBoardList(model, page);
-		return "gwanri/board/budget_bill/budget_bill_list";
+		model.addAttribute("pageName", "../gwanri/board/budget_bill/budget_bill_list.jsp");
+		return "Main/gwanriMain";
 	}
 }
