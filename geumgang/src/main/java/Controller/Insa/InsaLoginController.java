@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,20 +22,29 @@ public class InsaLoginController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public String loginPro(InsaLogCommand insaLogCommand, Errors errors, HttpSession session,
-			HttpServletResponse response) {
+			HttpServletResponse response, Model model) {
+		System.out.println("집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다");
 		new InsaLoginCommandValidator().validate(insaLogCommand, errors);
-		if(errors.hasErrors()) 
-			return "Login/login";
+		if(errors.hasErrors()) {
+			System.out.println("제발제발제발제발제발제발제발제발제발제발제발제발");
+			model.addAttribute("pageName", "../Login/staffInsaLog.jsp");
+			return "Main/basicMain";
+		}
+			
 		Integer i = insaLoginService.loginPro(
 				session, insaLogCommand,response);
 		if(i == 0 ) {
-			errors.rejectValue("inSaId", "notId");
-			return "Login/login";
+			errors.rejectValue("inSaId", "notId"); //아디 틀림
+			model.addAttribute("pageName", "../Login/staffInsaLog.jsp");
+			return "Main/basicMain";
 		}else if(i == -1) {
-			errors.rejectValue("inSaPw", "wrong");
-			return "Login/login";
+			System.out.println("비밀번호비밀번호비밀번호비밀번호비밀번호비밀번호비밀번호비밀번호비밀번호비밀번호");
+			errors.rejectValue("inSaPw", "wrong");//비밀번호다름
+			model.addAttribute("pageName", "../Login/staffInsaLog.jsp");
+			return "Main/basicMain";
 		}
-		return "insa/insaMain";
+		System.out.println("-------------------------------------------------------");
+		return "insa/insaLogPro";
 	}
 	@RequestMapping(method=RequestMethod.GET) 
 	public String loginPro() {
