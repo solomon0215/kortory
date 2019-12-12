@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="YoungupSelectMapper">
+<mapper namespace="youngupSelectMapper">
 	
 <cache />
-
+	<sql id="baseYoungUP"> <!-- 영업부 직원 테이블 컬럼 -->
+		YOUNG_UP_NUM,YOUNG_UP_ID,YOUNG_UP_PW,YOUNG_UP_NAME,YOUNG_UP_EMAIL,YOUNG_UP_PH,YOUNG_UP_REGIST,YOUNG_UP_BIRTH,YOUNG_UP_GENDER
+	</sql>
+	<resultMap type="youngDTO" id="youngDTOForm"><!--  YoungupDTO 클래스 resultMap -->
+		<id column="YOUNG_UP_NUM" jdbcType="VARCHAR" property="youngUpNum"/> <!-- 사원번호 -->
+		<result column="YOUNG_UP_ID" jdbcType="VARCHAR" property="youngUpId"/><!-- 아이디 -->
+		<result column="YOUNG_UP_PW" jdbcType="VARCHAR" property="youngUpPw"/><!--  비밀번호 -->
+		<result column="YOUNG_UP_NAME" jdbcType="VARCHAR" property="youngUpName"/><!-- 사원이름 -->
+		<result column="YOUNG_UP_EMAIL" jdbcType="VARCHAR" property="youngUpEmail"/><!-- 이메일주소 -->
+		<result column="YOUNG_UP_PH" jdbcType="VARCHAR" property="youngUpPh"/><!-- 전화번호 -->
+		<result column="YOUNG_UP_REGIST" jdbcType="DATE" property="youngUpRegist"/><!-- 입사일 -->
+		<result column="YOUNG_UP_BIRTH" jdbcType="DATE" property="youngUpBirth"/><!-- 생일 -->
+		<result column="YOUNG_UP_GENDER" jdbcType="CHAR" property="youngUpGender"/><!-- 성별 -->
+	</resultMap>
+	<!-- 로그인  조회 -->
+	<select id="youngupLog" resultMap="youngDTOForm" parameterMap="youngDTO">
+		select <include refid="baseYoungUP"/>
+		from YOUNG_UP
+		<where>
+			YOUNG_UP_ID = #{youngUpId}
+			AND YOUNG_UP_PW = #{youngUpPw}
+		</where>
+	</select>
 </mapper>

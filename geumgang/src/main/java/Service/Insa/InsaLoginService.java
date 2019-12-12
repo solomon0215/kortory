@@ -15,7 +15,9 @@ import Repository.Insa.InsaRepository;
 public class InsaLoginService {
 	@Autowired
 	InsaRepository insaRepository;
-
+	
+	
+	//로그인 메소드
 	public Integer loginPro(HttpSession session, InsaLogCommand insaLogCommand, HttpServletResponse response) {
 		Integer result = 0;
 		InsaDTO insa = new InsaDTO();
@@ -27,13 +29,13 @@ public class InsaLoginService {
 			result = 0;
 		} else {
 			if(insa.getInsaPw().equals(Encrypt.getEncryption(insaLogCommand.getInSaPw()))) {
+				
 				authInfo = new InsaAuthInfo(insa.getInsaId(), insa.getInsaEmail(), 
-						insa.getInsaName(), 301, insa.getInsaNum());
-				session.setAttribute("insaAuthInfo", authInfo);
-				setCookie(insaLogCommand, response);
+						insa.getInsaName(), 303, insa.getInsaNum());
+				session.setAttribute("authLog", authInfo);
 				result = 1;
 			}else {
-				result = 1;
+				result = -1;
 			}
 		}
 		return result;

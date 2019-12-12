@@ -40,7 +40,7 @@ function myAccFunc() {
   사원채용 <i class="fa fa-caret-down"></i>
   </button>
   <div id="demoAcc" class="w3-hide w3-white w3-card">
-    <a href="#" class="w3-bar-item w3-button">채용공고 작성</a>
+    <a href="recruitReg" class="w3-bar-item w3-button">채용공고 작성</a>
   </div>
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc()">
   사원정보 <i class="fa fa-caret-down"></i>
