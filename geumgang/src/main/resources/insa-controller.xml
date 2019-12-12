@@ -7,5 +7,5 @@
 
 <bean class="Controller.Insa.InsaLoginController"/>
 <bean class="Controller.Insa.InsaLogoutController" />
-	
+<bean class="Controller.Insa.RecruitController" />	
 </beans>

@@ -27,7 +27,7 @@
 </div>
 <div class="w3-center">
 <div class="w3-bar">
-  <button class="w3-button w3-teal">Next &raquo;</button>
+  <button class="w3-button w3-green">다음 &raquo;</button>
 </div>
 </div>
 </body>

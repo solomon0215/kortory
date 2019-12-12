@@ -4,14 +4,16 @@ public class InsaAuthInfo {
 	private String id;
 	private String email;
 	private String name;
-	private String pw;
+	private int kind;
+	private String inSaNum;
 	
 	public InsaAuthInfo() {}
-	public InsaAuthInfo(String id, String email, String name, String pw) {
+	public InsaAuthInfo(String id, String email, String name, int kind, String inSaNum) {
 		this.id = id;
 		this.email = email;
 		this.name = name;
-		this.pw = pw;
+		this.kind = kind;
+		this.inSaNum = inSaNum;
 	}
 	public String getId() {
 		return id;
@@ -31,14 +33,16 @@ public class InsaAuthInfo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPw() {
-		return pw;
+	public int getKind() {
+		return kind;
 	}
-	public void setPw(String pw) {
-		this.pw = pw;
+	public void setKind(int kind) {
+		this.kind = kind;
 	}
-
-	
-	
-
+	public String getInSaNum() {
+		return inSaNum;
+	}
+	public void setInSaNum(String inSaNum) {
+		this.inSaNum = inSaNum;
+	}
 }

@@ -8,5 +8,6 @@
 		<typeAlias type="Model.InsaDTO.InsaDTO" alias ="insaDTO"/>
 		<typeAlias type="Model.CompanyDTO.CompanyDTO" alias ="comDTO"/>
 		<typeAlias type="Model.UserDTO.UserDTO" alias ="userDTO"/>
+		<typeAlias type="Model.InsaDTO.RecruitDTO" alias = "recruitDTO"/>
 	</typeAliases>
 </configuration>

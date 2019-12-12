@@ -30,7 +30,7 @@ function myAccFunc() {
   <a href="#" class="w3-bar-item w3-button">기획부</a>
   <a href="#" class="w3-bar-item w3-button">영업부</a>
   <a href="#" class="w3-bar-item w3-button">관리부</a>
-  <a href="#" class="w3-bar-item w3-button w3-right">로그아웃</a>
+  <a href="logout" class="w3-bar-item w3-button w3-right">로그아웃</a>
 </div>
 <!-- Sidebar -->
 <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:10%">
