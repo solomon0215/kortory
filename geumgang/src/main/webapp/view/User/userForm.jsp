@@ -14,6 +14,7 @@
 	href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="js/jquery.form.js"></script>
+<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
 $(function(){
 	$("#userId").keyup(function(){
@@ -47,6 +48,16 @@ $(function(){
 			});
 		});	
 	});
+function openZipSearch() {
+	new daum.Postcode({
+		oncomplete: function(data) {
+			$('[commandName=zip]').val(data.zonecode); // 우편번호 (5자리)
+			$('[commandName=addr1]').val(data.address);
+			$('[commandName=addr2]').val(data.buildingName);
+		}
+	}).open();
+}
+
 </script>
 </head>
 <body>
@@ -113,7 +124,19 @@ $(function(){
 					placeholder="이메일주소" />
 				<form:errors class="w3-red" path="userEmail" />
 			</div>
-			<br />
+			<div class="w3-container w3-col m2">
+				<form:input path="userEmail" commandName="zip" class="w3-input w3-border" placeholder="우편번호" />
+			</div>
+			<button type="button" style="width:60px; height:32px;" onclick="openZipSearch()">검색</button><br>
+			<div class="w3-row w3-section">
+			<div class="w3-container w3-col m4">
+
+				<form:input path="userEmail" commandName="addr1" class="w3-input w3-border" placeholder="주소" />
+			</div>
+			<div class="w3-container w3-col m6">
+				<form:input path="userEmail" commandName="addr2" class="w3-input w3-border" placeholder="상세주소" />
+			</div>
+			</div>
 			<div class="w3-row w3-section">
 				<div class="w3-row w3-section w3-center">
 					<br />
