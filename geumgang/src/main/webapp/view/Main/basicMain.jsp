@@ -10,11 +10,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-</style>
 </head>
 <body>
-
 <div class="w3-container w3-white">
 	<div class="w3-bar w3-sand">
 	  <a href="http://localhost:8080/geumgang/main"  class="w3-bar-item w3-button">Home</a>
@@ -26,9 +23,8 @@
 </div>
 
 	
-	<div class="bgimg-1 w3-container w3-content" style="height:80%;">
+	<div class="bgimg-1 w3-container w3-content" style="height:80%;" id="include">
 	  	<jsp:include page="${pageName}" />
 	</div>
-
 </body>
 </html>
