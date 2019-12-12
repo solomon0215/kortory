@@ -7,7 +7,6 @@
 <!DOCTYPE html>
 <style>
 li{list-style:none;} 
-
 </style>
 <html>
 <head>
@@ -15,7 +14,6 @@ li{list-style:none;}
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="js/jquery.form.js"></script>
 <script type="text/javascript">
@@ -24,7 +22,7 @@ li{list-style:none;}
 			$.ajax({
 				type: "POST",
 				url : "userIdConfirm",
-				data: "userId="+$("#companyId").val(),
+				data: "userId="+$("#userId").val(),
 				datatype : "text",
 				success : function(data1){
 					$("#confirmNum").val(data1);
@@ -43,19 +41,13 @@ li{list-style:none;}
 		});
 		$("#send").click(function(){
 			$("#frm").submit(function(){
-			});				
-		});		
-		</script>
-		<script>
-		function openZipSearch() {
-			new daum.Postcode({
-				oncomplete: function(data) {
-					$('[commandName=zip]').val(data.zonecode); // 우편번호 (5자리)
-					$('[commandName=addr1]').val(data.address);
-					$('[commandName=addr2]').val(data.buildingName);
-				}
-			}).open();
-		}
+				if($("#userId").val == ""){
+					alert("생년월일을 확인해주세요");
+					$("#userId").focus();
+					return false;
+					}				
+				});
+			});		
 </script>
 </head>
 <body>
@@ -89,27 +81,19 @@ li{list-style:none;}
 			    <form:errors class="w3-red" path="userName"/>
 			</div>
 			<div class="w3-container w3-col m4">
-			    <form:input path="userBirth" class="w3-input w3-border"  placeholder="생년월일 주민번호 앞 여섯자리"/>
-			    <form:errors class="w3-red" path="userBirth"/>
-			</div>
+			    <input type="date" id="userBirth" name="userBirth" class="w3-input w3-border"  placeholder="생년월일 주민번호 앞 여섯자리"/>
+				</div>
 			<div class="w3-container w3-col m2">
 			    <form:input path="userGender" class="w3-input w3-border"  placeholder="주민번호 7번째 자리"/>
 			    <form:errors class="w3-red" path="userGender"/>
 			</div>
+		</div>	
+		<div class="w3-row w3-section w3-col m10 w3-margin">
+	      	<form:input path="userAddr" class="w3-input w3-border"  placeholder="주소"/>
+	      	<form:errors class="w3-red" path="userAddr"/>
 		</div>
-		<div class="w3-container w3-col m3">
-		  <form:input path="userAddr" commandName="zip" class="w3-input w3-border"  placeholder="우편번호" />
-		  </div>		  
-		  <button type="button" style="width:60px; height:40px;" onclick="openZipSearch()">검색</button><br>
-		<div class="w3-row w3-section">
-		 <div class="w3-container w3-col m6">
-		  <form:input path="userAddr" commandName="addr1" class="w3-input w3-border" placeholder="주소" />
-			</div>
-			<div class="w3-container w3-col m6">
-		  <form:input path="userAddr" commandName="addr2" class="w3-input w3-border" placeholder="상세주소" />
-			</div>		
-		</div>
-		
+		<div class="w3-row w3-section">	
+		</div>		
 		<div class="w3-container w3-col m6">
 		    	<form:input path="userPh" class="w3-input w3-border"  placeholder="전화번호"/>
 		    	<form:errors class="w3-red" path="userPh"/>

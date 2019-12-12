@@ -39,7 +39,6 @@ public class UserFormService {
 		dto.setUserPh(userFormCommand.getUserPh());// 회원 전화번호
 		dto.setUserName(userFormCommand.getUserName());// 회원 이름
 		dto.setUserEmail(userFormCommand.getUserEmail()); // 회원 이메일주소
-		dto.setUserBirth(userFormCommand.getUserBirth()); // 회원 생년월일
 		dto.setUserGender(userFormCommand.getUserGender()); // 회원 성별
 
 		return userInsertRepository.userInsert(dto);

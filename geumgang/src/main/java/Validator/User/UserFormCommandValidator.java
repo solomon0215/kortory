@@ -1,6 +1,7 @@
 package Validator.User;
 
 import java.util.regex.Matcher;
+
 import java.util.regex.Pattern;
 
 import org.springframework.validation.Errors;
@@ -11,15 +12,14 @@ import Command.User.UserFormCommand;
 public class UserFormCommandValidator {
 	private static final String emailRegExp=
 			"^[_A-Za-z0-9-](.[_A-Za-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
-	private static final String passwword = "[a-z0-9]{6,16}"; //��й�ȣ �ۼ� ����
+	private static final String passwword = "[a-z0-9]{6,16}"; //
 	private Pattern pwPattern;
-	private Pattern pattern ;
+	private Pattern pattern ;	
 	
 	public UserFormCommandValidator() {
 		pattern =  Pattern.compile(emailRegExp);
 		pwPattern = Pattern.compile(passwword);
 	}
-	
 	public boolean supports(Class<?> clazz) {
 		// TODO Auto-generated method stub
 		return false;
@@ -37,7 +37,8 @@ public class UserFormCommandValidator {
 			if(!matcher.matches()) {
 				errors.rejectValue("userEmail", "userEmailBad");
 			}
-		}
+		}		
+		
 		if(!ufc.getUserPw().isEmpty()) {
 			Matcher matcher = pwPattern.matcher(ufc.getUserPw());
 			if(!matcher.matches()) {
@@ -56,8 +57,6 @@ public class UserFormCommandValidator {
 		ValidationUtils.rejectIfEmpty(errors, "userPh", "required");
 		
 		ValidationUtils.rejectIfEmpty(errors, "userPwCon", "required");
-		
-		ValidationUtils.rejectIfEmpty(errors, "userBirth", "required");
 		
 		if(!ufc.getUserPw().isEmpty()){
 			if(!ufc.isPwEqualToPwCon()) {
