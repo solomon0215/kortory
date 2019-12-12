@@ -18,14 +18,13 @@ public class YoungupLogController {
 	@Autowired
 	YoungupLogService youngLogSer;
 	
-	@RequestMapping(value="/staff/youngupLogPro",method=RequestMethod.POST)
+	@RequestMapping(value="/staff/youngupLogPro", method=RequestMethod.POST)
 	public String youngupLogPro(YoungupLogCommand youngupLogCommand,Model model, Errors errors,HttpSession session) {
 		new YoungupLogCommandValidator().validate(youngupLogCommand, errors);
 		if(errors.hasErrors()) {
 			model.addAttribute("pageName", "../Login/companyLogin.jsp");
 			return "Main/basicMain";
 		}
-		
 		return youngLogSer.youngupLogPro(youngupLogCommand,model,errors,session);
 	}
 		
