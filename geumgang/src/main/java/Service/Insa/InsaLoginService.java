@@ -27,7 +27,8 @@ public class InsaLoginService {
 			result = 0;
 		} else {
 			if(insa.getInsaPw().equals(Encrypt.getEncryption(insaLogCommand.getInSaPw()))) {
-				authInfo = new InsaAuthInfo(insa.getInsaId(),insa.getInsaEmail(),insa.getInsaPw(),insa.getInsaName());
+				authInfo = new InsaAuthInfo(insa.getInsaId(), insa.getInsaEmail(), 
+						insa.getInsaName(), 301, insa.getInsaNum());
 				session.setAttribute("insaAuthInfo", authInfo);
 				setCookie(insaLogCommand, response);
 				result = 1;

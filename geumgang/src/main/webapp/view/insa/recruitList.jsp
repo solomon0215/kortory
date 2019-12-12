@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>  
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,6 +34,7 @@ function myAccFunc() {
 </div>
 <!-- Sidebar -->
 <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:10%">
+
   <h3 class="w3-bar-item">업무목록</h3>
    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc()">
   사원채용 <i class="fa fa-caret-down"></i>
@@ -81,54 +78,25 @@ function myAccFunc() {
   </div>
 </div>
 <!-- Page Content -->
-<form:form class="w3-container w3-card-4 w3-light-grey" style="margin-left:193px"
-commandName="recruitRegiCommand" id="frm" action="recruitRegiPro" method="POST" >
-		<h2 class="w3-center">채용공고 작성</h2>
-		<p>
-			<label class="w3-text-grey">업무내용</label>
-			<form:textarea path="regiContent" class="w3-input w3-border" cols="50" rows="5"/>
-		</p>
-		<p>
-			<label class="w3-text-grey">우대사항</label>
-			<form:textarea path="regiPrefer" class="w3-input w3-border" cols="50" rows="5"/>
-		</p>
-		<p>
-			<label class="w3-text-grey">모집인원</label>
-			 <form:input path="regiPersonnel"
-				class="w3-input w3-border w3-white" type="text"
-				onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
-		</p>
-		<p>
-			<label class="w3-text-grey">지원자격</label>
-			<form:textarea path="regiQual" class="w3-input w3-border" cols="50" rows="5"/>
-		</p>
-		<p>
-			<label class="w3-text-grey">등록일자</label> 
-			<form:input path="regiDate" class="w3-input w3-border w3-white" type="date" />
-		</p>
-		<p>
-			<label class="w3-text-grey">마감일자</label>
-			<form:input path="endDate" class="w3-input w3-border w3-white" type="date" />
-		</p>
-		<p>
-			<label class="w3-text-grey">급여(숫자만 입력)</label>
-			 <form:input path="regiCost"
-				class="w3-input w3-border w3-white" type="text"
-				onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
-		</p>
-		<p>
-			<label class="w3-text-grey">직원번호</label> 
-			<form:input path="inSaNum" class="w3-input w3-border w3-white" type="text"/>
-		</p>
+	<div class =" w3-container">
+		<center><h2>채용공고 목록</h2></center><br/>
+			<table class="w3-table-all">
+    <thead>
+     <table class="w3-table-all w3-centered">
+      <tr class="w3-teal">
+        <th>번호</th>
+        <th>작성일</th>
+        <th>작성자</th>
+      </tr>
+    </thead>
+    <tr>
+      <td>1</td>
+      <td>2019-12-09</td>
+      <td>김지유</td>
+    </tr>
+  </table>
+  </div>
+ 
 
-		<br />
-		<div class="w3-center">
-			<div class="w3-bar">
-			    <button class="w3-button w3-teal" id="reWrite">다시 작성</button>
-			    <button class="w3-button w3-teal" id="regist">등록</button>
-			</div>
-		</div>
-</form:form>
 </body>
 </html>
-
