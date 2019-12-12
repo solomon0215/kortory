@@ -19,6 +19,7 @@ import Repository.User.UserSelectRepository;
 public class UserLogService { //��ü�� �α��� �ϴ� ����
 	@Autowired
 	UserSelectRepository userSelectRepository;
+	
 	public String userLog(Model model, UserLogCommand userLogCommand,HttpSession session,Errors errors) {
 		UserDTO dto1 = new UserDTO(); //�α��� ������ �´��� Ȯ���ϱ� ���� ������ DTO
 		dto1.setUserId(userLogCommand.getUserId());
@@ -29,7 +30,7 @@ public class UserLogService { //��ü�� �α��� �ϴ� ���
 		
 		if(dto2 !=null ) {
 			System.out.println("----------------------------------------------------------succese");
-			UserAuth auth = new UserAuth(dto2.getUserId(), dto2.getUserEmail(), dto2.getUserName(),201); // ��� ���� Ȯ�� �ϴ� �޼ҵ带 ���� ���ؼ� ���Ƿ� 111�� ����
+			UserAuth auth = new UserAuth(dto2.getUserId(), dto2.getUserEmail(), dto2.getUserName(),111); // ��� ���� Ȯ�� �ϴ� �޼ҵ带 ���� ���ؼ� ���Ƿ� 111�� ����
 			session.setAttribute("authLog", auth);
 			model.addAttribute("pageName","../FirstView/firstView.jsp");
 			return "Main/basicMain";

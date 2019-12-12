@@ -29,7 +29,7 @@ public class UserFormService {
 	private static final String id = "[a-z0-9]{6,16}"; // 아이디작성 패턴
 	private Pattern pattern;
 
-	public Integer insert(UserFormCommand userFormCommand) { // 회원 등록 메소드
+	public Integer insert(UserFormCommand userFormCommand, java.sql.Date userBirth) { // 회원 등록 메소드
 		// DTO에 담기
 		UserDTO dto = new UserDTO();
 		dto.setUserId(userFormCommand.getUserId()); // 아아디
@@ -40,6 +40,7 @@ public class UserFormService {
 		dto.setUserName(userFormCommand.getUserName());// 회원 이름
 		dto.setUserEmail(userFormCommand.getUserEmail()); // 회원 이메일주소
 		dto.setUserGender(userFormCommand.getUserGender()); // 회원 성별
+		dto.setUserBirth(userBirth); //회원 생년월일		
 
 		return userInsertRepository.userInsert(dto);
 	}

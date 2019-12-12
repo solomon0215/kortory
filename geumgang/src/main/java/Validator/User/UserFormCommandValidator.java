@@ -58,6 +58,8 @@ public class UserFormCommandValidator {
 		
 		ValidationUtils.rejectIfEmpty(errors, "userPwCon", "required");
 		
+		ValidationUtils.rejectIfEmpty(errors, "userGender", "required");
+		
 		if(!ufc.getUserPw().isEmpty()){
 			if(!ufc.isPwEqualToPwCon()) {
 				errors.rejectValue("userPw", "userPwNoMatch");

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="UserInsertMapper">
+<mapper namespace="userInsertMapper">
 	
 <cache />
 
@@ -9,7 +9,7 @@
 		USER_ID,USER_PW,USER_EMAIL,USER_PH,USER_ADDR,USER_NAME,USER_BIRTH,USER_GENDER
 	</sql>
 	<insert id="userInsert" parameterType="userDTO">
-		insert into user(<include refid = "user" />)
+		insert into kortory_user(<include refid = "user" />)
 		values(#{userId},#{userPw},#{userEmail},#{userPh},#{userAddr},#{userName},#{userBirth},#{userGender})
 	</insert>
 </mapper>

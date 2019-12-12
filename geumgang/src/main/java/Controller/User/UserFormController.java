@@ -25,12 +25,14 @@ public class UserFormController {
 		return "Main/basicMain";
 	}
 	@RequestMapping(value="/user/userInsert", method=RequestMethod.POST)
-	public String userInsert(UserFormCommand userFormCommand,Errors errors,Model model) { 
+	public String userInsert(UserFormCommand userFormCommand,Errors errors,Model model
+			,@RequestParam(value="userBirth") java.sql.Date userBirth) { 
 		new UserFormCommandValidator().validate(userFormCommand, errors);
+		
 		if(errors.hasErrors()) {
 			return "User/userForm";//�Է� ����
 		}
-		Integer i = userFormService.insert(userFormCommand);
+		Integer i = userFormService.insert(userFormCommand, userBirth);
 		if(i != null) {
 			if(i>0) {
 				userFormService.infoEmail(userFormCommand); //���� ������

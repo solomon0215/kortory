@@ -1,7 +1,5 @@
 package Command.User;
 
-
-
 public class UserFormCommand {
 	String userId;
 	String userPw;
