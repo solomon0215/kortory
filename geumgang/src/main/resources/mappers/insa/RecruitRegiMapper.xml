@@ -4,7 +4,7 @@
 <mapper namespace="RecruitMapper">
 
 <cache />
-	<sql id="basecolumn">
+	<sql id="baseRecruit">
 		RECRUIT_NUM, RECRUIT_CONTENT, RECRUIT_PREFER, RECRUIT_PERSONNEL,
 		RECRUIT_QUALIFICATION,RECRUIT_REGI_DATE, RECRUIT_END_DATE, RECRUIT_COST, IN_SA_NUM
 	</sql>
