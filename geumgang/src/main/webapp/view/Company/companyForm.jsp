@@ -59,7 +59,7 @@
 		 
 		<div class="w3-row w3-section w3-col m10 w3-margin">
 			<div class="w3-col m9">
-				<form:input path="companyId" class="w3-input w3-border"  placeholder="아이디 영어 소문자/숫자 6~16자리"/>
+				<form:input path="companyId" id="companyId" class="w3-input w3-border"  placeholder="아이디 영어 소문자/숫자 6~16자리"/>
 				<form:errors class="w3-red" path="companyId"/>
 				<form:hidden path="confirmNum" id="confirmNum" value="3"/>				
 			</div>
