@@ -32,41 +32,39 @@ public class UserFormCommandValidator {
 				ufc.getUserEmail().trim().isEmpty()) {
 			errors.rejectValue("userEmail", "required");
 		}else{
-			// �̸��� ���ϰ˻�
+			
 			Matcher matcher = pattern.matcher(ufc.getUserEmail()); 
 			if(!matcher.matches()) {
 				errors.rejectValue("userEmail", "userEmailBad");
 			}
 		}
-		//��й�ȣ ���� 
 		if(!ufc.getUserPw().isEmpty()) {
 			Matcher matcher = pwPattern.matcher(ufc.getUserPw());
 			if(!matcher.matches()) {
 				errors.rejectValue("userPw", "userPwPattern");
 			}
 		}
-		//�ʼ� �Է� ��ü��
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName", 
 				"required");
-		//�ʼ� �Է� ��й�ȣ
+		
 		ValidationUtils.rejectIfEmpty(errors, "userPw", "required");
-		//�ʼ� �Է� ��ü���̵�
+		
 		ValidationUtils.rejectIfEmpty(errors, "userId", "required");
-		//�ʼ� �Է� ����ڹ�ȣ
+	
 		ValidationUtils.rejectIfEmpty(errors, "userAddr", "required");
-		//�ʼ� �Է� ����ó
+		
 		ValidationUtils.rejectIfEmpty(errors, "userPh", "required");
-		//�ʼ� �Է� ��й�ȣ Ȯ��
+		
 		ValidationUtils.rejectIfEmpty(errors, "userPwCon", "required");
 		
 		ValidationUtils.rejectIfEmpty(errors, "userBirth", "required");
-		//��й�ȣ ��
+		
 		if(!ufc.getUserPw().isEmpty()){
 			if(!ufc.isPwEqualToPwCon()) {
 				errors.rejectValue("userPw", "userPwNoMatch");
 			}
 		}
-		//���̵� Ajax���� �ϰ� ���۽� 
+		
 		if(ufc.getConfirmNum() != 0) {
 			errors.rejectValue("userId", "userId");
 		}

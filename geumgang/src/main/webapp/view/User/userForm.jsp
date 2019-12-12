@@ -88,9 +88,13 @@ li{list-style:none;}
 			    <form:input path="userName" class="w3-input w3-border"  placeholder="성명"/>
 			    <form:errors class="w3-red" path="userName"/>
 			</div>
-			<div class="w3-container w3-col m6">
-			    <form:input path="userBirth" class="w3-input w3-border"  placeholder="생년월일"/>
+			<div class="w3-container w3-col m4">
+			    <form:input path="userBirth" class="w3-input w3-border"  placeholder="생년월일 주민번호 앞 여섯자리"/>
 			    <form:errors class="w3-red" path="userBirth"/>
+			</div>
+			<div class="w3-container w3-col m2">
+			    <form:input path="userGender" class="w3-input w3-border"  placeholder="주민번호 7번째 자리"/>
+			    <form:errors class="w3-red" path="userGender"/>
 			</div>
 		</div>
 		<div class="w3-container w3-col m3">
@@ -117,16 +121,12 @@ li{list-style:none;}
 		    <br />
 		    	<div class="w3-row w3-section">
 			<div class="w3-row w3-section w3-center">
-		    	<label>성별</label>
-		    	<label>남</label><form:radiobutton class="w3-radio" path="userGender" value="M" checked="checked"/>
-				<label>여</label><form:radiobutton class="w3-radio" path="userGender" id="userGender" value="F" />
-						<br/><br/>
-						 <div class="panel-body" style="border: 1px solid #ccc">
-			<div style="overflow:scroll; width:1150px; height:300px; ">
-							<div class="step_box box_agree" id="tab_list1">
-					
-					<div class="txt_agree" id="box_agree_internet" >
-						<div class="wrap_agree" >
+		    	<br />
+				<div class="panel-body" style="border: 1px solid #ccc">
+				<div style="overflow:scroll; width:1150px; height:300px; ">
+				<div class="step_box box_agree" id="tab_list1">
+				<div class="txt_agree" id="box_agree_internet" >
+				<div class="wrap_agree" >
 							
     <h4 class="tit_skip">인터넷 회원규정</h4>  
     <h5 class="tit">제1장 총 칙</h5>

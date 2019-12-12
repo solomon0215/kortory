@@ -14,7 +14,7 @@ public class UserLogCommandValidator implements Validator{
 	public void validate(Object arg0, Errors arg1) {
 		// TODO Auto-generated method stub
 		ValidationUtils.rejectIfEmpty(arg1, "userPw", "required");
-		//�ʼ� �Է� ��ü���̵�
+	
 		ValidationUtils.rejectIfEmpty(arg1, "userId", "required");
 		
 	}
