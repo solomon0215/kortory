@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,28 +15,33 @@
 			<table class="w3-table-all">
     <thead>
      <table class="w3-table-all w3-centered">
-      <tr class="w3-blue">
-        <th>번호</th>        
+      <tr class="w3-green">
+        <th>번호</th>
+         <th>행사명</th>
         <th>작성일</th>
       </tr>
+     
     </thead>
     <tr>
       <td>1</td>
       <td>Smith</td>
+           <td>Smith</td>
     </tr>
     <tr>
       <td>2</td>
       <td>Jackson</td>
+           <td>Smith</td>
     </tr>
     <tr>
       <td>3</td>
       <td>Johnson</td>
+           <td>Smith</td>
     </tr>
   
   </table>
   </dvi>
   <div class="w3-container" align="center">
-   <a href="#" class="w3-btn w3-blue">등록</a>
+   <a href="#" class="w3-btn w3-green">등록</a>
 </div>
   
 </div>

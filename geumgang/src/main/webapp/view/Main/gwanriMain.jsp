@@ -35,7 +35,7 @@ $(document).ready(function(){
 
 </head>
 <body>
-<div class="w3-bar w3-black">
+<div class="w3-bar w3-teal")>
   <a href="aaaa" class="w3-bar-item w3-button">메인으로</a>
   <a href="#" class="w3-bar-item w3-button">인사부</a>
   <a href="#" class="w3-bar-item w3-button">영업부</a>
@@ -44,14 +44,14 @@ $(document).ready(function(){
 </div>
 <div class="w3-row">
 <!-- Sidebar -->
-<div class="w3-sidebar w3-black w3-bar-block" style="width:15%">
+<div class="w3-sidebar w3-sand w3-bar-block" style="width:15%">
     <h2 class="w3-bar-item">관리부 메뉴</h2>
 	<div>
 	    <ul>
 	        <li class="menu">
 	             <a href="#tabContent01" style="text-decoration:none" ><h3>협력업체 관련 업무</h3></a>
 	            <ul class="hide">
-	                <li>협약조건안 목록</li>
+	                <li><a href="http://localhost:8080/geumgang/gwanri/agreementConditionList">협약조건안 목록</a></li>
 	                <li>협약조건보고서 목록</li>
 	                <li>계약 위반처리</li>
 	                <li>협력업체계약서 목록</li>
