@@ -75,8 +75,8 @@
 <br />
 		<div class="w3-center">
 			<div class="w3-bar">
-			    <button class="w3-button w3-teal" id="save">저장</button>
-			    <button class="w3-button w3-green" id="next">다음</button>
+			    <button class="w3-button w3-teal" id="save" type="submit">저장</button>
+			    <button class="w3-button w3-green" id="next" >다음</button>
 			</div>
 		</div>
 </form:form>
