@@ -22,7 +22,7 @@
 		<div class="w3-center">
 			<form:input path="gwanRiPw" class="w3-input"/></p>
 		</div>
-		br>
+		<br>
 		<br>
 	  	<button class="w3-button w3-white w3-border w3-border-green" type="submit" >LOGIN</button>
 	</form:form>

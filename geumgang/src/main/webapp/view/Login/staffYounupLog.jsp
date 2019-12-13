@@ -17,12 +17,12 @@
 	  	<label>아이디 Name</label> 
 	  	<div class="w3-center">
 	  	  	<form:input path="youngUpId" class="w3-input"/>
-	  	  	<form:errors path="youngUpId" class="w3-text-red"/>
+	  	  	<form:errors path="youngUpId" class="w3-text-amber"/>
 		</div>
 		<label>비밀번호</label>
 		<div class="w3-center">
 			<form:input path="youngUpPw" class="w3-input"/>
-			<form:errors path="youngUpPw" class="w3-text-red"/>
+			<form:errors path="youngUpPw" class="w3-text-amber"/>
 		</div>  	
 		<br>
 		<br>
