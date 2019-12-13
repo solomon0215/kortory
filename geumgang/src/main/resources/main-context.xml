@@ -33,6 +33,7 @@ class = "org.springframework.context.support.ResourceBundleMessageSource"
 		<list>
 			<value>message.label</value>
 			<value>message.minjae</value>
+			<value>message.junhyeok</value>
 		</list>
 	</property>
 	<property name="defaultEncoding" value="UTF-8" />

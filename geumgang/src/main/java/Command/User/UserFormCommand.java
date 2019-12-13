@@ -1,7 +1,5 @@
 package Command.User;
 
-import java.sql.Date;
-
 public class UserFormCommand {
 	String userId;
 	String userPw;
@@ -10,7 +8,6 @@ public class UserFormCommand {
 	String userPh;
 	String userAddr;
 	String userName;
-	Date userBirth;
 	String userGender;
 	Integer confirmNum;
 	
@@ -59,13 +56,8 @@ public class UserFormCommand {
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
-	}
-	public Date getUserBirth() {
-		return userBirth;
-	}
-	public void setUserBirth(Date userBirth) {
-		this.userBirth = userBirth;
-	}
+	}	
+	
 	public String getUserGender() {
 		return userGender;
 	}
