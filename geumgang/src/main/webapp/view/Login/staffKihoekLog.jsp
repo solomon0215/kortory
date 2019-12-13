@@ -12,17 +12,21 @@
 </head>
 <body>
 	<!-- 기획부 -->
-	<form:form action="kiLogPro" class="w3-ontainer" commandName="kihoekLogCommand">
+	<form:form action="kiLogPro" class="w3-container w3-border w3-border-red w3-margin w3-padding-16" method="POST" commandName="kihoekLogCommand">
 	  	<h2>기획부 로그인</h2>
-	  	<label>아이디 Name</label> 
+	  	<label>아이디 Name</label>
 	  	<div class="w3-center">
-	  	  	<form:input path="kiHoekId" class="w3-input"/></p>
+	  	  	<form:input path="kiHoekId" class="w3-input"/>
+	  	  	<form:errors path="kiHoekId" class="w3-text-red"/>
 		</div>
 		<label>비밀번호</label>
 		<div class="w3-center">
-			<form:input path="kiHoekPw" class="w3-input"/></p>
-		</div>  	
-	  	<input type="submit" value="로그인">
+			<form:input path="kiHoekPw" class="w3-input"/>
+			<form:errors path="kiHoekPw" class="w3-text-red"/>
+		</div>
+		<br>
+		<br>
+	  	<button class="w3-button w3-white w3-border w3-border-red" type="submit" >LOGIN</button>
 	</form:form>
 </body>
 </html>

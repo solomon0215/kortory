@@ -12,7 +12,7 @@
 </head>
 <body>
 	<!-- 관리부 -->
-	<form:form class="w3-ontainer" action="gwanLogPro" commandName="gwanriLogCommand">
+	<form:form class="w3-container w3-border w3-border-green w3-margin w3-padding-16" method="POST" action="gwanLogPro" commandName="gwanriLogCommand">
 	  	<h2>관리부 로그인</h2>
 	  	<label>아이디 Name</label> 
 	  	<div class="w3-center">
@@ -21,8 +21,10 @@
 		<label>비밀번호</label>
 		<div class="w3-center">
 			<form:input path="gwanRiPw" class="w3-input"/></p>
-		</div>  	
-	  	<input type="submit" value="로그인">
+		</div>
+		br>
+		<br>
+	  	<button class="w3-button w3-white w3-border w3-border-green" type="submit" >LOGIN</button>
 	</form:form>
 </body>
 </html>
