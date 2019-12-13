@@ -17,7 +17,7 @@ public class InsaLoginService {
 	InsaRepository insaRepository;
 	
 	
-	//·Î±×ÀÎ ¸Þ¼Òµå
+	//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 	public Integer loginPro(HttpSession session, InsaLogCommand insaLogCommand, HttpServletResponse response) {
 		Integer result = 0;
 		InsaDTO insa = new InsaDTO();
@@ -29,7 +29,6 @@ public class InsaLoginService {
 			result = 0;
 		} else {
 			if(insa.getInsaPw().equals(Encrypt.getEncryption(insaLogCommand.getInSaPw()))) {
-				
 				authInfo = new InsaAuthInfo(insa.getInsaId(), insa.getInsaEmail(), 
 						insa.getInsaName(), 303, insa.getInsaNum());
 				session.setAttribute("authLog", authInfo);

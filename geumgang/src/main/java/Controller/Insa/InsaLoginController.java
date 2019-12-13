@@ -23,10 +23,8 @@ public class InsaLoginController {
 	@RequestMapping(method=RequestMethod.POST)
 	public String loginPro(InsaLogCommand insaLogCommand, Errors errors, HttpSession session,
 			HttpServletResponse response, Model model) {
-		System.out.println("집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다");
 		new InsaLoginCommandValidator().validate(insaLogCommand, errors);
 		if(errors.hasErrors()) {
-			System.out.println("제발제발제발제발제발제발제발제발제발제발제발제발");
 			model.addAttribute("pageName", "../Login/staffInsaLog.jsp");
 			return "Main/basicMain";
 		}
@@ -43,7 +41,7 @@ public class InsaLoginController {
 			model.addAttribute("pageName", "../Login/staffInsaLog.jsp");
 			return "Main/basicMain";
 		}
-		System.out.println("-------------------------------------------------------");
+
 		return "insa/insaLogPro";
 	}
 	@RequestMapping(method=RequestMethod.GET) 
