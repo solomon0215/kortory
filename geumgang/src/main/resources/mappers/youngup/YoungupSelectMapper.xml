@@ -24,7 +24,7 @@
 		from YOUNG_UP
 		<where>
 			YOUNG_UP_ID = #{youngUpId}
-			AND YOUNG_UP_PW = #{youngUpPw}
+			AND YOUNG_UP_PW = #{youngUpPw} 
 		</where>
 	</select>
 </mapper>
