@@ -23,7 +23,7 @@ public class InsaLoginService {
 		InsaDTO insa = new InsaDTO();
 		insa.setInsaId(insaLogCommand.getInSaId());
 		insa = insaRepository.userCheck(insa);
-		
+		System.out.println(Encrypt.getEncryption(insaLogCommand.getInSaPw()));
 		InsaAuthInfo authInfo = null;
 		if(insa == null) {
 			result = 0;

@@ -94,7 +94,7 @@ function myAccFunc6() {
   사원채용 <i class="fa fa-caret-down"></i>
   </button>
   <div id="demoAcc1" class="w3-hide w3-white w3-card">
-    <a href="recruitRegist" class="w3-bar-item w3-button">채용공고 작성</a>
+    <a href="recruitReg" class="w3-bar-item w3-button">채용공고 작성</a>
   </div>
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc2()">
   사원정보 <i class="fa fa-caret-down"></i>

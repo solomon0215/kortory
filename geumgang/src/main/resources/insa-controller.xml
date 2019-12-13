@@ -9,4 +9,5 @@
 <bean class="Controller.Insa.InsaLogoutController" />
 <bean class="Controller.Insa.RecruitController" />	
 <bean class="Controller.Insa.InsaMainController" />	
+<bean class="Controller.Insa.EmployeeInsertController" />
 </beans>

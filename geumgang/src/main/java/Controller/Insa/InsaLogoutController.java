@@ -15,10 +15,10 @@ public class InsaLogoutController {
 	@Autowired
 	InsaLogoutService insaLogoutService;
 	
-	@RequestMapping("staff/insalogout")
+	@RequestMapping("/insa/logout")
 	public String logout(HttpSession session, HttpServletResponse response, Model model) {
 		insaLogoutService.logout(session, response);
-		model.addAttribute("pageName", "../Login/staffLog.jsp");
+		model.addAttribute("pageName","../FirstView/firstView.jsp");
 		return "Main/basicMain";
 	}
 

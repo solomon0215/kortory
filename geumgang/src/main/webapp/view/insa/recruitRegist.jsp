@@ -124,7 +124,7 @@ commandName="recruitRegiCommand" id="frm" action="recruitRegiPro" method="POST" 
 		<br />
 		<div class="w3-center">
 			<div class="w3-bar">
-			    <button class="w3-button w3-teal" id="reWrite">다시 작성</button>
+				<input  class="w3-button w3-teal" type="reset" value="취소" />
 			    <button class="w3-button w3-teal" id="regist">등록</button>
 			</div>
 		</div>
