@@ -12,7 +12,7 @@
 </head>
 <body>
 	<!-- 기획부 -->
-	<form:form class="w3-ontainer" commandName="kihoekLogCommand">
+	<form:form action="kiLogPro" class="w3-ontainer" commandName="kihoekLogCommand">
 	  	<h2>기획부 로그인</h2>
 	  	<label>아이디 Name</label> 
 	  	<div class="w3-center">

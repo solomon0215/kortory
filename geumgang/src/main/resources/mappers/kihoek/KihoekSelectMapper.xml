@@ -4,5 +4,26 @@
 <mapper namespace="KihoekSelectMapper">
 	
 <cache />
-
+ 	<sql id="kiBaseColumn">
+		KI_HOEK_NUM, KI_HOEK_ID, KI_HOEK_PW, KI_HOEK_NAME, KI_HOEK_BIRTH,
+		KI_HOEK_GENDER, KI_HOEK_EMAIL, KI_HOEK_REGIST, KI_HOEK_PH
+ 	</sql>
+ 	<resultMap type="kihoekDTO" id="kihoekInfo"> <!-- KihoekDTO에 담는resultMap -->
+ 		<id column="KI_HOEK_NUM" jdbcType="VARCHAR" property="kiHoekNum"/>
+		<result column="KI_HOEK_ID" jdbcType="VARCHAR" property="kiHoekId"/>
+		<result column="KI_HOEK_PW" jdbcType="VARCHAR" property="kiHoekPw"/>
+		<result column="KI_HOEK_NAME" jdbcType = "VARCHAR" property="kiHoekName"/>
+		<result column="KI_HOEK_BIRTH" jdbcType="DATE" property="kiHoekBirth"/>
+		<result column="KI_HOEK_GENDER" jdbcType="CHAR" property="kiHoekGender"/>
+		<result column="KI_HOEK_EMAIL" jdbcType="VARCHAR" property="kiHoekEmail"/>
+		<result column="KI_HOEK_REGIST" jdbcType="DATE" property="kiHoekRegist"/>
+		<result column="KI_HOEK_PH" jdbcType="VARCHAR" property="kiHoekPh"/>
+	</resultMap>
+	<select id="logConfirm" parameterType="kihoekDTO" resultMap="kihoekInfo"><!-- 로그인 정보 대조하기 위해서 검색하는 select -->
+		select <include refid="kiBaseColumn"/> 
+		from KI_HOEK
+		<where>
+			KI_HOEK_ID = #{kiHoekId} and KI_HOEK_PW = #{kiHoekPw}
+		</where>
+	</select>
 </mapper>

@@ -25,6 +25,8 @@
   			classpath:insa-controller.xml
   			classpath:gwanri-beans.xml
   			classpath:gwanri-controller.xml
+  			classpath:kihoek-beans.xml
+  			classpath:kihoek-controller.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>
