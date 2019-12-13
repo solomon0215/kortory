@@ -18,9 +18,11 @@ public class YoungupLogController {
 	@Autowired
 	YoungupLogService youngLogSer;
 	
-	@RequestMapping(value="/staff/youngupLogPro", method=RequestMethod.POST)
+	@RequestMapping(value="/staff/youngupLogPro", method=RequestMethod.POST) //영업부 로그인
 	public String youngupLogPro(YoungupLogCommand youngupLogCommand,Model model, Errors errors,HttpSession session) {
 		new YoungupLogCommandValidator().validate(youngupLogCommand, errors);
+		
+		System.out.println("/staff/youngupLogPro/staff/youngupLogPro/staff/youngupLogPro/staff/youngupLogPro/staff/youngupLogPro");
 		if(errors.hasErrors()) {
 			model.addAttribute("pageName", "../Login/companyLogin.jsp");
 			return "Main/basicMain";
