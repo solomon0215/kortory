@@ -19,7 +19,7 @@
 		<result column="YOUNG_UP_GENDER" jdbcType="CHAR" property="youngUpGender"/><!-- 성별 -->
 	</resultMap>
 	<!-- 로그인  조회 -->
-	<select id="youngupLog" resultMap="youngDTOForm" parameterMap="youngDTO">
+	<select id="youngupLog" resultMap="youngDTOForm" parameterType="youngDTO">
 		select <include refid="baseYoungUP"/>
 		from YOUNG_UP
 		<where>
