@@ -59,11 +59,11 @@ $(function(){
 </head>
 <body>
 <div class="w3-container w3-half w3-display-middle" >
-	<div class="w3-center w3-margin"> 
-		<button class="w3-button w3-white w3-border w3-border-green" id="gwan">관리부 로그인</button>
-		<button class="w3-button w3-white w3-border w3-border-amber" id="young">영업부 로그인</button>
-		<button class="w3-button w3-white w3-border w3-border-blue" id="in">인사부 로그인</button>
-		<button class="w3-button w3-white w3-border w3-border-red" id="ki">기획부 로그인</button>
+	<div class="w3-panel w3-center w3-margin"> 
+		<button class="w3-button w3-hover-green w3-border w3-border-green" id="gwan">관리부 로그인</button>
+		<button class="w3-button w3-hover-amber w3-border w3-border-amber" id="young">영업부 로그인</button>
+		<button class="w3-button w3-hover-light-blue w3-border w3-border-light-blue" id="in">인사부 로그인</button>
+		<button class="w3-button w3-hover-red w3-border w3-border-red" id="ki">기획부 로그인</button>
 	</div>
 	<div id="staff" class="w3-margin"></div>
 </div>
