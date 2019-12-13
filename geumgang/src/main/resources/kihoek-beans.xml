@@ -13,5 +13,5 @@
 	<bean id="kihoekLogService" class="Service.Kihoek.KihoekLogService"/> 
 	
 	<!-- Repository -->
-	<bean id="kihoekSelectRepository" class="Repository.Kihoek.kihoekSelectRepository"/> 
+	<bean id="kihoekSelectRepository" class="Repository.Kihoek.KihoekSelectRepository"/> 
 </beans>
