@@ -5,6 +5,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
+<style>
+ol{
+   list-style:none;
+   }
+</style>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -41,18 +46,28 @@ $(function(){
 	$("#send").click(function(){
 		$("#frm").submit(function(){
 			if($("#userBirth").val() == ""){
-				alert("생년월일을 확인해주세요");
+				alert("생년월일을 입력하세요");
 				$("#userBirth").focus();
 				return false;
-				}			
+				}				
+			if($("#userAddr").val()==""){
+				alert("주소를 입력하세요.");
+				$("#userAddr").focus();				
+				return false;
+				}	
+			if (!$("input:checked[Name='check']").is(":checked")){ 
+				alert("약관에 동의하지 않으면 가입할 수 없습니다."); 
+				$("#check").focus(); 
+				return; 
+				}
 			});
 		});	
 	});
 function openZipSearch() {
 	new daum.Postcode({
 		oncomplete: function(data) {
-			$('[commandName=zip]').val(data.zonecode); // 우편번호 (5자리)
-			$('[commandName=addr1]').val(data.address);
+			$('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
+			$('[name=addr1]').val(data.address);
 			$('[commandName=addr2]').val(data.buildingName);
 		}
 	}).open();
@@ -98,23 +113,17 @@ function openZipSearch() {
 						placeholder="성명" />
 					<form:errors class="w3-red" path="userName" />
 				</div>
-				<div class="w3-container w3-col m4">
-					<input type="date" id="userBirth" name="userBirth"
-						class="w3-input w3-border" placeholder="생년월일 주민번호 앞 여섯자리" />
+				<div class="w3-container w3-col m3">
+					<input type="text" onfocus="(this.type='date')" id="userBirth" name="userBirth"
+						class="w3-input w3-border" placeholder="생년월일" />
 				</div>
-				<div class="w3-container w3-col m2">
-					<form:input path="userGender" class="w3-input w3-border"
-						placeholder="주민번호 7번째 자리" />
-					<form:errors class="w3-red" path="userGender" />
-				</div>
+				<div class="w3-container w3-col m3">
+			<label>성별 : </label>
+		    <label>남자</label><form:radiobutton class="w3-radio" path="userGender" value="M" checked="checked"/>
+			<label>여자</label><form:radiobutton class="w3-radio" path="userGender" id="userGender" value="F" />
+		</div>
 			</div>
-			<div class="w3-row w3-section w3-col m10 w3-margin">
-				<form:input path="userAddr" class="w3-input w3-border"
-					placeholder="주소" />
-				<form:errors class="w3-red" path="userAddr" />
-			</div>
-			<div class="w3-row w3-section"></div>
-			<div class="w3-container w3-col m6">
+				<div class="w3-container w3-col m6">
 				<form:input path="userPh" class="w3-input w3-border"
 					placeholder="전화번호" />
 				<form:errors class="w3-red" path="userPh" />
@@ -124,24 +133,24 @@ function openZipSearch() {
 					placeholder="이메일주소" />
 				<form:errors class="w3-red" path="userEmail" />
 			</div>
+			<div class="w3-row w3-section"></div>
 			<div class="w3-container w3-col m2">
-				<form:input path="userEmail" commandName="zip" class="w3-input w3-border" placeholder="우편번호" />
-			</div>
-			<button type="button" style="width:60px; height:32px;" onclick="openZipSearch()">검색</button><br>
+				<input type="text" id="userAddr" name="zip" class="w3-input w3-border" placeholder="우편번호"  readonly />
+				</div>
+			<button type="button" style="width:60px; height:40px;" onclick="openZipSearch()">검색</button><br>
 			<div class="w3-row w3-section">
 			<div class="w3-container w3-col m4">
-
-				<form:input path="userEmail" commandName="addr1" class="w3-input w3-border" placeholder="주소" />
-			</div>
-			<div class="w3-container w3-col m6">
-				<form:input path="userEmail" commandName="addr2" class="w3-input w3-border" placeholder="상세주소" />
-			</div>
+				<input type="text" id="userAddr" name="addr1" class="w3-input w3-border" placeholder="주소"  readonly />
+						</div>
+			<div class="w3-container w3-col m8">
+				<form:input path="userAddr" commandName="addr2" class="w3-input w3-border" placeholder="상세주소" />
+					</div>
 			</div>
 			<div class="w3-row w3-section">
 				<div class="w3-row w3-section w3-center">
 					<br />
 					<div class="panel-body" style="border: 1px solid #ccc">
-						<div style="overflow: scroll; width: 1150px; height: 300px;">
+						<div style="overflow: scroll; height: 300px; background-color:white;">
 							<div class="step_box box_agree" id="tab_list1">
 								<div class="txt_agree" id="box_agree_internet">
 									<div class="wrap_agree">
@@ -400,13 +409,7 @@ function openZipSearch() {
 							</div>
 						</div>
 					</div>
-					<div class="box_check">
-
-						<input type="checkbox" name="privacy_check" id="privacy_check1"
-							value="2" class="chk_step"><label for="privacy_check1"><span></span>
-
-							인터넷 회원약관에 동의합니다. </label>
-					</div>
+					<label><input type="checkbox" name="check">인터넷 회원약관에 동의합니다.</label>
 
 
 				</div>
@@ -414,7 +417,7 @@ function openZipSearch() {
 			<button	class="w3-button w3-block w3-section w3-yellow w3-ripple w3-padding"
 				id="send">가입</button>
 		</form:form>
-	</div>
+		</div>
 
 </body>
 </html>

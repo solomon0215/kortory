@@ -37,7 +37,7 @@ $(function(){
 		  	<button class="w3-button w3-white w3-border w3-border-yellow" id="userSubmit">로그인</button>
 		</form:form>
 		<div class="w3-margin w3-center">
-			<span class="w3-tag w3-xlarge w3-padding w3-yellow w3-round-small" style="transform:rotate(+2deg)">
+			<span class="w3-tag w3-xlarge w3-padding w3-pale-yellow w3-round-small" style="transform:rotate(+2deg)">
 		 		<a href="userForm" >Do you wanna Join Member?</a>
 			</span>	
 		</div>
