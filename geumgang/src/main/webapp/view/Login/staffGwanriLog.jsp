@@ -16,11 +16,13 @@
 	  	<h2>관리부 로그인</h2>
 	  	<label>아이디 Name</label> 
 	  	<div class="w3-center">
-	  	  	<form:input path="gwanRiId" class="w3-input"/></p>
+	  	  	<form:input path="gwanRiId" class="w3-input"/>
+	  	  	<form:errors path="gwanRiId" class="w3-text-green"/>
 		</div>
 		<label>비밀번호</label>
 		<div class="w3-center">
-			<form:input path="gwanRiPw" class="w3-input"/></p>
+			<form:input path="gwanRiPw" class="w3-input"/>
+			<form:errors path="gwanRiId" class="w3-text-green"/>
 		</div>
 		<br>
 		<br>

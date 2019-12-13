@@ -17,10 +17,12 @@
 	  	<label>아이디 Name</label>
 	  	<div class="w3-center">
 	  	  	<form:input path="kiHoekId" class="w3-input"/>
+	  	  	<form:errors path="kiHoekId" class="w3-text-red"/>
 		</div>
 		<label>비밀번호</label>
 		<div class="w3-center">
 			<form:input path="kiHoekPw" class="w3-input"/>
+			<form:errors path="kiHoekId" class="w3-text-red"/>
 		</div>
 		<br>
 		<br>

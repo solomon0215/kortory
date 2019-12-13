@@ -17,15 +17,15 @@
 	  	<label>아이디</label> 
 	  	<div class="w3-center">
 	  	  	<form:input path="inSaId" class="w3-input"/>
-	  	  	<form:errors path="inSaId" class="w3-text-red"/>
+	  	  	<form:errors path="inSaId" class="w3-text-blue"/>
 		</div>
 		<label>비밀번호</label>
 		<div class="w3-center">
 			<form:input path="inSaPw" class="w3-input"/>
-			<form:errors path="inSaPw" class="w3-text-red"/>
+			<form:errors path="inSaPw" class="w3-text-blue"/>
 		</div>  
-		<br />
-		<br />	
+		<br>
+		<br>	
 	  	<button class="w3-button w3-white w3-border w3-border-blue" type="submit" >LOGIN</button>
 	</form:form>
 </body>

@@ -60,10 +60,10 @@ $(function(){
 <body>
 <div class="w3-container w3-half w3-display-middle" >
 	<div class="w3-center w3-margin"> 
-		<button class="w3-button w3-white w3-border w3-border-yellow" id="gwan">관리부 로그인</button>
-		<button class="w3-button w3-white w3-border w3-border-red" id="young">영업부 로그인</button>
+		<button class="w3-button w3-white w3-border w3-border-green" id="gwan">관리부 로그인</button>
+		<button class="w3-button w3-white w3-border w3-border-amber" id="young">영업부 로그인</button>
 		<button class="w3-button w3-white w3-border w3-border-blue" id="in">인사부 로그인</button>
-		<button class="w3-button w3-white w3-border w3-border-black" id="ki">기획부 로그인</button>
+		<button class="w3-button w3-white w3-border w3-border-red" id="ki">기획부 로그인</button>
 	</div>
 	<div id="staff" class="w3-margin"></div>
 </div>
