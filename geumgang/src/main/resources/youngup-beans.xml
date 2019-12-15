@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:context = "http://www.springframework.org/schema/context"
 	   xmlns:xsi ="http://www.w3.org/2001/XMLSchema-instance"
 	   xsi:schemaLocation = "http://www.springframework.org/schema/beans 
-	    http://www.springframework.org/schema/beans/spring-beans.xsd"
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://www.springframework.org/schema/context
+	    http://www.springframework.org/schema/context/spring-context.xsd"
 >
+	<context:annotation-config/>
 	<!-- Service  -->
-	<bean id = "youngLogSer" class ="Service.Youngup.YoungupLogService"/><!-- 영업 사원 로그인 실행 서비스--> 
+	<bean id = "youngupLogService" class ="Service.Youngup.YoungupLogService"/><!-- 영업 사원 로그인 실행 서비스--> 
 
    	<!-- Repositopry -->
-	<bean id = "youngSelRep" class ="Repository.Youngup.YoungupSelectRepository"/><!-- 영업부 조회 repository--> 
+	<bean id = "youngupSelectRepository" class ="Repository.Youngup.YoungupSelectRepository"/><!-- 영업부 조회 repository--> 
 </beans>
 
 

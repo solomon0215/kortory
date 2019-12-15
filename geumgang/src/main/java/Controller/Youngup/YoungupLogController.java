@@ -16,9 +16,10 @@ import Validator.Youngup.YoungupLogCommandValidator;
 @Controller
 public class YoungupLogController {
 	@Autowired
-	YoungupLogService youngLogSer;
+	YoungupLogService youngupLogService;
 	
-	@RequestMapping(value="/staff/youngupLogPro", method=RequestMethod.POST) //영업부 로그인
+	//영업부 로그인
+	@RequestMapping(value = "/staff/loginYoung") 
 	public String youngupLogPro(YoungupLogCommand youngupLogCommand,Model model, Errors errors,HttpSession session) {
 		new YoungupLogCommandValidator().validate(youngupLogCommand, errors);
 		
@@ -27,7 +28,7 @@ public class YoungupLogController {
 			model.addAttribute("pageName", "../Login/companyLogin.jsp");
 			return "Main/basicMain";
 		}
-		return youngLogSer.youngupLogPro(youngupLogCommand,model,errors,session);
+		return youngupLogService.youngupLogPro(youngupLogCommand,model,errors,session);
 	}
 		
 }
