@@ -66,8 +66,8 @@ $(function(){
 function openZipSearch() {
 	new daum.Postcode({
 		oncomplete: function(data) {
-			$('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
-			$('[name=addr1]').val(data.address);
+			$('[id=zip]').val(data.zonecode); // 우편번호 (5자리)
+			$('[id=addr1]').val(data.address);
 			$('[commandName=addr2]').val(data.buildingName);
 		}
 	}).open();
@@ -135,12 +135,12 @@ function openZipSearch() {
 			</div>
 			<div class="w3-row w3-section"></div>
 			<div class="w3-container w3-col m2">
-				<input type="text" id="userAddr" name="zip" class="w3-input w3-border" placeholder="우편번호"  readonly />
+				<input type="text" id="zip" name="userAddr" class="w3-input w3-border" placeholder="우편번호"  readonly />
 				</div>
 			<button type="button" style="width:60px; height:40px;" onclick="openZipSearch()">검색</button><br>
 			<div class="w3-row w3-section">
 			<div class="w3-container w3-col m4">
-				<input type="text" id="userAddr" name="addr1" class="w3-input w3-border" placeholder="주소"  readonly />
+				<input type="text" id="addr1" name="userAddr" class="w3-input w3-border" placeholder="주소"  readonly />
 						</div>
 			<div class="w3-container w3-col m8">
 				<form:input path="userAddr" commandName="addr2" class="w3-input w3-border" placeholder="상세주소" />
