@@ -17,9 +17,9 @@
 	$(function(){
 		$("#companyId").keyup(function(){
 			$.ajax({
-				type: "POST",
-				url : "companyIdConfirm",
-				data: "userId="+$("#companyId").val(),
+				type: "POST", //보내는 방식
+				url : "companyIdConfirm", //url주소
+				data: "userId="+$("#companyId").val(), //쿼리로 보내는 값
 				datatype : "text",
 				success : function(data1){
 					$("#confirmNum").val(data1);

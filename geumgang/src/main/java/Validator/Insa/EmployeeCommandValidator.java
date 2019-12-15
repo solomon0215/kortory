@@ -48,7 +48,7 @@ public class EmployeeCommandValidator implements Validator{
 				errors.rejectValue("employeePw", "pwIncorrect");
 			}
 		}
-		if(ec.getEmployeeBirth()==null ||ec.getEmployeeBirth().trim().isEmpty()) {
+		if(ec.getEmployeeBirth()==null) {
 			errors.rejectValue("employeeBirth", "required");
 		}else {
 			Matcher matcher = pwPattern.matcher(ec.getEmployeePw());

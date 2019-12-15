@@ -15,10 +15,10 @@
 $(function(){
 	$("#user").click(function(){
 		$.ajax({
-			type: "POST",
-			url : "userLogin",
-			datatype : "html",
-			success : function(data1){
+			type: "POST", //보내는 방식
+			url : "userLogin", //요청하는  url
+			datatype : "html", //받아오는 타임 
+			success : function(data1){ //성공시
 				$("#logFrm").html(data1);
 			}
 		});
