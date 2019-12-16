@@ -19,7 +19,7 @@ public class BudgetBillController {
 	public String boardList(@RequestParam(value="page" ,
 	required = false) Integer page, Model model){
 		bbls.getBoardList(model, page);
-		model.addAttribute("pageName", "../gwanri/board/budget_bill/budget_bill_list.jsp");
+		model.addAttribute("pageName", "../gwanri/BudgetBill/budget_bill_list.jsp");
 		return "Main/gwanriMain";
 	}
 }
