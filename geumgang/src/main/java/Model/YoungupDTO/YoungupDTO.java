@@ -1,6 +1,9 @@
 package Model.YoungupDTO;
 
-public class YoungupDTO {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class YoungupDTO implements Serializable{
 	private String youngUpNum;
 	private String youngUpId;
 	private String youngUpPw;

@@ -16,8 +16,8 @@ public class YoungupLogCommandValidator implements Validator{
 
 	public void validate(Object target, Errors errors) {
 		// TODO Auto-generated method stub
-		ValidationUtils.rejectIfEmpty(errors, "companyId", "required");
-		ValidationUtils.rejectIfEmpty(errors, "companyPw", "required");
+		ValidationUtils.rejectIfEmpty(errors, "youngUpId", "required");
+		ValidationUtils.rejectIfEmpty(errors, "youngUpPw", "required");
 	}
 
 }
