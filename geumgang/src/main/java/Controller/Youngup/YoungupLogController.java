@@ -19,7 +19,7 @@ public class YoungupLogController {
 	YoungupLogService youngupLogService;
 	
 	//영업부 로그인
-	@RequestMapping(value = "/staff/loginYoung") 
+	@RequestMapping(value = "/staff/youngupLogPro",method = RequestMethod.POST) 
 	public String youngupLogPro(YoungupLogCommand youngupLogCommand,Model model, Errors errors,HttpSession session) {
 		new YoungupLogCommandValidator().validate(youngupLogCommand, errors);
 		

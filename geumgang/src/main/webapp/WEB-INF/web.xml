@@ -27,6 +27,8 @@
   			classpath:gwanri-controller.xml
   			classpath:kihoek-beans.xml
   			classpath:kihoek-controller.xml
+  			classpath:youngup-beans.xml
+  			classpath:youngup-controller.xml
   		</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>

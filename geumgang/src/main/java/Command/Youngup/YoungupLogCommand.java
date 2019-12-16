@@ -16,6 +16,4 @@ public class YoungupLogCommand {
 		this.youngUpPw = youngUpPw;
 	}
 	
-	
-	
 }

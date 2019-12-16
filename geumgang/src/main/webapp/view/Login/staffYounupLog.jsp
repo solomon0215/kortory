@@ -7,20 +7,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-$(function(){
-	$("#youngUPlog").click(function(){
-		$("youngLogFrm").submit();
-	});
-});
-</script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<!-- 영업부 -->
-	<form:form class="w3-container w3-border w3-border-amber w3-margin w3-padding-16" method="POST" id="youngLogFrm" action="loginYoung" commandName="youngupLogCommand">
+	<form:form class="w3-container w3-border w3-border-amber w3-margin w3-padding-16"
+	 method="POST"  action="youngupLogPro" commandName="youngupLogCommand">
 	  	<h2>영업부 로그인</h2>
 	  	<label>아이디</label> 
 	  	<div class="w3-center">
@@ -34,7 +27,7 @@ $(function(){
 		</div>  	
 		<br>
 		<br>
-	  	<button class="w3-button w3-white w3-border w3-hover-amber" id="youngUPlog" >LOGIN</button>
+	  	<button class="w3-button w3-white w3-border w3-hover-amber" type="submit" >LOGIN</button>
 	</form:form>
 </body>
 </html>
