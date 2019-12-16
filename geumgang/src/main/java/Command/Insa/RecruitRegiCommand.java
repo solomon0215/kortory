@@ -7,8 +7,8 @@ public class RecruitRegiCommand {
 	private String regiPrefer;
 	private int regiPersonnel;
 	private String regiQual;
-	private Date regiDate;
-	private Date endDate;
+	private String regiDate;
+	private String endDate;
 	private int regiCost;
 	private String inSaNum;
 	public String getRegiContent() {
@@ -35,16 +35,16 @@ public class RecruitRegiCommand {
 	public void setRegiQual(String regiQual) {
 		this.regiQual = regiQual;
 	}
-	public Date getRegiDate() {
+	public String getRegiDate() {
 		return regiDate;
 	}
-	public void setRegiDate(Date regiDate) {
+	public void setRegiDate(String regiDate) {
 		this.regiDate = regiDate;
 	}
-	public Date getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
-	public void setEndDate(Date endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 	public int getRegiCost() {

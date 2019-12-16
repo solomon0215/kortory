@@ -4,7 +4,7 @@
 <mapper namespace="InsaMapper">
 	
 <cache />
-<sql id="basecolumn">
+<sql id="baseInsa">
 		IN_SA_NUM, IN_SA_ID, IN_SA_PW, IN_SA_BIRTH, IN_SA_NAME,
 		IN_SA_GENDER, IN_SA_PH, IN_SA_EMAIL, IN_SA_REGIST
 	</sql>
@@ -23,7 +23,7 @@
 
 <select id="insaCheck" parameterType = "insaDTO" resultMap="baseMember" >
 		select 
-			<include refid="basecolumn" />
+			<include refid="baseInsa" />
 		from in_sa
 		<trim prefix="where" prefixOverrides="AND |OR ">
 			<if test="insaPw != null">

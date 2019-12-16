@@ -11,5 +11,6 @@
 		<typeAlias type="Model.InsaDTO.RecruitDTO" alias = "recruitDTO"/>
 		<typeAlias type="Model.YoungupDTO.YoungupDTO" alias = "youngDTO"/>
 		<typeAlias type="Model.KihoekDTO.KihoekDTO" alias ="kihoekDTO"/>
+		<typeAlias type="Model.InsaDTO.EmployeeDTO" alias = "employeeDTO"/>
 	</typeAliases>
 </configuration>

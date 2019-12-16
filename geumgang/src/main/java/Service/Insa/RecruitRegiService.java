@@ -1,6 +1,8 @@
 package Service.Insa;
 
-import java.sql.Date;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.http.HttpSession;
 
@@ -23,15 +25,20 @@ public class RecruitRegiService {
 		recruit.setRecruitPerfer(recruitCommand.getRegiPrefer());
 		recruit.setRecruitPersonnel(recruitCommand.getRegiPersonnel());
 		recruit.setRecruitQualification(recruitCommand.getRegiQual());
-		
-		//simpledate
-		recruit.setRecruitRegiDate((Date)recruitCommand.getRegiDate());
-		recruit.setRecruitEndDate((Date)recruitCommand.getEndDate());
-		
-		
 		recruit.setRecruitCost(recruitCommand.getRegiCost());
 		recruit.setInSaNum(((InsaAuthInfo)session.getAttribute("insaAuthInfo")).getInSaNum());
 		
+		SimpleDateFormat dt = new SimpleDateFormat("yyyyMMdd");
+		try {
+			Date date = dt.parse(recruitCommand.getRegiDate());
+			java.sql.Date regi = new java.sql.Date(date.getDate());
+			recruit.setRecruitRegiDate(regi);
+			date = dt.parse(recruitCommand.getEndDate());
+			java.sql.Date end = new java.sql.Date(date.getDate());
+			recruit.setRecruitEndDate(end);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		return recruitRepository.recruitInsert(recruit);
 		

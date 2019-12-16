@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="EmployeeMapper">
+
+<cache />
+<sql id="baseEmployee">
+	EMPLOYEE_NUM, EMPLOYEE_ID, EMPLOYEE_PW, EMPLOYEE_BIRTH, EMPLOYEE_NAME,
+	EMPLOYEE_GENDER, EMPLOYEE_PH, EMPLOYEE_REGIST, EMPLOYEE_EMAIL
+	</sql>
+	
+<resultMap type="employeeDTO" id="baseEmployee">
+	    
+		<id column="" jdbcType="VARCHAR" property="Num"/>
+		<result column="" jdbcType="VARCHAR" property="Id"/>
+		<result column="I" jdbcType="VARCHAR" property="Pw"/>
+		<result column="" jdbcType = "DATE" property="Birth"/>
+		<result column="" jdbcType="VARCHAR" property="Name"/>		
+		<result column="" jdbcType="CHAR" property="Gender"/>
+		<result column="" jdbcType="VARCHAR" property="Ph"/>
+		<result column="" jdbcType="VARCHAR" property="Email"/>
+		<result column="" jdbcType="DATE" property="Regist"/>		
+	</resultMap>	
+<!--     
+insert first
+when employeenum == 301 then into gwan_ri
+when num == 302 then into  ki_hoek
+when num == 303 then into in_sa
+when num == 304 then into young_up
+select * from ;
+
+ -->	
+
+</mapper>

@@ -1,19 +1,20 @@
-package Command.Insa;
+package Model.InsaDTO;
 
-import java.util.Date;
+import java.io.Serializable;
 
+import org.springframework.core.serializer.Serializer;
 
-public class EmployeeCommand {
-	public String employeeNum;
-	public String employeeId;
-	public String employeePw;
-	public String employeePwCon;
-	public String employeeBirth;
-	public String employeeName;
-	public char employeeGender;
-	public String employeePh;
-	public String employeeRegist;
-	public String employeeEmali;
+@SuppressWarnings("serial")
+public class EmployeeDTO implements Serializable  {
+	String employeeNum;
+	String employeeId;
+	String employeePw;
+	java.sql.Date employeeBirth;
+	String employeeName;
+	char employeeGender;
+	String employeePh;
+	java.sql.Date employeeRegist;
+	String employeeEmail;
 	public String getEmployeeNum() {
 		return employeeNum;
 	}
@@ -32,10 +33,10 @@ public class EmployeeCommand {
 	public void setEmployeePw(String employeePw) {
 		this.employeePw = employeePw;
 	}
-	public String getEmployeeBirth() {
+	public java.sql.Date getEmployeeBirth() {
 		return employeeBirth;
 	}
-	public void setEmployeeBirth(String employeeBirth) {
+	public void setEmployeeBirth(java.sql.Date employeeBirth) {
 		this.employeeBirth = employeeBirth;
 	}
 	public String getEmployeeName() {
@@ -56,28 +57,18 @@ public class EmployeeCommand {
 	public void setEmployeePh(String employeePh) {
 		this.employeePh = employeePh;
 	}
-	public String getEmployeeRegist() {
+	public java.sql.Date getEmployeeRegist() {
 		return employeeRegist;
 	}
-	public void setEmployeeRegist(String employeeRegist) {
+	public void setEmployeeRegist(java.sql.Date employeeRegist) {
 		this.employeeRegist = employeeRegist;
 	}
-	public String getEmployeeEmali() {
-		return employeeEmali;
+	public String getEmployeeEmail() {
+		return employeeEmail;
 	}
-	public void setEmployeeEmali(String employeeEmali) {
-		this.employeeEmali = employeeEmali;
+	public void setEmployeeEmail(String employeeEmail) {
+		this.employeeEmail = employeeEmail;
 	}
 	
-	public String getEmployeePwCon() {
-		return employeePwCon;
-	}
-	public void setEmployeePwCon(String employeePwCon) {
-		this.employeePwCon = employeePwCon;
-	}
-	public boolean isPwEqualToPwCon() {
-		if(employeePw.equals(employeePwCon)) return true;
-		return false;
-	}
- 
+
 }

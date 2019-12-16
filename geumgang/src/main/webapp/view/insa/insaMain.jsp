@@ -13,74 +13,74 @@ function myAccFunc1() {
   var x = document.getElementById("demoAcc1");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
-    x.previousElementSibling.className += " w3-light-blue";
+    x.previousElementSibling.className += " w3-blue-gray";
   } else { 
     x.className = x.className.replace(" w3-show", "");
     x.previousElementSibling.className = 
-    x.previousElementSibling.className.replace(" w3-light-blue", "");
+    x.previousElementSibling.className.replace(" w3-blue-gray", "");
   }
 }
 function myAccFunc2() {
 	  var x = document.getElementById("demoAcc2");
 	  if (x.className.indexOf("w3-show") == -1) {
 	    x.className += " w3-show";
-	    x.previousElementSibling.className += " w3-light-blue";
+	    x.previousElementSibling.className += " w3-blue-gray";
 	  } else { 
 	    x.className = x.className.replace(" w3-show", "");
 	    x.previousElementSibling.className = 
-	    x.previousElementSibling.className.replace(" w3-light-blue", "");
+	    x.previousElementSibling.className.replace(" w3-blue-gray", "");
 	  }
 	}
 function myAccFunc3() {
 	  var x = document.getElementById("demoAcc3");
 	  if (x.className.indexOf("w3-show") == -1) {
 	    x.className += " w3-show";
-	    x.previousElementSibling.className += " w3-light-blue";
+	    x.previousElementSibling.className += " w3-blue-gray";
 	  } else { 
 	    x.className = x.className.replace(" w3-show", "");
 	    x.previousElementSibling.className = 
-	    x.previousElementSibling.className.replace(" w3-light-blue", "");
+	    x.previousElementSibling.className.replace(" w3-blue-gray", "");
 	  }
 	}
 function myAccFunc4() {
 	  var x = document.getElementById("demoAcc4");
 	  if (x.className.indexOf("w3-show") == -1) {
 	    x.className += " w3-show";
-	    x.previousElementSibling.className += " w3-light-blue";
+	    x.previousElementSibling.className += " w3-blue-gray";
 	  } else { 
 	    x.className = x.className.replace(" w3-show", "");
 	    x.previousElementSibling.className = 
-	    x.previousElementSibling.className.replace(" w3-light-blue", "");
+	    x.previousElementSibling.className.replace(" w3-blue-gray", "");
 	  }
 	}
 function myAccFunc5() {
 	  var x = document.getElementById("demoAcc5");
 	  if (x.className.indexOf("w3-show") == -1) {
 	    x.className += " w3-show";
-	    x.previousElementSibling.className += " w3-light-blue";
+	    x.previousElementSibling.className += " w3-blue-gray";
 	  } else { 
 	    x.className = x.className.replace(" w3-show", "");
 	    x.previousElementSibling.className = 
-	    x.previousElementSibling.className.replace(" w3-light-blue", "");
+	    x.previousElementSibling.className.replace(" w3-blue-gray", "");
 	  }
 	}
 function myAccFunc6() {
 	  var x = document.getElementById("demoAcc6");
 	  if (x.className.indexOf("w3-show") == -1) {
 	    x.className += " w3-show";
-	    x.previousElementSibling.className += " w3-light-blue";
+	    x.previousElementSibling.className += " w3-blue-gray";
 	  } else { 
 	    x.className = x.className.replace(" w3-show", "");
 	    x.previousElementSibling.className = 
-	    x.previousElementSibling.className.replace(" w3-light-blue", "");
+	    x.previousElementSibling.className.replace(" w3-blue-gray", "");
 	  }
 	}
 </script>
 
 <body>
 <!-- Navigation bar -->
-<div class="w3-bar w3-cyan">
-  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+<div class="w3-bar w3-teal">
+  <a href="main" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
   <a href="#" class="w3-bar-item w3-button">기획부</a>
   <a href="#" class="w3-bar-item w3-button">영업부</a>
   <a href="#" class="w3-bar-item w3-button">관리부</a>
@@ -94,7 +94,7 @@ function myAccFunc6() {
   사원채용 <i class="fa fa-caret-down"></i>
   </button>
   <div id="demoAcc1" class="w3-hide w3-white w3-card">
-    <a href="recruitRegist" class="w3-bar-item w3-button">채용공고 작성</a>
+    <a href="recruitList" class="w3-bar-item w3-button">채용공고 목록</a>
   </div>
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc2()">
   사원정보 <i class="fa fa-caret-down"></i>

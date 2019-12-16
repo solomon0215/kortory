@@ -10,8 +10,8 @@ public class RecruitDTO implements Serializable {
 	private String recruitPerfer;
 	private Integer recruitPersonnel;
 	private String recruitQualification;
-	private Date recruitRegiDate;
-	private Date recruitEndDate;
+	private java.sql.Date recruitRegiDate;
+	private java.sql.Date recruitEndDate;
 	private Integer recruitCost;
 	private String inSaNum;
 	public RecruitDTO() {}

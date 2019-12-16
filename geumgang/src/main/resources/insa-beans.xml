@@ -9,8 +9,10 @@
       <bean id = "insaLoginService" class ="Service.Insa.InsaLoginService"/>
       <bean id = "insaLogoutService" class="Service.Insa.InsaLogoutService" />
       <bean id = "recruitRegiService" class="Service.Insa.RecruitRegiService" />
+      <bean id = "employeeInsertService" class="Service.Insa.EmployeeInsertService" />
       
 <!-- Repositopry -->
       <bean id = "insaRepository" class ="Repository.Insa.InsaRepository"/>            
       <bean id = "recruitRepository" class="Repository.Insa.RecruitRepository"/>
+      <bean id = "employeeRepository" class="Repository.Insa.EmployeeRepository"/>
 </beans>
