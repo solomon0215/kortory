@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+</style>
 </head>
 <body>
-	<h2>You Need Sign in My site</h2>
+	<h3>Welcome! I'm KORTORY!</h3>
 </body>
 </html>
