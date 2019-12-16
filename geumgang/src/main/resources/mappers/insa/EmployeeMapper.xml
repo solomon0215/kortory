@@ -11,15 +11,15 @@
 	
 <resultMap type="employeeDTO" id="baseEmployee">
 	    
-		<id column="" jdbcType="VARCHAR" property="Num"/>
-		<result column="" jdbcType="VARCHAR" property="Id"/>
-		<result column="I" jdbcType="VARCHAR" property="Pw"/>
-		<result column="" jdbcType = "DATE" property="Birth"/>
-		<result column="" jdbcType="VARCHAR" property="Name"/>		
-		<result column="" jdbcType="CHAR" property="Gender"/>
-		<result column="" jdbcType="VARCHAR" property="Ph"/>
-		<result column="" jdbcType="VARCHAR" property="Email"/>
-		<result column="" jdbcType="DATE" property="Regist"/>		
+		<id column="EMPLOYEE_NUM" jdbcType="VARCHAR" property="employeeNum"/>
+		<result column="EMPLOYEE_ID" jdbcType="VARCHAR" property="employeeId"/>
+		<result column="EMPLOYEE_PW" jdbcType="VARCHAR" property="employeePw"/>
+		<result column="EMPLOYEE_BIRTH" jdbcType = "DATE" property="employeeBirth"/>
+		<result column="EMPLOYEE_NAME" jdbcType="VARCHAR" property="employeeName"/>		
+		<result column="EMPLOYEE_GENDER" jdbcType="CHAR" property="employeeGender"/>
+		<result column="EMPLOYEE_PH" jdbcType="VARCHAR" property="employeePh"/>
+		<result column="EMPLOYEE_REGIST" jdbcType="VARCHAR" property="employeeEmail"/>
+		<result column="EMPLOYEE_EMAIL" jdbcType="DATE" property="employeeRegist"/>		
 	</resultMap>	
 <!--     
 insert first
@@ -30,5 +30,8 @@ when num == 304 then into young_up
 select * from ;
 
  -->	
+<insert id="insertEmployee" parameterType="recruitDTO"> 
+
+</insert> 
 
 </mapper>

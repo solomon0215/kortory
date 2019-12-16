@@ -11,7 +11,7 @@ public class EmployeeRepository {
 	private final String namespace = "EmployeeMapper";
 
 	public Integer insertEmployee(EmployeeDTO dto) {
-		String statement = namespace + ".employeeInsert";
+		String statement = namespace + ".insertEmployee";
 		Integer result = sqlSession.insert(statement, dto);
 		return result;
 	}
