@@ -41,7 +41,7 @@
   </table>
   </dvi>
   <div class="w3-container" align="center">
-   <a href="#" class="w3-btn w3-green">등록</a>
+   <a href="http://localhost:8080/geumgang/gwanri/agreementConditionWrite" class="w3-btn w3-green">등록</a>
 </div>
   
 </div>

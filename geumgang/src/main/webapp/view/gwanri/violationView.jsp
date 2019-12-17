@@ -11,9 +11,9 @@
 <body>  
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <div class="w3-container w3-full">
-<p><button class="w3-button w3-block w3-black">신규 계약 위반사항 목록</button></p>
-<p><button class="w3-button w3-block w3-teal">계약 위반처리 목록</button></p>
-<p><button class="w3-button w3-block w3-red">위약금 목록</button></p>
+<p><button class="w3-button w3-block w3-pale-red">신규 계약 위반사항 목록</button></p>
+<p><button class="w3-button w3-block w3-pale-yellow">계약 위반처리 목록</button></p>
+<p><button class="w3-button w3-block w3-pale-blue">위약금 목록</button></p>
 </div>
 </body>
 </html>

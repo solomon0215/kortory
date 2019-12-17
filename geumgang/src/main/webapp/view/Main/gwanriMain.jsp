@@ -6,7 +6,7 @@
 
 <!DOCTYPE html>
 <style>
-.w3-lobster {font-family: 'Sunflower', sans-serif;
+.w3-lobster {font-family: 'Do Hyeon', sans-serif;
 }
 .w3-myfont {font-family: 'Noto Sans KR', sans-serif;
 }
@@ -17,7 +17,7 @@
 <meta charset="UTF-8">
 <title>관리부 메인</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Sunflower:300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR&display=swap" rel="stylesheet">
 
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="js/jquery.form.js"></script>

@@ -20,10 +20,10 @@ public class AgreementConditionController {
 	@Autowired
 	AgreementConditionService acls;
 	
-	@RequestMapping("gwanri/agreementCondition") //폼
+	@RequestMapping("gwanri/agreementConditionWrite") //폼
 	public String form(@RequestParam(value="page" ,
 	required = false) AgreementConditionCommand acc, Integer page, Model model){
-		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition.jsp");
+		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_form.jsp");
 		return "Main/gwanriMain";
 	}
 	@RequestMapping(value = "gwanri/agreementConditionWritePro",

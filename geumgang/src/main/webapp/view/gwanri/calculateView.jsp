@@ -11,9 +11,9 @@
 <body>  
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <div class="w3-container w3-full">
-<p><button class="w3-button w3-block w3-black">지급 정산금 목록</button></p>
-<p><button class="w3-button w3-block w3-teal">미지급 정산금 목록</button></p>
-<p><button class="w3-button w3-block w3-red">업체별 집계 목록</button></p>
+<p><button class="w3-button w3-block w3-pale-red">지급 정산금 목록</button></p>
+<p><button class="w3-button w3-block w3-pale-yellow">미지급 정산금 목록</button></p>
+<p><button class="w3-button w3-block w3-pale-blue">업체별 집계 목록</button></p>
 </div>
 </body>
 </html>
