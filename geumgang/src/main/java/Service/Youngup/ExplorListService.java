@@ -15,7 +15,11 @@ public class ExplorListService {
 	private YoungupSelectRepository youngSelRepo;
 	
 	public void basicList(Model model) { //모든 리스트 뽑기
-		List<ExplorListDTO> list ;
+		/*
+		 * List<ExplorListDTO> list = youngSelRepo.selectExplorList();
+		 * model.addAttribute("explorList", list);
+		 */
+		
 	}
 	public void conditionList(Model model, String num, String companyId) { //검색 조건이 있는 리스트
 		

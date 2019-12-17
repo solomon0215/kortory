@@ -7,6 +7,37 @@
 	<sql id="baseYoungUP"> <!-- 영업부 직원 테이블 컬럼 -->
 		YOUNG_UP_NUM,YOUNG_UP_ID,YOUNG_UP_PW,YOUNG_UP_NAME,YOUNG_UP_EMAIL,YOUNG_UP_PH,YOUNG_UP_REGIST,YOUNG_UP_BIRTH,YOUNG_UP_GENDER
 	</sql>
+	<sql id="explorList">
+		COMPANY_ID,COMPANY_REG_NUM,COMPANY_PW,COMPANY_NAME,COMPANY_ADDR,COMPANY_PH,COMPANY_TYPE,COMPANY_EMAIL,
+		exploration_num,exploration_type,exploration_schedule,exploration_effect,exploration_mana_name,exploration_avail_time,
+		exploration_avail_date,exploration_avail_holi,exploration_limit_age,exploration_limit_per,exploration_condition,
+		exploration_file,exploration_submit, young_up_num	
+	</sql>
+	<resultMap type="exlDTO" id="exlMap"><!-- ExplorListDTO  클래스 resultMap -->
+		<id column="YOUNG_UP_NUM" jdbcType="VARCHAR" property="youngUpNum"/> <!-- 사원번호 -->
+	private String companyId; 				//업체 아이디
+	private String companyRegNum; 			//업체 사업자번호
+	private String companyPw;				//업체 비밀번호
+	private String companyName;				//업체 명
+	private String companyAddr;				//업체 주소
+	private String companyPh;				//업체 번호
+	private String companyType;				//업체 유형
+	private String companyEmail;			//업체 이메일
+	private Integer explorationNum;			//답사 보고서 번호(PK)	서류번호	NUMBER	
+	private String explorationType; 		//업체 유형	유형	VARCHAR2(20)	
+	private Date explorationSchedule;		//사전답사 예정일	예정일	DATE	
+	private Date explorationEffect;			//사전답사 실시일	실시일	DATE	
+	private String explorationManaName;		//업체담당자 이름	이름	VARCHAR2(50)	
+	private String explorationAvailTime;	//업체 방문 가능시간	가능시간	VARCHAR2(1000)
+	private String explorationAvailDate;	//업체 사용가능 날짜	가능날짜	VARCHAR2(2000)
+	private String explorationAvailHoli;	//공휴일 사용 가능 여부	여부	VARCHAR2(10)	
+	private Integer explorationLimitAge;	//업체 방문 제한 나이	나이	NUMBER	
+	private Integer explorationLimitPer;	//업체 방무문 제한 인원	인원	NUMBER	
+	private String explorationCondition;	//업체 방문 제한 조건	조건	VARCHAR2(1000)
+	private String explorationFile	;		//증빙자료	자료	VARCHAR2(2000)	
+	private String explorationSubmit;		//제출여부	여부	VARCHAR2(10)	
+	private String youngUpNum;		
+	</resultMap>
 	<resultMap type="youngDTO" id="youngDTOForm"><!--  YoungupDTO 클래스 resultMap -->
 		<id column="YOUNG_UP_NUM" jdbcType="VARCHAR" property="youngUpNum"/> <!-- 사원번호 -->
 		<result column="YOUNG_UP_ID" jdbcType="VARCHAR" property="youngUpId"/><!-- 아이디 -->
