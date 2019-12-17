@@ -14,8 +14,10 @@
 		exploration_file,exploration_submit, young_up_num	
 	</sql>
 	<resultMap type="exlDTO" id="exlMap"><!-- ExplorListDTO  클래스 resultMap -->
-		<id column="YOUNG_UP_NUM" jdbcType="VARCHAR" property="youngUpNum"/> <!-- 사원번호 -->
-	private String companyId; 				//업체 아이디
+		
+		<id column="COMPANY_ID" jdbcType="VARCHAR" property="companyId"/> <!-- 업체 아이디 (PK)-->
+		<result column="YOUNG_UP_NUM" jdbcType="VARCHAR" property="youngUpNum"/> <!-- 사원번호 -->
+	<!-- private String companyId; 				//업체 아이디
 	private String companyRegNum; 			//업체 사업자번호
 	private String companyPw;				//업체 비밀번호
 	private String companyName;				//업체 명
@@ -36,7 +38,7 @@
 	private String explorationCondition;	//업체 방문 제한 조건	조건	VARCHAR2(1000)
 	private String explorationFile	;		//증빙자료	자료	VARCHAR2(2000)	
 	private String explorationSubmit;		//제출여부	여부	VARCHAR2(10)	
-	private String youngUpNum;		
+	private String youngUpNum;		 -->
 	</resultMap>
 	<resultMap type="youngDTO" id="youngDTOForm"><!--  YoungupDTO 클래스 resultMap -->
 		<id column="YOUNG_UP_NUM" jdbcType="VARCHAR" property="youngUpNum"/> <!-- 사원번호 -->
