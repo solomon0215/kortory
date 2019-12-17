@@ -5,12 +5,13 @@
 
 <cache />
 	<sql id="baseRecruit">
-		RECRUIT_NUM, RECRUIT_CONTENT, RECRUIT_PREFER, RECRUIT_PERSONNEL,
+		RECRUIT_TITLE, RECRUIT_NUM, RECRUIT_CONTENT, RECRUIT_PREFER, RECRUIT_PERSONNEL,
 		RECRUIT_QUALIFICATION,RECRUIT_REGI_DATE, RECRUIT_END_DATE, RECRUIT_COST, IN_SA_NUM
 	</sql>
 	<resultMap type="recruitDTO" id="baseRecruit">
 		<!-- setter -->
 		<id column="RECRUIT_NUM" jdbcType="BIGINT" property="recruitNum"/>
+		<result column="RECRUIT_TITLE" jdbcType="VARCHAR" property="recruitTitle"/>
 		<result column="RECRUIT_CONTENT" jdbcType="VARCHAR" property="recruitContent"/>
 		<result column="RECRUIT_PREFER" jdbcType="VARCHAR" property="recruitPrefer"/>
 		<result column="RECRUIT_PERSONNEL" jdbcType="BIGINT" property="recruitPersonnel"/>
@@ -24,7 +25,7 @@
 	
 	<insert id="insertRecruit" parameterType="recruitDTO"> 
 		insert into recruit (<include refid="baseRecruit" />)
-		values(insa_seq.nextval, #{recruitContent}, #{recruitPrefer} ,
+		values(#{recruitTitle}, insa_seq.nextval,#{recruitContent} , #{recruitPrefer} ,
 		#{recruitPersonnel}, #{recruitQualification}, #{recruitRegiDate}, #{recruitEndDate},
 		#{recruitCost}, #{inSaNum})
 	</insert>

@@ -140,12 +140,14 @@ function myAccFunc6() {
      <table class="w3-table-all w3-centered">
       <tr class="w3-teal">
         <th>번호</th>
+        <th>제목</th>
         <th>작성일</th>
         <th>작성자</th>
       </tr>
     </thead>
     <tr>
       <td>1</td>
+      <td>중국인 전문 가이드 모집!</td>
       <td>2019-12-09</td>
       <td>김지유</td>
     </tr>

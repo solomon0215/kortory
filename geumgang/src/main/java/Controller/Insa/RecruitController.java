@@ -1,5 +1,7 @@
 package Controller.Insa;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -29,14 +31,16 @@ public class RecruitController {
 	
 	
 	@RequestMapping(value="/insa/recruitRegiPro", method=RequestMethod.POST) //채용공고 작성
-	public String write(RecruitRegiCommand recruitCommand, HttpSession session) {
-		recruitRegiService.recruitRegist(recruitCommand,session);
+	public String write(RecruitRegiCommand recruitCommand, HttpSession session,HttpServletRequest request) {
+		recruitRegiService.recruitRegist(recruitCommand,session,request);
 		return "redirect:/recruitList";
 	}
 	
 	@RequestMapping(value="/insa/recruitRegist", method=RequestMethod.GET)
 	public String regist(RecruitRegiCommand recruitRegiCommand) {
-		
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+		Date date = new Date();
+		recruitRegiCommand.setRegiDate(fmt.format(date));
 		return "insa/recruitRegist"; //jsp 경로
 	}
 	

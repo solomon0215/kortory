@@ -15,6 +15,7 @@ public class EmployeeDTO implements Serializable  {
 	String employeePh;
 	java.sql.Date employeeRegist;
 	String employeeEmail;
+	String employeeKind;
 	public String getEmployeeNum() {
 		return employeeNum;
 	}

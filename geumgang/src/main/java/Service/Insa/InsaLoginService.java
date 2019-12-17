@@ -23,7 +23,7 @@ public class InsaLoginService {
 		InsaDTO insa = new InsaDTO();
 		insa.setInsaId(insaLogCommand.getInSaId());
 		insa = insaRepository.userCheck(insa);
-		System.out.println(Encrypt.getEncryption(insaLogCommand.getInSaPw()));
+		System.out.println(Encrypt.getEncryption(insaLogCommand.getInSaPw())); //암호
 		InsaAuthInfo authInfo = null;
 		if(insa == null) {
 			result = 0;
@@ -31,7 +31,7 @@ public class InsaLoginService {
 			if(insa.getInsaPw().equals(Encrypt.getEncryption(insaLogCommand.getInSaPw()))) {
 				authInfo = new InsaAuthInfo(insa.getInsaId(), insa.getInsaEmail(), 
 						insa.getInsaName(), 303, insa.getInsaNum());
-				session.setAttribute("authLog", authInfo);
+				session.setAttribute("authLog", authInfo); //로그인정보
 				result = 1;
 			}else {
 				result = -1;

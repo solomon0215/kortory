@@ -3,6 +3,7 @@ package Command.Insa;
 import java.util.Date;
 
 public class RecruitRegiCommand {
+	private String regiTitle;
 	private String regiContent;
 	private String regiPrefer;
 	private int regiPersonnel;
@@ -11,6 +12,13 @@ public class RecruitRegiCommand {
 	private String endDate;
 	private int regiCost;
 	private String inSaNum;
+	
+	public String getRegiTitle() {
+		return regiTitle;
+	}
+	public void setRegiTitle(String regiTitle) {
+		this.regiTitle = regiTitle;
+	}
 	public String getRegiContent() {
 		return regiContent;
 	}

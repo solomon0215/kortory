@@ -14,6 +14,7 @@ public class EmployeeCommand {
 	public String employeePh;
 	public String employeeRegist;
 	public String employeeEmali;
+	public String employeeKind;
 	public String getEmployeeNum() {
 		return employeeNum;
 	}

@@ -100,7 +100,7 @@ function myAccFunc6() {
   사원정보 <i class="fa fa-caret-down"></i>
   </button>
   <div id="demoAcc2" class="w3-hide w3-white w3-card">
-    <a href="#" class="w3-bar-item w3-button">사원정보 등록</a>
+    <a href="employeeInfoInsert" class="w3-bar-item w3-button">사원정보 등록</a>
     <a href="#" class="w3-bar-item w3-button">근로계약서 열람</a>
     <a href="#" class="w3-bar-item w3-button">인사고과 열람</a>
   </div>

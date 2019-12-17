@@ -19,19 +19,29 @@
 		<result column="EMPLOYEE_GENDER" jdbcType="CHAR" property="employeeGender"/>
 		<result column="EMPLOYEE_PH" jdbcType="VARCHAR" property="employeePh"/>
 		<result column="EMPLOYEE_REGIST" jdbcType="VARCHAR" property="employeeEmail"/>
-		<result column="EMPLOYEE_EMAIL" jdbcType="DATE" property="employeeRegist"/>		
+		<result column="EMPLOYEE_EMAIL" jdbcType="DATE" property="employeeRegist"/>
+		<result column="EMPLOYEE_KIND" jdbcType="BIGINT" property="employeeKind"/>		
 	</resultMap>	
-<!--     
-insert first
-when employeenum == 301 then into gwan_ri
-when num == 302 then into  ki_hoek
-when num == 303 then into in_sa
-when num == 304 then into young_up
-select * from ;
 
- -->	
-<insert id="insertEmployee" parameterType="recruitDTO"> 
-
+<insert id="insertEmployee" parameterType="employeeDTO"> 
+   insert into
+	<if test="kind  == 301">
+	gwan_ri(gwan_ri_num)
+   values(to_char(sysdate)+#{employeeName}+#{employeeGender}+#{kind})
+	</if> 
+	<if test="kind  == 302">
+	ki_hoekki_hoek_num)
+   values(to_char(sysdate)+#{employeeName}+#{employeeGender}+#{kind})
+	</if> 
+	<if test="kind  == 303">
+	in_sa(in_sa_num)
+   values(to_char(sysdate)+#{employeeName}+#{employeeGender}+#{kind})
+	</if> 
+	<if test="kind  == 304">
+	young_up(young_up_num)
+   values(to_char(sysdate)+#{employeeName}+#{employeeGender}+#{kind})
+	</if> 
+   
 </insert> 
 
 </mapper>
