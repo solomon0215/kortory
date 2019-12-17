@@ -19,15 +19,15 @@
 		<center><h2>협약조건안 상세내역</h2></center><br/>
 			
 <form:form name ="frm" id ="frm" method = "post" 
-	commandName = "memberCommand" action ="memberModifyPro">
+	commandName = "agreementConditionCommand" action ="agreementConditionModifyPro">
 <table border = 1  width = 600 align = "center" cellpadding = 3 >
-		<tr><td >번호<spring:message code="userId.userPw" /></td>
+		<tr><td >번호<spring:message code="agreementConditionNum" /></td>
 		<td >&nbsp;</td></tr>
-	<tr><td>업체 희망 정산 비율<spring:message code="userModify" /></td>
+	<tr><td>업체 희망 정산 비율<spring:message code="agreementConditionRatio" /></td>
 		<td >&nbsp;</td></tr>		 
-	<tr><td>정산기준 시간<spring:message code="password" /></td>
+	<tr><td>정산기준 시간<spring:message code="agreementConditionSett" /></td>
 		<td >&nbsp;</td></tr>
-	<tr><td>작성일<spring:message code="birth.gender" /></td>
+	<tr><td>작성일<spring:message code="agreementConditionDate" /></td>
 		<td >&nbsp;</td></tr>
 </table>
 <br />

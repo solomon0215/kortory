@@ -3,16 +3,16 @@ package Command.Gwanri;
 import java.sql.Date;
 
 public class AgreementConditionCommand {
-	int agreementConditionNum; 
+	Long agreementConditionNum; 
 	Date agreementConditionDate; 
 	Float agreementConditionRatio; 
-	int agreementConditionSett;
+	Long agreementConditionSett;
 	String gwanRiNum;
 	
-	public int getAgreementConditionNum() {
+	public Long getAgreementConditionNum() {
 		return agreementConditionNum;
 	}
-	public void setAgreementConditionNum(int agreementConditionNum) {
+	public void setAgreementConditionNum(Long agreementConditionNum) {
 		this.agreementConditionNum = agreementConditionNum;
 	}
 	public Date getAgreementConditionDate() {
@@ -27,10 +27,10 @@ public class AgreementConditionCommand {
 	public void setAgreementConditionRatio(Float agreementConditionRatio) {
 		this.agreementConditionRatio = agreementConditionRatio;
 	}
-	public int getAgreementConditionSett() {
+	public Long getAgreementConditionSett() {
 		return agreementConditionSett;
 	}
-	public void setAgreementConditionSett(int agreementConditionSett) {
+	public void setAgreementConditionSett(Long agreementConditionSett) {
 		this.agreementConditionSett = agreementConditionSett;
 	}
 	public String getGwanRiNum() {
@@ -39,6 +39,4 @@ public class AgreementConditionCommand {
 	public void setGwanRiNum(String gwanRiNum) {
 		this.gwanRiNum = gwanRiNum;
 	}
-	
-	
 }

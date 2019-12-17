@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Command.Gwanri.AgreementConditionCommand;
 import Model.GwanriDTO.AgreementConditionDTO;
 import Model.GwanriDTO.BudgetBillDTO;
 import Model.GwanriDTO.GwanriDTO;
@@ -42,6 +43,10 @@ public class GwanriSelectRepository {
     	String statement =  namespace + ".boardList";
 		return sqlSession.selectList(statement, acdto);
     }
+	public List<AgreementConditionDTO> getBoardList(Integer page, AgreementConditionCommand acc) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 	
 
