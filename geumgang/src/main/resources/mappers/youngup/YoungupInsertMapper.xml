@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="youngupInsertMapper">
+	<sql id="exploration">
+		exploration_num,company_id,exploration_type,exploration_schedule,exploration_effect,exploration_mana_name,exploration_avail_time,
+		exploration_avail_date,exploration_avail_holi,exploration_limit_age,exploration_limit_per,exploration_condition,exploration_file,
+		exploration_submit,young_up_num
+	</sql>
+	<cache />
+	<insert id="insertExplor" parameterType="expDTO">
+		INSERT INTO EXPLORATION(<include refid="exploration" />)
+		values(youngup_seq.nextval,#{companyId},null,null,null,null,null,
+		null,null,null,null,null,null,
+		null,#{youngUpNum})
+	</insert>
+</mapper>

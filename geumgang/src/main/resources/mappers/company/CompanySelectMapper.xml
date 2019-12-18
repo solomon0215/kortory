@@ -4,10 +4,9 @@
 <mapper namespace="companySelectMapper">
 	
 <cache />
-
-	<sql id="company">
-		COMPANY_ID,COMPANY_REG_NUM,COMPANY_PW,COMPANY_NAME,COMPANY_ADDR,COMPANY_PH,COMPANY_TYPE,COMPANY_EMAIL,COMPANY_PER_APP,COMPANY_AGG_APP
-	</sql>
+	<!-- company 테이블 컬럼 -->
+	<sql id="company">COMPANY_ID,COMPANY_REG_NUM,COMPANY_PW,COMPANY_NAME,COMPANY_ADDR,COMPANY_PH,COMPANY_TYPE,COMPANY_EMAIL,COMPANY_PER_APP,COMPANY_AGG_APP</sql>
+	<!-- 리스트로 companyDTO 받아오는 resultMap -->
 	<resultMap type="comDTO" id="companyInfo"> <!-- CompanyDTO에 담는resultMap -->
 		<id column="COMPANY_ID" jdbcType="VARCHAR" property="companyId"/>
 		<result column="COMPANY_REG_NUM" jdbcType="VARCHAR" property="companyRegNum"/>
@@ -20,6 +19,7 @@
 		<result column="COMPANY_PER_APP" jdbcType="VARCHAR" property="companyPerApp"/>
 		<result column="COMPANY_AGG_APP" jdbcType="VARCHAR" property="companyAggApp"/>
 	</resultMap>
+	<!-- 업체 등록시 아이디 중복 확인 -->
 	<select id="idConfirm" parameterType="string" resultType="string">
 		SELECT COMPANY_ID FROM COMPANY  WHERE COMPANY_ID = #{userId} UNION 
 		SELECT user_id FROM KORTORY_USER WHERE user_id = #{userId} UNION 
@@ -28,11 +28,27 @@
 		SELECT ki_hoek_id FROM KI_HOEK WHERE ki_hoek_id = #{userId} UNION 
 		SELECT young_up_id FROM YOUNG_UP WHERE young_up_id = #{userId}
 	</select>
-	<select id="companyLogin" parameterType="comDTO"  resultMap="companyInfo"><!-- 로그인 정보 대조하기 위해서 검색하는 select -->
+	<!-- 로그인 정보 대조하기 위해서 검색하는 select -->
+	<select id="companyLogin" parameterType="comDTO"  resultMap="companyInfo">
 		select <include refid="company"/> 
 		from company 
 		<where>
 			COMPANY_ID = #{companyId} and COMPANY_PW = #{companyPw}
 		</where>
+	</select>
+	<!-- 신규업체 조회 -->
+	<select id="newComList" parameterType="hashMap" resultMap="companyInfo">
+		select <include refid="company"/>
+		from company
+		<choose>
+            <when test="exp.size() != 0">
+            	<where>
+                COMPANY_ID NOT IN 
+                <foreach collection="exp" item="com" index="index" separator="," open="(" close=")">
+                    #{com.companyId}
+                </foreach>
+                </where>
+            </when>
+        </choose>
 	</select>
 </mapper>

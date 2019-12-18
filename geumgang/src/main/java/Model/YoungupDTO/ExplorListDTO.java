@@ -7,7 +7,6 @@ import java.sql.Date;
 public class ExplorListDTO implements Serializable{ //사전답사보고서 테이블(exploration) + 업체테이블(company)
 	private String companyId; 				//업체 아이디
 	private String companyRegNum; 			//업체 사업자번호
-	private String companyPw;				//업체 비밀번호
 	private String companyName;				//업체 명
 	private String companyAddr;				//업체 주소
 	private String companyPh;				//업체 번호
@@ -38,12 +37,6 @@ public class ExplorListDTO implements Serializable{ //사전답사보고서 테이블(expl
 	}
 	public void setCompanyRegNum(String companyRegNum) {
 		this.companyRegNum = companyRegNum;
-	}
-	public String getCompanyPw() {
-		return companyPw;
-	}
-	public void setCompanyPw(String companyPw) {
-		this.companyPw = companyPw;
 	}
 	public String getCompanyName() {
 		return companyName;

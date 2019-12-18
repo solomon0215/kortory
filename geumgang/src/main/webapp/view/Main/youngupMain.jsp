@@ -22,23 +22,25 @@
 }
 </style>
 <body>
-<div class="w3-bar w3-yellow w3-lobster w3-xlarge w3-text-middle">
-  <a href="#" class="w3-bar-item w3-button">Home</a>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+<div class="w3-container w3-center" style="background-color: #ffffb3;">
+	<div class="w3-bar w3-xlarge" style="background-color: #ffffb4;">
+	  	<a href="http://localhost:8080/geumgang/youngup/main" class="w3-bar-item w3-button w3-margin-left w3-margin-right">Main</a>
+		<a href="http://localhost:8080/geumgang/youngup/main" class="w3-bar-item w3-button w3-margin-left w3-margin-right">Tour List</a>
+		<a href="http://localhost:8080/geumgang/youngup/myPage" class="w3-bar-item w3-button w3-margin-left w3-margin-right">MyPage</a>
+		<a href="http://localhost:8080/geumgang/youngup/myWork" class="w3-bar-item w3-button w3-margin-left w3-margin-right">Working Page</a>
+	</div>
 </div>
 <div class="w3-row">
 	<!-- Sidebar -->
-	<div class="w3-sidebar w3-dark-gray w3-bar-block w3-myfont w3-col w3-padding-small" style="width: 20%;">
+	<div class="w3-sidebar w3-bar-block w3-myfont w3-col w3-padding-small" style="width: 20%; background-color: #e6f7ff;">
 	    <p class="w3-bar-item w3-xlarge ">영업부 업무 메뉴</p>
 		<div>
 		    <ul>
 		         <li class="menu">
 		             <a href="#tabContent01" style="text-decoration:none" class="w3-large">업체 영업 업무</a>
 		            <ul>
-		                <li>신규업체</li>
-		                <li><a href="explorList" style="text-decoration:none">사전답사 보고서</a></li>
+		                <li><a href="http://localhost:8080/geumgang/youngup/newcompany" style="text-decoration:none">신규업체</a></li>
+		                <li><a href="http://localhost:8080/geumgang/youngup/explorList" style="text-decoration:none">사전답사 보고서</a></li>
 		                <li>협력 조건안</li>
 		                <li>업체 계약서</li>
 		            </ul>

@@ -12,7 +12,7 @@ public class YoungupMainController {
 	@RequestMapping("/youngup/main")
 	public String youngMain(Model model, HttpServletRequest request) {
 		if(request.getSession().getAttribute("authLog") == null) {
-			return "redirect: ../staff/login";
+			return "Youngup/back";
 		}
 		model.addAttribute("pageName", "../FirstView/youngFirst.jsp");
 		return "Main/youngupMain";
