@@ -16,7 +16,7 @@ public class KiheokLogCommandValidator implements Validator {
 	public void validate(Object target, Errors errors) {
 		// TODO Auto-generated method stub
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "KiHoekId", "required");
-		ValidationUtils.rejectIfEmpty(errors, "KihoekPw", "required");
+		ValidationUtils.rejectIfEmpty(errors, "kiHoekPw", "required");
 	}
 	
 }

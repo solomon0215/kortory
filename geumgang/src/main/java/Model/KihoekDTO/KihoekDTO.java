@@ -1,8 +1,9 @@
 package Model.KihoekDTO;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class KihoekDTO {
+public class KihoekDTO implements Serializable{
 	String KiHoekNum;
 	String KiHoekId;
 	String KiHoekPw;

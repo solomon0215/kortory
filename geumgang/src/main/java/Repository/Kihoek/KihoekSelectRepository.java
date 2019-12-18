@@ -4,6 +4,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Model.KihoekDTO.KihoekDTO;
+
 @Repository
 public class KihoekSelectRepository {
 	
@@ -11,13 +13,8 @@ public class KihoekSelectRepository {
 	private SqlSession sqlSession;	
 	private final String namespace = "KihoekSelectMapper";
 	
-	public Integer logConfirm(String kiHoekId) {
+	public KihoekDTO logConfirm(KihoekDTO kDto) {
 		String statement = namespace + ".logConfirm";
-		String id = sqlSession.selectOne(statement, kiHoekId) ;
-		if(id != null) {
-			return 1;
-		}
-		return 0;
-		
-	}		
+		return sqlSession.selectOne(statement, kDto) ;
+	}
 }
