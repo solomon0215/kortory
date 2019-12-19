@@ -12,7 +12,6 @@ import Command.Insa.EmployeeCommand;
 public class EmployeeCommandValidator implements Validator {
 	private static final String emailRegExp = "^[_A-Za-z0-9-](.[_A-Za-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
 	private static final String passwordEXP = "[a-z0-9]{6,16}";
-	private static final String birthRegExp = "^\\d{4}-\\d{2}-\\d{2}$";
 	private Pattern emailPattern;
 	private Pattern pwPattern;
 

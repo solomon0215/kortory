@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	    
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,12 +99,13 @@ function myAccFunc6() {
   </button>
   <div id="demoAcc1" class="w3-hide w3-white w3-card">
     <a href="recruitList" class="w3-bar-item w3-button">채용공고 목록</a>
+    <a href="#" class="w3-bar-item w3-button">이력서 확인</a>
   </div>
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc2()">
   사원정보 <i class="fa fa-caret-down"></i>
   </button>
   <div id="demoAcc2" class="w3-hide w3-white w3-card">
-    <a href="#" class="w3-bar-item w3-button">사원정보 등록</a>
+    <a href="employeeInfoInsert" class="w3-bar-item w3-button">사원정보 등록</a>
     <a href="#" class="w3-bar-item w3-button">근로계약서 열람</a>
     <a href="#" class="w3-bar-item w3-button">인사고과 열람</a>
   </div>
@@ -133,31 +138,13 @@ function myAccFunc6() {
   </div>
 </div>
 <!-- Page Content -->
-	<div class =" w3-container" style="margin-left:180px" >
-		<center><h2>채용공고 목록</h2></center><br/>
-			<table class="w3-table-all">
-    <thead>
-     <table class="w3-table-all w3-centered">
-      <tr class="w3-teal">
-        <th>번호</th>
-        <th>제목</th>
-        <th>작성일</th>
-        <th>작성자</th>
-      </tr>
-    </thead>
-    <c:forEach var="recruit" items="${recruit}" varStatus="status">
-    <tr>
-      <td>${status.count }</td>
-      <td>중국인 전문 가이드 모집!</td>
-      <td>2019-12-09</td>
-      <td>김지유</td>
-    </tr>
-    </c:forEach>
-  </table>
-  </div>
-  <br />
-   <div class="w3-container" align="right">
-   <a href="recruitRegist" class="w3-btn w3-light-gray w3-border">등록</a>
+<div>
+<table>
+<tr>
+			<td class="w3-border-right w3-light-gray">번호</td>
+			<td class="w3-row-padding">1</td>
+</tr>
+</table>
 </div>
 </body>
 </html>

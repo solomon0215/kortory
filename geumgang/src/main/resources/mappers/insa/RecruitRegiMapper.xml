@@ -3,31 +3,54 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="RecruitMapper">
 
-<cache />
+	<cache />
 	<sql id="baseRecruit">
-		RECRUIT_TITLE, RECRUIT_NUM, RECRUIT_CONTENT, RECRUIT_PREFER, RECRUIT_PERSONNEL,
-		RECRUIT_QUALIFICATION,RECRUIT_REGI_DATE, RECRUIT_END_DATE, RECRUIT_COST, IN_SA_NUM
+		RECRUIT_TITLE, RECRUIT_NUM, RECRUIT_CONTENT,
+		RECRUIT_PREFER, RECRUIT_PERSONNEL,
+		RECRUIT_QUALIFICATION,RECRUIT_REGI_DATE, RECRUIT_END_DATE,
+		RECRUIT_COST, IN_SA_NUM
 	</sql>
-	<resultMap type="recruitDTO" id="baseRecruit">
+	<resultMap type="recruitDTO" id="baseRecruitMap">
 		<!-- setter -->
-		<id column="RECRUIT_NUM" jdbcType="BIGINT" property="recruitNum"/>
-		<result column="RECRUIT_TITLE" jdbcType="VARCHAR" property="recruitTitle"/>
-		<result column="RECRUIT_CONTENT" jdbcType="VARCHAR" property="recruitContent"/>
-		<result column="RECRUIT_PREFER" jdbcType="VARCHAR" property="recruitPrefer"/>
-		<result column="RECRUIT_PERSONNEL" jdbcType="BIGINT" property="recruitPersonnel"/>
-		<result column="RECRUIT_QUALIFICATION" jdbcType="VARCHAR" property="recruitQualification"/>
-		<result column="RECRUIT_REGI_DATE" jdbcType="DATE" property="recruitRegiDate"/>
-		<result column="RECRUIT_END_DATE" jdbcType="DATE" property="recruitEndDate"/>
-		<result column="RECRUIT_COST" jdbcType="BIGINT" property="recruitCost"/>
-		<result column="IN_SA_NUM" jdbcType="VARCHAR" property="inSaNum"/>
-		
+		<id column="RECRUIT_NUM" jdbcType="BIGINT" property="recruitNum" />
+		<result column="RECRUIT_TITLE" jdbcType="VARCHAR"
+			property="recruitTitle" />
+		<result column="RECRUIT_CONTENT" jdbcType="VARCHAR"
+			property="recruitContent" />
+		<result column="RECRUIT_PREFER" jdbcType="VARCHAR"
+			property="recruitPrefer" />
+		<result column="RECRUIT_PERSONNEL" jdbcType="BIGINT"
+			property="recruitPersonnel" />
+		<result column="RECRUIT_QUALIFICATION" jdbcType="VARCHAR"
+			property="recruitQualification" />
+		<result column="RECRUIT_REGI_DATE" jdbcType="DATE"
+			property="recruitRegiDate" />
+		<result column="RECRUIT_END_DATE" jdbcType="DATE"
+			property="recruitEndDate" />
+		<result column="RECRUIT_COST" jdbcType="BIGINT"
+			property="recruitCost" />
+		<result column="IN_SA_NUM" jdbcType="VARCHAR"
+			property="inSaNum" />
+
 	</resultMap>
-	
-	<insert id="insertRecruit" parameterType="recruitDTO"> 
-		insert into recruit (<include refid="baseRecruit" />)
-		values(#{recruitTitle}, insa_seq.nextval,#{recruitContent} , #{recruitPrefer} ,
-		#{recruitPersonnel}, #{recruitQualification}, #{recruitRegiDate}, #{recruitEndDate},
+
+	<insert id="insertRecruit" parameterType="recruitDTO">
+		insert into recruit (
+		<include refid="baseRecruit" />
+		)
+		values(#{recruitTitle}, insa_seq.nextval,#{recruitContent} ,
+		#{recruitPrefer} ,
+		#{recruitPersonnel}, #{recruitQualification},
+		#{recruitRegiDate}, #{recruitEndDate},
 		#{recruitCost}, #{inSaNum})
 	</insert>
-
+	
+	
+	
+	<select id="recruitAllSelect" parameterType="string"
+		resultMap="baseRecruitMap">
+		select
+		<include refid="baseRecruit" />
+		from recruit
+	</select>
 </mapper>

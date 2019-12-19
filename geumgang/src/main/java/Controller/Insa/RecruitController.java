@@ -23,13 +23,6 @@ public class RecruitController {
 	@Autowired
 	RecruitRegiService recruitRegiService;
 	
-	@RequestMapping(value="/insa/recruitList", method=RequestMethod.GET) //채용공고 목록 이동
-	public String RecruitList(RecruitRegiCommand recruitRegiCommand) {
-		
-		return "insa/recruitList"; //jsp 경로
-	}
-	
-	
 	@RequestMapping(value="/insa/recruitRegiPro", method=RequestMethod.POST) //채용공고 작성
 	public String write(RecruitRegiCommand recruitCommand, HttpSession session,HttpServletRequest request) {
 		recruitRegiService.recruitRegist(recruitCommand,session,request);
@@ -44,6 +37,11 @@ public class RecruitController {
 		return "insa/recruitRegist"; //jsp 경로
 	}
 	
+	@RequestMapping(value="/insa/recruitList", method=RequestMethod.GET) //채용공고 리스트 추가
+	public String recruitList(RecruitRegiCommand rc, Model model) {
+		recruitRegiService.recruitSelect(model);
+		return "insa/recruitList";
+	}
 	
 
 }

@@ -3,12 +3,14 @@ package Service.Insa;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import Command.Insa.RecruitRegiCommand;
 import Model.InsaDTO.InsaAuthInfo;
@@ -50,5 +52,11 @@ public class RecruitRegiService {
 		return recruitRepository.recruitInsert(recruit);
 		
 	}
+
+	public void recruitSelect(Model model) {
+		List<RecruitDTO> recruitList = recruitRepository.recruitAllSelect();
+		model.addAttribute("recruit",recruitList);
+	}
+
 
 }

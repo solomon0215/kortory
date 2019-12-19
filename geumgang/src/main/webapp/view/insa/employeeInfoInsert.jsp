@@ -180,6 +180,15 @@ commandName="employeeCommand" id="frm" action="employeeRegiPro" method="POST" >
 			<label class="w3-text-grey">전화번호</label> 
 			<form:input path="employeePh" class="w3-input w3-border w3-white" type="text" />
 		</p>
+		<p>
+		<label class="w3-text-gray">부서번호</label>
+		<form:select path="employeeKind">
+		<form:option value="301" label="관리부" />
+		<form:option value="302" label="기획부" />
+		<form:option value="303" label="인사부" />
+		<form:option value="304" label="영업부"/>
+		</form:select>
+		</p>
 		<br />
 		<div class="w3-center">
 			<div class="w3-bar">
