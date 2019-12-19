@@ -35,12 +35,6 @@ public class CompanySelectRepository {
 	public List<CompanyDTO> selectNewCom(List<ExplorListDTO> expList){//신규업체 불러오기
 		String statement = namespace + ".newComList";
 		Map< String, Object> param = new HashMap<String, Object>();
-		if(expList != null) {
-			System.out.println("notNullnotNullnotNullnotNullnotNullnotNullnotNull");
-			if(expList.size() != 0) {
-				System.out.println(expList.size()+""+expList.size()+""+expList.size()+""+expList.size()+"");
-			}
-		}
 		param.put("exp",expList);
 		return sqlSession.selectList(statement, param);
 	}

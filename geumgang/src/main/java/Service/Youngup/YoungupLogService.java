@@ -28,7 +28,7 @@ public class YoungupLogService {
 		YoungupDTO dto2 = youngSelRepo.youngupLog(dto1); //로그인 정보 새로운 DTO에 담기
 		if(dto2 !=null ) { //로그인이 됬다면
 			System.out.println("-----------------------------------------log-----------------------------------");
-			YoungupAuth auth = new YoungupAuth(dto2.getYoungUpEmail(), dto2.getYoungUpName(), 304, dto2.getYoungUpEmail());
+			YoungupAuth auth = new YoungupAuth(dto2.getYoungUpEmail(), dto2.getYoungUpName(), 304, dto2.getYoungUpNum());
 			session.setAttribute("authLog", auth);
 			return "Login/youngupLogPro";
 		}else {// 안된다면

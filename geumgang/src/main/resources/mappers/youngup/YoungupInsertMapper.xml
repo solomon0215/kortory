@@ -8,10 +8,9 @@
 		exploration_submit,young_up_num
 	</sql>
 	<cache />
+	<!-- 신규업체 자기 담당(사전보고서 최초)으로 넣기 -->
 	<insert id="insertExplor" parameterType="expDTO">
-		INSERT INTO EXPLORATION(<include refid="exploration" />)
-		values(youngup_seq.nextval,#{companyId},null,null,null,null,null,
-		null,null,null,null,null,null,
-		null,#{youngUpNum})
+		INSERT INTO EXPLORATION(exploration_num,company_id,exploration_submit,young_up_num)
+		VALUES(youngup_seq.nextval,#{companyId},'NEW',#{youngUpNum})
 	</insert>
 </mapper>

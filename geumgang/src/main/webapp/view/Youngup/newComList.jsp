@@ -16,14 +16,16 @@
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 $(function(){
-	if(${over != null}){
-		var str = ${over}
-		for(int i = 0 ;i<str.length; i++){
-			$("#"+str[i]).attr('class','w3-red');
-		}
+	if(${over != null && over.size() != 0}){
+		var list = new Array(); 
+		<c:forEach items="${over}" var="item"> 
+			$("#${item}").attr("class","w3-red");
+		</c:forEach>
 		alert("다른 사람이 담당중인 업체가 있습니다.");
 	}
-	
+	if($("#msg").html() != ""){
+		$("#welcome").hide();	
+	}
 });
 </script>
 <style>
@@ -42,7 +44,8 @@ h2{
 <body>
 <div class="w3-container w3-display-container">
   <br>
-  <h2 class="w3-myfont w3-center">오늘도 이렇게 많은 업체들이 있어요!</h2>
+  <h2 class="w3-myfont w3-center" id="welcome">오늘도 이렇게 많은 업체들이 있어요!</h2>
+  <h2 class="w3-myfont w3-center w3-red" id="msg">${msg}</h2>
   <br>
 		<table class="w3-table-all w3-tiny w3-centered">
 	<thead>
@@ -63,14 +66,6 @@ h2{
 		      <td><form:checkbox path="check" value="${list.companyId}"/></td>
 		    </tr>
 	    	</c:forEach>
-	    	<tr class="w3-pale-blue" id="asdasd">
-		      <td>asdasd</td>
-		      <td>asdasd</td>
-		      <td>asdasd}</td>
-		      <td>asdasd</td>
-		      <td>asdasd</td>
-		      <td><form:checkbox path="check" value="asdasd"/></td>
-		    </tr>
 	    	<tr>
 	    		<td colspan="6">
 	    			<button class="w3-button w3-white w3-border w3-hover-amber" type="submit" >업무 가져오기</button>
@@ -81,7 +76,7 @@ h2{
     	</c:if>
     	<c:if test="${newComList == null }">
 	    	<tr class="w3-pale-blue">
-		      <td>오늘은 여기까지가  끝이네요</td>
+		      <td colspan="6"><h2>오늘은 여기까지가  끝이네요</h2></td>
 		    </tr>
     	</c:if>
     </tbody>

@@ -44,12 +44,12 @@ function openWork(work) {
 	
 	<div id="new" class="w3-container w3-display-container explor">
 	  <br>
-	  <h2 class="w3-myfont w3-center">오늘도 이렇게 많은 업체들이 있어요!</h2>
+	  <h2 class="w3-myfont w3-center">새롭게 담당하신 업체에요!</h2>
 	  <br>
   		<table class="w3-table-all w3-tiny w3-centered">
 			<thead>
 			    <tr>
-			      <th>업체 업무 종류</th><th>신규업체</th><th>미완료 사전보고서</th><th>미완료 협력 조건안</th>
+			      <th>업체 이름</th><th>주소</th><th>전화번호</th><th>공기업여부</th>
 			    </tr>
 		    </thead>
 		    <tbody>
@@ -61,8 +61,9 @@ function openWork(work) {
 	</div>
 	
 	<div id="incomplete" class="w3-container w3-display-container explor" style="display:none">
-	
-	  <h2>바쁘게 다니셔야 겠어요! 힘내세요!</h2>
+		<br>
+		<h2 class="w3-myfont w3-center">바쁘게 다니셔야 겠어요!</h2>
+		<br>
 	  	<table class="w3-table-all w3-tiny w3-centered">
 			<thead>
 			    <tr>
@@ -78,7 +79,9 @@ function openWork(work) {
 	</div>
 	
 	<div id="complete" class="w3-container w3-display-container explor" style="display:none">
-	  <h2>지금까지 이렇게 많은 일을 해내셨어요!</h2>
+	  	<br>
+		<h2 class="w3-myfont w3-center">지금까지 이렇게 많은 일을 해내셨어요!</h2>
+		<br>
 	  	<table class="w3-table-all w3-tiny w3-centered">
 			<thead>
 			    <tr>

@@ -15,20 +15,11 @@ public class ExplorListController { //사전답사 보고서 리스트
 	@Autowired
 	ExplorListService exListSer;
 	
-	@RequestMapping("/youngup/explorList")
-	public String basicList(Model model,
-			@RequestParam(value = "num",defaultValue = "0") String num,
-			@RequestParam(value = "companyId",defaultValue = "0") String companyName,
-			HttpServletRequest request) {
-		if(request.getSession().getAttribute("authLog") == null) {
-			return "Youngup/back";
-		}
-		if(!num.equals("0") || !companyName.equals("0")) {
-			exListSer.conditionList(model, num, companyName);
-		}else {
-			exListSer.basicList(model);
-		}
+	@RequestMapping("/youngup/explorList") //최초 사전답사보고서 카테고리 입장시
+	public String newList(Model model) {
+		exListSer.basicList(model);
 		model.addAttribute("pageName", "../Youngup/explorList.jsp");
 		return "Main/youngupMain";
 	}
+	
 }

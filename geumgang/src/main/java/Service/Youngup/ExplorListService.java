@@ -14,21 +14,17 @@ public class ExplorListService {
 	@Autowired
 	private YoungupSelectRepository youngSelRepo;
 
-	public void basicList(Model model) { // 모든 리스트 뽑기
-		List<ExplorListDTO> list = youngSelRepo.selectExplorList(new ExplorListDTO());
-		model.addAttribute("explorList", list);
-	}
-
-	public void conditionList(Model model, String num, String companyName) { // 검색 조건이 있는 리스트
+	public void basicList(Model model) { // 최초 사전답사 카테고리
 		ExplorListDTO dto = new ExplorListDTO();
-		if(!num.equals("0")) {
-			dto.setYoungUpNum(num);
-		}
-		if(!companyName.equals("0")) {
-			dto.setCompanyName(companyName);
-		}
-		List<ExplorListDTO> list = youngSelRepo.selectExplorList(dto);
-		model.addAttribute("explorList", list);
+		dto.setExplorationSubmit("NEW");
+		List<ExplorListDTO> newExp = youngSelRepo.selectKindExp(dto); //신규 담당 가져오기
+		dto.setExplorationSubmit("NO");
+		List<ExplorListDTO> incomplete = youngSelRepo.selectKindExp(dto); //미완성 사전답사 가져오기
+		dto.setExplorationSubmit("YES");
+		List<ExplorListDTO> complete = youngSelRepo.selectKindExp(dto); //완성 사전답사 보고서 가져오기
+		
+		model.addAttribute("newExp", newExp);
+		model.addAttribute("incomplete", incomplete);
+		model.addAttribute("complete", complete);
 	}
-
 }

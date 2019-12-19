@@ -44,7 +44,7 @@
             <when test="exp.size() != 0">
             	<where>
                 COMPANY_ID NOT IN 
-                <foreach collection="exp" item="com" index="index" separator="," open="(" close=")">
+                <foreach collection="exp" item="com" separator="," open="(" close=")">
                     #{com.companyId}
                 </foreach>
                 </where>

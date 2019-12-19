@@ -14,7 +14,7 @@
 		exploration_file,exploration_submit, young_up_num	
 	</sql>
 	<resultMap type="exlDTO" id="exlMap"><!-- ExplorListDTO  클래스 resultMap -->
-		<id column="exp.COMPANY_ID" jdbcType="VARCHAR" property="companyId"/> <!-- 업체 아이디 ()-->
+		<id column="COMPANY_ID" jdbcType="VARCHAR" property="companyId"/> <!-- 업체 아이디 ()-->
 		<id column="exploration_num" jdbcType="BIGINT" property="explorationNum"/> <!-- 답사보고서 번호-->
 		<result column="YOUNG_UP_NUM" jdbcType="VARCHAR" property="youngUpNum"/> <!-- 사원번호 -->
 		<result column="COMPANY_REG_NUM" jdbcType="VARCHAR" property="companyRegNum"/> <!-- 업체 사업자번호 -->
@@ -56,20 +56,22 @@
 			AND YOUNG_UP_PW = #{youngUpPw} 
 		</where>
 	</select>
-	<!-- 사전답사 보고서 조회 -->
-	<select id="explorList" parameterType="exlDTO" resultMap="exlMap">
+	<!-- 모든 사전답사 보고서 조회 -->
+	<select id="explorList" resultMap="exlMap">
 		select <include refid="exl"/>
 		from exploration exp,company com
 		<where>
-			exp.company_id = com.company_id 
-			<if test="companyId !=null">
-				and company_name  = #{companyId}
-			</if>
-			<if test="explorationNum != null">
-				and exploration_num = #{explorationNum}
-			</if>
-			<if test="explorationNum != null">
-				and exploration_submit = #{explorationSubmit}
+			exp.company_id = com.company_id
+		</where>
+	</select>
+	<!-- 종류별 사전답사 보고서 조회하기 -->
+	<select id="kindExp" parameterType="exlDTO" resultMap="exlMap">
+		select <include refid="exl"/>
+		from exploration exp,company com
+		<where>
+			exp.company_id = com.company_id
+			<if test="#{explorationSubmit !=null}">
+				AND exploration_submit = #{explorationSubmit}
 			</if>
 		</where>
 	</select>
