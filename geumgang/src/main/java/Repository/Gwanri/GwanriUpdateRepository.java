@@ -14,7 +14,7 @@ import Model.GwanriDTO.BudgetBillDTO;
 public class GwanriUpdateRepository {
 	@Autowired
 	private SqlSession sqlSession;	
-	private final String namespace = "GwanriUpdateMapper";
+	private final String namespace = "gwanriUpdateMapper";
 	
 	 /** 게시판 - 조회 수 수정  */
     public Integer updateBoardHits(BudgetBillDTO dto){

@@ -2,6 +2,7 @@ package Service.Gwanri;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,8 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import Command.Gwanri.AgreementConditionCommand;
 import Model.GwanriDTO.AgreementConditionDTO;
+import Model.GwanriDTO.AgreementListDTO;
+import Model.YoungupDTO.ExplorListDTO;
 import Repository.Gwanri.GwanriSelectRepository;
 
 @Service
@@ -19,16 +21,13 @@ public class AgreementConditionService {
 	@Autowired
 	GwanriSelectRepository gwanriSelectRepository;
 	
-	public String getBoardList(Model model, Integer page,
-			AgreementConditionCommand acc) {
+	public void getBoardList(Model model) {
 		
-		List<AgreementConditionDTO> list = 
-				gwanriSelectRepository.getBoardList(page, acc);
-		
-		return "Main/gwanriMain";
+		List<AgreementListDTO> list = gwanriSelectRepository.agreeList(new AgreementListDTO());
+		model.addAttribute("agreementList", list);
 	}
 
-	public void boardWrite(AgreementConditionCommand acc, HttpServletRequest request, HttpSession session) {
+	public void boardWrite(HttpServletRequest request, HttpSession session) {
 		// TODO Auto-generated method stub
 		
 	}

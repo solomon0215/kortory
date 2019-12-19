@@ -2,6 +2,7 @@ package Controller.Gwanri;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import Command.Gwanri.AgreementConditionCommand;
 import Service.Gwanri.AgreementConditionService;
 
 @Controller
@@ -22,21 +21,19 @@ public class AgreementConditionController {
 	
 	@RequestMapping("gwanri/agreementConditionWrite") //폼
 	public String form(@RequestParam(value="page" ,
-	required = false) AgreementConditionCommand acc, Integer page, Model model){
+	required = false) Integer page, Model model){
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_form.jsp");
 		return "Main/gwanriMain";
 	}
-	@RequestMapping(value = "gwanri/agreementConditionWritePro",
-			method = RequestMethod.POST) //등록
-	public String write(AgreementConditionCommand acc,
-			HttpServletRequest request , HttpSession session ) {
-		acls.boardWrite(acc , request, session);
+	@RequestMapping("gwanri/agreementConditionWritePro") //등록
+	public String write(HttpServletRequest request , HttpSession session ) {
+		acls.boardWrite(request, session);
 		return "Main/gwanriMain";
 	}	
 	@RequestMapping("gwanri/agreementConditionList") //리스트
 	public String boardList(@RequestParam(value="page" ,
 	required = false) Integer page, Model model){
-		acls.getBoardList(model, page, null);
+		acls.getBoardList(model);
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_list.jsp");
 		return "Main/gwanriMain";
 	}

@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="GwanriSelectMapper">
+<mapper namespace="gwanriSelectMapper">
 	
 <cache />
 <sql id="basecolumn">
 		GWAN_RI_NUM, GWAN_RI_ID, GWAN_RI_PW, GWAN_RI_BIRTH, GWAN_RI_NAME,
 		GWAN_RI_GENDER, GWAN_RI_PH, GWAN_RI_REGIST, GWAN_RI_EMAIL
 	</sql>
+	<sql id="acl">
+		AGREEMENT_CONDITION_NUM, AGREEMENT_CONDITION_DATE, AGREEMENT_CONDITION_RATIO, 
+		AGREEMENT_CONDITION_SETT, GWAN_RI_NUM, acl.COMPANY_ID, COMPANY_NAME	
+	</sql>
+	<resultMap type="aclDTO" id="aclMap"><!-- AgreementListDTO  클래스 resultMap -->
+		<id column="acl.COMPANY_ID" jdbcType="VARCHAR" property="companyId"/> <!-- 업체 아이디 ()-->
+		<id column="AGREEMENT_CONDITION_NUM" jdbcType="BIGINT" property="agreementConditionNum"/> <!-- 협약조건안 번호-->
+		<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/> <!-- 사원번호 -->
+		<result column="COMPANY_NAME" jdbcType="VARCHAR" property="companyName"/> <!-- 업체명 -->
+		<result column="AGREEMENT_CONDITION_DATE" jdbcType="DATE" property="agreementConditionDate"/><!-- 협약조건 작성일 -->
+		<result column="AGREEMENT_CONDITION_RATIO" jdbcType="DOUBLE" property="agreementConditionRatio"/><!-- 업체희망정산비율 -->
+		<result column="AGREEMENT_CONDITION_SETT" jdbcType="BIGINT" property="agreementConditionSett"/><!-- 정산기준시간 -->
+		
+	</resultMap>
+	
 	<select id="idConfirm" parameterType="string" resultType="string">
 		SELECT gwan_ri_id FROM GWAN_RI WHERE gwan_ri_id = #{gwanRiId} 
 	</select>
+	<select id="agreeList" parameterType="aclDTO" resultMap="aclMap">
+		select <include refid="acl"/>
+		from agreementCondition agree, company com
+		<where>
+			agree.company_name = com.company_name		
+			</where>
+		</select>
 </mapper>

@@ -14,7 +14,7 @@ import Model.GwanriDTO.BudgetBillDTO;
 public class GwanriDeleteRepository {
 	@Autowired
 	private SqlSession sqlSession;	
-	private final String namespace = "GwanriDeleteMapper";
+	private final String namespace = "gwanriDeleteMapper";
 	
 		   /** 게시판 - 삭제  */
     public Integer deleteBoard(BudgetBillDTO dto) {

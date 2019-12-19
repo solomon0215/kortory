@@ -17,7 +17,8 @@
      <table class="w3-table-all w3-centered">
       <tr class="w3-green">
         <th>번호</th>
-         <th>행사명</th>
+         <th>업체명</th>
+         <th>상품명</th>
         <th>작성일</th>
       </tr>
      
@@ -26,15 +27,18 @@
       <td>1</td>
       <td>Smith</td>
            <td>Smith</td>
+           <td>Smith</td>
     </tr>
     <tr>
       <td>2</td>
       <td>Jackson</td>
            <td>Smith</td>
+           <td>Smith</td>
     </tr>
     <tr>
       <td>3</td>
       <td>Johnson</td>
+           <td>Smith</td>
            <td>Smith</td>
     </tr>
   

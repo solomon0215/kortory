@@ -2,6 +2,7 @@ package Repository.Gwanri;
 
 import java.util.List;
 
+
 import org.apache.ibatis.session.SqlSession;
 
 
@@ -9,16 +10,17 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import Command.Gwanri.AgreementConditionCommand;
 import Model.GwanriDTO.AgreementConditionDTO;
+import Model.GwanriDTO.AgreementListDTO;
 import Model.GwanriDTO.BudgetBillDTO;
 import Model.GwanriDTO.GwanriDTO;
+import Model.YoungupDTO.ExplorListDTO;
 
 @Repository
 public class GwanriSelectRepository {
 	@Autowired
 	private SqlSession sqlSession;	
-	private final String namespace = "GwanriSelectMapper";
+	private final String namespace = "gwanriSelectMapper";
 	
 	public Integer idConfirm(String gwanRiId) {
 		String statement = namespace + ".idConfirm";
@@ -38,14 +40,10 @@ public class GwanriSelectRepository {
     	String statement =  namespace + ".boardDetail";
         return sqlSession.selectOne(statement, bbdto);
     }
-    /** 협약 조건안 게시판 - 상세 조회  */
-    public List<AgreementConditionDTO> boardList(AgreementConditionDTO acdto){
-    	String statement =  namespace + ".boardList";
-		return sqlSession.selectList(statement, acdto);
-    }
-	public List<AgreementConditionDTO> getBoardList(Integer page, AgreementConditionCommand acc) {
-		// TODO Auto-generated method stub
-		return null;
+    /** 협약 조건안 게시판 - 리스트  */
+    public List<AgreementListDTO> agreeList(AgreementListDTO dto){
+		String statement = namespace + ".agreeList";
+		return sqlSession.selectList(statement, dto);
 	}
 }
 	

@@ -15,7 +15,7 @@ import Model.GwanriDTO.GwanriDTO;
 public class GwanriInsertRepository {
 	@Autowired
 	private SqlSession sqlSession;	
-	private final String namespace = "GwanriInsertMapper";
+	private final String namespace = "gwanriInsertMapper";
 	
 	public Integer insertMember(GwanriDTO dto) {
 		String statement = namespace + ".gwanriInsert";

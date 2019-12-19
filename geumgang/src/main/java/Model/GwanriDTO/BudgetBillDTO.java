@@ -7,24 +7,24 @@ import java.sql.Date;
 
 @SuppressWarnings("serial")
 public class BudgetBillDTO implements Serializable {
-	Long budgetBillNum;
-	Long budgetBillPriceSum;
-	Float budgetBillLaborRatio;
-	Long budgetBillLaborPrice;
-	Long budgetBillGoodsPrice;
-	Date budgetBillDate;
-	String gwanRiNum;
+	private Integer budgetBillNum;
+	private Integer budgetBillPriceSum;
+	private Float budgetBillLaborRatio;
+	private Integer budgetBillLaborPrice;
+	private Integer budgetBillGoodsPrice;
+	private Date budgetBillDate;
+	private String gwanRiNum;
 	
-	public Long getBudgetBillNum() {
+	public Integer getBudgetBillNum() {
 		return budgetBillNum;
 	}
-	public void setBudgetBillNum(Long budgetBillNum) {
+	public void setBudgetBillNum(Integer budgetBillNum) {
 		this.budgetBillNum = budgetBillNum;
 	}
-	public Long getBudgetBillPriceSum() {
+	public Integer getBudgetBillPriceSum() {
 		return budgetBillPriceSum;
 	}
-	public void setBudgetBillPriceSum(Long budgetBillPriceSum) {
+	public void setBudgetBillPriceSum(Integer budgetBillPriceSum) {
 		this.budgetBillPriceSum = budgetBillPriceSum;
 	}
 	public Float getBudgetBillLaborRatio() {
@@ -33,16 +33,16 @@ public class BudgetBillDTO implements Serializable {
 	public void setBudgetBillLaborRatio(Float budgetBillLaborRatio) {
 		this.budgetBillLaborRatio = budgetBillLaborRatio;
 	}
-	public Long getBudgetBillLaborPrice() {
+	public Integer getBudgetBillLaborPrice() {
 		return budgetBillLaborPrice;
 	}
-	public void setBudgetBillLaborPrice(Long budgetBillLaborPrice) {
+	public void setBudgetBillLaborPrice(Integer budgetBillLaborPrice) {
 		this.budgetBillLaborPrice = budgetBillLaborPrice;
 	}
-	public Long getBudgetBillGoodsPrice() {
+	public Integer getBudgetBillGoodsPrice() {
 		return budgetBillGoodsPrice;
 	}
-	public void setBudgetBillGoodsPrice(Long budgetBillGoodsPrice) {
+	public void setBudgetBillGoodsPrice(Integer budgetBillGoodsPrice) {
 		this.budgetBillGoodsPrice = budgetBillGoodsPrice;
 	}
 	public Date getBudgetBillDate() {
@@ -56,5 +56,5 @@ public class BudgetBillDTO implements Serializable {
 	}
 	public void setGwanRiNum(String gwanRiNum) {
 		this.gwanRiNum = gwanRiNum;
-	}	
+	}
 }
