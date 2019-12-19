@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +35,15 @@ function openWork(work) {
   }
   document.getElementById(work).style.display = "block";  
 }
+function goToNewWrite(expNum){
+	location.href="explorNewWirte?expNum="+expNum;
+}
+function goToIncomWrite(expNum){
+	location.href="explorIncomWirte?expNum="+expNum;
+}
+function goToCompleDetail(expNum){
+	location.href="explorCompleDetail?expNum="+expNum;
+}
 </script>
 </head>
 <body>
@@ -49,13 +63,27 @@ function openWork(work) {
   		<table class="w3-table-all w3-tiny w3-centered">
 			<thead>
 			    <tr>
-			      <th>업체 이름</th><th>주소</th><th>전화번호</th><th>공기업여부</th>
+			      <th>사전답사 보고서 번호</th><th>업체 이름</th><th>주소</th><th>전화번호</th><th>공기업여부</th><th>업무</th>
 			    </tr>
 		    </thead>
 		    <tbody>
+		    	<c:if test="${newExp !=null}">
+		    	<c:forEach items="${newExp}" var="exp">
 			    <tr class="w3-pale-blue">
-			      <td>건수</td><td>15</td><td>20</td><td>1</td>
+			      <td>${exp.explorationNum}</td>
+			      <td>${exp.companyName}</td>
+			      <td>${exp.companyAddr}</td>
+			      <td>${exp.companyPh}</td>
+			      <td>${exp.companyType}</td>
+			      <td><button class="w3-button w3-white w3-border w3-hover-amber" onclick="goToNewWrite('${exp.explorationNum}')">작성하러 가기</button></td>
 			    </tr>
+			    </c:forEach>
+			    </c:if>
+		    	<c:if test="${newExp ==null}">
+		    	<tr class="w3-pale-blue">
+			      <td colspan="5">신규담당 업무 처리를 마치셨어요!!</td>
+			    </tr> 
+		    	</c:if>			    
 		    </tbody>
 		</table>
 	</div>

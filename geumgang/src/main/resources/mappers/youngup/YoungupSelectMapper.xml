@@ -62,10 +62,13 @@
 		from exploration exp,company com
 		<where>
 			exp.company_id = com.company_id
+			<!-- <if test="#{explorationNum != null}">
+			AND exploration_num = #{explorationNum}
+			</if> -->
 		</where>
 	</select>
 	<!-- 종류별 사전답사 보고서 조회하기 -->
-	<select id="kindExp" parameterType="exlDTO" resultMap="exlMap">
+	<select id="kindExp" resultMap="exlMap">
 		select <include refid="exl"/>
 		from exploration exp,company com
 		<where>
@@ -73,6 +76,14 @@
 			<if test="#{explorationSubmit !=null}">
 				AND exploration_submit = #{explorationSubmit}
 			</if>
+		</where>
+	</select>
+	<!-- 사전보고서 번호로 하나 가져오기 -->
+	<select id="expDetail" resultMap="exlMap" parameterType="expDTO">
+		select <include refid="exl"/>
+		from exploration exp,company com
+		<where>
+			exp.company_id = com.company_id AND exploration_num = #{explorationNum}
 		</where>
 	</select>
 </mapper>

@@ -7,7 +7,8 @@
 	<!-- Service  -->
 	<bean id = "youngupLogService" class ="Service.Youngup.YoungupLogService"/><!-- 영업 사원 로그인 실행 서비스-->
 	<bean id = "exListSer" class ="Service.Youngup.ExplorListService"/><!-- 사전답사 보고서 리스트 서비스-->
-	<bean id = "newComSer" class ="Service.Youngup.NewCompanyService"/><!-- 영업부 신규업체 리스트 보기--> 
+	<bean id = "newComSer" class ="Service.Youngup.NewCompanyService"/><!-- 영업부 신규업체 리스트 보기-->
+	<bean id = "expWriteSer" class ="Service.Youngup.ExplorWriteService"/><!-- 사전답사 보고서 작성 서비스--> 
 
    	<!-- Repositopry -->
 	<bean id = "youngSelRepo" class ="Repository.Youngup.YoungupSelectRepository"/><!-- 영업부 조회 repository--> 
