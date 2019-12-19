@@ -53,8 +53,14 @@ public class RecruitRegiService {
 		
 	}
 
-	public void recruitSelect(Model model) {
+	public void recruitSelect(Model model, HttpSession session) {
 		List<RecruitDTO> recruitList = recruitRepository.recruitAllSelect();
+		System.out.println("dddd");
+		for(RecruitDTO c : recruitList) {
+			System.out.println(c.getRecruitTitle());
+		}
+		String authName = ((InsaAuthInfo)session.getAttribute("authLog")).getName();
+		model.addAttribute("authName", authName);
 		model.addAttribute("recruit",recruitList);
 	}
 

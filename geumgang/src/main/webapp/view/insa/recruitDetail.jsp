@@ -1,150 +1,187 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Insert title here</title>
-</head>
-<script>
-function myAccFunc1() {
-  var x = document.getElementById("demoAcc1");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-blue-gray";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-    x.previousElementSibling.className = 
-    x.previousElementSibling.className.replace(" w3-blue-gray", "");
-  }
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+* {
+  box-sizing: border-box; width: 92%;
 }
-function myAccFunc2() {
-	  var x = document.getElementById("demoAcc2");
-	  if (x.className.indexOf("w3-show") == -1) {
-	    x.className += " w3-show";
-	    x.previousElementSibling.className += " w3-blue-gray";
-	  } else { 
-	    x.className = x.className.replace(" w3-show", "");
-	    x.previousElementSibling.className = 
-	    x.previousElementSibling.className.replace(" w3-blue-gray", "");
-	  }
-	}
-function myAccFunc3() {
-	  var x = document.getElementById("demoAcc3");
-	  if (x.className.indexOf("w3-show") == -1) {
-	    x.className += " w3-show";
-	    x.previousElementSibling.className += " w3-blue-gray";
-	  } else { 
-	    x.className = x.className.replace(" w3-show", "");
-	    x.previousElementSibling.className = 
-	    x.previousElementSibling.className.replace(" w3-blue-gray", "");
-	  }
-	}
-function myAccFunc4() {
-	  var x = document.getElementById("demoAcc4");
-	  if (x.className.indexOf("w3-show") == -1) {
-	    x.className += " w3-show";
-	    x.previousElementSibling.className += " w3-blue-gray";
-	  } else { 
-	    x.className = x.className.replace(" w3-show", "");
-	    x.previousElementSibling.className = 
-	    x.previousElementSibling.className.replace(" w3-blue-gray", "");
-	  }
-	}
-function myAccFunc5() {
-	  var x = document.getElementById("demoAcc5");
-	  if (x.className.indexOf("w3-show") == -1) {
-	    x.className += " w3-show";
-	    x.previousElementSibling.className += " w3-blue-gray";
-	  } else { 
-	    x.className = x.className.replace(" w3-show", "");
-	    x.previousElementSibling.className = 
-	    x.previousElementSibling.className.replace(" w3-blue-gray", "");
-	  }
-	}
-function myAccFunc6() {
-	  var x = document.getElementById("demoAcc6");
-	  if (x.className.indexOf("w3-show") == -1) {
-	    x.className += " w3-show";
-	    x.previousElementSibling.className += " w3-blue-gray";
-	  } else { 
-	    x.className = x.className.replace(" w3-show", "");
-	    x.previousElementSibling.className = 
-	    x.previousElementSibling.className.replace(" w3-blue-gray", "");
-	  }
-	}
-</script>
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.col-30 {
+  float: left;
+  width: 30%;
+  margin-top: 6px;
+}
 
+.col-70 {
+  float: left;
+  width: 70%;
+  margin-top: 8px;
+}
+
+.col-rg {
+  float: right;
+  width: 20%;
+  margin-top: 6px;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=checkbox] {
+margin-top: 10px;
+  width: 5%;
+   display: inline-block;
+}
+
+input[type=date] {
+margin-top: 10px;
+  width: 42%;
+   display: inline-block;
+}
+
+input:focus {
+  border: 2px solid #555;
+}
+
+textarea:focus {
+border: 2px solid #555;
+}
+
+
+input[type=submit] {
+  background-color: #ff4500;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+ul{
+   list-style:none;
+   }
+</style>
+</head>
 <body>
-<!-- Navigation bar -->
-<div class="w3-bar w3-teal">
-  <a href="main" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
-  <a href="#" class="w3-bar-item w3-button">기획부</a>
-  <a href="#" class="w3-bar-item w3-button">영업부</a>
-  <a href="#" class="w3-bar-item w3-button">관리부</a>
-  <a href="logout" class="w3-bar-item w3-button w3-right">로그아웃</a>
-</div>
-<!-- Sidebar -->
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:13%">
-
-  <h3 class="w3-bar-item">업무목록</h3>
-   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc1()">
-  사원채용 <i class="fa fa-caret-down"></i>
-  </button>
-  <div id="demoAcc1" class="w3-hide w3-white w3-card">
-    <a href="recruitList" class="w3-bar-item w3-button">채용공고 목록</a>
-    <a href="#" class="w3-bar-item w3-button">이력서 확인</a>
+<!-- PAGE CONTENT -->
+<form action="#">
+<div class="container">
+  <div class="row">
+    <div class="col-30">
+      <label for="egName"><b>채용공고 번호</b></label>
+    </div>
+    <div class="col-70">
+      <input type="text" id="egName" name="egName" placeholder="채용공고 번호">
+    </div>
   </div>
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc2()">
-  사원정보 <i class="fa fa-caret-down"></i>
-  </button>
-  <div id="demoAcc2" class="w3-hide w3-white w3-card">
-    <a href="employeeInfoInsert" class="w3-bar-item w3-button">사원정보 등록</a>
-    <a href="#" class="w3-bar-item w3-button">근로계약서 열람</a>
-    <a href="#" class="w3-bar-item w3-button">인사고과 열람</a>
+  <div class="row">
+    <div class="col-30">
+      <label for="egPlanNum"><b>제목</b></label>
+    </div>
+    <div class="col-70">
+     <input type="text" id="egName" name="egName" placeholder="제목">
+    </div>
   </div>
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc3()">
-  사원교육 <i class="fa fa-caret-down"></i>
-  </button>
-  <div id="demoAcc3" class="w3-hide w3-white w3-card">
-    <a href="#" class="w3-bar-item w3-button">기초교육안 작성</a>
-    <a href="#" class="w3-bar-item w3-button">행사교육안 작성</a>
+  <div class="row">
+    <div class="col-30">
+      <label for="egExp"><b>업무내용</b></label>
+    </div>
+    <div class="col-70">
+      <textarea id="egExp" name="egExp" style="height:200px" placeholder="업무내용"></textarea>
+    </div>
   </div>
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc4()">
-  사원배치 <i class="fa fa-caret-down"></i>
-  </button>
-  <div id="demoAcc4" class="w3-hide w3-white w3-card">
-    <a href="#" class="w3-bar-item w3-button">행사일정 확인 및 배치</a>
+ <div class="row">
+    <div class="col-30">
+      <label for="egExp"><b>우대사항</b></label>
+    </div>
+    <div class="col-70">
+      <textarea id="egExp" name="egExp" style="height:200px" placeholder="우대사항"></textarea>
+    </div>
   </div>
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc5()">
-  사원평가 <i class="fa fa-caret-down"></i>
-  </button>
-  <div id="demoAcc5" class="w3-hide w3-white w3-card">
-    <a href="#" class="w3-bar-item w3-button">인사고과 작성</a>
-    <a href="#" class="w3-bar-item w3-button">사원 평가서 열람</a>
+  <div class="row">
+    <div class="col-30">
+      <label for="egName"><b>모집인원</b></label>
+    </div>
+    <div class="col-70">
+      <input type="text" id="egName" name="egName" placeholder="모집인원">
+    </div>
   </div>
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc6()">
-  고객평가 <i class="fa fa-caret-down"></i>
-  </button>
-  <div id="demoAcc6" class="w3-hide w3-white w3-card">
-    <a href="#" class="w3-bar-item w3-button">고객평가서 작성</a>
-    <a href="#" class="w3-bar-item w3-button">고객평가서 열람</a>
+  <div class="row">
+    <div class="col-30">
+      <label for="egExp"><b>지원자격</b></label>
+    </div>
+    <div class="col-70">
+      <textarea id="egExp" name="egExp" style="height:200px" placeholder="지원자격"></textarea>
+    </div>
   </div>
-</div>
-<!-- Page Content -->
-<div>
-<table>
-<tr>
-			<td class="w3-border-right w3-light-gray">번호</td>
-			<td class="w3-row-padding">1</td>
-</tr>
-</table>
-</div>
+  <div class="row">
+    <div class="col-30">
+      <label for="egName"><b>등록일자</b></label>
+    </div>
+    <div class="col-70">
+      <input type="text" id="egName" name="egName" placeholder="등록일자">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-30">
+      <label for="egName"><b>마감일자</b></label>
+    </div>
+    <div class="col-70">
+      <input type="text" id="egName" name="egName" placeholder="마감일자">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-30">
+      <label for="egName"><b>연봉</b></label>
+    </div>
+    <div class="col-70">
+      <input type="text" id="egName" name="egName" placeholder="연봉">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-30">
+      <label for="egName"><b>직원번호</b></label>
+    </div>
+    <div class="col-70">
+      <input type="text" id="egName" name="egName" placeholder="직원번호">
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-rg">
+    <input type="submit" value="등록">
+    </div>
+  </div>
+  </div>
+</form>
 </body>
 </html>

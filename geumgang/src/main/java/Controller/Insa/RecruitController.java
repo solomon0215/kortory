@@ -23,13 +23,13 @@ public class RecruitController {
 	@Autowired
 	RecruitRegiService recruitRegiService;
 	
-	@RequestMapping(value="/insa/recruitRegiPro", method=RequestMethod.POST) //채용공고 작성
+	@RequestMapping(value="/insa/recruitRegiPro", method=RequestMethod.POST) //작성한 채용공고 등록
 	public String write(RecruitRegiCommand recruitCommand, HttpSession session,HttpServletRequest request) {
 		recruitRegiService.recruitRegist(recruitCommand,session,request);
 		return "redirect:/recruitList";
 	}
 	
-	@RequestMapping(value="/insa/recruitRegist", method=RequestMethod.GET)
+	@RequestMapping(value="/insa/recruitRegist", method=RequestMethod.GET) //등록일자에 오늘날짜 표시
 	public String regist(RecruitRegiCommand recruitRegiCommand) {
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
 		Date date = new Date();
@@ -37,10 +37,11 @@ public class RecruitController {
 		return "insa/recruitRegist"; //jsp 경로
 	}
 	
-	@RequestMapping(value="/insa/recruitList", method=RequestMethod.GET) //채용공고 리스트 추가
-	public String recruitList(RecruitRegiCommand rc, Model model) {
-		recruitRegiService.recruitSelect(model);
-		return "insa/recruitList";
+	@RequestMapping(value="/insa/recruitList", method=RequestMethod.GET) //작성한 채용공고를 리스트에 추가
+	public String recruitList(RecruitRegiCommand rc, Model model, HttpSession session) {
+		recruitRegiService.recruitSelect(model, session);
+		model.addAttribute("insaPage","../insa/recruitList.jsp");
+		return "insa/insaPage";
 	}
 	
 

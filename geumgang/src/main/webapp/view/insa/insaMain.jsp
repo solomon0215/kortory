@@ -8,14 +8,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Insert title here</title>
 </head>
-
 <body>
-
 <!-- Page Content -->
-<div style="margin-left:15%">
-<div class="w3-container w3-white">
+<div class="w3-container w3-white" style="margin-left:30%">
   <h2>인사부 메인</h2>
-</div>
 </div>
 
 </body>
