@@ -1,5 +1,7 @@
 package Controller.Insa;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +21,10 @@ public class EmployeeInsertController {
 	EmployeeInsertService employeeInsertService;
 	
 	@RequestMapping(value="/insa/employeeRegiPro", method=RequestMethod.GET) //사원정보등록 이동
-	public String employeeRegistView(EmployeeCommand ec) {
-		
-		return "insa/employeeInfoInsert"; //jsp 경로
+	public String employeeRegistView(Model model) {
+		model.addAttribute("insaPage","../insa/employeeInfoInsert.jsp");
+		return "insa/insaPage"; //jsp 경로
 	}
-	
 	
 	@RequestMapping(value="/insa/employeeRegiPro", method=RequestMethod.POST)
 	public String employeeInsert(EmployeeCommand ec, Errors errors, Model model) {
@@ -38,5 +39,6 @@ public class EmployeeInsertController {
 		}
 		return "insa/employeeInsertComplete"; //완료시 이동 페이지
 	}
+	
 	
 }

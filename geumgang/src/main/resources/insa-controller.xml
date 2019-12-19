@@ -10,4 +10,6 @@
 <bean class="Controller.Insa.RecruitController" />	
 <bean class="Controller.Insa.InsaMainController" />	
 <bean class="Controller.Insa.EmployeeInsertController" />
+<bean class="Controller.Insa.ResumeController" />
+<bean class="Controller.Insa.ContractController" />
 </beans>
