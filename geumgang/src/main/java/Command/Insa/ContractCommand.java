@@ -8,11 +8,11 @@ public class ContractCommand {
 	String conCeo;
 	String conRegiNum;
 	String conStart;
-	String conSalary;
+	Integer conSalary;
 	String conEnd;
-	String conIncentive;
+	Integer conIncentive;
 	String conDetail;
-	String resumeNum;
+	Integer resumeNum;
 	String userId;
 	public Integer getConNum() {
 		return conNum;
@@ -56,10 +56,10 @@ public class ContractCommand {
 	public void setConStart(String conStart) {
 		this.conStart = conStart;
 	}
-	public String getConSalary() {
+	public Integer getConSalary() {
 		return conSalary;
 	}
-	public void setConSalary(String conSalary) {
+	public void setConSalary(Integer conSalary) {
 		this.conSalary = conSalary;
 	}
 	public String getConEnd() {
@@ -68,10 +68,10 @@ public class ContractCommand {
 	public void setConEnd(String conEnd) {
 		this.conEnd = conEnd;
 	}
-	public String getConIncentive() {
+	public Integer getConIncentive() {
 		return conIncentive;
 	}
-	public void setConIncentive(String conIncentive) {
+	public void setConIncentive(Integer conIncentive) {
 		this.conIncentive = conIncentive;
 	}
 	public String getConDetail() {
@@ -80,10 +80,10 @@ public class ContractCommand {
 	public void setConDetail(String conDetail) {
 		this.conDetail = conDetail;
 	}
-	public String getResumeNum() {
+	public Integer getResumeNum() {
 		return resumeNum;
 	}
-	public void setResumeNum(String resumeNum) {
+	public void setResumeNum(Integer resumeNum) {
 		this.resumeNum = resumeNum;
 	}
 	public String getUserId() {

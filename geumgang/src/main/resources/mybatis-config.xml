@@ -15,5 +15,6 @@
 		<typeAlias type="Model.InsaDTO.EmployeeDTO" alias = "employeeDTO"/>
 		<typeAlias type="Model.YoungupDTO.ExplorListDTO" alias = "exlDTO"/>
 		<typeAlias type="Model.YoungupDTO.ExplorationDTO" alias = "expDTO"/>
+		<typeAlias type="Model.InsaDTO.ContractDTO" alias = "contractDTO" />
 	</typeAliases>
 </configuration>

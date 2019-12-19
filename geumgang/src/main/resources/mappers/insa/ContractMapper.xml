@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ContractMapper">
+
+	<cache />
+	<sql id="baseContract">
+		CON_NUM, CON_COMPANY, CON_PH, CON_LOCATION, CON_CEO, CON_REGI_NUM, CON_START,
+		CON_SALARY, CON_END, CON_INCENTIVE, CON_DETAIL, RESUME_NUM, USER_ID
+	</sql>
+	<resultMap type="contractDTO" id="baseContractMap">
+	
+	</resultMap>
+</mapper>
