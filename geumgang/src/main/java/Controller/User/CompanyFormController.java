@@ -1,5 +1,8 @@
 package Controller.User;
 
+import javax.servlet.http.HttpSession;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,4 +51,12 @@ public class CompanyFormController {
 	public String companyIdConfirm(@RequestParam("userId") String userId) {
 		return companyFormService.idConfirm(userId);
 	}
+	
+	@RequestMapping("company/info")
+	public String companyInfo(@RequestParam(value="page" ,
+		required = false)HttpSession session, Integer page, Model model){		
+			model.addAttribute("pageName", "../Company/companyDetail.jsp");
+			return "Main/companyMain";
+		}
+	
 }

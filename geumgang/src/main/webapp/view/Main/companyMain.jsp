@@ -27,7 +27,7 @@
 <div class="w3-bar w3-indigo">
 <div class="w3-container w3-lobster w3-xlarge">
   <a href="aaaa" class="w3-bar-item w3-button">메인으로</a>
-  <a href="#" class="w3-bar-item w3-button">마이페이지</a>
+  <a href="http://localhost:8080/geumgang/company/info" class="w3-bar-item w3-button">마이페이지</a>
   <a href="logout"  class="w3-bar-item w3-button w3-right">로그아웃</a>
 </div>
 </div>
