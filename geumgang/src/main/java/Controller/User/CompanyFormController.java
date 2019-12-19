@@ -17,32 +17,33 @@ public class CompanyFormController {
 	@Autowired
 	CompanyFormService companyFormService;
 	
-	//½ÅÃ»¼­ ÀÛ¼º ÆäÀÌÁö °¡±â
+	//ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/user/companyForm")
 	public String companyForm(Model model,CompanyFormCommand companyFormCommand) {
 		model.addAttribute("pageName", "../Company/companyForm.jsp");
 		return "Main/basicMain";
 	}
 	
-	//¾÷Ã¼µî·Ï
+	
+	//ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½
 	@RequestMapping(value="/user/companyInsert", method=RequestMethod.POST)
 	public String companyInsert(CompanyFormCommand companyFormCommand,Errors errors,Model model) { 
 		new CompanyFormCommandValidator().validate(companyFormCommand, errors);
 		if(errors.hasErrors()) {
-			return "Company/companyForm";//ÀÔ·Â ¹®Á¦
+			return "Company/companyForm";//ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}
 		Integer i = companyFormService.insert(companyFormCommand);
 		if(i != null) {
 			if(i>0) {
-				companyFormService.infoEmail(companyFormCommand); //¸ÞÀÏ º¸³»±â
+				companyFormService.infoEmail(companyFormCommand); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				model.addAttribute("command", companyFormCommand);
-				return "Company/welcomeCompany";//µî·Ï¿Ï·á
+				return "Company/welcomeCompany";//ï¿½ï¿½Ï¿Ï·ï¿½
 			}
 		}
-		return "Company/failedPage"; //¿¡·¯ÆäÀÌÁö
+		return "Company/failedPage"; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	
-	//Áßº¹È®ÀÎ 
+	//ï¿½ßºï¿½È®ï¿½ï¿½ 
 	@RequestMapping("/user/companyIdConfirm")
 	public String companyIdConfirm(@RequestParam("userId") String userId) {
 		return companyFormService.idConfirm(userId);

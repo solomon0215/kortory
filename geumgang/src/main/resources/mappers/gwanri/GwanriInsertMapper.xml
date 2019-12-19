@@ -2,8 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="gwanriInsertMapper">
+
+	<sql id = "agreementCondition">
+	company_name,AGREEMENT_CONDITION_NUM,AGREEMENT_CONDITION_DATE,AGREEMENT_CONDITION_RATIO,
+	AGREEMENT_CONDITION_SETT,GWAN_RI_NUM
+	</sql>
+	<cache />
+	<insert id = "insertAgree" parameterType="aclDTO">
+	insert into AGREEMENTCONDITION(<include refid="agreementCondition" />)
+	values(gwanri_seq.nextval,#{companyName},null,null,null,null,#{gwanRiNum})
+	</insert>
 	
-<cache />
 <insert id = "BudgetBillInsert">
 	INSERT INTO BUDGET_BILL(BUDGET_BILL_NUM,
 	BUDGET_BILL_PRICE_SUM, BUDGET_BILL_LABOR_RATIO,

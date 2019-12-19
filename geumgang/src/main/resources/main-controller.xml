@@ -11,4 +11,5 @@
 	<bean class="Controller.User.LogController"/> <!-- 회원,가이드 ,업체 로그인 창 가는 컨트롤러-->
 	<bean class="Controller.User.CompanyFormController"/> <!-- 업체 등록 신청서 작성 컨트롤러 -->
 	<bean class="Controller.User.CompanyLoginController"/> <!-- 업체가 로그인 하는 컨트롤러 -->
+	<bean class="Controller.User.CompanyLogoutController"/> <!-- 업체가 로그아웃 하는 컨트롤러 -->
 </beans>

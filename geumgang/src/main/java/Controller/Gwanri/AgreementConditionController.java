@@ -31,7 +31,7 @@ public class AgreementConditionController {
 		return "Main/gwanriMain";
 	}	
 	@RequestMapping("gwanri/agreementConditionList") //리스트
-	public String boardList(@RequestParam(value="page" ,
+	public String agreeList(@RequestParam(value="page" ,
 	required = false) Integer page, Model model){
 		acls.getBoardList(model);
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_list.jsp");
