@@ -3,14 +3,26 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="gwanriInsertMapper">
 
+	<cache />
+	
 	<sql id = "agreementCondition">
-	company_name,AGREEMENT_CONDITION_NUM,AGREEMENT_CONDITION_DATE,AGREEMENT_CONDITION_RATIO,
+	AGREEMENT_CONDITION_NUM,AGREEMENT_CONDITION_DATE,AGREEMENT_CONDITION_RATIO,
 	AGREEMENT_CONDITION_SETT,GWAN_RI_NUM
 	</sql>
-	<cache />
-	<insert id = "insertAgree" parameterType="aclDTO">
-	insert into AGREEMENTCONDITION(<include refid="agreementCondition" />)
-	values(gwanri_seq.nextval,#{companyName},null,null,null,null,#{gwanRiNum})
+	
+	<resultMap type="aclDTO" id="baseAgreementMap">
+	<id column="AGREEMENT_CONDITION_NUM" jdbcType="BIGINT" property="agreementConditionNum" />	
+	<result column="AGREEMENT_CONDITION_DATE" jdbcType="DATE" property="agreementConditionDate" />
+	<result column="AGREEMENT_CONDITION_RATIO" jdbcType="FLOAT" property="agreementConditionRatio" />
+	<result column="AGREEMENT_CONDITION_SETT" jdbcType="BIGINT" property="agreementConditionSett" />
+	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum" />
+	
+	
+	</resultMap>
+	<!-- 작성 -->
+	<insert id = "insertAgreement" parameterType="aclDTO">
+	insert into AGREEMENT_CONDITION(<include refid="agreementCondition" />)
+	values(gwanri_seq.nextval,#{agreementConditionNum},#{agreementConditionDate},#{agreementConditionRatio},#{agreementConditionSett},#{gwanRiNum})
 	</insert>
 	
 <insert id = "BudgetBillInsert">

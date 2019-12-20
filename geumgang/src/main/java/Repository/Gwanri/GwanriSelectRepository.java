@@ -41,7 +41,7 @@ public class GwanriSelectRepository {
         return sqlSession.selectOne(statement, bbdto);
     }
     /** 협약 조건안 게시판 - 리스트  */
-    public List<AgreementListDTO> agreeList(AgreementListDTO dto){
+    public List<AgreementConditionDTO> agreeList(AgreementConditionDTO dto){
 		String statement = namespace + ".agreeList";
 		return sqlSession.selectList(statement, dto);
 	}
