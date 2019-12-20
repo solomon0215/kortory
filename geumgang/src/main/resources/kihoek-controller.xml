@@ -11,4 +11,5 @@
 	<bean class="Controller.Kihoek.KihoekLogController"/>
 	<bean class="Controller.Kihoek.KihoekMainContoller"/>
 	<bean class="Controller.Kihoek.conceptFormController"/>
+	<bean class="Controller.Kihoek.conceptListController"/>
 </beans>

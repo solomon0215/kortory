@@ -96,28 +96,32 @@ li a:hover:not(.active) {
 .active {
   background-color: #005580;
 }
-.left {padding-left:40px; overflow:hidden; height:auto;}
+.left {padding-left:40px; padding-top:30px; overflow:hidden; height:auto;}
+.left1 {padding-top:30px; }
+a {text-decoration: none; !important}
 </style>
 </head>
 <body class="w3-white w3-content" style="max-width:1600px">
 <ul>
   <li class="active">
-  <a href="#home">Home</a></li>
-  <li><a href="../kihoek/main">News</a></li>
-  <li><a href="#">Contact</a></li>
-  <li><a href="#about">About</a></li>
+  <a href="../Main/basicMain">KORTORY</a></li>
+  <li><a href="../kihoek/main">MAIN</a></li>
+  <li><a href="conceptForm">CONCEPT</a></li>
+  <li><a href="#">EVENT</a></li>
   
 </ul>
 <div style="background-color:#white;">
 <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-blue-gray w3-collapse w3-card" style="width:320px;font-weight:bold" id="mySidebar"><br>
-	<h3 class="w3-padding-48 w3-center w3-text-deep-orange"><b>KI -<br>HOEK</b></h3>
-	<div class="left">
+	<div class="left1">
+	<a class="w3-center w3-text-deep-orange w3-padding" href="../kihoek/main"><h3><b>KI -<br>HOEK</b></h3></a>
+	</div>
+	<div class="left ">
 		<a onclick="conceptProject()" href="javascript:void(0)" class="w3-bar-item w3-button" id="conceptBtn">
 		컨셉 기획서 <i class="fa fa-caret-down"></i>
 		</a>
 		<div id="projectItem" class="w3-bar-block w3-hide w3-padding w3-text-deep-orange ">
 			<a href="conceptForm" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>컨셉 기획서 등록</a>
-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>컨셉 기획서 목록</a>
+			<a href="conceptList" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>컨셉 기획서 목록</a>
     	</div>
 		
 		<a onclick="companySelect()" href="javascript:void(0)" class="w3-bar-item w3-button" id="selectBtn">
@@ -155,8 +159,8 @@ li a:hover:not(.active) {
 	</div>
 	</nav>
 <!-- PAGE CONTENT -->
-<div class="content" style="margin-top:12px;">
-	<div class="w3-container w3-display-middle" style="padding-left:340px; padding-top:150px;width:100%;">
+<div class="content">
+	<div class="w3-container" style="padding-left:340px; padding-top:60px; width:100%;">
 		<jsp:include page="${pageName}"></jsp:include>
 	</div>
 </div>

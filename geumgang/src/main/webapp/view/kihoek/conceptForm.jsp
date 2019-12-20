@@ -56,9 +56,10 @@ input[type=text], select, textarea {
 }
 
 input[type=checkbox] {
-margin-top: 10px;
-  width: 20px;
+padding-top: 100px;
+width: 20px;
    display: inline-block;
+    resize: vertical;
 }
 
 input:focus {
@@ -91,7 +92,7 @@ ul{
 <body>
 <!-- PAGE CONTENT -->
 <form action="#">
-<h2>컨셉 기획서</h2>
+<h3>컨셉 기획서</h3>
 <div class="container" >
   <div class="row">
     <div class="col-30">
