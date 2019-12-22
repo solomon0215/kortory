@@ -45,7 +45,6 @@ public class RecruitRegiService {
 			date = dt.parse(recruitCommand.getEndDate());
 			java.sql.Date end = new java.sql.Date(date.getTime());
 			recruit.setRecruitEndDate(end);
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
