@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import Model.CompanyDTO.CompanyDTO;
 import Model.YoungupDTO.ExplorListDTO;
+import Model.YoungupDTO.ExplorationDTO;
 import Model.YoungupDTO.YoungupDTO;
 
 @Repository
@@ -31,5 +32,10 @@ public class YoungupSelectRepository {
 	public List<ExplorListDTO> selectKindExp(ExplorListDTO dto){ //신규 담당 업체  사전답사 보고서 가져오기
 		String statement = namespace + ".kindExp";
 		return sqlSession.selectList(statement, dto);
+	}
+	
+	public ExplorListDTO selectExpDetail(ExplorationDTO dto) {//보고서 번호로 하나만 가져오기
+		String statement = namespace + ".expDetail";
+		return sqlSession.selectOne(statement,dto);
 	}
 }

@@ -31,7 +31,7 @@ public class KihoekLogService {
 		if(kiDto != null) {
 			KihoekAuthInfo kAuth = new KihoekAuthInfo(kiDto.getKiHoekId(), kiDto.getKiHoekEmail(), kiDto.getKiHoekName(), 302);
 			session.setAttribute("authLog", kAuth);
-			return "Main/kihoekMain";
+			return "kihoek/goToMain";
 		}else {
 			errors.rejectValue("kiHoekId", "logFailed");
 			model.addAttribute("pageName","../Login/staffKLog.jsp");
