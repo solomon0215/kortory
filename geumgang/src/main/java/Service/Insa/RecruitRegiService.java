@@ -33,18 +33,19 @@ public class RecruitRegiService {
 		recruit.setRecruitCost(recruitCommand.getRegiCost());
 		recruit.setInSaNum(((InsaAuthInfo)session.getAttribute("authLog")).getInSaNum());
 		
-		String str1 = recruit.getRecruitContent().toString(); // 바이트를 있는 그래도 문자로 저장
-		String  str = new String(recruit.getRecruitContent());//바이트를 문자로 해석해서 저장
+		String str1 = recruit.getRecruitContent().toString(); // 諛붿씠�듃瑜� �엳�뒗 洹몃옒�룄 臾몄옄濡� ���옣
+		String  str = new String(recruit.getRecruitContent());//諛붿씠�듃瑜� 臾몄옄濡� �빐�꽍�빐�꽌 ���옣
 		System.out.println(str1);
 		System.out.println(str);
 		SimpleDateFormat dt = new SimpleDateFormat("yyyyMMdd");
 		try {
 			Date date = dt.parse(recruitCommand.getRegiDate());
-			java.sql.Date regi = new java.sql.Date(date.getDate());
+			java.sql.Date regi = new java.sql.Date(date.getTime());
 			recruit.setRecruitRegiDate(regi);
 			date = dt.parse(recruitCommand.getEndDate());
-			java.sql.Date end = new java.sql.Date(date.getDate());
+			java.sql.Date end = new java.sql.Date(date.getTime());
 			recruit.setRecruitEndDate(end);
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -55,7 +56,6 @@ public class RecruitRegiService {
 
 	public void recruitSelect(Model model, HttpSession session) {
 		List<RecruitDTO> recruitList = recruitRepository.recruitAllSelect();
-		System.out.println("dddd");
 		for(RecruitDTO c : recruitList) {
 			System.out.println(c.getRecruitTitle());
 		}
