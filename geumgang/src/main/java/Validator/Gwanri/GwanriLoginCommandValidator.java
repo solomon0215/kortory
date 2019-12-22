@@ -13,9 +13,9 @@ public class GwanriLoginCommandValidator implements Validator {
 
 	public void validate(Object target, Errors errors) {
 		// TODO Auto-generated method stub
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "GwanRiId", 
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "gwanRiId", 
 				"required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "GwanRiPw", 
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "gwanRiPw", 
 				"required");
 	}
 

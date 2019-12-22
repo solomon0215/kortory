@@ -15,6 +15,7 @@ import Model.GwanriDTO.AgreementListDTO;
 import Model.GwanriDTO.BudgetBillDTO;
 import Model.GwanriDTO.GwanriDTO;
 import Model.YoungupDTO.ExplorListDTO;
+import Model.YoungupDTO.YoungupDTO;
 
 @Repository
 public class GwanriSelectRepository {
@@ -22,14 +23,10 @@ public class GwanriSelectRepository {
 	private SqlSession sqlSession;	
 	private final String namespace = "gwanriSelectMapper";
 	
-	public Integer idConfirm(String gwanRiId) {
-		String statement = namespace + ".idConfirm";
-		String id = sqlSession.selectOne(statement, gwanRiId) ;
-		if(id != null) {
-			return 1;
-		}
-		return 0;		
-	}			
+	public GwanriDTO gwanLog(GwanriDTO dto) { 
+		String statement = namespace + ".gwanriLog";
+		return sqlSession.selectOne(statement, dto);
+	}	
 	/** 예산안 보고서 게시판 - 목록 조회  */
     public List<BudgetBillDTO> boardList(BudgetBillDTO bbdto){
     	String statement =  namespace + ".boardList";

@@ -1,29 +1,36 @@
 package Controller.Gwanri;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import Command.Gwanri.GwanriLogCommand;
+import Command.Youngup.YoungupLogCommand;
 import Service.Gwanri.GwanriLoginService;
+import Validator.Gwanri.GwanriLoginCommandValidator;
+import Validator.Youngup.YoungupLogCommandValidator;
 
 
-@RequestMapping("/staff/gwanLogPro")
 @Controller
 public class GwanriLogController {
 	
 	@Autowired
 	GwanriLoginService gwanriLoginService;	
 	
-	@RequestMapping(method=RequestMethod.POST)
-	public String gwanriIdConfirm(@RequestParam("gwanRiId") String gwanRiId, Model model) {
-		model.addAttribute("pageName", "../FirstView/firstView.jsp");
-		return gwanriLoginService.idConfirm(gwanRiId);
+	@RequestMapping(value = "/staff/gwanLogPro",method = RequestMethod.POST) 
+	public String gwanLogPro(GwanriLogCommand glc, Model model, Errors errors,HttpSession session) {
+		new GwanriLoginCommandValidator().validate(glc, errors);
+				
+		if(errors.hasErrors()) {
+			model.addAttribute("pageName", "../Login/companyLogin.jsp");
+			return "Main/basicMain";
+		}
+		return gwanriLoginService.gwanriLogPro(glc,model,errors,session);
 	}
-
-	@RequestMapping(method=RequestMethod.GET) 
-	public String loginPro() {
-		return "redirect:../main"; 		
-	} 
+		
 }

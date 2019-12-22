@@ -3,28 +3,27 @@ package Model.GwanriDTO;
 import java.sql.Date;
 
 public class AgreementConditionDTO { //협약조건안DTO
-	private Integer agreementConditionNum; //협약조건 번호
-	private Date agreementConditionDate; //협약조건 작성일
-	private Float agreementConditionRatio; //업체희망정산비율
-	private Integer agreementConditionSett; //정산기준시간
-	private String gwanRiNum; //관리부직원번호
-
-	public Integer getAgreementConditionNum() {
+	String agreementConditionNum; //협약조건 번호
+	String agreementConditionDate; //협약조건 작성일
+	float agreementConditionRatio; //업체희망정산비율
+	Integer agreementConditionSett; //정산기준시간
+	String gwanRiNum; //관리부직원번호
+	public String getAgreementConditionNum() {
 		return agreementConditionNum;
 	}
-	public void setAgreementConditionNum(Integer agreementConditionNum) {
+	public void setAgreementConditionNum(String agreementConditionNum) {
 		this.agreementConditionNum = agreementConditionNum;
 	}
-	public Date getAgreementConditionDate() {
+	public String getAgreementConditionDate() {
 		return agreementConditionDate;
 	}
-	public void setAgreementConditionDate(Date agreementConditionDate) {
+	public void setAgreementConditionDate(String agreementConditionDate) {
 		this.agreementConditionDate = agreementConditionDate;
 	}
-	public Float getAgreementConditionRatio() {
+	public float getAgreementConditionRatio() {
 		return agreementConditionRatio;
 	}
-	public void setAgreementConditionRatio(Float agreementConditionRatio) {
+	public void setAgreementConditionRatio(float agreementConditionRatio) {
 		this.agreementConditionRatio = agreementConditionRatio;
 	}
 	public Integer getAgreementConditionSett() {
