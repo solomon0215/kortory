@@ -25,21 +25,25 @@
 
 <insert id="insertEmployee" parameterType="employeeDTO"> 
    insert into
-	<if test="kind  == 301">
-	gwan_ri(gwan_ri_num)
-   values(to_char(sysdate)+#{employeeName}+#{employeeGender}+#{kind})
+	<if test="employeeKind  == 301">
+	gwan_ri
+   values((to_char(sysdate)+#{employeeName}+#{employeeGender}+#{employeeKind}),#{employeeName),#{employeeBirth},
+   #{employeeEmail},#{employeeGender},#{employeeId}, #{employeePw}, #{employeePh}, #{employeeRegist})
 	</if> 
-	<if test="kind  == 302">
-	ki_hoekki_hoek_num)
-   values(to_char(sysdate)+#{employeeName}+#{employeeGender}+#{kind})
+	<if test="employeeKind  == 302">
+	ki_hoekk
+   values((to_char(sysdate)+#{employeeName}+#{employeeGender}+#{employeeKind}),#{employeeName),#{employeeBirth},
+   #{employeeEmail},#{employeeGender},#{employeeId}, #{employeePw}, #{employeePh}, #{employeeRegist})
 	</if> 
-	<if test="kind  == 303">
-	in_sa(in_sa_num)
-   values(to_char(sysdate)+#{employeeName}+#{employeeGender}+#{kind})
+	<if test="employeeKind  == 303">
+	in_sa
+   values((to_char(sysdate)+#{employeeName}+#{employeeGender}+#{employeeKind}),#{employeeName),#{employeeBirth},
+   #{employeeEmail},#{employeeGender},#{employeeId}, #{employeePw}, #{employeePh}, #{employeeRegist})
 	</if> 
-	<if test="kind  == 304">
-	young_up(young_up_num)
-   values(to_char(sysdate)+#{employeeName}+#{employeeGender}+#{kind})
+	<if test="employeeKind  == 304">
+	young_up
+   values((to_char(sysdate)+#{employeeName}+#{employeeGender}+#{employeeKind}),#{employeeName),#{employeeBirth},
+   #{employeeEmail},#{employeeGender},#{employeeId}, #{employeePw}, #{employeePh}, #{employeeRegist})
 	</if> 
    
 </insert> 

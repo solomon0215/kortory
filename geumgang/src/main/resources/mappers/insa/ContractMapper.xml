@@ -9,6 +9,26 @@
 		CON_SALARY, CON_END, CON_INCENTIVE, CON_DETAIL, RESUME_NUM, USER_ID
 	</sql>
 	<resultMap type="contractDTO" id="baseContractMap">
+	<id column="WORK_CON_NUM" jdbcType="BIGINT" property="conNum" />
+	<result column="WORK_CON_COMPANY" jdbcType="VARCHAR" property="conCompany" />
+	<result column="WORK_CON_PH" jdbcType="BIGINT" property="conPh" />
+	<result column="WORK_CON_LOCATION" jdbcType="VARCHAR" property="conLocation" />
+	<result column="WORK_CON_CEO" jdbcType="VARCHAR" property="conCeo" />
+	<result column="WORK_CON_REGI_NUM" jdbcType="VARCHAR" property="conRegiNum" />
+	<result column="WORK_CON_START" jdbcType="DATE" property="conStart" />
+	<result column="WORK_CON_SALARY" jdbcType="BIGINT" property="conSalary" />
+	<result column="WORK_CON_END" jdbcType="DATE" property="conEnd" />
+	<result column="WORK_CON_INCENTIVE" jdbcType="BIGINT" property="conIncentive" />
+	<result column="WORK_CON_DETAIL" jdbcType="VARCHAR" property="conDetail" />
+	<result column="RESUME_NUM" jdbcType="BIGINT" property="resumeNum" />
+	<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
 	
 	</resultMap>
+	<insert id="insertContract" parameterType="contractDTO">
+	insert into work_con(
+	<include refid="baseContract" />
+	)
+	values(#{conNum}, #{conCompany}, #{conPh}, #{conLocation}, #{conCeo}, #{conRegiNum},
+	#{conStart}, #{conSalary}, #{conEnd}, #{conIncentive}, #{conDetail}, #{resumeNum}, #{userId})
+	</insert>
 </mapper>

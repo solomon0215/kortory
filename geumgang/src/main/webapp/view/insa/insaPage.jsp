@@ -92,14 +92,13 @@ function myAccFunc6() {
   <div id="demoAcc1" class="w3-hide w3-white w3-card">
     <a href="recruitList" class="w3-bar-item w3-button">채용공고 목록</a>
     <a href="resumeList" class="w3-bar-item w3-button">이력서 확인</a>
-    <a href="#" class="w3-bar-item w3-button">근로계약서 작성</a>
   </div>
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc2()">
   사원정보 <i class="fa fa-caret-down"></i>
   </button>
   <div id="demoAcc2" class="w3-hide w3-white w3-card">
     <a href="employeeInfoInsert" class="w3-bar-item w3-button">사원정보 등록</a>
-    <a href="#" class="w3-bar-item w3-button">근로계약서 열람</a>
+    <a href="#" class="w3-bar-item w3-button">근로계약서 목록</a>
     <a href="#" class="w3-bar-item w3-button">인사고과 열람</a>
   </div>
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc3()">

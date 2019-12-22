@@ -19,7 +19,6 @@ public class ContractService {
 
 	public Integer contractRegist(ContractCommand cc, HttpServletRequest request) {
 		ContractDTO contract = new ContractDTO();
-		contract.setConNum(cc.getConNum());
 		contract.setConCeo(cc.getConCeo());
 		contract.setConCompany(cc.getConCompany());
 		contract.setConIncentive(cc.getConIncentive());
@@ -34,10 +33,10 @@ public class ContractService {
 		SimpleDateFormat dt = new SimpleDateFormat("yyyyMMdd");
 		try {
 			Date date = dt.parse(cc.getConStart());
-			java.sql.Date start = new java.sql.Date(date.getDate());
+			java.sql.Date start = new java.sql.Date(date.getTime());
 			contract.setConStart(start);
 			date = dt.parse(cc.getConEnd());
-			java.sql.Date end = new java.sql.Date(date.getDate());
+			java.sql.Date end = new java.sql.Date(date.getTime());
 			contract.setConEnd(end);
 		} catch (Exception e) {
 			e.printStackTrace();

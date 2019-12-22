@@ -1,7 +1,6 @@
 package Command.Insa;
 
 public class ContractCommand {
-	Integer conNum;
 	String conCompany;
 	String conPh;
 	String conLocation;
@@ -14,12 +13,7 @@ public class ContractCommand {
 	String conDetail;
 	Integer resumeNum;
 	String userId;
-	public Integer getConNum() {
-		return conNum;
-	}
-	public void setConNum(Integer conNum) {
-		this.conNum = conNum;
-	}
+	
 	public String getConCompany() {
 		return conCompany;
 	}
