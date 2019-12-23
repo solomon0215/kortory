@@ -20,18 +20,19 @@ public class GwanriLoginService {
 	GwanriSelectRepository gwanriRepository;
 	
 	public String gwanriLogPro(GwanriLogCommand glc, Model model, Errors errors, HttpSession session) {
-		GwanriDTO gdto = new GwanriDTO();
-		gdto.setGwanRiId(glc.getGwanRiId()); 
-		gdto.setGwanRiPw(glc.getGwanRiPw());		
-		GwanriDTO dto2 = gwanriRepository.gwanLog(gdto); 
+		GwanriDTO dto1 = new GwanriDTO();
+		dto1.setGwanRiId(glc.getGwanRiId()); 
+		dto1.setGwanRiPw(glc.getGwanRiPw());		
+		GwanriDTO dto2 = gwanriRepository.gwanLog(dto1); 
 		if(dto2 !=null ) { 		
-			System.out.println("-----------------------------------------log-----------------------------------");
+			System.out.println("-----------------------------------------로그인 성공-----------------------------------");
 			GwanriAuthInfo auth = new GwanriAuthInfo(dto2.getGwanRiEmail(), dto2.getGwanRiName(), 301, dto2.getGwanRiNum());
 			model.addAttribute("pageName","../gwanri/welcome.jsp");
 			session.setAttribute("authLog", auth);
+			System.out.println(auth.getgwanRiNum());
 			return "Main/gwanriMain";
 		}else {	
-			System.out.println("-----------------------------------------no-----------------------------------");
+			System.out.println("-----------------------------------------로그인 실패-----------------------------------");
 			errors.rejectValue("gwanRiId", "userLogFailed");
 			model.addAttribute("pageName","../Login/staffGwanriLog.jsp");
 			return "Login/staffLog";

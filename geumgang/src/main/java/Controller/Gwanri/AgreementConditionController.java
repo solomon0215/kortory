@@ -29,13 +29,20 @@ public class AgreementConditionController {
 	public String form(@RequestParam(value="page" ,
 			required = false)HttpServletRequest request , HttpSession session, Model model){		
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_form.jsp");
+		
 		return "Main/gwanriMain";
 	}
 	@RequestMapping(value="/gwanri/agreementConditionWritePro", method=RequestMethod.POST) //등록
 	public String write(HttpServletRequest request , HttpSession session, Model model,
-		@RequestParam(value = "agreementConditionDate",required = false) java.sql.Date agreementConditionDate) {
+		@RequestParam(value = "agreementConditionDate",required = false) java.sql.Date agreementConditionDate,
+		@RequestParam(value = "agreementConditionSett",required = false) Integer agreementConditionSett,
+		@RequestParam(value = "agreementConditionRatio",required = false) float agreementConditionRatio
+		) {
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_list.jsp");
-		acls.agreeInsert(request, session, model, agreementConditionDate);
+		acls.agreeInsert(request, session, model, agreementConditionDate,agreementConditionSett,agreementConditionRatio);
+		if(request.getSession().getAttribute("authLog") == null) { 
+			return "Gwanri/back";
+		}
 		return "redirect:/gwanri/agreementConditionList";
 	}	
 	@RequestMapping("gwanri/agreementConditionList") //리스트

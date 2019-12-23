@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class AgreementConditionDTO implements Serializable { //협약조건안DTO
-	String agreementConditionNum; //협약조건 번호
+	Integer agreementConditionNum; //협약조건 번호
 	java.sql.Date agreementConditionDate; //협약조건 작성일
 	float agreementConditionRatio; //업체희망정산비율
 	Integer agreementConditionSett; //정산기준시간
 	String gwanRiNum; //관리부직원번호
-	public String getAgreementConditionNum() {
+	public Integer getAgreementConditionNum() {
 		return agreementConditionNum;
 	}
-	public void setAgreementConditionNum(String agreementConditionNum) {
+	public void setAgreementConditionNum(Integer agreementConditionNum) {
 		this.agreementConditionNum = agreementConditionNum;
 	}
 	public java.sql.Date getAgreementConditionDate() {

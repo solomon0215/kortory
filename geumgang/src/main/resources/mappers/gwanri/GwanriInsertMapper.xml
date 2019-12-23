@@ -17,7 +17,6 @@
 	<result column="AGREEMENT_CONDITION_SETT" jdbcType="BIGINT" property="agreementConditionSett" />
 	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum" />
 	
-	
 	</resultMap>
 	<!-- 작성 -->
 	<insert id = "insertAgreement" parameterType="acDTO">

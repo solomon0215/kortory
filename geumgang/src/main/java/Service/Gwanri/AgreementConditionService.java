@@ -23,9 +23,11 @@ public class AgreementConditionService {
 	public void boardView(Integer page, Long agreementConditionNum, Model model) {
 		// TODO Auto-generated method stub
 		}
-	public Integer agreeInsert(HttpServletRequest request, HttpSession session, Model model, java.sql.Date agreementConditionDate) {
+	public Integer agreeInsert(HttpServletRequest request, HttpSession session, Model model, java.sql.Date agreementConditionDate, Integer agreementConditionSett, float agreementConditionRatio) {
 		AgreementConditionDTO dto = new AgreementConditionDTO();
-		dto.setAgreementConditionDate(agreementConditionDate);	
+		dto.setAgreementConditionDate(agreementConditionDate);
+		dto.setAgreementConditionSett(agreementConditionSett);
+		dto.setAgreementConditionRatio(agreementConditionRatio);
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_list.jsp");
 		return gwanriInsertRepository.agreeInsert(dto);
 		

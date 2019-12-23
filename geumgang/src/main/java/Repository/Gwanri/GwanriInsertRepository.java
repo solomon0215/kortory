@@ -24,10 +24,7 @@ public class GwanriInsertRepository {
     	System.out.println(dto.getAgreementConditionRatio());
     	System.out.println(dto.getAgreementConditionDate());
     	System.out.println(dto.getAgreementConditionSett());
-    	
-    	
-    	String statement = namespace + ".insertAgreement";
-    	
+    	String statement = namespace + ".insertAgreement";    	
     	Integer result = sqlSession.insert(statement, dto);
     	
 		return result;

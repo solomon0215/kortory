@@ -40,7 +40,7 @@ $(function(){
 </script>
 </head>
 <body>
-<form action="agreementConditionWritePro" id="frm" method="post" >
+<form action="agreementConditionWritePro" name="frm" id="frm" method="post" >
      <table cellpadding="0" cellspacing="0" > 
 		<div class="w3-center">
 		<h2><p>협약조건안</p></h2><br /><br />
@@ -51,11 +51,11 @@ $(function(){
 				② "을" 은 계약중 사정에 의하여 변수가 생긴 경우, 이를 즉시 "갑"에게 알려야할 의무가 있으며,<br />이 계약이
 				정한 기준과 내용에 최대한 부합하도록 "갑"과 협의하여야 한다.<br /> <br /> 제3조(정산)<br /> ①
 				"갑"은 "을"에게 행사의 수익에 대해 "을"의 희망가격에서</p>		
-			
-				<input type="text" id="agreementConditionRatio" class="w3-input w3-center" style="width: 200px" placeholder="업체희망정산비율" >
+				
+				<input type="text" name="agreementConditionRatio" id="agreementConditionRatio" class="w3-input w3-center" style="width: 200px" placeholder="업체희망정산비율" >
 				<p>퍼센트를 지급하고 나머지 퍼센트는 "갑"이 갖는 것으로 한다. <br /> ② "갑"은 정산 진행 시 "을"이 이용한</p>
 				
-				<input type="text" id="agreementConditionSett" class="w3-input w3-center" style="width: 200px" placeholder="정산 기준 시간" >
+				<input type="text" name="agreementConditionSett" id="agreementConditionSett" class="w3-input w3-center" style="width: 200px" placeholder="정산 기준 시간" >
 				<p>시간에 대해 정산 기준 시간에 따라 금액을 계산하여 정산하는 것으로 한다. <br /> <br /> 제4조(지도·감독)<br />
 				① "갑"은 이 사업과 관련한 "을"의 업무를 지도·감독한다.<br /> ② "갑은 사업과 관련한 "을"의 사무처리가
 				관계법규 등에 위배되거나 부당하다고 인정되는 때에는<br />이에 대한 시정을 요구하거나 직접 시정조치 할 수 있다.<br />
@@ -64,7 +64,7 @@ $(function(){
 				발생되는 권리나 의무에 관한 소송은 "갑"의 소재지 관할 법원으로 한다.<br /> <br /> 제6조(효력발생)<br />
 				본 약정의 유효기간은 협약 체결일로부터 행사종료 후 정산완료 시점까지로 한다. <br /> <br /></p>				
 			
-				<input type="date" id="agreementConditionDate" class="w3-input w3-center" 
+				<input type="date" name="agreementConditionDate" id="agreementConditionDate" class="w3-input w3-center" 
 										style="width: 200px">
 				<div class="w3-container w3-center">
 				<br /> 
