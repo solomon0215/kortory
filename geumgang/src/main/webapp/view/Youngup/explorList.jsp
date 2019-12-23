@@ -39,7 +39,7 @@ function goToNewWrite(expNum){
 	location.href="explorNewWirte?expNum="+expNum;
 }
 function goToIncomWrite(expNum){
-	location.href="explorIncomWirte?expNum="+expNum;
+	location.href="explorIncomDetail?expNum="+expNum;
 }
 function goToCompleDetail(expNum){
 	location.href="explorCompleDetail?expNum="+expNum;
@@ -47,7 +47,7 @@ function goToCompleDetail(expNum){
 </script>
 </head>
 <body>
-<div class="w3-container" >
+<div class="w3-container" style="margin-top: 10%;">
 	<div class="w3-container w3-center w3-dark-gray">
 		<div class="w3-bar w3-dark-gray">
 		  <button class="w3-bar-item w3-button w3-margin-left w3-margin-right w3-large w3-min" onclick="openWork('new')">담당 신규업체</button>
@@ -107,7 +107,7 @@ function goToCompleDetail(expNum){
 			      <td>${in.companyAddr}</td>
 			      <td>${in.companyPh}</td>
 			      <td>${in.companyType}</td>
-			      <td><button class="w3-button w3-white w3-border w3-hover-amber" onclick="goToIncomWrite('${in.explorationNum}')">작성하러 가기</button></td>
+			      <td><button class="w3-button w3-white w3-border w3-hover-amber" onclick="goToIncomWrite('${in.explorationNum}')">상세보기</button></td>
 			    </tr>
 			    </c:forEach>
 			    </c:if>

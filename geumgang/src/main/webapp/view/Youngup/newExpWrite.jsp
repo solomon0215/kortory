@@ -34,7 +34,6 @@ $(function() {
 h2{
 	color:  #696463;
 }
-tr{}
 
 </style>
 </head>

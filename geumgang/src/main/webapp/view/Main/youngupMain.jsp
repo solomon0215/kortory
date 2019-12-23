@@ -73,7 +73,7 @@
 		    </ul>
 		</div>
 	</div>
-	<div class="w3-container w3-display-middle" style="padding-left: 20%;padding-top: 5%; width:100%;">
+	<div class="w3-container w3-display-middle" style="padding-left: 20%;padding-top: 5 %; width:100%; height:100%; ">
 		<jsp:include page="${pageName}"></jsp:include>
 	</div>	
 </div>
