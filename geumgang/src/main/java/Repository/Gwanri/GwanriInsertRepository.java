@@ -20,10 +20,18 @@ public class GwanriInsertRepository {
 		
 	/** 협약조건안 게시판 - 등록  */    
     public Integer agreeInsert(AgreementConditionDTO dto){
-    	Integer result = null;
+    	System.out.println(dto.getGwanRiNum());
+    	System.out.println(dto.getAgreementConditionRatio());
+    	System.out.println(dto.getAgreementConditionDate());
+    	System.out.println(dto.getAgreementConditionSett());
+    	
+    	
     	String statement = namespace + ".insertAgreement";
-    	result = sqlSession.insert(statement, dto);
+    	
+    	Integer result = sqlSession.insert(statement, dto);
+    	
 		return result;
     	
-    }	
+    }
+	
 }

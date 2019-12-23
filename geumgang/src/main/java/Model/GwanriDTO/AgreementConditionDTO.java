@@ -39,6 +39,7 @@ public class AgreementConditionDTO implements Serializable { //협약조건안DT
 	public void setGwanRiNum(String gwanRiNum) {
 		this.gwanRiNum = gwanRiNum;
 	}
-
+	
+	
 }
 

@@ -16,7 +16,7 @@
 <body>
 
 <dvi class =" w3-container">
-		<center><h2>협약조건안 상세내역</h2></center><br/>
+		<center><h2>협약조건안 수정</h2></center><br/>
 			
 <form action ="agreementConditionModifyPro" name ="frm" method = "post" >
 <table border = 1  width = 600 align = "center" cellpadding = 3 >

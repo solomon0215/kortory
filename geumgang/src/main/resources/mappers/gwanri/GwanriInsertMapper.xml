@@ -22,7 +22,7 @@
 	<!-- 작성 -->
 	<insert id = "insertAgreement" parameterType="acDTO">
 	insert into AGREEMENT_CONDITION(<include refid="agreementCondition" />)
-	values(gwanri_seq.nextval,#{agreementConditionNum},#{agreementConditionDate},#{agreementConditionRatio},#{agreementConditionSett},#{gwanRiNum})
+	values(gwanri_seq.nextval,#{agreementConditionDate},#{agreementConditionRatio},#{agreementConditionSett},#{gwanRiNum})
 	</insert>
 	
 <insert id = "BudgetBillInsert">
