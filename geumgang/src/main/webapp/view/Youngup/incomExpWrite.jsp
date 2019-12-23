@@ -43,7 +43,11 @@ h2{
 		    </thead>
 		    <tbody>
 		    	<tr class="w3-gray">
-		    		<td>보고서 번호</td><td class="w3-light-gray">${detail.explorationNum}</td>
+		    		<td>보고서 번호</td>
+		    		<td class="w3-light-gray">
+		    			${detail.explorationNum}
+		    			<form:hidden path="explorationNum" value="${detail.explorationNum}"/>
+		    		</td>
 		    	</tr>
 		    	<tr class="w3-gray">
 			      <td>사업자 번호</td><td class="w3-light-gray">${detail.companyRegNum}</td>
@@ -58,23 +62,50 @@ h2{
 			      <td>공기업 여부</td><td class="w3-light-gray">${detail.companyType}</td>
 			    </tr>
 				<tr class="w3-gray">
-					<td>업체유형</td><td><form:input path="explorationType" style="width:100%;"/></td>
+					<td>업체유형</td>
+					<td>
+						<form:select path="explorationType" style="width:100%;">
+							<form:option value="0" label="------업체 유형 선택------"/>
+							<form:option value="관광" label="관광업체"/>
+							<form:option value="숙박" label="숙박업체"/>
+							<form:option value="이동" label="이동업체"/>
+						</form:select>
+						<form:errors path="explorationType" class="w3-text-red"/>
+					</td>
 					
 				</tr>
 				<tr class="w3-gray">
 					<td>방문예정일</td><td class="w3-light-gray">${detail.explorationSchedule}</td>
 				</tr>
 				<tr class="w3-gray">
-					<td>방문실시일</td><td><form:input path="explorationEffect" style="width:100%" type="date"/></td>
+					<td>방문실시일</td>
+					<td>
+						<form:input path="explorationEffect" style="width:100%" type="date"/>
+						<form:errors path="explorationEffect" class="w3-text-red"/>
+					</td>
 				</tr>
 				<tr class="w3-gray">
-					<td>업체 담당자 이름</td><td><form:input path="explorationManaName" style="width:100%;"/></td>
+					<td>업체 담당자 이름</td>
+					<td>
+						<form:input path="explorationManaName" style="width:100%;"/>
+						<form:errors path="explorationManaName" class="w3-text-red"/>
+					</td>
 				</tr>
 				<tr class="w3-gray">
-					<td>업체 방문 가능시간</td><td><form:input path="startTime" style="width:46%;" type="number"/>시 ~ <form:input path="endTime" style="width:46%;" type="number"/>시</td>
+					<td>업체 방문 가능시간</td>
+					<td>
+						<form:input path="startTime" style="width:46%;" type="number"/>시 ~ <form:input path="endTime" style="width:46%;" type="number"/>시
+						<form:errors path="startTime" class="w3-text-red"/>
+						<form:errors path="endTime" class="w3-text-red"/>
+					</td>
 				</tr>
 				<tr class="w3-gray">
-					<td>업체 사용가능 날짜</td><td><form:input path="startDate" style="width:48%;" type="date"/> ~ <form:input path="endDate" style="width:48%;" type="date"/></td>
+					<td>업체 사용가능 날짜</td>
+					<td>
+						<form:input path="startDate" style="width:48%;" type="date"/> ~ <form:input path="endDate" style="width:48%;" type="date"/>
+						<form:errors path="startDate" class="w3-text-red"/>
+						<form:errors path="endDate" class="w3-text-red"/>
+					</td>
 				</tr>
 				<tr class="w3-gray">
 					<td>공휴일 사용 가능 여부</td>
@@ -90,16 +121,39 @@ h2{
 					</td>
 				</tr>
 				<tr class="w3-gray">
-					<td>업체 방문 제한 나이<br>(없으면 '0'으로)</td><td>만 <form:input path="explorationLimitAge" style="width:80%;"  type="number"/>세 이상</td>
+					<td>업체 방문 제한 나이<br>(없으면 '0'으로)</td>
+					<td>
+						만 <form:input path="explorationLimitAge" style="width:80%;"  type="number"/>세 이상
+						<form:errors path="explorationLimitAge" class="w3-text-red"/>
+					</td>
 				</tr>
 				<tr class="w3-gray">
-					<td>업체 방문 제한 인원</td><td><form:input path="explorationLimitPer" style="width:90%;" type="number"/>명 이하</td>
+					<td>업체 방문 제한 인원</td>
+					<td>
+						<form:input path="explorationLimitPer" style="width:90%;" type="number"/>명 이하
+						<form:errors path="explorationLimitPer" class="w3-text-red"/>
+					</td>
 				</tr>
 				<tr class="w3-gray">
-					<td>업체 방문 제한 조건</td><td><form:textarea path="explorationCondition" style="width:100%;" cols="15" rows="30"/></td>
+					<td>업체 방문 제한 조건</td>
+					<td>
+						<form:textarea path="explorationCondition" style="width:100%;" cols="15" rows="30"/>
+						<form:errors path="explorationCondition" class="w3-text-red"/>
+					</td>
 				</tr>
 				<tr class="w3-gray">
 					<td>증빙자료</td><td><input type="file" name="explorationFile" multiple = "multiple" style="width:100%;" /></td>
+				</tr>
+				<tr class="w3-gray">
+					<td>제출/임시보관 선택</td>
+					<td>
+						<form:select path="choise" value="1" style="width:100%;">
+							<form:option value="0" label="------저장 종류 선택------"/>
+							<form:option value="1" label="제출"/>
+							<form:option value="2" label="임시보관"/>
+						</form:select>
+						<form:errors path="choise" class="w3-text-red"/>
+					</td>
 				</tr>
 		    </tbody>
 		</table>

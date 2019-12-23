@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import Command.Youngup.ExplorIncomWriteCommand;
 import Service.Youngup.ExplorIncomService;
+import Validator.Youngup.ExplorIncomWriteCommandValidator;
 
 @Controller
 public class ExplorIncomController {
@@ -30,7 +31,7 @@ public class ExplorIncomController {
 		return "Main/youngupMain";
 	}
 	
-	//사전답사 내용 작성
+	//사전답사 내용 작성페이지 
 	@RequestMapping("/youngup/incomExpWrite") 
 	public String incomExpWrite(ExplorIncomWriteCommand explorIncomWriteCommand,Model model,HttpServletRequest request,Errors errors,
 			@RequestParam(value = "expNum") Integer expNum) {
@@ -41,13 +42,21 @@ public class ExplorIncomController {
 		model.addAttribute("pageName", "../Youngup/incomExpWrite.jsp");
 		return "Main/youngupMain";
 	}
+	
+	//사전답사 내용 작성 저장
 	@RequestMapping(value= "/youngup/incomExpWritePro", method = RequestMethod.POST) 
-	public String incomExpWritePro(ExplorIncomWriteCommand explorIncomWriteCommand) {
-		System.out.println(explorIncomWriteCommand.getStartTime());
-		System.out.println(explorIncomWriteCommand.getEndTime());
-		System.out.println(explorIncomWriteCommand.getStartDate());
-		System.out.println(explorIncomWriteCommand.getEndDate());
-		System.out.println(explorIncomWriteCommand.getExploration_avail_holi());
+	public String incomExpWritePro(ExplorIncomWriteCommand explorIncomWriteCommand,Model model,Errors errors,HttpServletRequest req) {
+		if(req.getSession().getAttribute("authLog") == null) { //로그인 확인
+			return "Youngup/back";
+		}
+		new ExplorIncomWriteCommandValidator().validate(explorIncomWriteCommand, errors);
+		if(errors.hasErrors()) {
+			expInSer.incomExpDetail(model,explorIncomWriteCommand.getExplorationNum());
+			model.addAttribute("pageName", "../Youngup/incomExpWrite.jsp");
+			return "Main/youngupMain";
+		}
+		
+		expInSer.incomExpUpdate(explorIncomWriteCommand,model,errors);
 		return "Main/youngupMain";
 	}
 	

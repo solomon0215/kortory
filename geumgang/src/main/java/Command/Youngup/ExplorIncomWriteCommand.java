@@ -1,12 +1,11 @@
 package Command.Youngup;
 
-import java.sql.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
 public class ExplorIncomWriteCommand {
-	private Integer explorationNum; //답사 보고서 번호(PK) 
-	private String explorationType;	//업체 유형	
+	private Integer explorationNum; //답사 보고서 번호(PK)
+	private String explorationType;
 	private String explorationManaName;//	업체담당자 이름
 	private String explorationEffect;//방문 실시일
 	private String startTime;	//업체 방문 가능 시작시간	
@@ -18,7 +17,20 @@ public class ExplorIncomWriteCommand {
 	private Integer explorationLimitPer;//업체 방무문 제한 인원
 	private String explorationCondition;//	업체 방문 제한 조건	조건	VARCHAR2(1000)	NULL
 	private MultipartFile [] picture; //증빙 사진자료
+	private Integer choise;//제출/임시보관 선택
 	
+	public String getExplorationType() {
+		return explorationType;
+	}
+	public void setExplorationType(String explorationType) {
+		this.explorationType = explorationType;
+	}
+	public Integer getChoise() {
+		return choise;
+	}
+	public void setChoise(Integer choise) {
+		this.choise = choise;
+	}
 	public String getExplorationEffect() {
 		return explorationEffect;
 	}
@@ -30,12 +42,6 @@ public class ExplorIncomWriteCommand {
 	}
 	public void setExplorationNum(Integer explorationNum) {
 		this.explorationNum = explorationNum;
-	}
-	public String getExplorationType() {
-		return explorationType;
-	}
-	public void setExplorationType(String explorationType) {
-		this.explorationType = explorationType;
 	}
 	public String getExplorationManaName() {
 		return explorationManaName;
