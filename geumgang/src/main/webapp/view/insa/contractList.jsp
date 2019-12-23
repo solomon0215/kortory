@@ -25,10 +25,10 @@
     </thead>
     <c:forEach var="contract" items="${contract}"  varStatus="status">
     <tr>
-      <td></td>
+      <td>${status.count}</td>
       <td><a href="#"></a></td>
-      <td></td>
-      <td></td>
+      <td>${contract.conStart}</td>
+      <td>${contract.conEnd}</td>
     </tr>
     </c:forEach>
   </table>

@@ -17,9 +17,9 @@ public class EmployeeInsertService {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
-	public Integer Insert(EmployeeCommand ec) { //command를 dto에 저장
+	public Integer Insert(EmployeeCommand ec) { //command瑜� dto�뿉 ���옣
 		EmployeeDTO dto = new EmployeeDTO(); 
-		dto.setEmployeeEmail(ec.getEmployeeEmali());
+		dto.setEmployeeEmail(ec.getEmployeeEmail());
 		dto.setEmployeeGender(ec.getEmployeeGender());
 		dto.setEmployeeId(ec.getEmployeeId());
 		dto.setEmployeeName(ec.getEmployeeName());

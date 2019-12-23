@@ -13,8 +13,16 @@ public class EmployeeCommand {
 	public char employeeGender;
 	public String employeePh;
 	public String employeeRegist;
-	public String employeeEmali;
+	public String employeeEmail;
 	public String employeeKind;
+	
+	
+	public String getEmployeeKind() {
+		return employeeKind;
+	}
+	public void setEmployeeKind(String employeeKind) {
+		this.employeeKind = employeeKind;
+	}
 	public String getEmployeeNum() {
 		return employeeNum;
 	}
@@ -63,11 +71,11 @@ public class EmployeeCommand {
 	public void setEmployeeRegist(String employeeRegist) {
 		this.employeeRegist = employeeRegist;
 	}
-	public String getEmployeeEmali() {
-		return employeeEmali;
+	public String getEmployeeEmail() {
+		return employeeEmail;
 	}
-	public void setEmployeeEmali(String employeeEmali) {
-		this.employeeEmali = employeeEmali;
+	public void setEmployeeEmail(String employeeEmail) {
+		this.employeeEmail = employeeEmail;
 	}
 	
 	public String getEmployeePwCon() {

@@ -31,4 +31,12 @@
 	values(#{conNum}, #{conCompany}, #{conPh}, #{conLocation}, #{conCeo}, #{conRegiNum},
 	#{conStart}, #{conSalary}, #{conEnd}, #{conIncentive}, #{conDetail}, #{resumeNum}, #{userId})
 	</insert>
+	
+	<select id="contractAllSelect" parameterType="string" resultMap="baseContractMap">
+	select
+	<include refid="baseContract" />
+	from contract
+	</select>
+	
+	
 </mapper>

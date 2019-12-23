@@ -27,12 +27,12 @@ public class EmployeeCommandValidator implements Validator {
 
 	public void validate(Object target, Errors errors) {
 		EmployeeCommand ec = (EmployeeCommand) target;
-		if (ec.getEmployeeEmali() == null || ec.getEmployeeEmali().trim().isEmpty()) {// e메일확인
+		if (ec.getEmployeeEmail() == null || ec.getEmployeeEmail().trim().isEmpty()) {// e硫붿씪�솗�씤
 			errors.rejectValue("employeeEmail", "required");
 		} else {
 
-			Matcher matcher = emailPattern.matcher(ec.getEmployeeEmali());
-			if (!matcher.matches()) { // 이메일형식틀림
+			Matcher matcher = emailPattern.matcher(ec.getEmployeeEmail());
+			if (!matcher.matches()) { // �씠硫붿씪�삎�떇��由�
 				errors.rejectValue("employeeEmail", "emailIncorrect");
 			}
 		}

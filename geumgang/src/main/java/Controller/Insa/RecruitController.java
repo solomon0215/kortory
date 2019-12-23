@@ -23,13 +23,13 @@ public class RecruitController {
 	@Autowired
 	RecruitRegiService recruitRegiService;
 	
-	@RequestMapping(value="/insa/recruitRegiPro", method=RequestMethod.POST) //ì‘ì„±í•œ ì±„ìš©ê³µê³  ë“±ë¡
+	@RequestMapping(value="/insa/recruitRegiPro", method=RequestMethod.POST) //Ã¤¿ë°ø°í ÀÛ¼º ¸Ş¼Òµå
 	public String write(RecruitRegiCommand recruitCommand, HttpSession session,HttpServletRequest request) {
 		recruitRegiService.recruitRegist(recruitCommand,session,request);
 		return "redirect:/recruitList";
 	}
 	
-	@RequestMapping(value="/insa/recruitRegist", method=RequestMethod.GET) //ë“±ë¡ì¼ìì— ì˜¤ëŠ˜ë‚ ì§œ í‘œì‹œ
+	@RequestMapping(value="/insa/recruitRegist", method=RequestMethod.GET) //Ã¤¿ë°ø°í µî·ÏÀÏ¿¡ ¿À´Ã³¯Â¥ Ç¥½Ã
 	public String regist(RecruitRegiCommand recruitRegiCommand) {
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
 		Date date = new Date();
@@ -37,7 +37,7 @@ public class RecruitController {
 		return "insa/recruitRegist"; //jsp ê²½ë¡œ
 	}
 	
-	@RequestMapping(value="/insa/recruitList", method=RequestMethod.GET) //ì‘ì„±í•œ ì±„ìš©ê³µê³ ë¥¼ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
+	@RequestMapping(value="/insa/recruitList", method=RequestMethod.GET) //Ã¤¿ë°ø°í ÆäÀÌÁöÀÇ include
 	public String recruitList(RecruitRegiCommand rc, Model model, HttpSession session) {
 		recruitRegiService.recruitSelect(model, session);
 		model.addAttribute("insaPage","../insa/recruitList.jsp");

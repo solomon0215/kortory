@@ -2,11 +2,13 @@ package Service.Insa;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import Command.Insa.ContractCommand;
 import Model.InsaDTO.ContractDTO;
@@ -43,6 +45,11 @@ public class ContractService {
 		}
 		
 		return contractRepository.contractInsert(contract);
+	}
+	
+	public void contractSelect(Model model) {
+		List<ContractDTO> contractList = contractRepository.contractAllSelect();
+		model.addAttribute("contract",contractList);
 	}
 
 }

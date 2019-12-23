@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,27 +18,35 @@ import Validator.Insa.EmployeeCommandValidator;
 
 @Controller
 public class EmployeeInsertController {
+	
 	@Autowired
 	EmployeeInsertService employeeInsertService;
 	
-	@RequestMapping(value="/insa/employeeRegiPro", method=RequestMethod.GET) //ì‚¬ì›ì •ë³´ë“±ë¡ ì´ë™
-	public String employeeRegistView(Model model) {
-		model.addAttribute("insaPage","../insa/employeeInfoInsert.jsp");
-		return "insa/insaPage"; //jsp ê²½ë¡œ
+	@RequestMapping(value="/insa/employeeInfoInsert", method=RequestMethod.GET)
+	public String asf(@ModelAttribute("ec") EmployeeCommand ec) {
+		return "insa/employeeInfoInsert";
 	}
 	
+	@RequestMapping(value="/insa/employeeRegiPro", method=RequestMethod.GET) //»ç¿øµî·Ï include
+	public String employeeRegistView(Model model) {
+		model.addAttribute("insaPage","../insa/employeeInfoInsert.jsp");
+		return "insa/insaPage"; 
+	}
+	
+	//¾î¶»°Ô ¿¬°á?
+	
 	@RequestMapping(value="/insa/employeeRegiPro", method=RequestMethod.POST)
-	public String employeeInsert(EmployeeCommand ec, Errors errors, Model model) {
+	public String employeeInsert(EmployeeCommand ec, Model model, Errors errors) {
 		new EmployeeCommandValidator().validate(ec,errors);
-		if(errors.hasErrors()) { //validator ê²€ì‚¬
-			return "redirect:/employeeInfoInsert";
+		if(errors.hasErrors()) { //»ç¿ø µî·Ï ½Ã ¿¡·¯ È®ÀÎ
+			return "insa/employeeInfoInsert";
 		}
 		Integer result = employeeInsertService.Insert(ec);
-		if(result == null) { //ì•„ì´ë”” ì¤‘ë³µ ê²€ì‚¬?
+		if(result == null) { //¾ÆÀÌµğ Áßº¹ È®ÀÎ
 			errors.rejectValue("employeeId", "have");
-			return "redirect:/employeeInfoInsert";
+			return "insa/employeeInfoInsert";
 		}
-		return "insa/employeeInsertComplete"; //ì™„ë£Œì‹œ ì´ë™ í˜ì´ì§€
+		return "insa/main"; //µî·Ï ¿Ï·á ½Ã ¸ŞÀÎÆäÀÌÁö·Î µ¹¾Æ°¡±â
 	}
 	
 	

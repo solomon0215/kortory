@@ -13,47 +13,56 @@
 <title>Insert title here</title>
 </head>
 <form:form class="w3-container w3-card-4 w3-white" style="margin-left:175px"
-commandName="employeeCommand" id="frm" action="employeeRegiPro" method="POST" >
+commandName="ec" id="frm" action="employeeRegiPro" method="POST" >
 		<h2 class="w3-center">사원 등록</h2>
 		<p>
 			<label class="w3-text-grey">직원번호</label>
-			<form:input path="employeeNum" class="w3-input w3-border w3-white"  type="text" />
+			<form:input path="employeeNum" class="w3-input w3-border w3-white" />
+			<form:errors path="employeeNum" />
 		</p>
 		<p>
 			<label class="w3-text-grey">아이디</label>
-			<form:input path="employeeId" class="w3-input w3-border w3-white"  type="text" />
+			<form:input path="employeeId" class="w3-input w3-border w3-white" />
+			<form:errors path="employeeId" />
 		</p>
 		<p>
 			<label class="w3-text-grey">비밀번호</label>
-			 <form:input path="employeePw" class="w3-input w3-border w3-white"  type="text" />
+			 <form:password path="employeePw" class="w3-input w3-border w3-white"   />
+			 <form:errors path="employeePw" />
 		</p>
 		<p>
 			<label class="w3-text-grey">비밀번호 확인</label>
-			<form:input path="employeePwCon" class="w3-input w3-border w3-white"  type="text" />
+			<form:password path="employeePwCon" class="w3-input w3-border w3-white"   />
 		</p>
 		<p>
 			<label class="w3-text-grey">입사일</label> 
-			<form:input path="employeeRegist" class="w3-input w3-border w3-white"  type="text" />
+			<form:input path="employeeRegist" class="w3-input w3-border w3-white"   />
+			<form:errors path="employeeRegist" />
 		</p>
 		<p>
 			<label class="w3-text-grey">이름</label>
-			<form:input path="employeeName" class="w3-input w3-border w3-white" type="text" />
+			<form:input path="employeeName" class="w3-input w3-border w3-white"  />
+			<form:errors path="employeeName" />
 		</p>
 		<p>
 			<label class="w3-text-grey">생년월일</label>
-			<form:input path="employeeBirth" class="w3-input w3-border w3-white" type="text" />
+			<form:input path="employeeBirth" class="w3-input w3-border w3-white"  />
+			<form:errors path="employeeBirth" />
 		</p>
 		<p>
 			<label class="w3-text-grey">전자메일</label> 
-			<form:input path="employeeEmail" class="w3-input w3-border w3-white" type="text" />
+			<form:input path="employeeEmail" class="w3-input w3-border w3-white"  />
+			<form:errors path="employeeEmail" />
 		</p>
 		<p>
 			<label class="w3-text-grey">성별</label> 
-			<form:input path="employeeGender" class="w3-input w3-border w3-white" type="text" />
-		</p>
+			<form:input path="employeeGender" class="w3-input w3-border w3-white" />
+			<form:errors path="employeeGender" />
+		</p>	
 		<p>
 			<label class="w3-text-grey">전화번호</label> 
-			<form:input path="employeePh" class="w3-input w3-border w3-white" type="text" />
+			<form:input path="employeePh" class="w3-input w3-border w3-white" />
+			<form:errors path="employeePh" />
 		</p>
 		<p>
 		<label class="w3-text-gray">부서번호</label>

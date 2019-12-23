@@ -1,5 +1,7 @@
 package Repository.Insa;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,6 +20,13 @@ public class ContractRepository {
 		String statement = namespace + ".insertContract";
 		result = sqlSession.insert(statement, contract);
 		return result;
+	}
+
+
+	public List<ContractDTO> contractAllSelect() {
+		String statement = namespace + ".contractAllSelect";
+		List<ContractDTO> list = sqlSession.selectList(statement);
+		return list;
 	}
 
 }
