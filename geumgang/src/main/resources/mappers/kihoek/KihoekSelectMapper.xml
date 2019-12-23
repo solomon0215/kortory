@@ -19,7 +19,7 @@
 		<result column="KI_HOEK_REGIST" jdbcType="DATE" property="kiHoekRegist"/>
 		<result column="KI_HOEK_PH" jdbcType="VARCHAR" property="kiHoekPh"/>
 	</resultMap>
-	<select id="logConfirm" parameterType="kihoekDTO" resultType="string" resultMap="kihoekInfo"><!-- 로그인 정보 대조하기 위해서 검색하는 select -->
+	<select id="logConfirm" parameterType="kihoekDTO" resultMap="kihoekInfo"><!-- 로그인 정보 대조하기 위해서 검색하는 select -->
 		select <include refid="kiBaseColumn"/> 
 		from KI_HOEK
 		<where>

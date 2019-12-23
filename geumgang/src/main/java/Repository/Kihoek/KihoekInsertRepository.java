@@ -1,0 +1,20 @@
+package Repository.Kihoek;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import Model.KihoekDTO.ConceptDTO;
+
+@Repository
+public class KihoekInsertRepository {
+	@Autowired
+	private SqlSession sqlSession;	
+	private final String namespace = "KihoekInsertMapper";
+	
+	public Integer insertConcept(ConceptDTO cDto) {
+		String statement = namespace + ".conceptInsert";
+		Integer result = sqlSession.insert(statement, cDto);
+		return result;
+	}
+}

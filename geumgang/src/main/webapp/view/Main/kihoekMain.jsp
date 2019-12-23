@@ -65,32 +65,15 @@ function reportConfirm() {
 </script>
 <style>
 body, h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-ul {
-z-index:99;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: red;
+.navbar {
+  z-index:99;
   position: fixed;
-  top: 0;
-  width: 100%;
 }
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
+.navbar a {
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 24px 24px;
   text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: red;
 }
 
 .active {
@@ -101,15 +84,16 @@ li a:hover:not(.active) {
 a {text-decoration: none; !important}
 </style>
 </head>
-<body class="w3-white w3-content" style="max-width:1600px">
-<ul>
-  <li class="active">
-  <a href="../Main/basicMain">KORTORY</a></li>
-  <li><a href="../kihoek/main">MAIN</a></li>
-  <li><a href="conceptForm">CONCEPT</a></li>
-  <li><a href="#">EVENT</a></li>
-  
-</ul>
+<body>
+<div class="navbar">
+<div class="w3-top w3-bar w3-red">
+  <div class="active">
+  <a class="w3-bar-item w3-button w3-hover-red" href="../Main/basicMain">KORTORY</a></div>
+  <a class="w3-bar-item" href="../kihoek/main">MAIN</a>
+  <a class="w3-bar-item" href="conceptForm">CONCEPT</a>
+  <a class="w3-bar-item" href="#">EVENT</a>
+</div>
+</div>
 <div style="background-color:#white;">
 <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-blue-gray w3-collapse w3-card" style="width:320px;font-weight:bold" id="mySidebar"><br>
 	<div class="left1">
@@ -159,7 +143,7 @@ a {text-decoration: none; !important}
 	</div>
 	</nav>
 <!-- PAGE CONTENT -->
-<div class="content">
+<div class="main">
 	<div class="w3-container" style="padding-left:340px; padding-top:60px; width:100%;">
 		<jsp:include page="${pageName}"></jsp:include>
 	</div>

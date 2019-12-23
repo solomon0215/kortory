@@ -10,8 +10,10 @@
 	<context:annotation-config />
 	
 	<!-- Service -->
-	<bean id="kihoekLogService" class="Service.Kihoek.KihoekLogService"/> 
+	<bean id="kihoekLogService" class="Service.Kihoek.KihoekLogService"/>
+	<bean id="conceptWriteService" class="Service.Kihoek.ConceptWriteService"/> 
 	
 	<!-- Repository -->
 	<bean id="kihoekSelectRepository" class="Repository.Kihoek.KihoekSelectRepository"/> 
+	<bean id="kihoekInsertRepository" class="Repository.Kihoek.KihoekInsertRepository"/>
 </beans>

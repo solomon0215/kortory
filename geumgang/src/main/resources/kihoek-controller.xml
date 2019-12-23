@@ -10,6 +10,6 @@
 	<context:annotation-config />
 	<bean class="Controller.Kihoek.KihoekLogController"/>
 	<bean class="Controller.Kihoek.KihoekMainContoller"/>
-	<bean class="Controller.Kihoek.conceptFormController"/>
-	<bean class="Controller.Kihoek.conceptListController"/>
+	<bean class="Controller.Kihoek.ConceptController"/>
+	<bean class="Controller.Kihoek.ConceptListController"/>
 </beans>

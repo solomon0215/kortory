@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,9 +93,17 @@ ul{
 </style>
 <body>
 <!-- PAGE CONTENT -->
-<form action="#">
+<form:form action="conceptWritePro" id="frm" method="POST" commandName="conceptCommand">
 <h3>컨셉 기획서</h3>
 <div class="container" >
+  <div class="row">
+    <div class="col-30">
+      <label for="kiHoekName"><b>작성자 이름</b></label>
+    </div>
+    <div class="col-70">
+      <input type="text" id="kiHoekName" name="kiHoekName">${kihoek.kiHoekName }
+    </div>
+  </div>
   <div class="row">
     <div class="col-30">
       <label for="cSubject"><b>행사 컨셉 주제</b></label>
@@ -128,26 +138,26 @@ ul{
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="subject"><b>행사 컨셉 관련 유적지</b></label>
+      <label for="cPlace"><b>행사 컨셉 관련 유적지</b></label>
     </div>
     <div class="col-70">
-      <textarea id="subject" name="subject" style="height:100px" placeholder="행사 컨셉 관련 유적지를 적어주세요"></textarea>
+      <textarea id="cPlace" name="cPlace" style="height:100px" placeholder="행사 컨셉 관련 유적지를 적어주세요"></textarea>
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="cSubject"><b>모집 예정 인원 규모</b></label>
+      <label for="cScale"><b>모집 예정 인원 규모</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="cSubject" name="cSubject" placeholder="최대 00명">
+      <input type="text" id="cScale" name="cScale" placeholder="최대 00명">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="cSubject"><b>행사 컨셉 타겟 연령</b></label>
+      <label for="cTargerAge"><b>행사 컨셉 타겟 연령</b></label>
     </div>
     <div class="col-70">
-      <select id="targetAge" name="targetAge">
+      <select id="cTargerAge" name="cTargerAge">
         <option value="ageAll">전연령</option>
         <option value="age10s">10대</option>
         <option value="age20s">20대</option>
@@ -162,8 +172,7 @@ ul{
     <input type="submit" value="등록">
     </div>
   </div>
-  </form>
-</div>
+  </div>
+  </form:form>
 </body>
 </html>
-

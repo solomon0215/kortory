@@ -17,6 +17,15 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+ul{
+   list-style:none;
+   }
 </style>
 </head>
 <body>
@@ -25,8 +34,16 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <h3>컨셉 기획서 목록</h3>
 <div class="container" >
 	<div class="row">
+	<div class="w3-ul w3-hoverable">
+	<dl>
+  		<li>Jill</li>
+  		<li>Eve</li>
+  		<li>Adam</li>
+  		</dl>
+	</div>
 	</div>
 </div>
+
 
 </form>
 </body>
