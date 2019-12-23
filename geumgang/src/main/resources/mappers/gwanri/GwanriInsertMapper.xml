@@ -10,7 +10,7 @@
 	AGREEMENT_CONDITION_SETT,GWAN_RI_NUM
 	</sql>
 	
-	<resultMap type="aclDTO" id="baseAgreementMap">
+	<resultMap type="acDTO" id="baseAgreementMap">
 	<id column="AGREEMENT_CONDITION_NUM" jdbcType="BIGINT" property="agreementConditionNum" />	
 	<result column="AGREEMENT_CONDITION_DATE" jdbcType="DATE" property="agreementConditionDate" />
 	<result column="AGREEMENT_CONDITION_RATIO" jdbcType="FLOAT" property="agreementConditionRatio" />
@@ -20,7 +20,7 @@
 	
 	</resultMap>
 	<!-- 작성 -->
-	<insert id = "insertAgreement" parameterType="aclDTO">
+	<insert id = "insertAgreement" parameterType="acDTO">
 	insert into AGREEMENT_CONDITION(<include refid="agreementCondition" />)
 	values(gwanri_seq.nextval,#{agreementConditionNum},#{agreementConditionDate},#{agreementConditionRatio},#{agreementConditionSett},#{gwanRiNum})
 	</insert>

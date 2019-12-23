@@ -1,6 +1,8 @@
 package Controller.Gwanri;
 
+
 import javax.servlet.http.HttpServletRequest;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,5 +18,6 @@ public class GwanriMainController {
 		}
 		model.addAttribute("pageName", "../Main/gwanriMain.jsp");
 		return "Main/gwanriMain";
-	}
+	}	
+	
 }

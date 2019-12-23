@@ -1,6 +1,9 @@
 package Model.GwanriDTO;
 
-public class GwanriAuthInfo {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class GwanriAuthInfo implements Serializable  {
 	private String email;
 	private String name;
 	private int kind;

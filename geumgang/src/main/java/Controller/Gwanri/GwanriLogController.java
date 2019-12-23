@@ -1,6 +1,7 @@
 package Controller.Gwanri;
 import javax.servlet.http.HttpSession;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,10 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import Command.Gwanri.GwanriLogCommand;
-import Command.Youngup.YoungupLogCommand;
 import Service.Gwanri.GwanriLoginService;
 import Validator.Gwanri.GwanriLoginCommandValidator;
-import Validator.Youngup.YoungupLogCommandValidator;
 
 
 @Controller
@@ -23,7 +22,8 @@ public class GwanriLogController {
 	GwanriLoginService gwanriLoginService;	
 	
 	@RequestMapping(value = "/staff/gwanLogPro",method = RequestMethod.POST) 
-	public String gwanLogPro(GwanriLogCommand glc, Model model, Errors errors,HttpSession session) {
+	public String gwanLogPro(@RequestParam(value="page" ,
+			required = false) Integer page, GwanriLogCommand glc, Model model, Errors errors,HttpSession session) {
 		new GwanriLoginCommandValidator().validate(glc, errors);
 				
 		if(errors.hasErrors()) {
@@ -32,5 +32,6 @@ public class GwanriLogController {
 		}
 		return gwanriLoginService.gwanriLogPro(glc,model,errors,session);
 	}
+	
 		
 }

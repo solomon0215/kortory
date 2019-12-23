@@ -1,10 +1,11 @@
 package Model.GwanriDTO;
 
-import java.sql.Date;
+import java.io.Serializable;
 
-public class AgreementConditionDTO { //협약조건안DTO
+@SuppressWarnings("serial")
+public class AgreementConditionDTO implements Serializable { //협약조건안DTO
 	String agreementConditionNum; //협약조건 번호
-	String agreementConditionDate; //협약조건 작성일
+	java.sql.Date agreementConditionDate; //협약조건 작성일
 	float agreementConditionRatio; //업체희망정산비율
 	Integer agreementConditionSett; //정산기준시간
 	String gwanRiNum; //관리부직원번호
@@ -14,10 +15,10 @@ public class AgreementConditionDTO { //협약조건안DTO
 	public void setAgreementConditionNum(String agreementConditionNum) {
 		this.agreementConditionNum = agreementConditionNum;
 	}
-	public String getAgreementConditionDate() {
+	public java.sql.Date getAgreementConditionDate() {
 		return agreementConditionDate;
 	}
-	public void setAgreementConditionDate(String agreementConditionDate) {
+	public void setAgreementConditionDate(java.sql.Date agreementConditionDate) {
 		this.agreementConditionDate = agreementConditionDate;
 	}
 	public float getAgreementConditionRatio() {
@@ -38,5 +39,6 @@ public class AgreementConditionDTO { //협약조건안DTO
 	public void setGwanRiNum(String gwanRiNum) {
 		this.gwanRiNum = gwanRiNum;
 	}
+
 }
 
