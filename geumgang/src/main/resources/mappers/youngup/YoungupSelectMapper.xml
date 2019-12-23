@@ -84,6 +84,9 @@
 		from exploration exp,company com
 		<where>
 			exp.company_id = com.company_id AND exploration_num = #{explorationNum}
+			<if test="youngUpNum != null">
+				AND YOUNG_UP_NUM = #{youngUpNum}
+			</if>
 		</where>
 	</select>
 </mapper>

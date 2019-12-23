@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="youngupUpdateMapper">
+	<sql id="exploration">
+		exploration_num,company_id,exploration_type,exploration_schedule,exploration_effect,exploration_mana_name,exploration_avail_time,
+		exploration_avail_date,exploration_avail_holi,exploration_limit_age,exploration_limit_per,exploration_condition,exploration_file,
+		exploration_submit,young_up_num
+	</sql>
+	<cache />
+	<!-- 방문 예정일자 업데이트 하기-->
+	<update id="scheduleUpdate" parameterType="expDTO">
+		update Exploration set exploration_schedule = #{explorationSchedule}, exploration_submit = 'NOT'
+		<where>
+			exploration_num = #{explorationNum}
+		</where>
+	</update>
+</mapper>

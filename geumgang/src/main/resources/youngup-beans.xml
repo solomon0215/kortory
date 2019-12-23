@@ -12,7 +12,8 @@
 
    	<!-- Repositopry -->
 	<bean id = "youngSelRepo" class ="Repository.Youngup.YoungupSelectRepository"/><!-- 영업부 조회 repository--> 
-	<bean id = "youngInRepo" class ="Repository.Youngup.YoungupInsertRepository"/><!-- 영업부 insert repository--> 
+	<bean id = "youngInRepo" class ="Repository.Youngup.YoungupInsertRepository"/><!-- 영업부 insert repository-->
+	<bean id = "youngUpRepo" class ="Repository.Youngup.YoungupUpdateRepository"/><!-- 영업부 update repository--> 
 </beans>
 
 

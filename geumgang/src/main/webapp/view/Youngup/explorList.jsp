@@ -95,13 +95,27 @@ function goToCompleDetail(expNum){
 	  	<table class="w3-table-all w3-tiny w3-centered">
 			<thead>
 			    <tr>
-			      <th>업체 업무 종류</th><th>신규업체</th><th>미완료 사전보고서</th><th>미완료 협력 조건안</th>
+			      <th>사전답사 보고서 번호</th><th>업체 이름</th><th>주소</th><th>전화번호</th><th>공기업여부</th><th>업무</th>
 			    </tr>
 		    </thead>
 		    <tbody>
+		    	<c:if test="${incomplete !=null}">
+		    	<c:forEach items="${incomplete}" var="in">
 			    <tr class="w3-pale-blue">
-			      <td>건수</td><td>15</td><td>20</td><td>1</td>
+			      <td>${in.explorationNum}</td>
+			      <td>${in.companyName}</td>
+			      <td>${in.companyAddr}</td>
+			      <td>${in.companyPh}</td>
+			      <td>${in.companyType}</td>
+			      <td><button class="w3-button w3-white w3-border w3-hover-amber" onclick="goToIncomWrite('${in.explorationNum}')">작성하러 가기</button></td>
 			    </tr>
+			    </c:forEach>
+			    </c:if>
+		    	<c:if test="${incomplete ==null}">
+		    	<tr class="w3-pale-blue">
+			      <td colspan="5">신규담당 업무 처리를 마치셨어요!!</td>
+			    </tr> 
+		    	</c:if>			    
 		    </tbody>
 		</table>
 	</div>
@@ -113,13 +127,27 @@ function goToCompleDetail(expNum){
 	  	<table class="w3-table-all w3-tiny w3-centered">
 			<thead>
 			    <tr>
-			      <th>업체 업무 종류</th><th>신규업체</th><th>미완료 사전보고서</th><th>미완료 협력 조건안</th>
+			      <th>사전답사 보고서 번호</th><th>업체 이름</th><th>주소</th><th>전화번호</th><th>공기업여부</th><th>업무</th>
 			    </tr>
 		    </thead>
 		    <tbody>
+		    	<c:if test="${incomplete !=null}">
+		    	<c:forEach items="${incomplete}" var="in">
 			    <tr class="w3-pale-blue">
-			      <td>건수</td><td>15</td><td>20</td><td>1</td>
+			      <td>${in.explorationNum}</td>
+			      <td>${in.companyName}</td>
+			      <td>${in.companyAddr}</td>
+			      <td>${in.companyPh}</td>
+			      <td>${in.companyType}</td>
+			      <td><button class="w3-button w3-white w3-border w3-hover-amber" onclick="goToIncomWrite('${in.explorationNum}')">작성하러 가기</button></td>
 			    </tr>
+			    </c:forEach>
+			    </c:if>
+		    	<c:if test="${incomplete ==null}">
+		    	<tr class="w3-pale-blue">
+			      <td colspan="5">신규담당 업무 처리를 마치셨어요!!</td>
+			    </tr> 
+		    	</c:if>			    
 		    </tbody>
 		</table>
 	</div>	

@@ -18,7 +18,7 @@ public class ExplorListService {
 		ExplorListDTO dto = new ExplorListDTO();
 		dto.setExplorationSubmit("NEW");
 		List<ExplorListDTO> newExp = youngSelRepo.selectKindExp(dto); //신규 담당 가져오기
-		dto.setExplorationSubmit("NO");
+		dto.setExplorationSubmit("NOT");
 		List<ExplorListDTO> incomplete = youngSelRepo.selectKindExp(dto); //미완성 사전답사 가져오기
 		dto.setExplorationSubmit("YES");
 		List<ExplorListDTO> complete = youngSelRepo.selectKindExp(dto); //완성 사전답사 보고서 가져오기
