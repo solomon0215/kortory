@@ -59,6 +59,7 @@ public class RecruitRegiService {
 			System.out.println(c.getRecruitTitle());
 		}*/
 		String authName = ((InsaAuthInfo)session.getAttribute("authLog")).getName();
+		
 		model.addAttribute("authName", authName);
 		model.addAttribute("recruit",recruitList);
 	}

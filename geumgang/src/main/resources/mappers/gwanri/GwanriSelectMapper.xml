@@ -4,6 +4,20 @@
 <mapper namespace="gwanriSelectMapper">
 	
 <cache />
+
+<sql id = "agreementCondition">
+	AGREEMENT_CONDITION_NUM,AGREEMENT_CONDITION_DATE,AGREEMENT_CONDITION_RATIO,
+	AGREEMENT_CONDITION_SETT,GWAN_RI_NUM
+	</sql>
+	
+	<resultMap type="acDTO" id="baseAgreementMap">
+	<id column="AGREEMENT_CONDITION_NUM" jdbcType="BIGINT" property="agreementConditionNum" />	
+	<result column="AGREEMENT_CONDITION_DATE" jdbcType="DATE" property="agreementConditionDate" />
+	<result column="AGREEMENT_CONDITION_RATIO" jdbcType="FLOAT" property="agreementConditionRatio" />
+	<result column="AGREEMENT_CONDITION_SETT" jdbcType="BIGINT" property="agreementConditionSett" />
+	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum" />
+	
+	</resultMap>
 <sql id="basecolumn">
 		GWAN_RI_NUM, GWAN_RI_ID, GWAN_RI_PW, GWAN_RI_BIRTH, GWAN_RI_NAME,
 		GWAN_RI_GENDER, GWAN_RI_PH, GWAN_RI_REGIST, GWAN_RI_EMAIL
@@ -23,10 +37,13 @@
 	<select id="gwanriLog" resultMap="gwanriDTOForm" parameterType="gwanriDTO">
 		select <include refid="basecolumn"/>
 		from GWAN_RI
-		<where>
-			GWAN_RI_ID = #{gwanRiId}
-			AND GWAN_RI_PW = #{gwanRiPw} 
-		</where>
+		where GWAN_RI_ID = #{gwanRiId} 
+		
+	</select>
+	<select id="agreeAllSelect" parameterType="string" resultMap="baseAgreementMap">
+		select 
+		<include refid="agreementCondition" />
+		from AGREEMENT_CONDITION
 	</select>
 	
 </mapper>

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- <%response.sendRedirect("../gwanri/main"); %> --%>
+등록완료 목록으로 ㄱㄱ
+<a href="http://localhost:8080/geumgang/gwanri/agreementConditionList">ㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱ</a>
 </body>
 </html>

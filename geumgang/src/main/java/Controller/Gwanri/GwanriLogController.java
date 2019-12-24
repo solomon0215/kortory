@@ -22,14 +22,14 @@ public class GwanriLogController {
 	GwanriLoginService gwanriLoginService;	
 	
 	@RequestMapping(value = "/staff/gwanLogPro",method = RequestMethod.POST) 
-	public String gwanriLogPro(GwanriLogCommand glc, Model model, Errors errors,HttpSession session) {
+	public String gwanriLogPro(GwanriLogCommand glc, HttpSession session, Model model, Errors errors ) {
 		new GwanriLoginCommandValidator().validate(glc, errors);
 		System.out.println("/staff/gwanLogPro");	
 		if(errors.hasErrors()) {
 			model.addAttribute("pageName", "../Login/staffLog.jsp");
 			return "Main/basicMain";
 		}
-		return gwanriLoginService.gwanriLogPro(glc,model,errors,session);
+		return gwanriLoginService.gwanriLogPro(glc, session, model, errors);
 	}
 	
 		

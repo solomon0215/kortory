@@ -37,18 +37,18 @@ public class AgreementConditionController {
 		@RequestParam(value = "agreementConditionSett",required = false) Integer agreementConditionSett,
 		@RequestParam(value = "agreementConditionRatio",required = false) float agreementConditionRatio
 		) {
-		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_list.jsp");
+		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_form_pro.jsp");
 		acls.agreeInsert(request, session, model, agreementConditionDate,agreementConditionSett,agreementConditionRatio);
-		if(request.getSession().getAttribute("authLog") == null) { 
+		if(session.getAttribute("authLog") == null) { 
 			System.out.println("authLog");
 
-			return "Gwanri/back";
+			return "Main/gwanriMain";
 		}
-		return "redirect:/gwanri/agreementConditionList";
+		return "gwanri/AgreementCondition/agreement_condition_form_pro";
 	}	
-	@RequestMapping("gwanri/agreementConditionList") //리스트
-	public String agreeList(Integer page, Model model){
-		acls.getBoardList(model, page);
+	@RequestMapping(value="gwanri/agreementConditionList", method=RequestMethod.GET) //리스트
+	public String agreeList(Model model, HttpSession session){
+		acls.agreeList(model, session);
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_list.jsp");
 		return "Main/gwanriMain";
 	}

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import Model.GwanriDTO.AgreementConditionDTO;
 import Model.GwanriDTO.BudgetBillDTO;
 import Model.GwanriDTO.GwanriDTO;
+import Model.InsaDTO.RecruitDTO;
 
 @Repository
 public class GwanriSelectRepository {
@@ -23,7 +24,9 @@ public class GwanriSelectRepository {
 	
 	public GwanriDTO gwanriLog(GwanriDTO dto) { 
 		String statement = namespace + ".gwanriLog";
-		return sqlSession.selectOne(statement, dto);
+		GwanriDTO result = sqlSession.selectOne(statement, dto); 
+		
+		return result;
 	}	
 	/** 예산안 보고서 게시판 - 목록 조회  */
     public List<BudgetBillDTO> boardList(BudgetBillDTO bbdto){
@@ -36,10 +39,13 @@ public class GwanriSelectRepository {
         return sqlSession.selectOne(statement, bbdto);
     }
     /** 협약 조건안 게시판 - 리스트  */
-    public List<AgreementConditionDTO> agreeList(AgreementConditionDTO dto){
-		String statement = namespace + ".agreeList";
-		return sqlSession.selectList(statement, dto);
+    public List<AgreementConditionDTO> agreeAllSelect() {
+		String statement = namespace + ".agreeAllSelect";
+		List<AgreementConditionDTO> list = sqlSession.selectList(statement);
+		return list;
 	}
+    
+    
 }
 	
 
