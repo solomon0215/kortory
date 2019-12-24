@@ -29,7 +29,6 @@ public class AgreementConditionController {
 	public String form(@RequestParam(value="page" ,
 			required = false)HttpServletRequest request , HttpSession session, Model model){		
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_form.jsp");
-		
 		return "Main/gwanriMain";
 	}
 	@RequestMapping(value="/gwanri/agreementConditionWritePro", method=RequestMethod.POST) //등록
@@ -41,6 +40,8 @@ public class AgreementConditionController {
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_list.jsp");
 		acls.agreeInsert(request, session, model, agreementConditionDate,agreementConditionSett,agreementConditionRatio);
 		if(request.getSession().getAttribute("authLog") == null) { 
+			System.out.println("authLog");
+
 			return "Gwanri/back";
 		}
 		return "redirect:/gwanri/agreementConditionList";
