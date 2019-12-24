@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- <%response.sendRedirect("../gwanri/main"); %> --%>
+ <%response.sendRedirect("../gwanri/main"); %> 
 </body>
 </html>

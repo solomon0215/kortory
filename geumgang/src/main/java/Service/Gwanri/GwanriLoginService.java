@@ -34,7 +34,7 @@ public class GwanriLoginService {
 			model.addAttribute("pageName","../gwanri/welcome.jsp");
 			
 			System.out.println(auth.getgwanRiNum());
-			return "Main/gwanriMain";
+			return "gwanri/GoToMain";
 		}else {	
 			System.out.println("-----------------------------------------로그인 실패-----------------------------------");
 			errors.rejectValue("gwanRiId", "userLogFailed");

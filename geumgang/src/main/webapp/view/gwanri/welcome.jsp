@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+관리부 메인페이지입니다
 </body>
 </html>

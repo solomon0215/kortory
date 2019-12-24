@@ -20,7 +20,7 @@ public class StaffLogController {
 	
 	//gwanri Log formn Ajax
 	@RequestMapping("/staff/gwanLog")
-	public String gwanLog(GwanriLogCommand gwanriLogCommand) {
+	public String gwanLog(GwanriLogCommand glc) {
 		return "Login/staffGwanriLog";
 	}
 	
