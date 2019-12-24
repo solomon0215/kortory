@@ -19,19 +19,19 @@ public class YoungupLogService {
 	@Autowired
 	YoungupSelectRepository youngSelRepo;
 	
-	public String youngupLogPro(YoungupLogCommand youngupLogCommand,Model model, Errors errors,HttpSession session) { //·Î±×ÀÎ ½Ãµµ 
+	public String youngupLogPro(YoungupLogCommand youngupLogCommand,Model model, Errors errors,HttpSession session) { //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ãµï¿½ 
 		YoungupDTO dto1 = new YoungupDTO();
-		dto1.setYoungUpId(youngupLogCommand.getYoungUpId()); //¾ÆÀÌµð ´ã±â
-		String pw = Encrypt.getEncryption(youngupLogCommand.getYoungUpPw()); //¾ÏÈ£È­
+		dto1.setYoungUpId(youngupLogCommand.getYoungUpId()); //ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½
+		String pw = Encrypt.getEncryption(youngupLogCommand.getYoungUpPw()); //ï¿½ï¿½È£È­
 		System.out.println(pw);
-		dto1.setYoungUpPw(pw); //¾ÏÈ£È­ ÆÐ½º¿öµå ´ã±â
-		YoungupDTO dto2 = youngSelRepo.youngupLog(dto1); //·Î±×ÀÎ Á¤º¸ »õ·Î¿î DTO¿¡ ´ã±â
-		if(dto2 !=null ) { //·Î±×ÀÎÀÌ ‰ç´Ù¸é
+		dto1.setYoungUpPw(pw); //ï¿½ï¿½È£È­ ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		YoungupDTO dto2 = youngSelRepo.youngupLog(dto1); //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ DTOï¿½ï¿½ ï¿½ï¿½ï¿½
+		if(dto2 !=null ) { //ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ù¸ï¿½
 			System.out.println("-----------------------------------------log-----------------------------------");
 			YoungupAuth auth = new YoungupAuth(dto2.getYoungUpEmail(), dto2.getYoungUpName(), 304, dto2.getYoungUpNum());
 			session.setAttribute("authLog", auth);
 			return "Login/youngupLogPro";
-		}else {// ¾ÈµÈ´Ù¸é
+		}else {// ï¿½ÈµÈ´Ù¸ï¿½
 			System.out.println("-----------------------------------------no-----------------------------------");
 			errors.rejectValue("youngUpId", "companyLogFailed");
 			model.addAttribute("pageName","../Login/staffYounupLog.jsp");

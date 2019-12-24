@@ -21,7 +21,7 @@ public class GwanriSelectRepository {
 	private SqlSession sqlSession;	
 	private final String namespace = "gwanriSelectMapper";
 	
-	public GwanriDTO gwanLog(GwanriDTO dto) { 
+	public GwanriDTO gwanriLog(GwanriDTO dto) { 
 		String statement = namespace + ".gwanriLog";
 		return sqlSession.selectOne(statement, dto);
 	}	
