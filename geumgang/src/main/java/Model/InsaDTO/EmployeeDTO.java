@@ -11,11 +11,18 @@ public class EmployeeDTO implements Serializable  {
 	String employeePw;
 	java.sql.Date employeeBirth;
 	String employeeName;
-	char employeeGender;
+	String employeeGender;
 	String employeePh;
 	java.sql.Date employeeRegist;
 	String employeeEmail;
-	String employeeKind;
+	Integer employeeKind;
+	
+	public Integer getEmployeeKind() {
+		return employeeKind;
+	}
+	public void setEmployeeKind(Integer employeeKind) {
+		this.employeeKind = employeeKind;
+	}
 	public String getEmployeeNum() {
 		return employeeNum;
 	}
@@ -46,10 +53,10 @@ public class EmployeeDTO implements Serializable  {
 	public void setEmployeeName(String employeeName) {
 		this.employeeName = employeeName;
 	}
-	public char getEmployeeGender() {
+	public String getEmployeeGender() {
 		return employeeGender;
 	}
-	public void setEmployeeGender(char employeeGender) {
+	public void setEmployeeGender(String employeeGender) {
 		this.employeeGender = employeeGender;
 	}
 	public String getEmployeePh() {

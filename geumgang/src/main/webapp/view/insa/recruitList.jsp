@@ -11,7 +11,7 @@
 </head>
 <body>
 <!-- Page Content -->
-	<div class =" w3-container" style="margin-left:250px" >
+	<div class =" w3-container" style="margin-left:12%" >
 		<center><h2>채용공고 목록</h2></center><br/>
 			<table class="w3-table-all">
     <thead>

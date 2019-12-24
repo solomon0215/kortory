@@ -33,8 +33,7 @@ public class EmployeeInsertController {
 		return "insa/insaPage"; 
 	}
 	
-	//어떻게 연결?
-	
+
 	@RequestMapping(value="/insa/employeeRegiPro", method=RequestMethod.POST)
 	public String employeeInsert(EmployeeCommand ec, Model model, Errors errors) {
 		new EmployeeCommandValidator().validate(ec,errors);

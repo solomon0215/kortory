@@ -30,11 +30,12 @@ public class RecruitController {
 	}
 	
 	@RequestMapping(value="/insa/recruitRegist", method=RequestMethod.GET) //채용공고 등록일에 오늘날짜 표시
-	public String regist(RecruitRegiCommand recruitRegiCommand) {
+	public String regist(RecruitRegiCommand recruitRegiCommand, Model model) {
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
 		Date date = new Date();
 		recruitRegiCommand.setRegiDate(fmt.format(date));
-		return "insa/recruitRegist"; //jsp 寃쎈줈
+		model.addAttribute("insaPage","../insa/recruitRegist.jsp");
+		return "insa/insaPage"; //jsp 寃쎈줈
 	}
 	
 	@RequestMapping(value="/insa/recruitList", method=RequestMethod.GET) //채용공고 페이지의 include

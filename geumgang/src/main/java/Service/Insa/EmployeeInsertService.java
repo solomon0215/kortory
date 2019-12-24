@@ -18,21 +18,21 @@ public class EmployeeInsertService {
 	private EmployeeRepository employeeRepository;
 	
 	public Integer Insert(EmployeeCommand ec) { //command瑜� dto�뿉 ���옣
-		EmployeeDTO dto = new EmployeeDTO(); 
+		EmployeeDTO dto = new EmployeeDTO();
 		dto.setEmployeeEmail(ec.getEmployeeEmail());
 		dto.setEmployeeGender(ec.getEmployeeGender());
 		dto.setEmployeeId(ec.getEmployeeId());
 		dto.setEmployeeName(ec.getEmployeeName());
-		dto.setEmployeeNum(ec.getEmployeeNum());
 		dto.setEmployeePh(ec.getEmployeePh());
+		dto.setEmployeeKind(ec.getEmployeeKind());
 		dto.setEmployeePw(Encrypt.getEncryption(ec.getEmployeePw()));
 		SimpleDateFormat dt = new SimpleDateFormat("yyyyMMdd");
 		try {
 			Date date = dt.parse(ec.getEmployeeBirth());
-			java.sql.Date birth = new java.sql.Date(date.getDate());
+			java.sql.Date birth = new java.sql.Date(date.getTime());
 			dto.setEmployeeBirth(birth);
 			date=dt.parse(ec.getEmployeeRegist());
-			java.sql.Date regi = new java.sql.Date(date.getDate());
+			java.sql.Date regi = new java.sql.Date(date.getTime());
 			dto.setEmployeeRegist(regi);
 		} catch(Exception e) {
 			e.printStackTrace();

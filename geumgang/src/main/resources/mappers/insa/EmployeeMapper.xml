@@ -9,7 +9,7 @@
 	EMPLOYEE_GENDER, EMPLOYEE_PH, EMPLOYEE_REGIST, EMPLOYEE_EMAIL
 	</sql>
 	
-<resultMap type="employeeDTO" id="baseEmployee">
+<!-- <resultMap type="employeeDTO" id="baseEmployee">
 	    
 		<id column="EMPLOYEE_NUM" jdbcType="VARCHAR" property="employeeNum"/>
 		<result column="EMPLOYEE_ID" jdbcType="VARCHAR" property="employeeId"/>
@@ -21,29 +21,34 @@
 		<result column="EMPLOYEE_REGIST" jdbcType="VARCHAR" property="employeeEmail"/>
 		<result column="EMPLOYEE_EMAIL" jdbcType="DATE" property="employeeRegist"/>
 		<result column="EMPLOYEE_KIND" jdbcType="BIGINT" property="employeeKind"/>		
-	</resultMap>	
+	</resultMap>	 -->
 
 <insert id="insertEmployee" parameterType="employeeDTO"> 
    insert into
 	<if test="employeeKind  == 301">
-	gwan_ri
-   values((to_char(sysdate)+#{employeeName}+#{employeeGender}+#{employeeKind}),#{employeeName),#{employeeBirth},
-   #{employeeEmail},#{employeeGender},#{employeeId}, #{employeePw}, #{employeePh}, #{employeeRegist})
+	gwan_ri(gwan_ri_num, gwan_ri_id, gwan_ri_pw, gwan_ri_birth, gwan_ri_name, gwan_ri_gender, gwan_ri_ph, gwan_ri_regist, gwan_ri_email)
+   values((to_char(#{employeeRegist},'yyyyMMdd')||#{employeeName}||#{employeeGender}||to_char(#{employeeKind}))
+   ,#{employeeId},#{employeePw},
+   #{employeeBirth},#{employeeName},#{employeeGender}, #{employeePh}, #{employeeRegist}, #{employeeEmail})
 	</if> 
 	<if test="employeeKind  == 302">
-	ki_hoekk
-   values((to_char(sysdate)+#{employeeName}+#{employeeGender}+#{employeeKind}),#{employeeName),#{employeeBirth},
-   #{employeeEmail},#{employeeGender},#{employeeId}, #{employeePw}, #{employeePh}, #{employeeRegist})
+	ki_hoek(ki_hoek_num, ki_hoek_id, ki_hoek_pw, ki_hoek_name, ki_hoek_birth, ki_hoek_gender, ki_hoek_email, ki_hoek_regist, ki_hoek_ph)
+   values((to_char(#{employeeRegist},'yyyyMMdd')||#{employeeName}||#{employeeGender}||to_char(#{employeeKind})),
+   #{employeeId},#{employeePw},
+   #{employeeName},#{employeeBirth},#{employeeGender}, #{employeeEmail}, #{employeeRegist}, #{employeePh})
 	</if> 
 	<if test="employeeKind  == 303">
-	in_sa
-   values((to_char(sysdate)+#{employeeName}+#{employeeGender}+#{employeeKind}),#{employeeName),#{employeeBirth},
+	in_sa(in_sa_num, in_sa_name,in_sa_birth,in_sa_email,in_sa_gender,in_sa_id,in_sa_pw,in_sa_ph,in_sa_regist)
+   values(
+   (to_char(#{employeeRegist},'yyyyMMdd')||#{employeeName}||#{employeeGender}||to_char(#{employeeKind})),
+   #{employeeName},#{employeeBirth},
    #{employeeEmail},#{employeeGender},#{employeeId}, #{employeePw}, #{employeePh}, #{employeeRegist})
 	</if> 
 	<if test="employeeKind  == 304">
-	young_up
-   values((to_char(sysdate)+#{employeeName}+#{employeeGender}+#{employeeKind}),#{employeeName),#{employeeBirth},
-   #{employeeEmail},#{employeeGender},#{employeeId}, #{employeePw}, #{employeePh}, #{employeeRegist})
+	young_up(young_up_num, young_up_id, young_up_pw, young_up_regist, young_up_name, young_up_birth, young_up_email, young_up_gender, young_up_ph)
+   values((to_char(#{employeeRegist},'yyyyMMdd')||#{employeeName}||#{employeeGender}||to_char(#{employeeKind}))
+   ,#{employeeId},#{employeePw},
+   #{employeeRegist},#{employeeName},#{employeeBirth}, #{employeeEmail}, #{employeeGender}, #{employeePh})
 	</if> 
    
 </insert> 
