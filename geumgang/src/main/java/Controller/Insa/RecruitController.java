@@ -25,7 +25,10 @@ public class RecruitController {
 	
 	@RequestMapping(value="/insa/recruitRegiPro", method=RequestMethod.POST) //채용공고 작성 메소드
 	public String write(RecruitRegiCommand recruitCommand, HttpSession session,HttpServletRequest request) {
-		recruitRegiService.recruitRegist(recruitCommand,session,request);
+		Integer result = recruitRegiService.recruitRegist(recruitCommand,session,request);
+		if(result == 0) {//insert 실패시 
+			return "";
+		}
 		return "redirect:/recruitList";
 	}
 	
@@ -33,7 +36,7 @@ public class RecruitController {
 	public String regist(RecruitRegiCommand recruitRegiCommand, Model model) {
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
 		Date date = new Date();
-		recruitRegiCommand.setRegiDate(fmt.format(date));
+		 recruitRegiCommand.setRegiDate(fmt.format(date));
 		model.addAttribute("insaPage","../insa/recruitRegist.jsp");
 		return "insa/insaPage"; //jsp 寃쎈줈
 	}

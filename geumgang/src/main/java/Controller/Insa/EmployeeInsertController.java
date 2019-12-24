@@ -1,5 +1,6 @@
 package Controller.Insa;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import Command.Insa.EmployeeCommand;
 import Command.Insa.RecruitRegiCommand;
+import Model.InsaDTO.InsaAuthInfo;
 import Service.Insa.EmployeeInsertService;
 import Validator.Insa.EmployeeCommandValidator;
 
@@ -23,14 +25,18 @@ public class EmployeeInsertController {
 	EmployeeInsertService employeeInsertService;
 	
 	@RequestMapping(value="/insa/employeeInfoInsert", method=RequestMethod.GET)
-	public String asf(@ModelAttribute("ec") EmployeeCommand ec) {
-		return "insa/employeeInfoInsert";
-	}
-	
-	@RequestMapping(value="/insa/employeeRegiPro", method=RequestMethod.GET) //사원등록 include
-	public String employeeRegistView(Model model) {
-		model.addAttribute("insaPage","../insa/employeeInfoInsert.jsp");
-		return "insa/insaPage"; 
+	public String asf(@ModelAttribute("ec") EmployeeCommand ec, Model model,HttpServletRequest request) {
+		if(request.getSession().getAttribute("authLog")==null) {//로그인이 안되어 있다면 접근 못하게 하기
+			return "insa/goToLogin";
+		}else {
+			InsaAuthInfo auth =(InsaAuthInfo)request.getSession().getAttribute("authLog");
+			if(auth.getKind() == 303) { 
+				model.addAttribute("insaPage","../insa/employeeInfoInsert.jsp");
+				return "insa/insaPage";
+			}else { //로그인은 했는데 다른 부서 
+				return "insa/goToLogin";	
+			}
+		}
 	}
 	
 
