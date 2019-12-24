@@ -44,7 +44,6 @@ public class EmployeeCommandValidator implements Validator {
 				errors.rejectValue("employeePw", "pwIncorrect");
 			}
 		}
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "employeeNum", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "employeeId", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "employeeBirth", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "employeeName", "required");

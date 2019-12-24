@@ -98,7 +98,7 @@ function myAccFunc6() {
   </button>
   <div id="demoAcc2" class="w3-hide w3-white w3-card">
     <a href="employeeInfoInsert" class="w3-bar-item w3-button">사원정보 등록</a>
-    <a href="#" class="w3-bar-item w3-button">근로계약서 목록</a>
+    <a href="contractList" class="w3-bar-item w3-button">근로계약서 목록</a>
     <a href="#" class="w3-bar-item w3-button">인사고과 열람</a>
   </div>
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc3()">
@@ -129,7 +129,7 @@ function myAccFunc6() {
     <a href="#" class="w3-bar-item w3-button">고객평가서 열람</a>
   </div>
 </div>
-<div>
+<div style="margin-left:1%;height:90%;">
   <jsp:include page="${insaPage}" />
 </div>
 </body>

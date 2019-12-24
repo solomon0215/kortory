@@ -11,7 +11,7 @@
 </head>
 <body>
 <!-- Page Content -->
-	<div class =" w3-container" style="margin-left:250px" >
+	<div class =" w3-container" style="margin-left:12%" >
 		<center><h2>근로계약서 목록</h2></center><br/>
 			<table class="w3-table-all">
     <thead>
@@ -35,7 +35,7 @@
   </div>
   <br />
    <div class="w3-container" align="right">
-   <a href="#" class="w3-btn w3-light-gray w3-border">등록</a>
+   <a href="contractRegist" class="w3-btn w3-light-gray w3-border">등록</a>
 </div>
 </body>
 </html>

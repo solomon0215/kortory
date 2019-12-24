@@ -16,7 +16,7 @@ function showPopup() { window.open("recruitPopup.html", "a", "width=400, height=
 </script>
 </head>
 	<body>
-<form:form class="w3-container w3-card-4 w3-white" style="margin-left:175px"
+<form:form class="w3-container w3-card-4 w3-white" style="margin-left:12%"
 commandName="recruitRegiCommand" id="frm" action="recruitRegiPro" method="POST" >
 		<h2 class="w3-center">채용공고 작성</h2>
 		<p>

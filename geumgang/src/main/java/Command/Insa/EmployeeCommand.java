@@ -4,30 +4,23 @@ import java.util.Date;
 
 
 public class EmployeeCommand {
-	public String employeeNum;
 	public String employeeId;
 	public String employeePw;
 	public String employeePwCon;
 	public String employeeBirth;
 	public String employeeName;
-	public char employeeGender;
+	public String employeeGender;
 	public String employeePh;
 	public String employeeRegist;
 	public String employeeEmail;
-	public String employeeKind;
+	public Integer employeeKind;
 	
 	
-	public String getEmployeeKind() {
+	public Integer getEmployeeKind() {
 		return employeeKind;
 	}
-	public void setEmployeeKind(String employeeKind) {
+	public void setEmployeeKind(Integer employeeKind) {
 		this.employeeKind = employeeKind;
-	}
-	public String getEmployeeNum() {
-		return employeeNum;
-	}
-	public void setEmployeeNum(String employeeNum) {
-		this.employeeNum = employeeNum;
 	}
 	public String getEmployeeId() {
 		return employeeId;
@@ -53,10 +46,10 @@ public class EmployeeCommand {
 	public void setEmployeeName(String employeeName) {
 		this.employeeName = employeeName;
 	}
-	public char getEmployeeGender() {
+	public String getEmployeeGender() {
 		return employeeGender;
 	}
-	public void setEmployeeGender(char employeeGender) {
+	public void setEmployeeGender(String employeeGender) {
 		this.employeeGender = employeeGender;
 	}
 	public String getEmployeePh() {
