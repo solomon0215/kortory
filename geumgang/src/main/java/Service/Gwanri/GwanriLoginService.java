@@ -24,7 +24,8 @@ public class GwanriLoginService {
 	public String gwanriLogPro(GwanriLogCommand glc, HttpSession session, Model model, Errors errors) {
 		GwanriDTO dto1 = new GwanriDTO();
 		dto1.setGwanRiId(glc.getGwanRiId()); 
-		dto1.setGwanRiPw(glc.getGwanRiPw()); 
+		String pw = Encrypt.getEncryption(glc.getGwanRiPw());
+		dto1.setGwanRiPw(pw); 
 		GwanriDTO dto2 = gwanriRepository.gwanriLog(dto1); 
 		if(dto2 !=null ) { 		
 			System.out.println("-----------------------------------------로그인 성공-----------------------------------");
