@@ -33,5 +33,7 @@ public class ContractController {
 		contractService.contractRegist(cc, request);
 		return "redirect:/contractList";
 	}
+	
+	
 
 }
