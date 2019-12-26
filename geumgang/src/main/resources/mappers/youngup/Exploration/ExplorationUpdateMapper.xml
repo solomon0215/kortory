@@ -3,16 +3,32 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="youngupUpdateMapper">
 	<sql id="exploration">
-		exploration_num,company_id,exploration_type,exploration_schedule,exploration_effect,exploration_mana_name,exploration_avail_time,
-		exploration_avail_date,exploration_avail_holi,exploration_limit_age,exploration_limit_per,exploration_condition,exploration_file,
-		exploration_submit,young_up_num
+		EXPLORATION_NUM,COMPANY_ID,EXPLORATION_TYPE,EXPLORATION_SCHEDULE,
+		EXPLORATION_EFFECT,EXPLORATION_MANA_NAME,EXPLORATION_AVAIL_TIME,
+		EXPLORATION_AVAIL_DATE,EXPLORATION_AVAIL_HOLI,EXPLORATION_LIMIT_AGE,
+		EXPLORATION_LIMIT_PER,EXPLORATION_CONDITION,EXPLORATION_FILE,
+		EXPLORATION_SUBMIT,YOUNG_UP_NUM
 	</sql>
 	<cache />
 	<!-- 방문 예정일자 업데이트 하기-->
 	<update id="scheduleUpdate" parameterType="expDTO">
-		update Exploration set exploration_schedule = #{explorationSchedule}, exploration_submit = 'NOT'
+		UPDATE EXPLORATION SET EXPLORATION_SCHEDULE = #{explorationSchedule}, EXPLORATION_SUBMIT = 'NOT'
 		<where>
-			exploration_num = #{explorationNum}
+			EXPLORATION_NUM = #{explorationNum}
+		</where>
+	</update>
+	<!-- 사전답사 보고서 제출/임시보관 -->
+	<update id="explorUpdate">
+		UPDATE EXPLORATION 
+		<set>
+		EXPLORATION_TYPE=#{explorationType}, EXPLORATION_EFFECT=#{explorationEffect},
+		EXPLORATION_MANA_NAME=#{explorationManaName},EXPLORATION_AVAIL_TIME=#{explorationAvailTime},
+		EXPLORATION_AVAIL_DATE=#{explorationAvailDate},EXPLORATION_AVAIL_HOLI=#{explorationAvailHoli},
+		EXPLORATION_LIMIT_AGE=#{explorationLimitAge},EXPLORATION_LIMIT_PER=#{explorationLimitPer},
+		EXPLORATION_FILE=#{explorationFile},EXPLORATION_CONDITION=#{explorationCondition},EXPLORATION_SUBMIT=#{explorationSubmit}
+		</set>
+		<where>	
+			EXPLORATION_NUM=#{explorationNum}
 		</where>
 	</update>
 </mapper>

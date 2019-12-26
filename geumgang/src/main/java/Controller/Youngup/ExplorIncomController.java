@@ -1,5 +1,6 @@
 package Controller.Youngup;
 
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import Command.Youngup.ExplorIncomWriteCommand;
 import Service.Youngup.ExplorIncomService;
@@ -51,12 +53,13 @@ public class ExplorIncomController {
 		}
 		new ExplorIncomWriteCommandValidator().validate(explorIncomWriteCommand, errors);
 		if(errors.hasErrors()) {
+			System.out.println("has Error ----------------------");
 			expInSer.incomExpDetail(model,explorIncomWriteCommand.getExplorationNum());
 			model.addAttribute("pageName", "../Youngup/incomExpWrite.jsp");
 			return "Main/youngupMain";
 		}
-		
-		expInSer.incomExpUpdate(explorIncomWriteCommand,model,errors);
+		System.out.println(explorIncomWriteCommand.getPicture()+"-------------------");
+		expInSer.incomExpUpdate(explorIncomWriteCommand,model,errors,req);
 		return "Main/youngupMain";
 	}
 	

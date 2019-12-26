@@ -31,7 +31,7 @@ public class ExplorIncomWriteCommandValidator implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "endTime", "required");
 		ValidationUtils.rejectIfEmpty(errors, "startDate", "required");
 		ValidationUtils.rejectIfEmpty(errors, "endDate", "required");
-		ValidationUtils.rejectIfEmpty(errors, "exploration_avail_holi", "required");
+		ValidationUtils.rejectIfEmpty(errors, "explorationAvailHoli", "required");
 		ValidationUtils.rejectIfEmpty(errors, "explorationLimitAge", "required");
 		ValidationUtils.rejectIfEmpty(errors, "explorationLimitPer", "required");
 		ValidationUtils.rejectIfEmpty(errors, "explorationCondition", "required");

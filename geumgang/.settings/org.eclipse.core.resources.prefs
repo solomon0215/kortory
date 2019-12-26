@@ -3,6 +3,7 @@ encoding//src/main/java/Controller/Insa/InsaLoginController.java=UTF-8
 encoding//src/main/java/Service/Company/CompanyFormService.java=UTF-8
 encoding//src/main/java/Service/Insa/EmployeeInsertService.java=UTF-8
 encoding//src/main/java/Service/Insa/RecruitRegiService.java=UTF-8
+encoding//src/main/java/Service/Youngup/ExplorIncomService.java=UTF-8
 encoding//src/main/java/Validator/Insa/EmployeeCommandValidator.java=UTF-8
 encoding//src/main/resources/message/jiyu.properties=UTF-8
 encoding//src/main/resources/message/junhyeok.properties=UTF-8

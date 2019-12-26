@@ -12,7 +12,7 @@ public class ExplorIncomWriteCommand {
 	private String endTime;	//업체 방문 가능 종료시간
 	private String startDate;	//업체 사용가능 날짜
 	private String endDate;	//업체 사용가능 날짜
-	private String exploration_avail_holi;//공휴일 사용 가능 여부	여부	VARCHAR2(10)	NULL
+	private String explorationAvailHoli;//공휴일 사용 가능 여부	여부	VARCHAR2(10)	NULL
 	private Integer explorationLimitAge;//업체 방문 제한 나이	
 	private Integer explorationLimitPer;//업체 방무문 제한 인원
 	private String explorationCondition;//	업체 방문 제한 조건	조건	VARCHAR2(1000)	NULL
@@ -73,11 +73,12 @@ public class ExplorIncomWriteCommand {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
-	public String getExploration_avail_holi() {
-		return exploration_avail_holi;
+	
+	public String getExplorationAvailHoli() {
+		return explorationAvailHoli;
 	}
-	public void setExploration_avail_holi(String exploration_avail_holi) {
-		this.exploration_avail_holi = exploration_avail_holi;
+	public void setExplorationAvailHoli(String explorationAvailHoli) {
+		this.explorationAvailHoli = explorationAvailHoli;
 	}
 	public Integer getExplorationLimitAge() {
 		return explorationLimitAge;

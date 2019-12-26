@@ -12,7 +12,6 @@
 <title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css?family=Single+Day&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Gugi|Yeon+Sung&display=swap" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-latest.js"></script>
 <style>
 .w3-myfont {
   font-family: 'Single Day', cursive;
@@ -24,8 +23,17 @@
 h2{
 	color:  #696463;
 }
-
 </style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+	$(function(){
+		if(${msg != null}){
+			$("#fileWarning").html('${msg}');
+			$("#fileWarning").focus();
+		}
+		
+	});
+</script>
 </head>
 <body>
 <div class="w3-container" style="margin-top: 5%;">
@@ -112,11 +120,11 @@ h2{
 					<td>
 						<div>
 							<label>YES</label>
-							<form:radiobutton path="exploration_avail_holi" value="YES" checked="checked"/>
+							<form:radiobutton path="explorationAvailHoli" value="YES" checked="checked"/>
 						</div>
 						<div>
 							<label>NO</label>
-							<form:radiobutton path="exploration_avail_holi" value="NO"/>
+							<form:radiobutton path="explorationAvailHoli" value="NO"/>
 						</div>
 					</td>
 				</tr>
@@ -142,7 +150,12 @@ h2{
 					</td>
 				</tr>
 				<tr class="w3-gray">
-					<td>증빙자료</td><td><input type="file" name="explorationFile" multiple = "multiple" style="width:100%;" /></td>
+					<td>증빙자료 </td>
+					<td>
+						<label class="w3-left">증빙자료 파일은 jpg/png 파일로 제한 됩니다.</label>
+						<input type="file" name="picture" multiple = "multiple" style="width:100%;" />
+						<div class="w3-text-red" id="fileWarning"></div>
+					</td>
 				</tr>
 				<tr class="w3-gray">
 					<td>제출/임시보관 선택</td>
