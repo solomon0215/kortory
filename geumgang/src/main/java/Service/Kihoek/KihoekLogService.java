@@ -30,6 +30,7 @@ public class KihoekLogService {
 		KihoekDTO kiDto = KihoekSelectRepository.logConfirm(kDto);
 		if(kiDto != null) {
 			KihoekAuthInfo kAuth = new KihoekAuthInfo(kiDto.getKiHoekId(), kiDto.getKiHoekEmail(), kiDto.getKiHoekName(), 302, kiDto.getKiHoekNum());
+			System.out.println(kiDto.getKiHoekName()+"-------log------");
 			session.setAttribute("authLog", kAuth);
 			return "kihoek/goToMain";
 		}else {

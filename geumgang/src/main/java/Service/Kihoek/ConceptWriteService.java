@@ -21,10 +21,11 @@ public class ConceptWriteService {
 	KihoekInsertRepository kihoekInsertRepository;
 	
 	@Transactional
-	public void kihoekName(HttpSession session, Model model) {
+	public void kihoekName(HttpServletRequest request, Model model) {
 		KihoekDTO kDto = new KihoekDTO();
-		kDto.setKiHoekName(
-				((KihoekAuthInfo)session.getAttribute("AuthLog")).getName());
+		KihoekAuthInfo info =(KihoekAuthInfo)request.getSession().getAttribute("authLog");
+		System.out.println(info.getName()+"----------------");
+		kDto.setKiHoekName(info.getName());
 		model.addAttribute("kihoek", kDto);
 	}
 	
@@ -38,9 +39,9 @@ public class ConceptWriteService {
 		cDto.setConceptPlace(conceptCommand.getConceptPlace());
 		cDto.setConceptScale(conceptCommand.getConceptScale());
 		cDto.setConceptTargetAge(conceptCommand.getConceptTargetAge());
-		cDto.setKiHoekNum(((KihoekAuthInfo)session.getAttribute("AuthLog")).getKiHoekNum());
-		
-		return kihoekInsertRepository.insertConcept(cDto);
+		cDto.setKiHoekNum(((KihoekAuthInfo)session.getAttribute("authLog")).getKiHoekNum());
+		model.addAttribute(cDto);
+		return kihoekInsertRepository.insertConcept(model);
 	}
 
 }

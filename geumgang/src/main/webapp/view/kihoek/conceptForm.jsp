@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,7 +95,7 @@ ul{
 </style>
 <body>
 <!-- PAGE CONTENT -->
-<form:form action="conceptWritePro" id="frm" method="POST" commandName="conceptCommand">
+<form action="conceptWritePro" id="frm" name="frm" method="POST">
 <h3>컨셉 기획서</h3>
 <div class="container" >
   <div class="row">
@@ -101,7 +103,7 @@ ul{
       <label for="kiHoekName"><b>작성자 이름</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="kiHoekName" name="kiHoekName">${kihoek.kiHoekName }
+      ${kihoek.kiHoekName }
     </div>
   </div>
   <div class="row">
@@ -173,6 +175,6 @@ ul{
     </div>
   </div>
   </div>
-  </form:form>
+  </form>
 </body>
 </html>

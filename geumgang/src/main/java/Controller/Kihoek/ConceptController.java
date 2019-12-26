@@ -18,6 +18,7 @@ public class ConceptController {
 	
 	@RequestMapping("/kihoek/conceptForm")
 	public String conceptForm(Model model, HttpServletRequest request) {
+		conceptWriteService.kihoekName(request, model);
 		model.addAttribute("pageName", "../kihoek/conceptForm.jsp");
 		return "Main/kihoekMain";
 	}
