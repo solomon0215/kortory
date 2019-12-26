@@ -17,5 +17,7 @@
 		<typeAlias type="Model.YoungupDTO.ExplorationDTO" alias = "expDTO"/>
 		<typeAlias type="Model.InsaDTO.ContractDTO" alias = "contractDTO" />
 		<typeAlias type="Model.KihoekDTO.ConceptDTO" alias ="conceptDTO"/>
+		<typeAlias type="Model.KihoekDTO.CInsertDTO" alias ="cInsertDTO"/>
+		
 	</typeAliases>
 </configuration>
