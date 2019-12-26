@@ -2,9 +2,11 @@ package Repository.Youngup;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import Model.YoungupDTO.ExplorationDTO;
 
+@Repository
 public class YoungupUpdateRepository {
 	@Autowired
 	private SqlSession sqlSession;
