@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form class="w3-table w3-bordered" commandName="resumeInsertCommand" id="frm" action="resumeInsert2" method="POST" >
+<form:form class="w3-table w3-bordered" commandName="rc" id="frm" action="resumeInsert2" method="POST" >
 <!-- <table class="w3-table w3-bordered">  -->
 		<tr>
 			<td class="w3-border-right w3-light-gray" style="width: 15%">해외거주경험</td>

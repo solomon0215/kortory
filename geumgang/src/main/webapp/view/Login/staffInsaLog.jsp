@@ -21,7 +21,7 @@
 		</div>
 		<label>비밀번호</label>
 		<div class="w3-center">
-			<form:input path="inSaPw" class="w3-input"/>
+			<form:password path="inSaPw" class="w3-input"/>
 			<form:errors path="inSaPw" class="w3-text-light-blue"/>
 		</div>  
 		<br>

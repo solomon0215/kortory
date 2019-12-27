@@ -30,8 +30,15 @@ public class ResumeController {
 	}
 	
 	@RequestMapping(value="/insa/resume1", method=RequestMethod.GET) //이력서1 include
-	public String resume1(Model model) {
+	public String resume1(ResumeCommand rc,Model model) {
+		model.addAttribute("rc", rc);
 		model.addAttribute("pageName","../insa/resume1.jsp");
+		return "Main/basicMain";
+	}
+	
+	@RequestMapping(value="/insa/resume2", method=RequestMethod.GET) //이력서2 include
+	public String resume2(ResumeCommand rc,Model model) {
+		model.addAttribute("pageName","../insa/resume2.jsp");
 		return "Main/basicMain";
 	}
 	
@@ -41,6 +48,11 @@ public class ResumeController {
 		return "insa/resume1";
 	}
 	
+	@RequestMapping(value="/insa/resumeInsert2", method=RequestMethod.POST) //이력서 2 작성 메소드
+	public String resume2Write(ResumeCommand rc, HttpSession session, HttpServletRequest request) {
+		Integer result = resumeService.resumeRegist2(rc, session, request);
+		return "insa/resume2";
+	}
 	
 
 }

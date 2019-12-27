@@ -79,9 +79,7 @@ function myAccFunc6() {
 <body>
 <div class="w3-bar w3-cyan">
   <a href="main" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
-  <a href="#" class="w3-bar-item w3-button">기획부</a>
-  <a href="#" class="w3-bar-item w3-button">영업부</a>
-  <a href="#" class="w3-bar-item w3-button">관리부</a>
+  <a href="#" class="w3-bar-item w3-button">마이 페이지</a>
   <a href="logout" class="w3-bar-item w3-button w3-right">로그아웃</a>
 </div>
 <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:13%">

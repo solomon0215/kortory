@@ -9,6 +9,16 @@
 	RESUME_HIGHSCHOOL, RESUME_UNIVERCITY, RESUME_SCHOOL_START1, RESUME_SCHOOL_END1, RESUME_SCHOOL_START2, 
 	RESUME_SCHOOL_END2, RESUME_MAJOR, RESUME_GRADE_POINT
 	</sql>
+	
+	<sql id="baseResume2">
+	RESUME_LANGUAGE, RESUME_LANGUAGE_GRADE, RESUME_LICENSE, RESUME_FORMER_WORK, RESUME_FORMER_POSITION,
+	RESUME_FORMER_START, RESUME_FORMER_END, RESUME_FORMER_SALARY, RESUME_FORMER_TASK, RESUME_FORMER_INTRO
+	</sql>
+	
+	<sql id="baseResume3">
+	RESUME_GROW, RESUME_GOOD, RESUME_BAD, RESUME_PER_INFO
+	</sql>
+	
 	<resultMap type="resumeDTO" id="baseResumeMap1">
 	<id column="RESUME_NUM" jdbcType="BIGINT" property="resumeNum" />
 	<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
@@ -26,7 +36,22 @@
 	<result column="RESUME_MAJOR" jdbcType="VARCHAR" property="resumeMajor"/>
 	<result column="RESUME_GRADE_POINT" jdbcType="DOUBLE" property="resumePoint"/>
 	</resultMap>
-
+	
+	<resultMap type="resumeDTO" id="baseResumeMap2">
+	<result column="RESUME_LANGUAGE" jdbcType="VARCHAR" property="resumeLanguage" />
+	<result column="RESUME_LANGUAGE_GRADE" jdbcType="VARCHAR" property="resumeGrade" />
+	<result column="RESUME_LICENSE" jdbcType="VARCHAR" property="resumeLicense" />
+	<result column="RESUME_FORMER_WORK" jdbcType="VARCHAR" property="formerWork" />
+	<result column="RESUME_FORMER_POSITION" jdbcType="VARCHAR" property="formerPosition" />
+	<result column="RESUME_FORMER_START" jdbcType="DATE" property="formerStart" />
+	<result column="RESUME_FORMER_END" jdbcType="DATE" property="formerEnd" />
+	<result column="RESUME_FORMER_SALARY" jdbcType="BIGINT" property="formerSalary" />
+	<result column="RESUME_FORMER_TASK" jdbcType="VARCHAR" property="formerTask" />
+	<result column="RESUME_FORMER_INTRO" jdbcType="VARCHAR" property="formerIntro" />
+	</resultMap>
+	
+	
+    <!-- 이력서1 -->
 	<insert id="insertResume1" parameterType="resumeDTO">
 	insert into resume (
 	<include refid="baseResume1" />
@@ -34,6 +59,15 @@
 	values(insa_seq.nextval, #{userId}, #{resumeFile}, #{resumeNational}, #{resumeBohun}, #{resumeDisorder},
 	#{resumeArmy}, #{resumeExpOver}, #{resumeHighschool}, #{resumeUnivercity}, #{schoolStart1}, #{schoolEnd1},
 	 #{schoolStart2}, #{schoolEnd2}, #{resumeMajor}, #{resumePoint})
+	</insert>
+	
+	<!-- 이력서2 -->
+	<insert id="insertResume2" parameterType="resumeDTO">
+	insert into resume(
+	<include refid="baseResume2" />
+	)
+	value(#{resumeLanguage}, #{resumeGrade}, #{resumeLicense}, #{formerWork}, 
+	#{formerPosition}, #{formerStart}, #{formerEnd}, #{formerSalary}, #{formerTask}, #{formerIntro})
 	</insert>
 
 

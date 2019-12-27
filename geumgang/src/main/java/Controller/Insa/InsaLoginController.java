@@ -36,7 +36,6 @@ public class InsaLoginController {
 			model.addAttribute("pageName", "../Login/staffInsaLog.jsp");
 			return "Main/basicMain";
 		}else if(i == -1) {
-			System.out.println("비밀번호비밀번호비밀번호비밀번호비밀번호비밀번호비밀번호비밀번호비밀번호비밀번호");
 			errors.rejectValue("inSaPw", "wrong");//비밀번호다름
 			model.addAttribute("pageName", "../Login/staffInsaLog.jsp");
 			return "Main/basicMain";

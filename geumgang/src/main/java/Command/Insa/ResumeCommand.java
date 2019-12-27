@@ -16,7 +16,9 @@ public class ResumeCommand {
 	String schoolStart2;
 	String schoolEnd2;
 	String major;
-	double gradePoint;
+	double point;
+	String language;
+	String grade;
 	String license;
 	String formerWork;
 	String formerPosition;
@@ -94,11 +96,11 @@ public class ResumeCommand {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	public double getGradePoint() {
-		return gradePoint;
+	public double getPoint() {
+		return point;
 	}
-	public void setGradePoint(double gradePoint) {
-		this.gradePoint = gradePoint;
+	public void setPoint(double Point) {
+		this.point = Point;
 	}
 	public String getLicense() {
 		return license;
@@ -178,8 +180,18 @@ public class ResumeCommand {
 	public void setSchoolEnd2(String schoolEnd2) {
 		this.schoolEnd2 = schoolEnd2;
 	}
-	
-	
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
 	
 	
 
