@@ -6,12 +6,13 @@
 	<cache />
 	
 	<sql id = "agreementCondition">
-	AGREEMENT_CONDITION_NUM,AGREEMENT_CONDITION_DATE,AGREEMENT_CONDITION_RATIO,
+	AGREEMENT_CONDITION_NUM,AGREEMENT_CONDITION_SUBJECT,AGREEMENT_CONDITION_DATE,AGREEMENT_CONDITION_RATIO,
 	AGREEMENT_CONDITION_SETT,GWAN_RI_NUM
 	</sql>
 	
 	<resultMap type="acDTO" id="baseAgreementMap">
-	<id column="AGREEMENT_CONDITION_NUM" jdbcType="BIGINT" property="agreementConditionNum" />	
+	<id column="AGREEMENT_CONDITION_NUM" jdbcType="BIGINT" property="agreementConditionNum" />
+	<result column="AGREEMENT_CONDITION_SUBJECT" jdbcType="VARCHAR" property="agreementConditionSubject" />	
 	<result column="AGREEMENT_CONDITION_DATE" jdbcType="DATE" property="agreementConditionDate" />
 	<result column="AGREEMENT_CONDITION_RATIO" jdbcType="FLOAT" property="agreementConditionRatio" />
 	<result column="AGREEMENT_CONDITION_SETT" jdbcType="BIGINT" property="agreementConditionSett" />
@@ -21,7 +22,7 @@
 	<!-- 작성 -->
 	<insert id = "insertAgreement" parameterType="acDTO">
 	insert into AGREEMENT_CONDITION(<include refid="agreementCondition" />)
-	values(gwanri_seq.nextval,#{agreementConditionDate},#{agreementConditionRatio},#{agreementConditionSett},#{gwanRiNum})
+	values(gwanri_seq.nextval,#{agreementConditionSubject},#{agreementConditionDate},#{agreementConditionRatio},#{agreementConditionSett},#{gwanRiNum})
 	</insert>
 	
 <insert id = "BudgetBillInsert">

@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 </head>
 <body>
 	<dvi class =" w3-container">
@@ -17,15 +18,18 @@
      <table class="w3-table-all w3-centered">
       <tr class="w3-green">
         <th>번호</th>
-        <th>작성일</th>
+        <th>제목</th>
         <th>작성자</th>
+        <th>작성일</th>
       </tr>     
     </thead>
      <c:forEach var="agree" items="${agree}" varStatus="status" >
     <tr>
       <td>${status.count }</td>
-      <td>${agree.agreementConditionDate }</td>
+      <td><a href='<c:url value='/gwanri/agreementConditionView?num=${agree.agreementConditionNum }'/>'${agree.agreementConditionNum}')">${agree.agreementConditionSubject }</a></td>
       <td>${authName}</td>
+      <td>${agree.agreementConditionDate }</td>
+     
     </tr>
     </c:forEach>
   </table>

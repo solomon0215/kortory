@@ -33,10 +33,12 @@ public class GwanriSelectRepository {
     	String statement =  namespace + ".boardList";
 		return sqlSession.selectList(statement, bbdto);
     }
-    /** 예산안 보고서 게시판 - 상세 조회  */
-    public BudgetBillDTO boardDetail(BudgetBillDTO bbdto){   
-    	String statement =  namespace + ".boardDetail";
-        return sqlSession.selectOne(statement, bbdto);
+    /** 협약 조건안 게시판 - 상세 보기 */    
+    
+    public AgreementConditionDTO agreeDetail(AgreementConditionDTO dto){ 
+    	System.out.println(dto.getAgreementConditionNum()+"-------------------------------");
+    	String statement =  namespace + ".agreeDetail";
+        return sqlSession.selectOne(statement, dto);
     }
     /** 협약 조건안 게시판 - 리스트  */
     public List<AgreementConditionDTO> agreeAllSelect() {

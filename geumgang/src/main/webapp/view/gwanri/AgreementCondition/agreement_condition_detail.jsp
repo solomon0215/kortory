@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,18 +18,18 @@
 
 <dvi class =" w3-container">
 		<center><h2>협약조건안 상세내역</h2></center><br/>
-			
-<form action ="agreementConditionModifyPro" name ="frm" method = "post" >
-<table border = 1  width = 600 align = "center" cellpadding = 3 >
-		<tr><td >번호<spring:message code="agreementConditionNum" /></td>
-		<td >&nbsp;</td></tr>
-	<tr><td>업체 희망 정산 비율<spring:message code="agreementConditionRatio" /></td>
-		<td >&nbsp;</td></tr>		 
-	<tr><td>정산기준 시간<spring:message code="agreementConditionSett" /></td>
-		<td >&nbsp;</td></tr>
-	<tr><td>작성일<spring:message code="agreementConditionDate" /></td>
-		<td >&nbsp;</td></tr>
-</table>
+	
+<thead>
+     <table class="w3-table-all w3-half w3-centered">
+       <tr><th>번호</th> <td>${detail.agreementConditionNum}</td></tr>
+        <tr><th>제목</th><td>${detail.agreementConditionSubject }</td></tr>
+       <tr> <th>업체 희망 정산 비율</th> <td>${detail.agreementConditionRatio }</td></tr>
+       <tr> <th>정산기준 시간</th><td>${detail.agreementConditionSett }</td></tr>
+       <tr> <th>작성일</th> <td>${detail.agreementConditionDate }</td></tr>
+     
+
+  </table>
+  </thead>
 <br />
   <div class="w3-container" align="center">
    <a href="#" class="w3-btn w3-blue">수정</a>

@@ -45,6 +45,8 @@ $(function(){
 		<div class="w3-center">
 		<h2><p>협약조건안</p></h2><br /><br />
 		<div>
+			<center>
+				<input type="text" name="agreementConditionSubject" id="agreementConditionSubject" class="w3-input w3-center" style="width: 800px" placeholder="제목" ></center><br/>
 			<p>"Kortory"(이하 "갑"이라 한다)는 협약업체(이하 "을"이라 한다)에게 다음과 같이 협약 조건을 신청한다.<br /> <br /> 제1조(목적)<br /> 본
 				협약은 "갑"과 "을"이 본 사업을 진행함에 있어서 "갑"과 "을"의 역할과 조건 등 상호협력이 필요한 사항을 정한다.<br />
 				<br /> 제2조(조건)<br /> ① "을"은 협약 기간 동안 "본사업"이 원활하게 게첩 되도록 하여야 한다.<br />

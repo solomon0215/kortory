@@ -26,7 +26,7 @@
 
 <div class="w3-bar w3-teal">
 <div class="w3-container w3-lobster w3-xlarge">
-  <a href="aaaa" class="w3-bar-item w3-button">메인으로</a>
+  <a href="main" class="w3-bar-item w3-button">메인으로</a>
   <a href="#" class="w3-bar-item w3-button">인사부</a>
   <a href="#" class="w3-bar-item w3-button">영업부</a>
   <a href="#" class="w3-bar-item w3-button">기획부</a>

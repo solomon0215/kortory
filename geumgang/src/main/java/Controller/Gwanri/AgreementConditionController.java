@@ -33,12 +33,12 @@ public class AgreementConditionController {
 	}
 	@RequestMapping(value="/gwanri/agreementConditionWritePro", method=RequestMethod.POST) //등록
 	public String write(HttpServletRequest request , HttpSession session, Model model,
+		@RequestParam(value = "agreementConditionSubject",required = false) String agreementConditionSubject,
 		@RequestParam(value = "agreementConditionDate",required = false) java.sql.Date agreementConditionDate,
 		@RequestParam(value = "agreementConditionSett",required = false) Integer agreementConditionSett,
 		@RequestParam(value = "agreementConditionRatio",required = false) float agreementConditionRatio
-		) {
-		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_form_pro.jsp");
-		acls.agreeInsert(request, session, model, agreementConditionDate,agreementConditionSett,agreementConditionRatio);
+		) {		
+		acls.agreeInsert(request, session, model, agreementConditionSubject,agreementConditionDate,agreementConditionSett,agreementConditionRatio);
 		if(session.getAttribute("authLog") == null) { 
 			System.out.println("authLog");
 
@@ -52,7 +52,19 @@ public class AgreementConditionController {
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_list.jsp");
 		return "Main/gwanriMain";
 	}
+	@RequestMapping("gwanri/agreementConditionView") //디테일
+	public String agreeDetail(@RequestParam(value="num",required = false) Long agreementConditionNum
+			, Model model) {
+		System.out.println(agreementConditionNum);
+		acls.agreeDetail(model,agreementConditionNum);
+		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_detail.jsp");
+		return "Main/gwanriMain";
+	}
+	
 	
 }
+
+
+
 
 
