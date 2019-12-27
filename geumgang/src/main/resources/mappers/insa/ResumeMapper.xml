@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ResumeMapper">
+
+	<cache />
+	<sql id="baseResume1">
+	RESUME_NUM, USER_ID, RESUME_FILE, RESUME_NATIONAL, RESUME_BOHUN, RESUME_DISORDER, RESUME_ARMY,
+	RESUME_HIGHSCHOOL, RESUME_UNIVERCITY, RESUME_SCHOOL_START1, RESUME_SCHOOL_END1, RESUME_SCHOOL_START2, 
+	RESUME_SCHOOL_END2, RESUME_MAJOR, RESUME_GRADE_POINT
+	</sql>
+	<resultMap type="resumeDTO" id="baseResumeMap1">
+	<id column="RESUME_NUM" jdbcType="BIGINT" property="resumeNum" />
+	<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+	<result column="RESUME_FILE" jdbcType="VARCHAR" property="resumeFile" />
+	<result column="RESUME_NATIONAL" jdbcType="VARCHAR" property="resumeNational" />
+	<result column="RESUME_BOHUN" jdbcType="VARCHAR" property="resumeBohun"/>
+	<result column="RESUME_DISORDER" jdbcType="VARCHAR" property="resumeDisorder"/>
+	<result column="RESUME_ARMY" jdbcType="VARCHAR" property="resumeArmy"/>
+	<result column="RESUME_HIGHSCHOOL" jdbcType="VARCHAR" property="resumeHighschool"/>
+	<result column="RESUME_UNIVERCITY" jdbcType="VARCHAR" property="resumeUnivercity"/>
+	<result column="RESUME_SCHOOL_START1" jdbcType="DATE" property="SchoolStart1"/>
+	<result column="RESUME_SCHOOL_END1" jdbcType="DATE" property="SchoolEnd1"/>
+	<result column="RESUME_SCHOOL_START2" jdbcType="DATE" property="SchoolStart2"/>
+	<result column="RESUME_SCHOOL_END2" jdbcType="DATE" property="SchoolEnd2"/>
+	<result column="RESUME_MAJOR" jdbcType="VARCHAR" property="resumeMajor"/>
+	<result column="RESUME_GRADE_POINT" jdbcType="DOUBLE" property="resumePoint"/>
+	</resultMap>
+
+	<insert id="insertResume1" parameterType="resumeDTO">
+	insert into resume (
+	<include refid="baseResume1" />
+	)
+	values(insa_seq.nextval, #{userId}, #{resumeFile}, #{resumeNational}, #{resumeBohun}, #{resumeDisorder},
+	#{resumeArmy}, #{resumeExpOver}, #{resumeHighschool}, #{resumeUnivercity}, #{schoolStart1}, #{schoolEnd1},
+	 #{schoolStart2}, #{schoolEnd2}, #{resumeMajor}, #{resumePoint})
+	</insert>
+
+
+
+	
+	</mapper>

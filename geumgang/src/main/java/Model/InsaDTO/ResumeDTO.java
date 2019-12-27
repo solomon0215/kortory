@@ -10,7 +10,7 @@ public class ResumeDTO implements Serializable {
 	private String resumeFile;
 	private String resumeNational;
 	private String resumeBohun;
-	private String resumeDisoerder;
+	private String resumeDisorder;
 	private String resumeArmy;
 	private String resumeExpOver;
 	private String resumeHighschool;
@@ -38,7 +38,7 @@ public class ResumeDTO implements Serializable {
 	public ResumeDTO() {}
 	
 	public ResumeDTO(Integer resumeNum, String userId, String resumeFile, String resumeNational, String resumeBohun,
-			String resumeDisoerder, String resumeArmy, String resumeExpOver, String resumeHighschool,
+			String resumeDisorder, String resumeArmy, String resumeExpOver, String resumeHighschool,
 			String resumeUnivercity, Date schoolStart1, Date schoolEnd1, Date schoolStart2, Date schoolEnd2,
 			String resumeMajor, double resumePoint, String resumeLanguage, String resumegrade, String resumeLicense,
 			String formerWork, String formerPosition, Date formerStart, Date formerEnd, Integer formerSalary,
@@ -50,7 +50,7 @@ public class ResumeDTO implements Serializable {
 		this.resumeFile = resumeFile;
 		this.resumeNational = resumeNational;
 		this.resumeBohun = resumeBohun;
-		this.resumeDisoerder = resumeDisoerder;
+		this.resumeDisorder = resumeDisorder;
 		this.resumeArmy = resumeArmy;
 		this.resumeExpOver = resumeExpOver;
 		this.resumeHighschool = resumeHighschool;
@@ -106,11 +106,11 @@ public class ResumeDTO implements Serializable {
 	public void setResumeBohun(String resumeBohun) {
 		this.resumeBohun = resumeBohun;
 	}
-	public String getResumeDisoerder() {
-		return resumeDisoerder;
+	public String getResumeDisorder() {
+		return resumeDisorder;
 	}
-	public void setResumeDisoerder(String resumeDisoerder) {
-		this.resumeDisoerder = resumeDisoerder;
+	public void setResumeDisorder(String resumeDisorder) {
+		this.resumeDisorder = resumeDisorder;
 	}
 	public String getResumeArmy() {
 		return resumeArmy;

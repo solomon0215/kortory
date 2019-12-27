@@ -22,7 +22,7 @@ public class ResumeService {
 		resume.setResumeFile(rc.getFile());
 		resume.setResumeNational(rc.getNational());
 		resume.setResumeBohun(rc.getBohun());
-		resume.setResumeDisoerder(rc.getDisorder());
+		resume.setResumeDisorder(rc.getDisorder());
 		resume.setResumeArmy(rc.getArmy());
 		resume.setResumeHighschool(rc.getHighschool());
 		resume.setResumeUnivercity(rc.getUnivercity());
