@@ -27,9 +27,9 @@ public class RecruitController {
 	public String write(RecruitRegiCommand recruitCommand, HttpSession session,HttpServletRequest request) {
 		Integer result = recruitRegiService.recruitRegist(recruitCommand,session,request);
 		if(result == 0) {//insert 실패시 
-			return "";
+			return "insa/registFailed";
 		}
-		return "redirect:/recruitList";
+		return "insa/recruitList";
 	}
 	
 	@RequestMapping(value="/insa/recruitRegist", method=RequestMethod.GET) //채용공고 등록일에 오늘날짜 표시
@@ -41,7 +41,7 @@ public class RecruitController {
 		return "insa/insaPage"; //jsp 寃쎈줈
 	}
 	
-	@RequestMapping(value="/insa/recruitList", method=RequestMethod.GET) //채용공고 페이지의 include
+	@RequestMapping(value="/insa/recruitList", method=RequestMethod.GET) //채용공고 페이지의 include, 채용공고 리스트 출력
 	public String recruitList(RecruitRegiCommand rc, Model model, HttpSession session) {
 		recruitRegiService.recruitSelect(model, session);
 		model.addAttribute("insaPage","../insa/recruitList.jsp");

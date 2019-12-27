@@ -11,9 +11,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Insert title here</title>
-<script type="text/javascript">
-function showPopup() { window.open("recruitPopup.html", "a", "width=400, height=300, left=100, top=50"); }
-</script>
 </head>
 	<body>
 <form:form class="w3-container w3-card-4 w3-white" style="margin-left:12%"
@@ -63,7 +60,7 @@ commandName="recruitRegiCommand" id="frm" action="recruitRegiPro" method="POST" 
 		<div class="w3-center">
 			<div class="w3-bar">
 				<input  class="w3-button w3-yellow" type="reset" value="다시 작성" />
-			    <button class="w3-button w3-teal" id="regist" onclick="showPopup();">등록</button>
+			    <button class="w3-button w3-teal" id="regist">등록</button>
 			</div>
 		</div>
 </form:form>

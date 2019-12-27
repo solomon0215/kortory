@@ -38,7 +38,7 @@ $(function(){
 		</form:form>
 		<div class="w3-margin w3-center">
 			<span class="w3-tag w3-xlarge w3-padding w3-pale-yellow w3-round-small" style="transform:rotate(+2deg)">
-		 		<a href="userForm" >Do you wanna Join Member?</a>
+		 		<a href="userForm" >Do you want to Join Member?</a>
 			</span>	
 		</div>
 </body>

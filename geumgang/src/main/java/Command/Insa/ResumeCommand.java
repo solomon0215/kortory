@@ -11,15 +11,15 @@ public class ResumeCommand {
 	String expOver;
 	String highschool;
 	String univercity;
-	Date schoolStart;
-	Date schoolEnd;
+	String schoolStart;
+	String schoolEnd;
 	String major;
-	float gradePoint;
+	double gradePoint;
 	String license;
 	String formerWork;
 	String formerPosition;
-	Date formerStart;
-	Date formerEnd;
+	String formerStart;
+	String formerEnd;
 	Integer formerSalary;
 	String formerTask;
 	String formerIntro;
@@ -74,16 +74,16 @@ public class ResumeCommand {
 	public void setUnivercity(String univercity) {
 		this.univercity = univercity;
 	}
-	public Date getSchoolStart() {
+	public String getSchoolStart() {
 		return schoolStart;
 	}
-	public void setSchoolStart(Date schoolStart) {
+	public void setSchoolStart(String schoolStart) {
 		this.schoolStart = schoolStart;
 	}
-	public Date getSchoolEnd() {
+	public String getSchoolEnd() {
 		return schoolEnd;
 	}
-	public void setSchoolEnd(Date schoolEnd) {
+	public void setSchoolEnd(String schoolEnd) {
 		this.schoolEnd = schoolEnd;
 	}
 	public String getMajor() {
@@ -92,10 +92,10 @@ public class ResumeCommand {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	public float getGradePoint() {
+	public double getGradePoint() {
 		return gradePoint;
 	}
-	public void setGradePoint(float gradePoint) {
+	public void setGradePoint(double gradePoint) {
 		this.gradePoint = gradePoint;
 	}
 	public String getLicense() {
@@ -116,16 +116,16 @@ public class ResumeCommand {
 	public void setFormerPosition(String formerPosition) {
 		this.formerPosition = formerPosition;
 	}
-	public Date getFormerStart() {
+	public String getFormerStart() {
 		return formerStart;
 	}
-	public void setFormerStart(Date formerStart) {
+	public void setFormerStart(String formerStart) {
 		this.formerStart = formerStart;
 	}
-	public Date getFormerEnd() {
+	public String getFormerEnd() {
 		return formerEnd;
 	}
-	public void setFormerEnd(Date formerEnd) {
+	public void setFormerEnd(String formerEnd) {
 		this.formerEnd = formerEnd;
 	}
 	public Integer getFormerSalary() {

@@ -11,6 +11,8 @@
       <bean id = "recruitRegiService" class="Service.Insa.RecruitRegiService" />
       <bean id = "employeeInsertService" class="Service.Insa.EmployeeInsertService" />
       <bean id = "contractService" class="Service.Insa.ContractService" />
+      <bean id = "applicantMailService" class="Service.Insa.ApplicantMailService" />
+      <bean id = "resumeService" class="Service.Insa.ResumeService" />
       
 <!-- Repositopry -->
       <bean id = "insaRepository" class ="Repository.Insa.InsaRepository"/>            
