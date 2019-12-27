@@ -10,4 +10,5 @@
 	<bean class="Controller.Youngup.NewComapnyController"/> <!--영업부 신규업체 리스트 보기 컨트롤러-->
 	<bean class="Controller.Youngup.ExplorWriteController"/> <!-- 신규 사전답사 보고서 작성 컨트롤러-->
 	<bean class="Controller.Youngup.ExplorIncomController"/> <!--미완성 사전답사 보고서 작성 컨트롤러-->
+	<bean class="Controller.Youngup.ExplorComController"/> <!--완성 사전답사 보고서 작성 컨트롤러-->
 </beans>

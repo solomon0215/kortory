@@ -28,6 +28,7 @@ public class ExplorIncomService {
 	String store = null;
 	
 	
+	//상세 보기
 	public void incomExpDetail(Model model,Integer expNum) {
 		ExplorationDTO dto = new ExplorationDTO();
 		dto.setExplorationNum(expNum);
@@ -35,6 +36,7 @@ public class ExplorIncomService {
 		model.addAttribute("detail", detail);
 	}
 	
+	//작성하기
 	public String incomExpUpdate(ExplorIncomWriteCommand explorIncomWriteCommand,Model model,Errors errors,HttpServletRequest request) {
 		String storeTotal = "";
 		

@@ -22,7 +22,7 @@
 		</div>
 		<label>비밀번호</label>.
 		<div class="w3-center">
-			<form:input path="youngUpPw" class="w3-input"/>
+			<form:password path="youngUpPw" class="w3-input"/>
 			<form:errors path="youngUpPw" class="w3-text-amber"/>
 		</div>  	
 		<br>

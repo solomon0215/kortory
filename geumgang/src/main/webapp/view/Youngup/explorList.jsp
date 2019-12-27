@@ -131,21 +131,21 @@ function goToCompleDetail(expNum){
 			    </tr>
 		    </thead>
 		    <tbody>
-		    	<c:if test="${incomplete !=null}">
-		    	<c:forEach items="${incomplete}" var="in">
+		    	<c:if test="${complete !=null}">
+		    	<c:forEach items="${complete}" var="com">
 			    <tr class="w3-pale-blue">
-			      <td>${in.explorationNum}</td>
-			      <td>${in.companyName}</td>
-			      <td>${in.companyAddr}</td>
-			      <td>${in.companyPh}</td>
-			      <td>${in.companyType}</td>
-			      <td><button class="w3-button w3-white w3-border w3-hover-amber" onclick="goToIncomWrite('${in.explorationNum}')">작성하러 가기</button></td>
+			      <td>${com.explorationNum}</td>
+			      <td>${com.companyName}</td>
+			      <td>${com.companyAddr}</td>
+			      <td>${com.companyPh}</td>
+			      <td>${com.companyType}</td>
+			      <td><button class="w3-button w3-white w3-border w3-hover-amber" onclick="goToCompleDetail('${com.explorationNum}')">내용 열람하기</button></td>
 			    </tr>
 			    </c:forEach>
 			    </c:if>
 		    	<c:if test="${incomplete ==null}">
 		    	<tr class="w3-pale-blue">
-			      <td colspan="5">신규담당 업무 처리를 마치셨어요!!</td>
+			      <td colspan="5">아직 작성 완료 하신 업무가 없네요.(T 0 T)</td>
 			    </tr> 
 		    	</c:if>			    
 		    </tbody>

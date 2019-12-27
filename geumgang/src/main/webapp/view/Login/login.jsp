@@ -51,7 +51,7 @@ $(function(){
 </script>
 </head>
 <body>
-	<div class="w3-container w3-margin w3-display-bottommiddle w3-half">
+	<div class="w3-container" style="margin: 0px auto; width:80%;">
 		<div id="logFrm" class="w3-margin">
 			<div class="w3-center w3-margin">
 				<div class="w3-margin">
@@ -68,7 +68,7 @@ $(function(){
 				<br>
 			</div>
 		</div>
-		<div class="w3-center">
+		<div class="w3-center w3-margin">
 		<button class="w3-button w3-white w3-border w3-border-yellow" id="user">일반회원 로그인</button>
 		<button class="w3-button w3-white w3-border w3-border-red" id="guide">가이드 로그인</button>
 		<button class="w3-button w3-white w3-border w3-border-blue" id="company">업체 로그인</button>

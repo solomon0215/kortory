@@ -1,5 +1,7 @@
 package Validator.Youngup;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.regex.Pattern;
 
 import org.springframework.validation.Errors;
@@ -25,6 +27,7 @@ public class ExplorIncomWriteCommandValidator implements Validator{
 		if(com.getExplorationType().equals("0")) {
 			errors.rejectValue("explorationType", "required");
 		}
+		
 		ValidationUtils.rejectIfEmpty(errors, "explorationManaName", "required");
 		ValidationUtils.rejectIfEmpty(errors, "explorationEffect", "required");
 		ValidationUtils.rejectIfEmpty(errors, "startTime", "required");
@@ -35,6 +38,35 @@ public class ExplorIncomWriteCommandValidator implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "explorationLimitAge", "required");
 		ValidationUtils.rejectIfEmpty(errors, "explorationLimitPer", "required");
 		ValidationUtils.rejectIfEmpty(errors, "explorationCondition", "required");
+		if(!com.getStartDate().trim().isEmpty() && !com.getEndDate().trim().isEmpty() ) { //날짜 검사 
+			java.util.Date now = new java.util.Date(); //현재 날자
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			java.util.Date start;
+			java.util.Date end;
+			try {
+				 start = sdf.parse(com.getStartDate());
+				 end = sdf.parse(com.getEndDate());
+				 int nowResult = now.compareTo(start);
+					if(nowResult > 0) {
+						errors.rejectValue("startDate","startDateNow");
+					}else {
+						int startResult = start.compareTo(end);
+						if(startResult > 0) {
+							errors.rejectValue("startDate","startDate");
+						}
+					}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		if(!com.getStartTime().trim().isEmpty() && !com.getEndTime().trim().isEmpty() ) {//시간검사
+			Integer startTime = Integer.parseInt(com.getStartTime()); 
+			Integer endTime = Integer.parseInt(com.getEndTime());
+			if(startTime >= endTime) {
+				errors.rejectValue("startTime","startTime");
+			}
+		}
+		
 	}
 
 }

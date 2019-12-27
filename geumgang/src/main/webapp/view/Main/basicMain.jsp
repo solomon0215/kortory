@@ -37,7 +37,7 @@
   <b style="color:lime">Y</b></h1>
   <b>"역사와 함께 떠나는 여행"</b>
 </div>
-<div class="menubar"></div>
+<div class="menubar" style="margin-bottom:3%;">
 	<div class="w3-bar w3-black w3-text-center">
 	  <a href="http://localhost:8080/geumgang/main"  class="w3-bar-item w3-button fa fa-home w3-hover-red" 
 	  style="width:20%">&nbsp; HOME</a>
@@ -50,11 +50,10 @@
 	  <a href="http://localhost:8080/geumgang/staff/login" class="w3-bar-item w3-button fa fa-user-circle-o w3-hover-orange" 
 	  style="width:20%">&nbsp; 직원 로그인</a>
 	</div>
+</div>	
 </header>
-
-	<div class="bgimg-1 w3-container" id="include">
+	<div class="bgimg-1 w3-container" id="include" style="max-height:40%;width:80%;margin: 0px auto;">
 	  	<jsp:include page="${pageName}" />
 	</div>
-</div>
 </body>
 </html>
