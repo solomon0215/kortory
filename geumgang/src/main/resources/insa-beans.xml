@@ -19,4 +19,5 @@
       <bean id = "recruitRepository" class="Repository.Insa.RecruitRepository"/>
       <bean id = "employeeRepository" class="Repository.Insa.EmployeeRepository"/>
       <bean id = "contractRepository" class="Repository.Insa.ContractRepository"/>
+      <bean id = "resumeRepository" class="Repository.Insa.ResumeRepository" />
 </beans>

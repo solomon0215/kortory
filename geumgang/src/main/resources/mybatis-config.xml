@@ -18,6 +18,6 @@
 		<typeAlias type="Model.InsaDTO.ContractDTO" alias = "contractDTO" />
 		<typeAlias type="Model.KihoekDTO.ConceptDTO" alias ="conceptDTO"/>
 		<typeAlias type="Model.KihoekDTO.CInsertDTO" alias ="cInsertDTO"/>
-		
+		<typeAlias type="Model.InsaDTO.ResumeDTO" alias="resumeDTO"/>
 	</typeAliases>
 </configuration>

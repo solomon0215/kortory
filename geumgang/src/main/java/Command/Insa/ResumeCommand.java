@@ -11,8 +11,10 @@ public class ResumeCommand {
 	String expOver;
 	String highschool;
 	String univercity;
-	String schoolStart;
-	String schoolEnd;
+	String schoolStart1;
+	String schoolEnd1;
+	String schoolStart2;
+	String schoolEnd2;
 	String major;
 	double gradePoint;
 	String license;
@@ -74,17 +76,17 @@ public class ResumeCommand {
 	public void setUnivercity(String univercity) {
 		this.univercity = univercity;
 	}
-	public String getSchoolStart() {
-		return schoolStart;
+	public String getSchoolStart1() {
+		return schoolStart1;
 	}
-	public void setSchoolStart(String schoolStart) {
-		this.schoolStart = schoolStart;
+	public void setSchoolStart1(String schoolStart1) {
+		this.schoolStart1 = schoolStart1;
 	}
-	public String getSchoolEnd() {
-		return schoolEnd;
+	public String getSchoolEnd1() {
+		return schoolEnd1;
 	}
-	public void setSchoolEnd(String schoolEnd) {
-		this.schoolEnd = schoolEnd;
+	public void setSchoolEnd1(String schoolEnd1) {
+		this.schoolEnd1 = schoolEnd1;
 	}
 	public String getMajor() {
 		return major;
@@ -163,6 +165,18 @@ public class ResumeCommand {
 	}
 	public void setBad(String bad) {
 		this.bad = bad;
+	}
+	public String getSchoolStart2() {
+		return schoolStart2;
+	}
+	public void setSchoolStart2(String schoolStart2) {
+		this.schoolStart2 = schoolStart2;
+	}
+	public String getSchoolEnd2() {
+		return schoolEnd2;
+	}
+	public void setSchoolEnd2(String schoolEnd2) {
+		this.schoolEnd2 = schoolEnd2;
 	}
 	
 	
