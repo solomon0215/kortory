@@ -4,6 +4,11 @@
 <mapper namespace="gwanriInsertMapper">
 
 	<cache />
+	<sql id="exploration">
+		exploration_num,company_id,exploration_type,exploration_schedule,exploration_effect,exploration_mana_name,exploration_avail_time,
+		exploration_avail_date,exploration_avail_holi,exploration_limit_age,exploration_limit_per,exploration_condition,exploration_file,
+		exploration_submit,young_up_num
+	</sql>
 	
 	<sql id = "agreementCondition">
 	AGREEMENT_CONDITION_NUM,AGREEMENT_CONDITION_SUBJECT,AGREEMENT_CONDITION_DATE,AGREEMENT_CONDITION_RATIO,
@@ -17,13 +22,45 @@
 	<result column="AGREEMENT_CONDITION_RATIO" jdbcType="FLOAT" property="agreementConditionRatio" />
 	<result column="AGREEMENT_CONDITION_SETT" jdbcType="BIGINT" property="agreementConditionSett" />
 	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum" />
-	
 	</resultMap>
-	<!-- 작성 -->
-	<insert id = "insertAgreement" parameterType="acDTO">
+	
+	<resultMap type="eaDTO" id="baseExpagreeMap"> <!-- 사전답사보고서DTO+협약조건보고서DTO -->
+		<id column="AGREEMENT_CONDITION_NUM" jdbcType="BIGINT" property="agreementConditionNum" />
+		<id column="exploration_num" jdbcType="BIGINT" property="explorationNum"/> <!-- 답사보고서 번호-->
+		<result column="COMPANY_ID" jdbcType="VARCHAR" property="companyId"/> <!-- 업체 아이디 ()-->
+		<result column="AGREEMENT_CONDITION_SUBJECT" jdbcType="VARCHAR" property="agreementConditionSubject" />	
+		<result column="AGREEMENT_CONDITION_DATE" jdbcType="DATE" property="agreementConditionDate" />
+		<result column="AGREEMENT_CONDITION_RATIO" jdbcType="FLOAT" property="agreementConditionRatio" />
+		<result column="AGREEMENT_CONDITION_SETT" jdbcType="BIGINT" property="agreementConditionSett" />
+		<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum" />
+		<result column="exploration_type" jdbcType="VARCHAR" property="explorationType"/> <!-- 업체 유형	 -->
+		<result column="exploration_schedule" jdbcType="DATE" property="explorationSchedule"/> <!-- 사전답사 예정일 -->
+		<result column="exploration_effect" jdbcType="DATE" property="explorationEffect"/> <!-- 사전답사 실시일 -->
+		<result column="exploration_mana_name" jdbcType="VARCHAR" property="explorationManaName"/> <!-- 업체담당자 이름 -->
+		<result column="exploration_avail_time" jdbcType="VARCHAR" property="explorationAvailTime"/> <!-- 업체 방문 가능시간 -->
+		<result column="exploration_avail_date" jdbcType="VARCHAR" property="explorationAvailDate"/> <!-- 업체 사용가능 날짜 -->
+		<result column="exploration_avail_holi" jdbcType="VARCHAR" property="explorationAvailHoli"/> <!-- 공휴일 사용 가능 여부 -->
+		<result column="exploration_limit_age" jdbcType="BIGINT" property="explorationLimitAge"/> <!-- 업체 방문 제한 나이 -->
+		<result column="exploration_limit_per" jdbcType="BIGINT" property="explorationLimitPer"/> <!-- 업체 방무문 제한 인원 -->
+		<result column="exploration_condition" jdbcType="VARCHAR" property="explorationCondition"/> <!-- 업체 방문 제한 조건	 -->
+		<result column="exploration_file" jdbcType="VARCHAR" property="explorationFile"/> <!-- 증빙자료	자료	 -->
+		<result column="exploration_submit" jdbcType="VARCHAR" property="explorationSubmit"/> <!-- 제출여부	여부	 -->
+		<result column="YOUNG_UP_NUM" jdbcType="VARCHAR" property="youngUpNum"/> <!-- 사원번호 -->
+		</resultMap>
+		
+	
+	<!-- 협약조건안 작성 -->
+	<insert id = "insertAgree" parameterType="eaDTO">
 	insert into AGREEMENT_CONDITION(<include refid="agreementCondition" />)
 	values(gwanri_seq.nextval,#{agreementConditionSubject},#{agreementConditionDate},#{agreementConditionRatio},#{agreementConditionSett},#{gwanRiNum})
 	</insert>
+	<!-- 사전답사도 같이 인설트 -->
+	<insert id = "insertExp" parameterType="eaDTO">
+	insert into exploration(exploration_num, company_id)
+	values(#{explorationNum}, #{companyId})
+	</insert>
+	
+	
 	
 <insert id = "BudgetBillInsert">
 	INSERT INTO BUDGET_BILL(BUDGET_BILL_NUM,

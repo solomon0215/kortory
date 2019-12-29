@@ -43,6 +43,7 @@
 	        <li class="menu">
 	             <a href="#" style="text-decoration:none" >협력업체 관련 업무</a>
 	            <ul>
+	            	<li><a href="http://localhost:8080/geumgang/gwanri/expList" style="text-decoration:none">사전답사 보고서 목록</a></li>
 	                <li><a href="http://localhost:8080/geumgang/gwanri/agreementConditionList" style="text-decoration:none">협약조건안 목록</a></li>
 	                <li>협약조건보고서 목록</li>
 	                <li><a href="http://localhost:8080/geumgang/gwanri/violation" style="text-decoration:none">계약 위반처리</a></li>
