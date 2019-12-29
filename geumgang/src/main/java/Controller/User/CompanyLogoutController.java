@@ -17,12 +17,11 @@ public class CompanyLogoutController {
 	@Autowired
 	private CompanyLogoutService cls;
 	
-	@RequestMapping("user/logout")
+	@RequestMapping("company/logout")
 	public String logout(HttpSession session,
 			HttpServletResponse response, Model model, CompanyLogCommand clc) {
 		cls.logout(session, response,clc);
-	model.addAttribute("pageName", "../Login/companyLogin.jsp");
-		return "Main/basicMain";
+		return "Company/goToLog";
 	}
 }
 

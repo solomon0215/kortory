@@ -4,7 +4,7 @@ public class CompanyAuth {
 	private String id;
 	private String email;
 	private String name;
-	private int kind;//로그인한 사람의 형태 업체(계약 전 =111,계약 후 = 112), 가이드 =202, 회원=201, 직원(관리 =301,기획=302,인사=303, 영업=304)
+	private int kind;//로그인한 사람의 형태 업체=111, 가이드 =202, 회원=201, 직원(관리 =301,기획=302,인사=303, 영업=304)
 	
 	public CompanyAuth() {
 	}

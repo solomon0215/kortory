@@ -93,7 +93,41 @@ function goToIncomWrite(expNum){
 					<td>업체 방문 제한 조건</td><td class="w3-light-gray">${detail.explorationCondition}</td>
 				</tr>
 				<tr class="w3-gray">
-					<td>증빙자료</td><td class="w3-light-gray">${detail.explorationFile}</td>
+					<td>증빙자료</td>
+					<td class="w3-light-gray">
+						<c:if test="${images != null}">
+							<div class="w3-content w3-display-container">
+							<c:forEach items="${images}" var="image" >
+								  <img class="mySlides" src="../view/Youngup/upload/${image}" style="width:100%;height:20;">
+							</c:forEach>
+							  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+							  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+							</div>
+							
+							<script>
+							var slideIndex = 1;
+							showDivs(slideIndex);
+							
+							function plusDivs(n) {
+							  showDivs(slideIndex += n);
+							}
+							
+							function showDivs(n) {
+							  var i;
+							  var x = document.getElementsByClassName("mySlides");
+							  if (n > x.length) {slideIndex = 1}
+							  if (n < 1) {slideIndex = x.length}
+							  for (i = 0; i < x.length; i++) {
+							    x[i].style.display = "none";  
+							  }
+							  x[slideIndex-1].style.display = "block";  
+							}
+							</script>
+						</c:if>
+						<c:if test="${images == null }">
+							증빙자료가 없습니다.
+						</c:if>
+					</td>
 				</tr>
 		    </tbody>
 		</table>
