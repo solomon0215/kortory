@@ -60,14 +60,29 @@ $(function(){
 </script>
 </head>
 <body>
-<div class="w3-container w3-display-bottommiddle w3-half" >
+<div class="w3-container" style="margin: 0px auto; width:80%;" >
+	<div id="staff" class="w3-margin">
+		<div class="w3-center w3-margin">
+			<div class="w3-margin">
+				<span class="w3-tag w3-xxlarge w3-padding w3-pink w3-round-small" style="transform:rotate(-2deg)">
+			 		오늘도 열심히 일해라 노예들아
+				</span>	
+			</div>
+			<div >
+				&nbsp;&nbsp;&nbsp;<span class="w3-tag w3-xxlarge w3-padding w3-deep-purple w3-round-small" style="transform:rotate(+5deg)">
+				자기 부서도 모르는건 아니지?
+				</span>
+			</div>
+			<br>
+			<br>
+		</div>
+	</div>
 	<div class="w3-panel w3-center w3-margin"> 
 		<button class="w3-button w3-hover-green w3-border w3-white w3-border-green" id="gwan">관리부 로그인</button>
 		<button class="w3-button w3-hover-amber w3-border w3-white w3-border-amber" id="young">영업부 로그인</button>
 		<button class="w3-button w3-hover-light-blue w3-border w3-white w3-border-light-blue" id="in">인사부 로그인</button>
 		<button class="w3-button w3-hover-red w3-border w3-white w3-border-red" id="ki">기획부 로그인</button>
 	</div>
-	<div id="staff" class="w3-margin"></div>
 </div>
 </body>
 </html>

@@ -31,6 +31,7 @@ public class NewCompanyService {
 	//신규업체 불러오기 메소드
 	public void newCom(Model model) {
 		List<ExplorListDTO> expList = youngSelRepo.selectExplorList(); //모든 사전 보고서 불러오기
+		System.out.println(expList.size()+"-----------------------------------------------");
 		List<CompanyDTO> newComList = companySelectRepository.selectNewCom(expList); //업체 목록에서 검색 (사전보고서에 포함되지 않는)
 		model.addAttribute("newComList", newComList);
 		model.addAttribute("pageName", "../Youngup/newComList.jsp");

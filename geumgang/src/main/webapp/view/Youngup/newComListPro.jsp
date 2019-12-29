@@ -19,7 +19,7 @@
 </style>
 </head>
 <body>
-<div class="w3-container w3-center">
+<div class="w3-container w3-center" style="margin-top: 20%;">
 	<h2 class="w3-min">${result}개의 업체를 이관하셨습니다. <br>사전답사 보고서 페이지에서 확인 해보세요!</h2>
 	<br>
 	<br>

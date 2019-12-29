@@ -42,7 +42,7 @@ h2{
 </style>
 </head>
 <body>
-<div class="w3-container w3-display-container">
+<div class="w3-container w3-display-container" style="margin-top: 5%;">
   <br>
   <h2 class="w3-myfont w3-center" id="welcome">오늘도 이렇게 많은 업체들이 있어요!</h2>
   <h2 class="w3-myfont w3-center w3-red" id="msg">${msg}</h2>

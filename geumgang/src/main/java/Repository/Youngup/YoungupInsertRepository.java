@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import Model.YoungupDTO.ExplorationDTO;
 
@@ -16,6 +17,7 @@ public class YoungupInsertRepository {
 	private SqlSession sqlSession;
 	private final String namespace = "youngupInsertMapper";
 	
+	@Transactional
 	public Integer insertExplor(List<ExplorationDTO> list) { //신규 업체(여러개) 자기 담당으로 옮기기
 		String statement = namespace + ".insertExplor";
 		Integer result=0;
