@@ -1,6 +1,8 @@
 package Service.Youngup;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,6 +35,15 @@ public class ExplorIncomService {
 		ExplorationDTO dto = new ExplorationDTO();
 		dto.setExplorationNum(expNum);
 		ExplorListDTO detail = youngSelRepo.selectExpDetail(dto);
+		if(detail.getExplorationFile() != null) {
+			String [] file = detail.getExplorationFile().split(";");
+			List<String> images = new ArrayList<String>();
+			for(String image : file) {
+				System.out.println(image);
+				images.add(image);
+			}
+			model.addAttribute("images", images);
+		}
 		model.addAttribute("detail", detail);
 	}
 	

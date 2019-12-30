@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import Model.GwanriDTO.AgreementConditionDTO;
 import Model.GwanriDTO.BudgetBillDTO;
+import Model.GwanriDTO.ExpagreeDTO;
 import Model.GwanriDTO.GwanriDTO;
 
 @Repository
@@ -19,16 +20,18 @@ public class GwanriInsertRepository {
 	private final String namespace = "gwanriInsertMapper";
 		
 	/** 협약조건안 게시판 - 등록  */    
-    public Integer agreeInsert(AgreementConditionDTO dto){
-    	System.out.println(dto.getGwanRiNum());
-    	System.out.println(dto.getAgreementConditionRatio());
-    	System.out.println(dto.getAgreementConditionDate());
-    	System.out.println(dto.getAgreementConditionSett());
-    	String statement = namespace + ".insertAgreement";    	
+    public Integer agreeInsert(ExpagreeDTO dto){
+    	String statement = namespace + ".insertAgree";    	
+    	Integer result = sqlSession.insert(statement, dto);
+    	
+		return result;    	
+    }
+    /** 협약조건안 게시판 - 등록  */    
+    public Integer expInsert(ExpagreeDTO dto){
+    	String statement = namespace + ".insertExp";    	
     	Integer result = sqlSession.insert(statement, dto);
     	
 		return result;
-    	
-    }
 	
+    }
 }

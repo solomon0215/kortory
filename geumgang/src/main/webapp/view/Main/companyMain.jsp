@@ -1,62 +1,59 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<style>
-.w3-lobster {font-family: 'Do Hyeon', sans-serif;
-}
-.w3-myfont {font-family: 'Noto Sans KR', sans-serif;
-}
-
-</style>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>업체 메인페이지</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Insert title here</title>
+<style>
 
-<script src="https://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="js/jquery.form.js"></script>
+.header {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+</style>
 </head>
 <body>
-
-<div class="w3-bar w3-indigo">
-<div class="w3-container w3-lobster w3-xlarge">
-  <a href="aaaa" class="w3-bar-item w3-button">메인으로</a>
-  <a href="http://localhost:8080/geumgang/company/info" class="w3-bar-item w3-button">마이페이지</a>
-  <a href="logout"  class="w3-bar-item w3-button w3-right">로그아웃</a>
+<!-- Header -->
+<header class="w3-margin-top ">
+<div class="header">
+<br>
+  <h1 class="w3-jumbo">
+  <b style="color:red">K</b>
+  <b style="color:gold">O</b>
+  <b style="color:green">R</b>
+  <b style="color:indigo">T</b>
+  <b style="color:amber">O</b>
+  <b style="color:orange">R</b>
+  <b style="color:lime">Y</b></h1>
+  <b>"역사와 함께 떠나는 여행"</b>
 </div>
-</div>
-<div class="w3-row">
-<!-- Sidebar -->
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
-<div class="w3-container w3-myfont w3-large"><br/>
-   <div class="w3-bar-item w3-xxlarge">업체 메뉴</div>
-	<div>
-	    <ul>
-	        <li class="menu">
-	             <a href="#" style="text-decoration:none" >협력업체 관련 업무</a>
-	            <ul>
-	                <li><a href="#" style="text-decoration:none">협약조건안 목록</a></li>
-	                <li>협약조건보고서 목록</li>
-	                <li><a href="#" style="text-decoration:none">계약 위반처리</a></li>
-	                <li>협력업체계약서 목록</li>
-	            </ul>
-	        </li> 
-	        
+<div class="menubar" style="margin-bottom:3%;">
+	<div class="w3-bar w3-black w3-text-center">
+	  <a href="http://localhost:8080/geumgang/main"  class="w3-bar-item w3-button fa fa-home w3-hover-red" 
+	  style="width:20%">&nbsp; HOME</a>
+	  <a href="http://localhost:8080/geumgang/intro" class="w3-bar-item w3-button fa fa-info w3-hover-lime" 
+	  style="width:20%">&nbsp; 회사소개</a>
+	  <a href="http://localhost:8080/geumgang/event/list" class="w3-bar-item w3-button fa fa-plane w3-hover-yellow" 
+	  style="width:20%">&nbsp; 행사상품</a>
+	  <a href="http://localhost:8080/geumgang/company/mypage" class="w3-bar-item w3-button fa fa-user-o w3-hover-cyan" 
+	  style="width:20%">&nbsp; 마이페이지</a>
+	  <a href="http://localhost:8080/geumgang/company/logout" class="w3-bar-item w3-button fa fa-power-off w3-hover-orange" 
+	  style="width:20%">&nbsp; 로그아웃</a>
 	</div>
-</div>
-</div>
-<div class="w3-container w3-myfont w3-large" style="margin-left:15%">
-	<jsp:include page="${pageName}"></jsp:include>
-</div>
-
-
-</div>
-
+</div>	
+</header>
+	<div class="bgimg-1 w3-container" id="include" style="max-height:40%;width:80%;margin: 0px auto;">
+	  	<jsp:include page="${pageName}" />
+	</div>
 </body>
 </html>

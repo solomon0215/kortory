@@ -15,6 +15,8 @@ import Model.GwanriDTO.AgreementConditionDTO;
 import Model.GwanriDTO.BudgetBillDTO;
 import Model.GwanriDTO.GwanriDTO;
 import Model.InsaDTO.RecruitDTO;
+import Model.YoungupDTO.ExplorListDTO;
+import Model.YoungupDTO.ExplorationDTO;
 
 @Repository
 public class GwanriSelectRepository {
@@ -45,6 +47,15 @@ public class GwanriSelectRepository {
 		String statement = namespace + ".agreeAllSelect";
 		List<AgreementConditionDTO> list = sqlSession.selectList(statement);
 		return list;
+	}
+    public List<ExplorListDTO> expAllSelect() {
+		String statement = namespace + ".expAllSelect";
+		List<ExplorListDTO> list = sqlSession.selectList(statement);
+		return list;
+	}
+	public ExplorListDTO selectExpDetail(ExplorationDTO dto) {//���� ��ȣ�� �ϳ��� ��������
+		String statement = namespace + ".expDetail";
+		return sqlSession.selectOne(statement,dto);
 	}
     
     

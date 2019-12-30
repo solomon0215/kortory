@@ -16,26 +16,27 @@
 </head>
 <body>
 
-<dvi class =" w3-container">
-		<center><h2>협약조건안 상세내역</h2></center><br/>
-	
-<thead>
-     <table class="w3-table-all w3-half w3-centered">
-       <tr><th>번호</th> <td>${detail.agreementConditionNum}</td></tr>
-        <tr><th>제목</th><td>${detail.agreementConditionSubject }</td></tr>
-       <tr> <th>업체 희망 정산 비율</th> <td>${detail.agreementConditionRatio }</td></tr>
-       <tr> <th>정산기준 시간</th><td>${detail.agreementConditionSett }</td></tr>
+<dvi class =" w3-container" >
+		<center><h2>협약조건안 상세내역</h2></center>
+</dvi>	
+<thead> 
+<div class="w3-container" style="margin-left: 30%;">
+    <table class="w3-table-all w3-half w3-centered" >
+     <tr><th>번호</th> <td>${detail.agreementConditionNum}</td></tr>
+       <tr><th>제목</th><td>${detail.agreementConditionSubject }</td></tr>
+       <tr> <th>업체 희망 정산 비율</th> <td>${detail.agreementConditionRatio }%</td></tr>
+       <tr> <th>정산기준 시간</th><td>${detail.agreementConditionSett }시간</td></tr>
        <tr> <th>작성일</th> <td>${detail.agreementConditionDate }</td></tr>
-     
+
 
   </table>
+  </div>
   </thead>
-<br />
-  <div class="w3-container" align="center">
-   <a href="#" class="w3-btn w3-blue">수정</a>
-    <a href="#" class="w3-btn w3-blue">삭제</a>
+  <br/>
+  <div class="w3-container " style="margin-left: 43%;">
+   <a href="http://localhost:8080/geumgang/gwanri/agreementConditionModify" class="w3-btn w3-green">수정</a>
+    <a href="#" class="w3-btn w3-green">삭제</a>
 </div>
-</form>
-</dvi>
+
 </body>
 </html>

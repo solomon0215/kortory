@@ -4,15 +4,12 @@
 <mapper namespace="gwanriUpdateMapper">
 	
 <cache />
-<sql id="basecolumn">
+	<sql id="basecolumn">
 		GWAN_RI_NUM, GWAN_RI_ID, GWAN_RI_PW, GWAN_RI_BIRTH, GWAN_RI_NAME,
 		GWAN_RI_GENDER, GWAN_RI_PH, GWAN_RI_REGIST, GWAN_RI_EMAIL
 	</sql>
-	<resultMap type="gwanriDTO" id="baseMember">
-	    <!-- 
-	    	MemberDTO memDTO = new MemberDTO();
-	    	memDTO.setUserId(rs.gertString("USER_ID"));
-	     -->
+	
+	<resultMap type="gwanriDTO" id="baseMember">	        
 		<id column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/>
 		<!-- memDTO.setUserPw(rs.getString("USER_PW")); -->
 		<result column="GWAN_RI_ID" jdbcType="VARCHAR" property="gwanRiId"/>
@@ -25,6 +22,14 @@
 		<result column="GWAN_RI_EMAIL" jdbcType="VARCHAR" property="gwanRiEmail"/>
 	</resultMap>
 
-
+<!-- 수정 -->
+	<update id="agreeModify">
+		update AGREEMENT_CONDITION		
+		set
+		AGREEMENT_CONDITION_SUBJECT=#{agreementConditionSubject}, 
+		AGREEMENT_CONDITION_SETT=#{agreementConditionSett},
+		AGREEMENT_CONDITION_LATIO=#{agreementConditionLatio}
+		where AGREEMENT_CONDITION_NUM=#{agreementConditionNum}
+</update>
 
 </mapper>

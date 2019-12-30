@@ -30,7 +30,7 @@ public class CompanyLogService { //업체가 로그인 하는 서비스
 			CompanyAuth auth = new CompanyAuth(dto2.getCompanyId(), dto2.getCompanyEmail(), dto2.getCompanyName(),111); // 계약 여부 확인 하는 메소드를 넣지 못해서 임의로 111로 정의
 			session.setAttribute("authLog", auth);
 			model.addAttribute("pageName","../FirstView/firstView.jsp");
-			return "Main/companyMain";
+			return "Company/goToMain";
 		}else {
 			errors.rejectValue("companyId", "companyLogFailed");
 			model.addAttribute("pageName","../Login/companyLogin.jsp");
