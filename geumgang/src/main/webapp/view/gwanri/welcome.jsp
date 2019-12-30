@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-관리부 메인페이지입니다
+<div class="w3-content w3-section" style="max-width:100%;">
+  <img class="mySlides w3-round  w3-animate-opacity" src="../images/money.jpg" alt="mainImage" style="width:100%;">
+</div>
 </body>
 </html>

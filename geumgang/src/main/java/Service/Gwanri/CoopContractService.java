@@ -34,7 +34,7 @@ import Repository.Gwanri.GwanriUpdateRepository;
 import Repository.Youngup.YoungupSelectRepository;
 
 @Service
-public class AgreementConditionService {
+public class CoopContractService {
 	
 	@Autowired
 	GwanriInsertRepository gwanriInsertRepository;	
@@ -52,7 +52,7 @@ public class AgreementConditionService {
 		model.addAttribute("agree", agreeList);
 	}
 	
-	public Integer agreeInsert(HttpServletRequest request, HttpSession session, Model model, String agreementConditionSubject, java.sql.Date agreementConditionDate, Integer agreementConditionSett, float agreementConditionRatio, Integer explorationNum, String companyId) {
+	public Integer agreeInsert(HttpServletRequest request, HttpSession session, Model model, String agreementConditionSubject, java.sql.Date agreementConditionDate, Integer agreementConditionSett, float agreementConditionRatio, Integer explorationNum) {
 		ExpagreeDTO dto = new ExpagreeDTO();
 		GwanriAuthInfo auth = (GwanriAuthInfo) request.getSession().getAttribute("authLog");
 		dto.setGwanRiNum(auth.getgwanRiNum());
@@ -61,7 +61,6 @@ public class AgreementConditionService {
 		dto.setAgreementConditionSett(agreementConditionSett);
 		dto.setAgreementConditionRatio(agreementConditionRatio);
 		dto.setExplorationNum(explorationNum);
-		dto.setCompanyId(companyId);
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_list.jsp");
 		gwanriInsertRepository.agreeInsert(dto);
 		gwanriInsertRepository.expInsert(dto);
@@ -69,8 +68,7 @@ public class AgreementConditionService {
 		return gwanriInsertRepository.agreeInsert(dto);
 		
 	}
-	@Transactional
-	public void agreeDetail(Model model, Long agreementConditionNum) {
+	public void agreeDetail(Model model, Integer agreementConditionNum) {
 		
 		AgreementConditionDTO dto = new AgreementConditionDTO();
 		dto.setAgreementConditionNum(agreementConditionNum);
@@ -79,7 +77,7 @@ public class AgreementConditionService {
 		// detail		
 	}
 	
-	public void agreeModify(Model model, Long agreementConditionNum) {
+	public void agreeModify(Model model, Integer agreementConditionNum) {
 		AgreementConditionDTO dto = new AgreementConditionDTO();
 		dto.setAgreementConditionNum(agreementConditionNum);
 		int modify = gwanriUpdateRepository.agreeModify(dto);
@@ -98,6 +96,13 @@ public class AgreementConditionService {
 		dto.setExplorationNum(explorationNum);
 		ExplorListDTO detail = gwanriSelectRepository.selectExpDetail(dto);
 		model.addAttribute("detail", detail);
+	}
+	public void expDetail2(Model model, Integer explorationNum) {
+		System.out.println(explorationNum+"====================");
+		ExplorationDTO dto = new ExplorationDTO();
+		dto.setExplorationNum(explorationNum);
+		ExplorListDTO detail2 = gwanriSelectRepository.selectExpDetail2(dto);
+		model.addAttribute("detail2", detail2);
 	}
 	
 	

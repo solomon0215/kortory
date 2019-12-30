@@ -43,7 +43,7 @@ $(function(){
 <form action="agreementConditionWritePro" name="frm" id="frm" method="post" >
      <table cellpadding="0" cellspacing="0" > 
 		<div class="w3-center">
-		<h2><p>협약조건안</p></h2><br /><br />
+		<h2><p>협력업체 계약서</p></h2><br /><br />
 		<div>
 			<center>
 				<input type="text" name="agreementConditionSubject" id="agreementConditionSubject" class="w3-input w3-center" style="width: 800px" placeholder="제목" ></center><br/>

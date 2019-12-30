@@ -18,7 +18,7 @@ public class ExpagreeDTO { //사전답사보고서DTO + 협약조건안DTO
 	private String explorationFile;
 	private String explorationSubmit;
 	private String youngUpNum;
-	private Long agreementConditionNum; //협약조건 번호
+	private Integer agreementConditionNum; //협약조건 번호
 	private String agreementConditionSubject; //협약조건 제목
 	private java.sql.Date agreementConditionDate; //협약조건 작성일
 	private float agreementConditionRatio; //업체희망정산비율
@@ -114,10 +114,10 @@ public class ExpagreeDTO { //사전답사보고서DTO + 협약조건안DTO
 	public void setYoungUpNum(String youngUpNum) {
 		this.youngUpNum = youngUpNum;
 	}
-	public Long getAgreementConditionNum() {
+	public Integer getAgreementConditionNum() {
 		return agreementConditionNum;
 	}
-	public void setAgreementConditionNum(Long agreementConditionNum) {
+	public void setAgreementConditionNum(Integer agreementConditionNum) {
 		this.agreementConditionNum = agreementConditionNum;
 	}
 	public String getAgreementConditionSubject() {

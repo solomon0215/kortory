@@ -56,8 +56,8 @@
 	</insert>
 	<!-- 사전답사도 같이 인설트 -->
 	<insert id = "insertExp" parameterType="eaDTO">
-	insert into exploration(exploration_num, company_id)
-	values(#{explorationNum}, #{companyId})
+	insert into exploration(exploration_num)
+	values(#{explorationNum})
 	</insert>
 	
 	

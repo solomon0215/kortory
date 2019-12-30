@@ -57,6 +57,10 @@ public class GwanriSelectRepository {
 		String statement = namespace + ".expDetail";
 		return sqlSession.selectOne(statement,dto);
 	}
+	public ExplorListDTO selectExpDetail2(ExplorationDTO dto) {//���� ��ȣ�� �ϳ��� ��������
+		String statement = namespace + ".expDetail2";
+		return sqlSession.selectOne(statement,dto);
+	}
     
     
 }

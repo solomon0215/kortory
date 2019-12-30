@@ -100,8 +100,8 @@
 		<include refid="agreementCondition" />
 		from AGREEMENT_CONDITION
 	</select>
-	
-	<select id="agreeDetail" resultMap="baseAgreementMap" parameterType="Long">
+	<!-- 협약조건안 디테일 -->
+	<select id="agreeDetail" resultMap="baseAgreementMap" parameterType="Integer">
   		SELECT <include refid="agreementCondition" />
 		FROM AGREEMENT_CONDITION 
 		WHERE AGREEMENT_CONDITION_NUM = #{agreementConditionNum}
@@ -120,6 +120,15 @@
 	
 	<!-- 사전보고서 번호로 하나 가져오기 -->
 	<select id="expDetail" resultMap="exlMap" parameterType="expDTO">
+		select <include refid="exl"/>
+		from exploration exp,company com
+		<where>
+			exp.company_id = com.company_id AND exploration_num = #{explorationNum}
+			
+		</where>
+	</select>
+	<!-- 사전보고서 번호로 하나 가져오기(확인) -->
+	<select id="expDetail2" resultMap="exlMap" parameterType="expDTO">
 		select <include refid="exl"/>
 		from exploration exp,company com
 		<where>
