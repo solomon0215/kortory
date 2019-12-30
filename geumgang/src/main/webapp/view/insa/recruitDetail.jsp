@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>채용공고 상세보기</title>
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -179,11 +182,14 @@ ul{
     </div>
   </div>
  <div class="w3-center">
-			<div class="w3-bar">
-				<button class="w3-button w3-teal" id="modify">수정</button>
-				<button class="w3-button w3-red" id="delete">삭제</button>	
+			<div class="w3-bar" style="margin-top: 20px">
+				<a href="#">
+					<button class="w3-bar-item w3-button w3-teal" id="modify" style="margin-right: 10px">수정</button>
+				</a>
+				<button class="w3-bar-item w3-button w3-red" id="delete">삭제</button>
 			</div>
 		</div>
+		
 </form>
 </body>
 </html>

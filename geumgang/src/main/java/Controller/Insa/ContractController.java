@@ -17,23 +17,24 @@ public class ContractController {
 	@Autowired
 	ContractService contractService;
 	
-	@RequestMapping(value="/insa/contractList", method=RequestMethod.GET)
-	public String go(@ModelAttribute("cc") ContractCommand cc) {
-		return "insa/contractList";
-	}
-	
-	@RequestMapping(value="/insa/contractRegiPro", method=RequestMethod.GET)
-	public String contractView(Model model) {
+	@RequestMapping(value="/insa/contractList", method=RequestMethod.GET) //근로계약서 목록 보기
+	public String go(@ModelAttribute("cc") ContractCommand cc, Model model) {
 		model.addAttribute("insaPage","../insa/contractList.jsp");
 		return "insa/insaPage"; 
 	}
 	
-	@RequestMapping(value="/insa/contractRegiPro", method=RequestMethod.POST)
-	public String write(ContractCommand cc,HttpServletRequest request) {
+
+	@RequestMapping(value="/insa/contractRegiPro", method=RequestMethod.POST) //근로계약서 작성
+	public String write(@ModelAttribute("cc") ContractCommand cc,HttpServletRequest request) {
 		contractService.contractRegist(cc, request);
 		return "redirect:/contractList";
 	}
 	
+	@RequestMapping(value="/insa/contractRegist", method=RequestMethod.GET) //근로계약서 작성 페이지 보기
+	public String registView(@ModelAttribute("cc") ContractCommand cc, Model model) {
+		model.addAttribute("insaPage", "../insa/contractRegist.jsp");
+		return "insa/insaPage";
+	}
 	
 
 }

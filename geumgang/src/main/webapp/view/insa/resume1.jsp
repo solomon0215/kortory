@@ -70,7 +70,7 @@
 					rowspan="4">최종학력</td>
 				<td class="w3-row-padding" rowspan="2">고등학교명: 
 				<form:input path="highschool" class="w3-input w3-border" placeholder=""
-						style="width: 50%" />
+						style="width: 47%" />
 				<td class="w3-border w3-light-gray" style="width: 15%">입학년월</td>
 				<td class="w3-row-padding">
 				<input type="date" id="schoolStart1" name="schoolstart1"></td>
@@ -81,18 +81,22 @@
 				<input type="date" id="schoolEnd1" name="schoolEnd1"></td>
 			</tr>
 			<tr>
-				<td class="w3-row-padding">대학교명: 
-				<form:input path="univercity" class="w3-input w3-border" placeholder="" style="width: 50%" />
+				<td class="w3-row-padding" >대학교명: 
+				<form:input path="univercity" class="w3-input w3-border" placeholder="" style="width: 47%" />
 				<td class="w3-border w3-light-gray" style="width: 15%">입학년월</td>
 				<td class="w3-row-padding">
 				<input type="date" id="schoolStart2" name="schoolstart2"></td>
 			</tr>
 			<tr>
-				<td class="w3-margin-20">전공: 
-				<form:input path="major" class="w3-input w3-border" placeholder="" style="width: 35%" />
-				</td>
-				<td class="w3-margin-30">학점: 
-				<form:input path="point" class="w3-input w3-border" placeholder="" style="width: 35%" />
+				<td class="w3-margin-20">
+					<div style="float: left;">
+						전공: 
+						<form:input path="major" class="w3-input w3-border" placeholder="" style="width: 95%" />
+					</div>
+					<div>
+						학점: 
+						<form:input path="point" class="w3-input w3-border" placeholder="" style="width: 25%" />
+					</div>
 				</td>
 				<td class="w3-border w3-light-gray" style="width: 15%">졸업년월</td>
 				<td class="w3-row-padding">

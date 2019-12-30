@@ -17,39 +17,39 @@ function showPopup() { window.open("#", "a", "width=400, height=300, left=100, t
 </head>
 	<body>
 <form:form class="w3-container w3-card-4 w3-white" style="margin-left:175px"
-commandName="recruitRegiCommand" id="frm" action="recruitRegiPro" method="POST" >
+commandName="cc" id="frm" action="contractRegiPro" method="POST" >
 		<h2 class="w3-center">근로계약서 작성</h2>
 		<p>
 			<label class="w3-text-grey">회사명</label>
-			<form:input path="conCompaly" class="w3-input w3-border w3-white"   type="text" />
+			<form:input path="conCompany" class="w3-input w3-border w3-white"  />
 		</p>
 		<p>
 			<label class="w3-text-grey">회사 전화번호</label>
-			<form:input path="conPh" class="w3-input w3-border w3-white"   type="text" />
+			<form:input path="conPh" class="w3-input w3-border w3-white" />
 		</p>
 		<p>
 			<label class="w3-text-grey">회사 소재지</label>
-			<form:input path="conLocation" class="w3-input w3-border w3-white"   type="text" />
+			<form:input path="conLocation" class="w3-input w3-border w3-white" />
 		</p>
 		<p>
 			<label class="w3-text-grey">대표자명</label>
-			<form:input path="conCeo" class="w3-input w3-border w3-white"   type="text" />
+			<form:input path="conCeo" class="w3-input w3-border w3-white"  />
 		</p>
 		<p>
 			<label class="w3-text-grey">사업자 등록번호</label>
-			<form:input path="conRegiNum" class="w3-input w3-border w3-white"   type="text" />
+			<form:input path="conRegiNum" class="w3-input w3-border w3-white" />
 		</p>
 		<p>
 			<label class="w3-text-grey">근로계약 시작일</label> 
-			<form:input path="conStart" class="w3-input w3-border w3-white"  style="width: 30%" type="text" />
+			<input type="date" name="conStart" class="w3-input w3-border w3-white" style="width: 30%" />
 		    &nbsp;&nbsp;&nbsp;&nbsp;
 			<label class="w3-text-grey">근로계약 만료일</label>
-			<form:input path="conEnd" class="w3-input w3-border w3-white"   style="width: 30%"  type="text" />
+			<input type="date" name="conEnd" class="w3-input w3-border w3-white" style="width: 30%" />
 		</p>
 		<p>
 			<label class="w3-text-grey">인센티브(숫자만 입력)</label>
 			 <form:input path="conIncentive"
-				class="w3-input w3-border w3-white"  value="1" type="text"
+				class="w3-input w3-border w3-white"  value="1"
 				onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
 		</p>
 		<p>
@@ -59,12 +59,12 @@ commandName="recruitRegiCommand" id="frm" action="recruitRegiPro" method="POST" 
 		<p>
 			<label class="w3-text-grey">이력서 번호(숫자만 입력)</label>
 			 <form:input path="resumeNum"
-				class="w3-input w3-border w3-white"  value="1" type="text"
+				class="w3-input w3-border w3-white"  value="1"
 				onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
 		</p>
 		<p>
 			<label class="w3-text-grey">회원 아이디</label>
-			<form:input path="userId" class="w3-input w3-border w3-white" type="text" />
+			<form:input path="userId" class="w3-input w3-border w3-white" />
 		</p>
 		<br />
 		<div class="w3-center">
