@@ -2,11 +2,13 @@ package Service.Insa;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 
 import Command.Insa.ResumeCommand;
 import Model.InsaDTO.ResumeDTO;
@@ -59,6 +61,19 @@ public class ResumeService {
 		
 		
 		return resumeRepository.resumeInsert2(resume);
+	}
+
+	public void resumeSelect(Model model, HttpSession session) {
+		List<ResumeDTO> resumeList = resumeRepository.resumeAllSelect();
+		model.addAttribute("resume",resumeList);
+	}
+
+	public void resumeDetail(Model model, Integer resumeNum) {
+		ResumeDTO dto = new ResumeDTO();
+		dto.setResumeNum(resumeNum);
+		ResumeDTO detail = resumeRepository.resumeDetail(dto);
+		model.addAttribute("detail",detail);
+		
 	}
 	
   

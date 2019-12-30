@@ -4,22 +4,16 @@
 <mapper namespace="ResumeMapper">
 
 	<cache />
-	<sql id="baseResume1">
+	<sql id="baseResume">
 	RESUME_NUM, USER_ID, RESUME_FILE, RESUME_NATIONAL, RESUME_BOHUN, RESUME_DISORDER, RESUME_ARMY,
 	RESUME_HIGHSCHOOL, RESUME_UNIVERCITY, RESUME_SCHOOL_START1, RESUME_SCHOOL_END1, RESUME_SCHOOL_START2, 
-	RESUME_SCHOOL_END2, RESUME_MAJOR, RESUME_GRADE_POINT
-	</sql>
-	
-	<sql id="baseResume2">
+	RESUME_SCHOOL_END2, RESUME_MAJOR, RESUME_GRADE_POINT, RESUME_EXP_OVER,
 	RESUME_LANGUAGE, RESUME_LANGUAGE_GRADE, RESUME_LICENSE, RESUME_FORMER_WORK, RESUME_FORMER_POSITION,
-	RESUME_FORMER_START, RESUME_FORMER_END, RESUME_FORMER_SALARY, RESUME_FORMER_TASK, RESUME_FORMER_INTRO
-	</sql>
-	
-	<sql id="baseResume3">
+	RESUME_FORMER_START, RESUME_FORMER_END, RESUME_FORMER_SALARY, RESUME_FORMER_TASK, RESUME_FORMER_INTRO,
 	RESUME_GROW, RESUME_GOOD, RESUME_BAD, RESUME_PER_INFO
 	</sql>
 	
-	<resultMap type="resumeDTO" id="baseResumeMap1">
+	<resultMap type="resumeDTO" id="baseResumeMap">
 	<id column="RESUME_NUM" jdbcType="BIGINT" property="resumeNum" />
 	<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
 	<result column="RESUME_FILE" jdbcType="VARCHAR" property="resumeFile" />
@@ -35,9 +29,7 @@
 	<result column="RESUME_SCHOOL_END2" jdbcType="DATE" property="SchoolEnd2"/>
 	<result column="RESUME_MAJOR" jdbcType="VARCHAR" property="resumeMajor"/>
 	<result column="RESUME_GRADE_POINT" jdbcType="DOUBLE" property="resumePoint"/>
-	</resultMap>
-	
-	<resultMap type="resumeDTO" id="baseResumeMap2">
+	<result column="RESUME_EXP_OVER" jdbcType="VARCHAR" property="resumeExpOver"/>
 	<result column="RESUME_LANGUAGE" jdbcType="VARCHAR" property="resumeLanguage" />
 	<result column="RESUME_LANGUAGE_GRADE" jdbcType="VARCHAR" property="resumeGrade" />
 	<result column="RESUME_LICENSE" jdbcType="VARCHAR" property="resumeLicense" />
@@ -48,29 +40,47 @@
 	<result column="RESUME_FORMER_SALARY" jdbcType="BIGINT" property="formerSalary" />
 	<result column="RESUME_FORMER_TASK" jdbcType="VARCHAR" property="formerTask" />
 	<result column="RESUME_FORMER_INTRO" jdbcType="VARCHAR" property="formerIntro" />
+	<result column="RESUME_GROW" jdbcType="VARCHAR" property="resumeGrow" />
+	<result column="RESUME_GOOD" jdbcType="VARCHAR" property="resumeGood" />
+	<result column="RESUME_BAD" jdbcType="VARCHAR" property="resumeBad" />
+	<result column="RESUME_PER_INFO" jdbcType="VARCHAR" property="resumePerInfo"/>
 	</resultMap>
 	
 	
     <!-- 이력서1 -->
 	<insert id="insertResume1" parameterType="resumeDTO">
 	insert into resume (
-	<include refid="baseResume1" />
+	RESUME_NUM, USER_ID, RESUME_FILE, RESUME_NATIONAL, RESUME_BOHUN, RESUME_DISORDER, RESUME_ARMY,
+	RESUME_HIGHSCHOOL, RESUME_UNIVERCITY, RESUME_SCHOOL_START1, RESUME_SCHOOL_END1, RESUME_SCHOOL_START2, 
+	RESUME_SCHOOL_END2, RESUME_MAJOR, RESUME_GRADE_POINT
 	)
 	values(insa_seq.nextval, #{userId}, #{resumeFile}, #{resumeNational}, #{resumeBohun}, #{resumeDisorder},
-	#{resumeArmy}, #{resumeExpOver}, #{resumeHighschool}, #{resumeUnivercity}, #{schoolStart1}, #{schoolEnd1},
+	#{resumeArmy}, #{resumeHighschool}, #{resumeUnivercity}, #{schoolStart1}, #{schoolEnd1},
 	 #{schoolStart2}, #{schoolEnd2}, #{resumeMajor}, #{resumePoint})
 	</insert>
 	
 	<!-- 이력서2 -->
 	<insert id="insertResume2" parameterType="resumeDTO">
 	insert into resume(
-	<include refid="baseResume2" />
+	RESUME_EXP_OVER,RESUME_LANGUAGE, RESUME_LANGUAGE_GRADE, RESUME_LICENSE, RESUME_FORMER_WORK, RESUME_FORMER_POSITION,
+	RESUME_FORMER_START, RESUME_FORMER_END, RESUME_FORMER_SALARY, RESUME_FORMER_TASK, RESUME_FORMER_INTRO
 	)
-	value(#{resumeLanguage}, #{resumeGrade}, #{resumeLicense}, #{formerWork}, 
+	value( #{resumeExpOver},#{resumeLanguage}, #{resumeGrade}, #{resumeLicense}, #{formerWork}, 
 	#{formerPosition}, #{formerStart}, #{formerEnd}, #{formerSalary}, #{formerTask}, #{formerIntro})
 	</insert>
-
-
-
 	
+	<!-- 이력서 목록 출력 -->
+	<select id="resumeAllSelect" parameterType="string" resultMap="baseResumeMap">
+	select
+	<include refid="baseResume" />
+	from resume
+	</select>
+
+	<!-- 이력서 상세보기 -->
+	<select id="resumeDetail" resultMap="baseResumeMap" parameterType="Integer">
+	select
+	<include refid="baseResume" />
+	from resume
+	where RESUME_NUM = #{resumeNum}
+	</select>
 	</mapper>

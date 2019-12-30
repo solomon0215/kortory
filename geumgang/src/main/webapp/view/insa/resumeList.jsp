@@ -22,11 +22,11 @@
         <th>작성일</th>
       </tr>
     </thead>
-    <c:forEach var=" "  items=" "  varStatus="status">
+    <c:forEach var="resume"  items="${resume}"  varStatus="status">
     <tr>
-      <td>${status.count }</td>
+      <td>${status.count}</td>
       <td>김지유</td>
-      <td>20191219</td>
+      <td></td>
     </tr>
     </c:forEach>
   </table>

@@ -18,14 +18,14 @@
 		<tr>
 			<td class="w3-border-right w3-light-gray" style="width: 15%">해외거주경험</td>
 			<td class="w3-row-padding" colspan="4">
-			<form:input path="expOver" class="w3-input w3-border" placeholder="거주경험에 대한 간략한 설명"
-				style="width: 100%" />
+			<form:input path="expOver" class="w3-input w3-border" placeholder="거주경험에 대한 간략한 설명" style="width: 100%" />
+			</td>
 		</tr>
 		<tr>
 			<td class="w3-border-right w3-light-gray" style="width: 15%">공인언어시험</td>
 			<td class="w3-border-right" colspan="4">
 			<form:select class="w3-select w3-border" path="language" style="width: 30%">
-					<form:option value="없음" label="시험선택" disabled selected />
+					<form:option value="없음" label="시험선택" disabled="selected" />
 					<form:option value="TOEIC" label="TOEIC" />
 					<form:option value="TOFLE" label="TOFLE" />
 					<form:option value="JLPT" label="JLPT" />
@@ -40,8 +40,7 @@
 		<tr>
 		<td class="w3-border-right w3-light-gray" style="width: 15%">자격먼허사항</td>
 		<td class="w3-row-padding">
-		<form:input path="license" class="w3-input w3-border" placeholder="보유자격/면허"
-				style="width: 100%"/>
+		<form:input path="license" class="w3-input w3-border" placeholder="보유자격/면허" style="width: 100%"/>
 			</td>
 		</tr>
 		<tr>
@@ -64,8 +63,7 @@
 		<tr>
 			<td class="w3-row-padding">업무내용: </td>
 			<td class="w3-row-padding" colspan="4">
-			<form:input path="formerTask"class="w3-input w3-border" placeholder="업무내용에 대한 간략한 설명"
-				style="width: 100%"/>
+			<form:input path="formerTask" class="w3-input w3-border" placeholder="업무내용에 대한 간략한 설명" style="width: 100%"/>
 			</td>
 		</tr>	
 		<tr>

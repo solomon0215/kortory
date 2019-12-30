@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import Command.Insa.ResumeCommand;
 import Service.Insa.ResumeService;
@@ -18,7 +19,8 @@ public class ResumeController {
 	ResumeService resumeService;
 	
 	@RequestMapping(value="/insa/resumeList", method=RequestMethod.GET) //이력서 목록 include 
-	public String resumeList(Model model) {
+	public String resumeList(ResumeCommand rc, Model model, HttpSession session) {
+		resumeService.resumeSelect(model, session);
 		model.addAttribute("insaPage","../insa/resumeList.jsp");
 		return "insa/insaPage";
 	}
@@ -54,5 +56,11 @@ public class ResumeController {
 		return "insa/resume2";
 	}
 	
+	@RequestMapping(value="insa/resumeDetailView")
+	public String recruitDetail(@RequestParam(value="num", required = false) Integer resumeNum, Model model) {
+		resumeService.resumeDetail(model, resumeNum);
+		model.addAttribute("insaPage","../insa/resumeDetail.jsp");
+		return "insa/insaPage";
+	}
 
 }

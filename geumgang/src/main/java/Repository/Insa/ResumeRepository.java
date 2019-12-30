@@ -1,5 +1,7 @@
 package Repository.Insa;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -33,6 +35,17 @@ public class ResumeRepository {
 		dto.setUserName(name);
 		return result;
 		
+	}
+
+	public List<ResumeDTO> resumeAllSelect() {
+		String statement = namespace + ".resumeAllSelect";
+		List<ResumeDTO> list = sqlSession.selectList(statement);
+		return list;
+	}
+
+	public ResumeDTO resumeDetail(ResumeDTO dto) {
+		String statement = namespace + ".resumeDetail";
+		return sqlSession.selectOne(statement,dto);
 	}
 
 }
