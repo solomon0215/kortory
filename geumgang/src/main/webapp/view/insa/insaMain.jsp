@@ -10,8 +10,9 @@
 </head>
 <body>
 <!-- Page Content -->
-<div class="w3-container w3-white" style="margin-left:30%">
-  <h2>인사부 메인</h2>
+<div class="w3-container w3-white" style="margin-left:15%">
+<br />
+  <img src="../images/GP.jpg" class="w3-round" alt="Pengsoo" style="width:50%">
 </div>
 
 </body>

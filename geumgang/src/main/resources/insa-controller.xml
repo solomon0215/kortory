@@ -12,4 +12,7 @@
 <bean class="Controller.Insa.EmployeeInsertController" />
 <bean class="Controller.Insa.ResumeController" />
 <bean class="Controller.Insa.ContractController" />
+<bean class="Controller.Insa.ApplicantMailController" />
+<bean class="Controller.Insa.ApplicantLoginController" />
+<bean class="Controller.Insa.RegistController"/>
 </beans>

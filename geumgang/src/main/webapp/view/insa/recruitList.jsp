@@ -26,7 +26,7 @@
     <c:forEach var="recruit" items="${recruit}"  varStatus="status">
     <tr>
       <td>${status.count }</td>
-      <td><a href="#">${recruit.recruitTitle}</a></td>
+      <td><a href='<c:url value='/insa/recruitDetailView?num=${recruit.recruitNum}'/>'${recruit.recruitNum}'>${recruit.recruitTitle}</a></td>
       <td>${recruit.recruitRegiDate}</td>
       <td>${authName}</td>
     </tr>

@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>채용공고 상세보기</title>
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
@@ -14,6 +15,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
+  width: 100%;
   padding: 20px;
 }
 .row:after {
@@ -95,21 +97,21 @@ ul{
 <body>
 <!-- PAGE CONTENT -->
 <form action="#">
-<div class="container">
+<div class="container" style="margin-left:17.1%">
   <div class="row">
     <div class="col-30">
-      <label for="egName"><b>채용공고 번호</b></label>
+      <label for="recruitNum"><b>채용공고 번호</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egName" name="egName" placeholder="채용공고 번호">
+    <textarea style="height:50px; resize:none;" readonly>${detail.recruitNum}</textarea>
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egPlanNum"><b>제목</b></label>
+      <label for="recruitTitle"><b>제목</b></label>
     </div>
     <div class="col-70">
-     <input type="text" id="egName" name="egName" placeholder="제목">
+     <textarea style="height:50px; resize:none;" readonly>${detail.recruitTitle}</textarea>
     </div>
   </div>
   <div class="row">
@@ -117,7 +119,7 @@ ul{
       <label for="egExp"><b>업무내용</b></label>
     </div>
     <div class="col-70">
-      <textarea id="egExp" name="egExp" style="height:200px" placeholder="업무내용"></textarea>
+      <textarea style="height:200px" readonly>${recruitContent}</textarea>
     </div>
   </div>
  <div class="row">
@@ -125,7 +127,7 @@ ul{
       <label for="egExp"><b>우대사항</b></label>
     </div>
     <div class="col-70">
-      <textarea id="egExp" name="egExp" style="height:200px" placeholder="우대사항"></textarea>
+      <textarea style="height:200px" readonly>${detail.recruitPrefer}</textarea>
     </div>
   </div>
   <div class="row">
@@ -133,7 +135,7 @@ ul{
       <label for="egName"><b>모집인원</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egName" name="egName" placeholder="모집인원">
+    <textarea style="height:50px; resize:none;" readonly>${detail.recruitPersonnel}</textarea>
     </div>
   </div>
   <div class="row">
@@ -141,7 +143,7 @@ ul{
       <label for="egExp"><b>지원자격</b></label>
     </div>
     <div class="col-70">
-      <textarea id="egExp" name="egExp" style="height:200px" placeholder="지원자격"></textarea>
+      <textarea style="height:200px" readonly>${detail.recruitQualification}</textarea>
     </div>
   </div>
   <div class="row">
@@ -149,7 +151,7 @@ ul{
       <label for="egName"><b>등록일자</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egName" name="egName" placeholder="등록일자">
+      <textarea style="height:50px; resize:none;" readonly>${detail.recruitRegiDate}</textarea>
     </div>
   </div>
   <div class="row">
@@ -157,7 +159,7 @@ ul{
       <label for="egName"><b>마감일자</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egName" name="egName" placeholder="마감일자">
+      <textarea style="height:50px; resize:none;" readonly>${detail.recruitEndDate}</textarea>
     </div>
   </div>
   <div class="row">
@@ -165,7 +167,7 @@ ul{
       <label for="egName"><b>연봉</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egName" name="egName" placeholder="연봉">
+      <textarea style="height:50px; resize:none;" readonly>${detail.recruitCost}</textarea>
     </div>
   </div>
   <div class="row">
@@ -173,15 +175,15 @@ ul{
       <label for="egName"><b>직원번호</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egName" name="egName" placeholder="직원번호">
+      <textarea style="height:50px; resize:none;" readonly>${detail.inSaNum}</textarea>
     </div>
   </div>
-  <div class="row">
-  <div class="col-rg">
-    <input type="submit" value="등록">
-    </div>
-  </div>
-  </div>
+ <div class="w3-center">
+			<div class="w3-bar">
+				<button class="w3-button w3-teal" id="modify">수정</button>
+				<button class="w3-button w3-red" id="delete">삭제</button>	
+			</div>
+		</div>
 </form>
 </body>
 </html>

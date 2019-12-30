@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import Model.InsaDTO.ResumeDTO;
+import Model.UserDTO.UserDTO;
 @Repository
 public class ResumeRepository {
 	@Autowired
@@ -24,6 +25,14 @@ public class ResumeRepository {
 		String statement = namespace + ".insertResume2";
 		result = sqlSession.insert(statement,resume);
 		return result;
+	}
+
+	public Integer updateCheck(String num, String applicant, String name) {
+		UserDTO dto = new UserDTO();
+		dto.setUserEmail(applicant);
+		dto.setUserName(name);
+		return result;
+		
 	}
 
 }

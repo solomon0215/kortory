@@ -31,14 +31,15 @@
 			property="recruitCost" />
 		<result column="IN_SA_NUM" jdbcType="VARCHAR"
 			property="inSaNum" />
-
 	</resultMap>
-
+	
+	
+	<!-- 채용공고 등록 -->
 	<insert id="insertRecruit" parameterType="recruitDTO">
 		insert into recruit (
 		<include refid="baseRecruit" />
 		)
-		values(#{recruitTitle}, insa_seq.nextval,#{recruitContent} ,
+		values(#{recruitTitle}, insa_seq.nextval,#{recruitContent},
 		#{recruitPrefer} ,
 		#{recruitPersonnel}, #{recruitQualification},
 		#{recruitRegiDate}, #{recruitEndDate},
@@ -46,11 +47,23 @@
 	</insert>
 	
 	
-	
+	<!-- 채용공고 리스트에 출력 -->
 	<select id="recruitAllSelect" parameterType="string"
 		resultMap="baseRecruitMap">
 		select
 		<include refid="baseRecruit" />
 		from recruit
 	</select>
+	
+	<!-- 채용공고 상세보기 -->
+	<select id="recruitDetail" resultMap="baseRecruitMap" parameterType="Integer">
+	select
+	<include refid="baseRecruit"/>
+	from recruit
+	where RECRUIT_NUM = #{recruitNum}
+	</select>
+	
+	
+	
+	
 </mapper>

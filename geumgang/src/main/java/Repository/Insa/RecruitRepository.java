@@ -14,17 +14,22 @@ public class RecruitRepository {
 	
 	private final String namespace = "RecruitMapper";
 
-	public Integer recruitInsert(RecruitDTO recruit) {
+	public Integer recruitInsert(RecruitDTO recruit) { //채용공고 등록
 		Integer result = null;
 		String statement = namespace + ".insertRecruit";
 		result = sqlSession.insert(statement, recruit);
 		return result;
 	}
 
-	public List<RecruitDTO> recruitAllSelect() {
+	public List<RecruitDTO> recruitAllSelect() { //채용공고 리스트에 출력
 		String statement = namespace + ".recruitAllSelect";
 		List<RecruitDTO> list = sqlSession.selectList(statement);
 		return list;
+	}
+
+	public RecruitDTO recruitDetail(RecruitDTO dto) { //채용공고 상세보기
+		String statement = namespace + ".recruitDetail";
+		return sqlSession.selectOne(statement,dto);
 	}
 
 }

@@ -73,19 +73,19 @@
 						style="width: 50%" />
 				<td class="w3-border w3-light-gray" style="width: 15%">입학년월</td>
 				<td class="w3-row-padding">
-				<form:input path="schoolStart1" class="w3-input w3-border w3-white" /></td>
+				<input type="date" id="schoolStart1" name="schoolstart1"></td>
 			</tr>
 			<tr>
 				<td class="w3-border w3-light-gray" style="width: 15%">졸업년월</td>
 				<td class="w3-row-padding">
-				<form:input path="schoolEnd1" class="w3-input w3-border w3-white" /></td>
+				<input type="date" id="schoolEnd1" name="schoolEnd1"></td>
 			</tr>
 			<tr>
 				<td class="w3-row-padding">대학교명: 
 				<form:input path="univercity" class="w3-input w3-border" placeholder="" style="width: 50%" />
 				<td class="w3-border w3-light-gray" style="width: 15%">입학년월</td>
 				<td class="w3-row-padding">
-				<form:input path="schoolStart2" class="w3-input w3-border w3-white" /></td>
+				<input type="date" id="schoolStart2" name="schoolstart2"></td>
 			</tr>
 			<tr>
 				<td class="w3-margin-20">전공: 
@@ -96,7 +96,7 @@
 				</td>
 				<td class="w3-border w3-light-gray" style="width: 15%">졸업년월</td>
 				<td class="w3-row-padding">
-				<form:input path="schoolEnd2" class="w3-input w3-border w3-white" /></td>
+				<input type="date" id="schoolEnd2" name="schoolEnd2"></td>
 			</tr>
 		</table>
 		<br />

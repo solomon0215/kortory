@@ -1,6 +1,6 @@
 package Command.Insa;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class ResumeCommand {
 	String file;
@@ -11,10 +11,10 @@ public class ResumeCommand {
 	String expOver;
 	String highschool;
 	String univercity;
-	String schoolStart1;
-	String schoolEnd1;
-	String schoolStart2;
-	String schoolEnd2;
+	Date schoolStart1;
+	Date schoolEnd1;
+	Date schoolStart2;
+	Date schoolEnd2;
 	String major;
 	double point;
 	String language;
@@ -22,8 +22,8 @@ public class ResumeCommand {
 	String license;
 	String formerWork;
 	String formerPosition;
-	String formerStart;
-	String formerEnd;
+	Date formerStart;
+	Date formerEnd;
 	Integer formerSalary;
 	String formerTask;
 	String formerIntro;
@@ -78,16 +78,16 @@ public class ResumeCommand {
 	public void setUnivercity(String univercity) {
 		this.univercity = univercity;
 	}
-	public String getSchoolStart1() {
+	public Date getSchoolStart1() {
 		return schoolStart1;
 	}
-	public void setSchoolStart1(String schoolStart1) {
+	public void setSchoolStart1(Date schoolStart1) {
 		this.schoolStart1 = schoolStart1;
 	}
-	public String getSchoolEnd1() {
+	public Date getSchoolEnd1() {
 		return schoolEnd1;
 	}
-	public void setSchoolEnd1(String schoolEnd1) {
+	public void setSchoolEnd1(Date schoolEnd1) {
 		this.schoolEnd1 = schoolEnd1;
 	}
 	public String getMajor() {
@@ -120,16 +120,16 @@ public class ResumeCommand {
 	public void setFormerPosition(String formerPosition) {
 		this.formerPosition = formerPosition;
 	}
-	public String getFormerStart() {
+	public Date getFormerStart() {
 		return formerStart;
 	}
-	public void setFormerStart(String formerStart) {
+	public void setFormerStart(Date formerStart) {
 		this.formerStart = formerStart;
 	}
-	public String getFormerEnd() {
+	public Date getFormerEnd() {
 		return formerEnd;
 	}
-	public void setFormerEnd(String formerEnd) {
+	public void setFormerEnd(Date formerEnd) {
 		this.formerEnd = formerEnd;
 	}
 	public Integer getFormerSalary() {
@@ -168,16 +168,16 @@ public class ResumeCommand {
 	public void setBad(String bad) {
 		this.bad = bad;
 	}
-	public String getSchoolStart2() {
+	public Date getSchoolStart2() {
 		return schoolStart2;
 	}
-	public void setSchoolStart2(String schoolStart2) {
+	public void setSchoolStart2(Date schoolStart2) {
 		this.schoolStart2 = schoolStart2;
 	}
-	public String getSchoolEnd2() {
+	public Date getSchoolEnd2() {
 		return schoolEnd2;
 	}
-	public void setSchoolEnd2(String schoolEnd2) {
+	public void setSchoolEnd2(Date schoolEnd2) {
 		this.schoolEnd2 = schoolEnd2;
 	}
 	public String getLanguage() {

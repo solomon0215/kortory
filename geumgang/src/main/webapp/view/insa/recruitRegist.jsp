@@ -53,7 +53,7 @@ commandName="recruitRegiCommand" id="frm" action="recruitRegiPro" method="POST" 
 		</p>
 		<p>
 			<label class="w3-text-grey">직원번호</label> 
-			<form:input path="inSaNum" class="w3-input w3-border w3-white"  value="${authLog.inSaNum }" type="text"/>
+			<form:input path="inSaNum" class="w3-input w3-border w3-white"  value="${authLog.inSaNum}" type="text"/>
 		</p>
 
 		<br />

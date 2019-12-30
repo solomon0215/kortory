@@ -29,7 +29,7 @@ public class RecruitController {
 		if(result == 0) {//insert 실패시 
 			return "insa/registFailed";
 		}
-		return "insa/recruitList";
+		return "insa/registSuccess";
 	}
 	
 	@RequestMapping(value="/insa/recruitRegist", method=RequestMethod.GET) //채용공고 등록일에 오늘날짜 표시
@@ -45,6 +45,13 @@ public class RecruitController {
 	public String recruitList(RecruitRegiCommand rc, Model model, HttpSession session) {
 		recruitRegiService.recruitSelect(model, session);
 		model.addAttribute("insaPage","../insa/recruitList.jsp");
+		return "insa/insaPage";
+	}
+	
+	@RequestMapping(value="insa/recruitDetailView") //디테일
+	public String recruitDetail(@RequestParam(value="num",required = false) Integer recruitNum, Model model) {
+		recruitRegiService.recruitDetail(model, recruitNum);
+		model.addAttribute("insaPage","../insa/recruitDetail.jsp");
 		return "insa/insaPage";
 	}
 	

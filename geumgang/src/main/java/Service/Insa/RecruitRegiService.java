@@ -64,5 +64,15 @@ public class RecruitRegiService {
 		model.addAttribute("recruit",recruitList);
 	}
 
+	public void recruitDetail(Model model, Integer recruitNum) {
+		RecruitDTO dto = new RecruitDTO();
+		dto.setRecruitNum(recruitNum);
+		RecruitDTO detail = recruitRepository.recruitDetail(dto);
+		String recruitContent = new String(detail.getRecruitContent());
+		System.out.println("recruitContent : " + recruitContent);
+		model.addAttribute("detail",detail);
+		model.addAttribute("recruitContent",recruitContent);
+	}
+
 
 }
