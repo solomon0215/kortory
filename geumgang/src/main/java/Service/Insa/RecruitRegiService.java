@@ -67,7 +67,7 @@ public class RecruitRegiService {
 	public void recruitDetail(Model model, Integer recruitNum) {
 		RecruitDTO dto = new RecruitDTO();
 		dto.setRecruitNum(recruitNum);
-		RecruitDTO detail = recruitRepository.recruitDetail(dto);
+		RecruitDTO detail = recruitRepository.recruitDetail(dto); //blob 타입 상세보기
 		String recruitContent = new String(detail.getRecruitContent());
 		System.out.println("recruitContent : " + recruitContent);
 		model.addAttribute("detail",detail);
