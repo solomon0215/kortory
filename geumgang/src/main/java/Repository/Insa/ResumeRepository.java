@@ -6,8 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import Model.InsaDTO.ResumeDTO;
-import Model.UserDTO.UserDTO;
+import Model.InsaDTO.*;
+import Model.UserDTO.*;
 @Repository
 public class ResumeRepository {
 	@Autowired
@@ -37,9 +37,9 @@ public class ResumeRepository {
 		
 	}
 
-	public List<ResumeDTO> resumeAllSelect() {
+	public List<ApplicantDTO> resumeAllSelect() {
 		String statement = namespace + ".resumeAllSelect";
-		List<ResumeDTO> list = sqlSession.selectList(statement);
+		List<ApplicantDTO> list = sqlSession.selectList(statement);
 		return list;
 	}
 

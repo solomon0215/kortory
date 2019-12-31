@@ -56,10 +56,16 @@ public class ResumeController {
 		return "insa/resume2";
 	}
 	
-	@RequestMapping(value="insa/resumeDetailView")
+	@RequestMapping(value="insa/resumeDetailView") //이력서 상세보기
 	public String recruitDetail(@RequestParam(value="num", required = false) Integer resumeNum, Model model) {
 		resumeService.resumeDetail(model, resumeNum);
 		model.addAttribute("insaPage","../insa/resumeDetail.jsp");
+		return "insa/insaPage";
+	}
+	
+	@RequestMapping(value="insa/sendEmail") //합격자 이메일 통보 실행창
+	public String sendEmail(Model model) {
+		model.addAttribute("insaPage","../insa/sendEmail.jsp");
 		return "insa/insaPage";
 	}
 

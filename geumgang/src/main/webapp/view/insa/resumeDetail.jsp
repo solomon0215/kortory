@@ -114,7 +114,7 @@ ul{
       <label for="recruitTitle"><b>보훈대상여부</b></label>
     </div>
     <div class="col-70">
-     <textarea style="height:50px; resize:none;" readonly>${detail.resumeBogun}</textarea>
+     <textarea style="height:50px; resize:none;" readonly>${detail.resumeBohun}</textarea>
     </div>
   </div>
   <div class="row">
@@ -202,7 +202,7 @@ ul{
       <label for="recruitTitle"><b>해외거주경험</b></label>
     </div>
     <div class="col-70">
-     <textarea style="height:50px; resize:none;" readonly>${detail.expOver}</textarea>
+     <textarea style="height:50px; resize:none;" readonly>${detail.resumeExpOver}</textarea>
     </div>
   </div>
   <div class="row">
@@ -218,7 +218,7 @@ ul{
       <label for="recruitTitle"><b>어학시험점수</b></label>
     </div>
     <div class="col-70">
-     <textarea style="height:50px; resize:none;" readonly>${detail.resumegrade}</textarea>
+     <textarea style="height:50px; resize:none;" readonly>${detail.resumeGrade}</textarea>
     </div>
   </div>
   <div class="row">
@@ -319,7 +319,7 @@ ul{
   </div>
  <div class="w3-center">
 			<div class="w3-bar" style="margin-top: 20px">
-				<a href="#">
+				<a href="sendEmail">
 					<button class="w3-bar-item w3-button w3-teal" id="email" style="margin-right: 10px">합격 통보</button>
 				</a>
 			</div>	

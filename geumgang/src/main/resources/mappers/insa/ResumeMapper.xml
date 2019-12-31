@@ -12,6 +12,10 @@
 	RESUME_FORMER_START, RESUME_FORMER_END, RESUME_FORMER_SALARY, RESUME_FORMER_TASK, RESUME_FORMER_INTRO,
 	RESUME_GROW, RESUME_GOOD, RESUME_BAD, RESUME_PER_INFO
 	</sql>
+	<sql id="baseUser">
+	USER_ID, USER_PW, USER_EMAIL, USER_PH, USER_ADDR, USER_NAME, USER_BIRTH, USER_GENDER
+	</sql>
+	
 	
 	<resultMap type="resumeDTO" id="baseResumeMap">
 	<id column="RESUME_NUM" jdbcType="BIGINT" property="resumeNum" />
@@ -23,10 +27,10 @@
 	<result column="RESUME_ARMY" jdbcType="VARCHAR" property="resumeArmy"/>
 	<result column="RESUME_HIGHSCHOOL" jdbcType="VARCHAR" property="resumeHighschool"/>
 	<result column="RESUME_UNIVERCITY" jdbcType="VARCHAR" property="resumeUnivercity"/>
-	<result column="RESUME_SCHOOL_START1" jdbcType="DATE" property="SchoolStart1"/>
-	<result column="RESUME_SCHOOL_END1" jdbcType="DATE" property="SchoolEnd1"/>
-	<result column="RESUME_SCHOOL_START2" jdbcType="DATE" property="SchoolStart2"/>
-	<result column="RESUME_SCHOOL_END2" jdbcType="DATE" property="SchoolEnd2"/>
+	<result column="RESUME_SCHOOL_START1" jdbcType="DATE" property="schoolStart1"/>
+	<result column="RESUME_SCHOOL_END1" jdbcType="DATE" property="schoolEnd1"/>
+	<result column="RESUME_SCHOOL_START2" jdbcType="DATE" property="schoolStart2"/>
+	<result column="RESUME_SCHOOL_END2" jdbcType="DATE" property="schoolEnd2"/>
 	<result column="RESUME_MAJOR" jdbcType="VARCHAR" property="resumeMajor"/>
 	<result column="RESUME_GRADE_POINT" jdbcType="DOUBLE" property="resumePoint"/>
 	<result column="RESUME_EXP_OVER" jdbcType="VARCHAR" property="resumeExpOver"/>
@@ -69,11 +73,26 @@
 	#{formerPosition}, #{formerStart}, #{formerEnd}, #{formerSalary}, #{formerTask}, #{formerIntro})
 	</insert>
 	
+	<resultMap type="Model.InsaDTO.ApplicantDTO" id="applicantMap">
+		<id column="RESUME_NUM" jdbcType="BIGINT" property="resumeDTO.resumeNum" />
+		<id column="USER_ID" jdbcType="VARCHAR" property="userDTO.userId" />
+		<result column="USER_NAME" jdbcType="VARCHAR" property="userDTO.userName"/>
+		<result column="USER_PW" jdbcType="VARCHAR" property="userDTO.userPw" />
+		<result column="USER_EMAIL" jdbcType="VARCHAR" property="userDTO.userEmail" />
+		<result column="USER_PH" jdbcType="VARCHAR" property="userDTO.userPh" />
+		<result column="USER_ADDR" jdbcType="VARCHAR" property="userDTO.userAddr" />
+		<result column="USER_BIRTH" jdbcType="DATE" property="userDTO.userBirth" />
+		<result column="USER_GENDER" jdbcType="CHAR" property="userDTO.userGender" />
+	</resultMap>
 	<!-- 이력서 목록 출력 -->
-	<select id="resumeAllSelect" parameterType="string" resultMap="baseResumeMap">
+	<select id="resumeAllSelect" parameterType="string" resultMap="applicantMap">
 	select
-	<include refid="baseResume" />
-	from resume
+	RESUME_NUM,
+	u.USER_ID USER_ID, USER_PW, USER_EMAIL, USER_PH, USER_ADDR, USER_NAME, USER_BIRTH, USER_GENDER
+	from resume r, kortory_user u
+	<where>
+	r.user_id = u.user_id
+	</where>
 	</select>
 
 	<!-- 이력서 상세보기 -->

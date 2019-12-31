@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
 import Command.Insa.ResumeCommand;
-import Model.InsaDTO.ResumeDTO;
+import Model.InsaDTO.*;
 import Model.UserDTO.UserAuth;
 import Repository.Insa.ResumeRepository;
 
@@ -49,7 +49,7 @@ public class ResumeService {
 		session = request.getSession();
 		resume.setResumeExpOver(rc.getExpOver());
 		resume.setResumeLanguage(rc.getLanguage());
-		resume.setResumegrade(rc.getGrade());
+		resume.setResumeGrade(rc.getGrade());
 		resume.setResumeLicense(rc.getLicense());
 		resume.setFormerWork(rc.getFormerWork());
 		resume.setFormerPosition(rc.getFormerPosition());
@@ -63,11 +63,14 @@ public class ResumeService {
 		return resumeRepository.resumeInsert2(resume);
 	}
 
+	//이력서 목록
 	public void resumeSelect(Model model, HttpSession session) {
-		List<ResumeDTO> resumeList = resumeRepository.resumeAllSelect();
+		List<ApplicantDTO> resumeList = resumeRepository.resumeAllSelect();
+		System.out.println("아이구");
 		model.addAttribute("resume",resumeList);
 	}
 
+	//이력서 상세보기
 	public void resumeDetail(Model model, Integer resumeNum) {
 		ResumeDTO dto = new ResumeDTO();
 		dto.setResumeNum(resumeNum);

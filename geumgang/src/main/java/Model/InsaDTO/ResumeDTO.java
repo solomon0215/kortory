@@ -22,7 +22,7 @@ public class ResumeDTO implements Serializable {
 	private String resumeMajor;
 	private double resumePoint;
 	private String resumeLanguage;
-	private String resumegrade;
+	private String resumeGrade;
 	private String resumeLicense;
 	private String formerWork;
 	private String formerPosition;
@@ -40,7 +40,7 @@ public class ResumeDTO implements Serializable {
 	public ResumeDTO(Integer resumeNum, String userId, String resumeFile, String resumeNational, String resumeBohun,
 			String resumeDisorder, String resumeArmy, String resumeExpOver, String resumeHighschool,
 			String resumeUnivercity, Date schoolStart1, Date schoolEnd1, Date schoolStart2, Date schoolEnd2,
-			String resumeMajor, double resumePoint, String resumeLanguage, String resumegrade, String resumeLicense,
+			String resumeMajor, double resumePoint, String resumeLanguage, String resumeGrade, String resumeLicense,
 			String formerWork, String formerPosition, Date formerStart, Date formerEnd, Integer formerSalary,
 			String formerTask, String formerIntro, String resumeGrow, String resumeGood, String resumeBad,
 			String resumePerInfo) {
@@ -62,7 +62,7 @@ public class ResumeDTO implements Serializable {
 		this.resumeMajor = resumeMajor;
 		this.resumePoint = resumePoint;
 		this.resumeLanguage = resumeLanguage;
-		this.resumegrade = resumegrade;
+		this.resumeGrade = resumeGrade;
 		this.resumeLicense = resumeLicense;
 		this.formerWork = formerWork;
 		this.formerPosition = formerPosition;
@@ -136,30 +136,7 @@ public class ResumeDTO implements Serializable {
 	public void setResumeUnivercity(String resumeUnivercity) {
 		this.resumeUnivercity = resumeUnivercity;
 	}
-	public java.sql.Date getSchoolStart1() {
-		return schoolStart1;
-	}
-	public void setSchoolStart1(java.util.Date date) {
-		this.schoolStart1 = (Date) date;
-	}
-	public java.sql.Date getSchoolEnd1() {
-		return schoolEnd1;
-	}
-	public void setSchoolEnd1(java.util.Date date) {
-		this.schoolEnd1 = (Date) date;
-	}
-	public java.sql.Date getSchoolStart2() {
-		return schoolStart2;
-	}
-	public void setSchoolStart2(java.util.Date date) {
-		this.schoolStart2 = (Date) date;
-	}
-	public java.sql.Date getSchoolEnd2() {
-		return schoolEnd2;
-	}
-	public void setSchoolEnd2(java.util.Date date) {
-		this.schoolEnd2 = (Date) date;
-	}
+
 	public String getResumeMajor() {
 		return resumeMajor;
 	}
@@ -178,11 +155,11 @@ public class ResumeDTO implements Serializable {
 	public void setResumeLanguage(String resumeLanguage) {
 		this.resumeLanguage = resumeLanguage;
 	}
-	public String getResumegrade() {
-		return resumegrade;
+	public String getResumeGrade() {
+		return resumeGrade;
 	}
-	public void setResumegrade(String resumegrade) {
-		this.resumegrade = resumegrade;
+	public void setResumeGrade(String resumeGrade) {
+		this.resumeGrade = resumeGrade;
 	}
 	public String getResumeLicense() {
 		return resumeLicense;
@@ -201,18 +178,6 @@ public class ResumeDTO implements Serializable {
 	}
 	public void setFormerPosition(String formerPosition) {
 		this.formerPosition = formerPosition;
-	}
-	public java.sql.Date getFormerStart() {
-		return formerStart;
-	}
-	public void setFormerStart(java.util.Date date) {
-		this.formerStart = (Date) date;
-	}
-	public java.sql.Date getFormerEnd() {
-		return formerEnd;
-	}
-	public void setFormerEnd(java.util.Date date) {
-		this.formerEnd = (Date) date;
 	}
 	public Integer getFormerSalary() {
 		return formerSalary;
@@ -255,6 +220,54 @@ public class ResumeDTO implements Serializable {
 	}
 	public void setResumePerInfo(String resumePerInfo) {
 		this.resumePerInfo = resumePerInfo;
+	}
+
+	public java.sql.Date getSchoolStart1() {
+		return schoolStart1;
+	}
+
+	public void setSchoolStart1(java.sql.Date schoolStart1) {
+		this.schoolStart1 = schoolStart1;
+	}
+
+	public java.sql.Date getSchoolEnd1() {
+		return schoolEnd1;
+	}
+
+	public void setSchoolEnd1(java.sql.Date schoolEnd1) {
+		this.schoolEnd1 = schoolEnd1;
+	}
+
+	public java.sql.Date getSchoolStart2() {
+		return schoolStart2;
+	}
+
+	public void setSchoolStart2(java.sql.Date schoolStart2) {
+		this.schoolStart2 = schoolStart2;
+	}
+
+	public java.sql.Date getSchoolEnd2() {
+		return schoolEnd2;
+	}
+
+	public void setSchoolEnd2(java.sql.Date schoolEnd2) {
+		this.schoolEnd2 = schoolEnd2;
+	}
+
+	public java.sql.Date getFormerStart() {
+		return formerStart;
+	}
+
+	public void setFormerStart(java.sql.Date formerStart) {
+		this.formerStart = formerStart;
+	}
+
+	public java.sql.Date getFormerEnd() {
+		return formerEnd;
+	}
+
+	public void setFormerEnd(java.sql.Date formerEnd) {
+		this.formerEnd = formerEnd;
 	}
 	
 

@@ -19,14 +19,15 @@
       <tr class="w3-light-blue">
         <th>번호</th>
         <th>이름</th>
-        <th>작성일</th>
+        <th>아이디</th>
       </tr>
     </thead>
     <c:forEach var="resume"  items="${resume}"  varStatus="status">
     <tr>
       <td>${status.count}</td>
-      <td>김지유</td>
-      <td></td>
+     <!-- <td>${resume.userDTO.userName}</td> -->
+     <td><a href='<c:url value='/insa/resumeDetailView?num=${resume.resumeDTO.resumeNum}'/>'${resume.resumeDTO.resumeNum}'>${resume.userDTO.userName}</a></td>
+      <td>${resume.userDTO.userId}</td>
     </tr>
     </c:forEach>
   </table>
