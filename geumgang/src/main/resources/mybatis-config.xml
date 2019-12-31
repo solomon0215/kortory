@@ -6,8 +6,6 @@
 	<typeAliases>
 		<typeAlias type="Model.GwanriDTO.GwanriDTO" alias ="gwanriDTO"/>
 		<typeAlias type="Model.GwanriDTO.AgreementConditionDTO" alias ="acDTO"/>
-		<typeAlias type="Model.GwanriDTO.ExpagreeDTO" alias ="eaDTO"/>
-		<typeAlias type="Model.GwanriDTO.CoopContractDTO" alias ="ccDTO"/>
 		<typeAlias type="Model.InsaDTO.InsaDTO" alias ="insaDTO"/>
 		<typeAlias type="Model.CompanyDTO.CompanyDTO" alias ="comDTO"/>
 		<typeAlias type="Model.UserDTO.UserDTO" alias ="userDTO"/>
@@ -19,7 +17,6 @@
 		<typeAlias type="Model.YoungupDTO.ExplorationDTO" alias = "expDTO"/>
 		<typeAlias type="Model.InsaDTO.ContractDTO" alias = "contractDTO" />
 		<typeAlias type="Model.KihoekDTO.ConceptDTO" alias ="conceptDTO"/>
-		<typeAlias type="Model.KihoekDTO.CInsertDTO" alias ="cInsertDTO"/>
-		<typeAlias type="Model.InsaDTO.ResumeDTO" alias="resumeDTO"/>
+		
 	</typeAliases>
 </configuration>

@@ -88,7 +88,7 @@ a {text-decoration: none; !important}
 <div class="navbar">
 <div class="w3-top w3-bar w3-red">
   <div class="active">
-  <a class="w3-bar-item w3-button w3-hover-red" href="../Main/basicMain">KORTORY</a></div>
+  <a class="w3-bar-item w3-button w3-hover-red" href="../main">KORTORY</a></div>
   <a class="w3-bar-item" href="../kihoek/main">MAIN</a>
   <a class="w3-bar-item" href="conceptForm">CONCEPT</a>
   <a class="w3-bar-item" href="#">EVENT</a>

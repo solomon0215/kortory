@@ -1,14 +1,14 @@
 package Model.KihoekDTO;
 
 public class ConceptDTO {
-	private long conceptNum;
-	private String conceptSubject;
-	private String conceptHistory;
-	private String conceptQuarter;
-	private String conceptPlace;
-	private long conceptScale;
-	private String conceptTargetAge;
-	private String kiHoekNum;
+	Long conceptNum;
+	String conceptSubject;
+	String conceptHistory;
+	String conceptQuarter;
+	String conceptPlace;
+	Long conceptScale;
+	String conceptTargetAge;
+	String kiHoekNum;
 	
 	public long getConceptNum() {
 		return conceptNum;

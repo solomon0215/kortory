@@ -23,25 +23,25 @@ public class ConceptWriteService {
 	@Transactional
 	public void kihoekName(HttpServletRequest request, Model model) {
 		KihoekDTO kDto = new KihoekDTO();
-		KihoekAuthInfo info =(KihoekAuthInfo)request.getSession().getAttribute("authLog");
-		System.out.println(info.getName()+"----------------");
+		KihoekAuthInfo info = (KihoekAuthInfo)request.getSession().getAttribute("authLog");
+		kDto.setKiHoekNum(info.getNum());
 		kDto.setKiHoekName(info.getName());
 		model.addAttribute("kihoek", kDto);
 	}
 	
-	public Integer insertConcept(ConceptCommand conceptCommand, HttpServletRequest request, HttpSession session, Model model) {
+	public Integer insertConcept(ConceptCommand conceptCommand, HttpServletRequest request, HttpSession session, Model model, Long conceptScale) {
 		ConceptDTO cDto = new ConceptDTO();
 		session = request.getSession();
-		//cDto.setConceptNum(conceptCommand.getConceptNum());
 		cDto.setConceptSubject(conceptCommand.getConceptSubject());
 		cDto.setConceptHistory(conceptCommand.getConceptHistory());
 		cDto.setConceptQuarter(conceptCommand.getConceptQuarter());
 		cDto.setConceptPlace(conceptCommand.getConceptPlace());
-		cDto.setConceptScale(conceptCommand.getConceptScale());
+		cDto.setConceptScale(conceptScale);
 		cDto.setConceptTargetAge(conceptCommand.getConceptTargetAge());
-		cDto.setKiHoekNum(((KihoekAuthInfo)session.getAttribute("authLog")).getKiHoekNum());
-		model.addAttribute(cDto);
-		return kihoekInsertRepository.insertConcept(model);
+		cDto.setKiHoekNum(conceptCommand.getKiHoekNum());
+		model.addAttribute("concept", cDto);
+		Integer result = kihoekInsertRepository.insertConcept(cDto);
+		return result;
 	}
 
 }

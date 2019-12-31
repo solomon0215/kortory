@@ -5,16 +5,16 @@ public class KihoekAuthInfo {
 	private String email;
 	private String name;
 	private int kind;  //로그인한 사람의 형태 업체(계약 전 =111,계약 후 = 112), 가이드 =202, 회원=201, 직원(관리 =301,기획=302,인사=303, 영업=304)
-	private String kiHoekNum;
+	private String num;
 	
 
-	public KihoekAuthInfo(String id, String email, String name, int kind, String kiHoekNum) {
+	public KihoekAuthInfo(String id, String email, String name, int kind, String num) {
 		super();
 		this.id = id;
 		this.email = email;
 		this.name = name;
 		this.kind = kind;
-		this.kiHoekNum = kiHoekNum;
+		this.num = num;
 	}
 
 	public String getId() {
@@ -49,12 +49,12 @@ public class KihoekAuthInfo {
 		this.kind = kind;
 	}
 	
-	public String getKiHoekNum() {
-		return kiHoekNum;
+	public String getNum() {
+		return num;
 	}
 
-	public void setKiHoekNum(String kiHoekNum) {
-		this.kiHoekNum = kiHoekNum;
+	public void setNum(String num) {
+		this.num = num;
 	}
 	
 }

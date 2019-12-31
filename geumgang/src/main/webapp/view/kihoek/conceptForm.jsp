@@ -103,63 +103,64 @@ ul{
       <label for="kiHoekName"><b>작성자 이름</b></label>
     </div>
     <div class="col-70">
+    <input type="hidden" name="kiHoekNum" value='<c:out value="${kihoek.kiHoekNum }"/>'>
       ${kihoek.kiHoekName }
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="cSubject"><b>행사 컨셉 주제</b></label>
+      <label><b>행사 컨셉 주제</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="cSubject" name="cSubject" placeholder="행사 컨셉 주제를 적어주세요">
+      <input type="text" id="conceptSubject" name="conceptSubject" placeholder="행사 컨셉 주제를 적어주세요">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="cHistory"><b>행사 컨셉 관련 역사</b></label>
+      <label><b>행사 컨셉 관련 역사</b></label>
     </div>
     <div class="col-70">
-      <textarea id="cHistory" name="cHistory" style="height:200px" placeholder="행사 컨셉 관련 역사를 적어주세요 "></textarea>
+      <textarea id="conceptHistory" name="conceptHistory" style="height:200px" placeholder="행사 컨셉 관련 역사를 적어주세요 "></textarea>
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="cQuarter"><b>행사 예정 시기</b></label>
+      <label><b>행사 예정 시기</b></label>
     </div>
     <div class="checkbox">
     <ul>
      <li class="check">
-        <input id="allQ" name="allQ" type="checkbox">사계절
-        <input id="spring" name="spring" type="checkbox">봄
-        <input id="summer" name="summer" type="checkbox">여름
-        <input id="fail" name="fail" type="checkbox">가을
-        <input id="winter" name="winter" type="checkbox">겨울
+        <input type="checkbox" value="allQ" name="conceptQuarter">사계절
+        <input type="checkbox" value="spring" name="conceptQuarter">봄
+        <input type="checkbox" value="summer" name="conceptQuarter">여름
+        <input type="checkbox" value="fail" name="conceptQuarter">가을
+        <input type="checkbox" value="winter" name="conceptQuarter">겨울
       </li>
       </ul>
 	</div>  
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="cPlace"><b>행사 컨셉 관련 유적지</b></label>
+      <label><b>행사 컨셉 관련 유적지</b></label>
     </div>
     <div class="col-70">
-      <textarea id="cPlace" name="cPlace" style="height:100px" placeholder="행사 컨셉 관련 유적지를 적어주세요"></textarea>
+      <textarea id="conceptPlace" name="conceptPlace" style="height:100px" placeholder="행사 컨셉 관련 유적지를 적어주세요"></textarea>
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="cScale"><b>모집 예정 인원 규모</b></label>
+      <label><b>모집 예정 인원 규모</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="cScale" name="cScale" placeholder="최대 00명">
+      <input type="text" id="conceptScale" name="conceptScale" placeholder="최대 00명">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="cTargerAge"><b>행사 컨셉 타겟 연령</b></label>
+      <label><b>행사 컨셉 타겟 연령</b></label>
     </div>
     <div class="col-70">
-      <select id="cTargerAge" name="cTargerAge">
+      <select id="conceptTargetAge" name="conceptTargetAge">
         <option value="ageAll">전연령</option>
         <option value="age10s">10대</option>
         <option value="age20s">20대</option>

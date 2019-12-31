@@ -13,9 +13,9 @@ public class KihoekInsertRepository {
 	private SqlSession sqlSession;	
 	private final String namespace = "KihoekInsertMapper";
 	
-	public Integer insertConcept(Model model) {
+	public Integer insertConcept(ConceptDTO cDto) {
 		String statement = namespace + ".conceptInsert";
-		Integer result = sqlSession.insert(statement, model);
+		Integer result = sqlSession.insert(statement, cDto);
 		return result;
 	}
 }

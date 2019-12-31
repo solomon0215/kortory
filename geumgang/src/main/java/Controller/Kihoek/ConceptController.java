@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import Command.Kihoek.ConceptCommand;
 import Service.Kihoek.ConceptWriteService;
@@ -23,10 +25,13 @@ public class ConceptController {
 		return "Main/kihoekMain";
 	}
 	
-	@RequestMapping("/kihoek/conceptWritePro")
-	public String conceptWrite(ConceptCommand conceptCommand, HttpServletRequest request , HttpSession session, Model model) {
+	@RequestMapping(value="/kihoek/conceptWritePro", method=RequestMethod.POST)
+	public String conceptWrite(ConceptCommand conceptCommand, HttpServletRequest request , HttpSession session, Model model,
+			@RequestParam(value = "conceptScale",required = false) Long conceptScale
+			) {
+		conceptWriteService.insertConcept(conceptCommand, request, session, model, conceptScale);
+		System.out.println(conceptCommand + "form1");
 		model.addAttribute("pageName", "../kihoek/conceptList.jsp");
-		conceptWriteService.insertConcept(conceptCommand, request, session, model);
-		return "redirect:/conceptList";
+		return "Main/kihoekMain";
 	}
 }
