@@ -28,7 +28,7 @@
 	insert into work_con(
 	<include refid="baseContract" />
 	)
-	values(#{conNum}, #{conCompany}, #{conPh}, #{conLocation}, #{conCeo}, #{conRegiNum},
+	values(insa_seq.nextval, #{conCompany}, #{conPh}, #{conLocation}, #{conCeo}, #{conRegiNum},
 	#{conStart}, #{conSalary}, #{conEnd}, #{conIncentive}, #{conDetail}, #{resumeNum}, #{userId})
 	</insert>
 	
@@ -38,5 +38,11 @@
 	from contract
 	</select>
 	
+	<select id="contractDetail" resultMap="baseContractMap" parameterType="Integer">
+	select
+	<include refid="baseContract" />
+	from work_con
+	where WORK_CON_NUM = #{conNum}
+	</select>
 	
 </mapper>

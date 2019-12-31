@@ -48,4 +48,14 @@ public class ResumeRepository {
 		return sqlSession.selectOne(statement,dto);
 	}
 
+	public String findMemberId(Integer resumeNum) {
+		String statement = namespace + ".findMemberId";
+		return sqlSession.selectOne(statement, resumeNum);
+	}
+
+	public String findMemberEmail(UserDTO dto) {
+		String statement = namespace + ".findMemberEmail";
+		return sqlSession.selectOne(statement, dto);
+	}
+
 }

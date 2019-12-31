@@ -13,12 +13,12 @@
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 * {
-  box-sizing: border-box; width: 92%;
+  box-sizing: border-box; width: 100%;
 }
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
-  width: 100%;
+  width: 87%;
   padding: 20px;
 }
 .row:after {
@@ -28,7 +28,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 }
 .col-30 {
   float: left;
-  width: 30%;
+  width: 15%;
   margin-top: 6px;
 }
 
@@ -99,8 +99,7 @@ ul{
 </head>
 <body>
 <!-- PAGE CONTENT -->
-<form action="#">
-<div class="container" style="margin-left:17.1%">
+<div class="container" style="margin-left:12.1%">
   <div class="row">
     <div class="col-30">
       <label for="recruitNum"><b>국적</b></label>
@@ -319,12 +318,11 @@ ul{
   </div>
  <div class="w3-center">
 			<div class="w3-bar" style="margin-top: 20px">
-				<a href="sendEmail">
-					<button class="w3-bar-item w3-button w3-teal" id="email" style="margin-right: 10px">합격 통보</button>
-				</a>
+			<a href="sendEmail?userId=${userId }">
+				<button class="w3-bar-item w3-button w3-teal" id="email" style="margin-right: 10px">합격 통보</button>
+			</a>
 			</div>	
 		</div>
-		
-</form>
+	</div>
 </body>
 </html>

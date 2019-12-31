@@ -102,4 +102,18 @@
 	from resume
 	where RESUME_NUM = #{resumeNum}
 	</select>
+	
+	<!-- 회원 아이디 찾기 -->
+	<select id="findMemberId" parameterType="Integer" resultType="String">
+	select user_id
+	from resume
+	where resume_num = #{resumeNum}
+	</select>
+	
+	<select id="findMemberEmail" parameterType="Model.UserDTO.UserDTO" resultType="String">
+	select user_email
+	from kortory_user
+	where user_id = #{userId}
+	</select>
+	
 	</mapper>

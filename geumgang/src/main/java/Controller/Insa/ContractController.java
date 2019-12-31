@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import Command.Insa.ContractCommand;
 import Service.Insa.ContractService;
@@ -24,7 +25,7 @@ public class ContractController {
 	}
 	
 
-	@RequestMapping(value="/insa/contractRegiPro", method=RequestMethod.POST) //근로계약서 작성
+	@RequestMapping(value="/insa/contractRegiPro", method=RequestMethod.POST) //근로계약서 작성 값 전송
 	public String write(@ModelAttribute("cc") ContractCommand cc,HttpServletRequest request) {
 		contractService.contractRegist(cc, request);
 		return "redirect:/contractList";
@@ -36,5 +37,11 @@ public class ContractController {
 		return "insa/insaPage";
 	}
 	
+	@RequestMapping(value="insa/contractDetail") //디테일
+	public String contractDetail(@RequestParam(value="num",required=false) Integer conNum, Model model) {
+		contractService.contractDetail(model, conNum);
+		model.addAttribute("insaPage","../insa/contractDetail.jsp");
+		return "insa/insaPage";
+	}
 
 }

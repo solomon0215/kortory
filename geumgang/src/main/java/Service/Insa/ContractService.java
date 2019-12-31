@@ -28,21 +28,10 @@ public class ContractService {
 		contract.setConPh(cc.getConPh());
 		contract.setConRegiNum(cc.getConRegiNum());
 		contract.setConSalary(cc.getConSalary());
-		
+		contract.setConStart(cc.getConStart());
+		contract.setConEnd(cc.getConEnd());
 		
 		String detail = contract.getConDetail().toString();
-		
-		SimpleDateFormat dt = new SimpleDateFormat("yyyyMMdd");
-		try {
-			Date date = dt.parse(cc.getConStart());
-			java.sql.Date start = new java.sql.Date(date.getTime());
-			contract.setConStart(start);
-			date = dt.parse(cc.getConEnd());
-			java.sql.Date end = new java.sql.Date(date.getTime());
-			contract.setConEnd(end);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		
 		return contractRepository.contractInsert(contract);
 	}
@@ -50,6 +39,15 @@ public class ContractService {
 	public void contractSelect(Model model) {
 		List<ContractDTO> contractList = contractRepository.contractAllSelect();
 		model.addAttribute("contract",contractList);
+	}
+
+	public void contractDetail(Model model, Integer conNum) {
+		ContractDTO dto = new ContractDTO();
+		dto.setConNum(conNum);
+		ContractDTO detail = contractRepository.contractDetal(dto);
+		model.addAttribute("con",detail);
+		
+		
 	}
 
 }

@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import Command.Insa.ResumeCommand;
 import Model.InsaDTO.*;
 import Model.UserDTO.UserAuth;
+import Model.UserDTO.UserDTO;
 import Repository.Insa.ResumeRepository;
 
 public class ResumeService {
@@ -75,8 +76,15 @@ public class ResumeService {
 		ResumeDTO dto = new ResumeDTO();
 		dto.setResumeNum(resumeNum);
 		ResumeDTO detail = resumeRepository.resumeDetail(dto);
+		String userId = resumeRepository.findMemberId(resumeNum);
+		model.addAttribute("userId", userId);
 		model.addAttribute("detail",detail);
 		
+	}
+
+	public String findUserEmail(UserDTO dto, Model model) {
+		String userEmail = resumeRepository.findMemberEmail(dto);
+		return userEmail;
 	}
 	
   

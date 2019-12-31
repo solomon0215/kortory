@@ -21,7 +21,7 @@ $(function(){
 <body>
 		<!-- 회원 로그인 -->
 		<form:form class="w3-container w3-border w3-border-yellow w3-margin w3-padding-16"  method="post"
-		action="ApplicantLogPro" id="userFrm" commandName="userLogCommand">
+		action="applicantLogPro" id="userFrm" commandName="userLogCommand">
 		  	<h2>회원 로그인</h2>
 		  	<label>아이디</label> 
 		  	<div class="w3-center">

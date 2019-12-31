@@ -1,14 +1,16 @@
 package Command.Insa;
 
+import java.sql.Date;
+
 public class ContractCommand {
 	String conCompany;
 	String conPh;
 	String conLocation;
 	String conCeo;
 	String conRegiNum;
-	String conStart;
+	Date conStart;
 	Integer conSalary;
-	String conEnd;
+	Date conEnd;
 	Integer conIncentive;
 	String conDetail;
 	Integer resumeNum;
@@ -44,10 +46,10 @@ public class ContractCommand {
 	public void setConRegiNum(String conRegiNum) {
 		this.conRegiNum = conRegiNum;
 	}
-	public String getConStart() {
+	public Date getConStart() {
 		return conStart;
 	}
-	public void setConStart(String conStart) {
+	public void setConStart(Date conStart) {
 		this.conStart = conStart;
 	}
 	public Integer getConSalary() {
@@ -56,10 +58,10 @@ public class ContractCommand {
 	public void setConSalary(Integer conSalary) {
 		this.conSalary = conSalary;
 	}
-	public String getConEnd() {
+	public Date getConEnd() {
 		return conEnd;
 	}
-	public void setConEnd(String conEnd) {
+	public void setConEnd(Date conEnd) {
 		this.conEnd = conEnd;
 	}
 	public Integer getConIncentive() {

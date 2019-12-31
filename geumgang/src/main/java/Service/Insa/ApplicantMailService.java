@@ -15,7 +15,7 @@ public class ApplicantMailService {
 	@Autowired
 	private JavaMailSender mailSender;
 	
-	public void sendMail(String receiver, String name) {
+	public void sendMail(String userEmail, String userId) {
 		MimeMessage msg = mailSender.createMimeMessage();
 		SimpleDateFormat dateForm = new SimpleDateFormat("yyyyMMdd");
 		String num = dateForm.format(new Date());
@@ -24,11 +24,10 @@ public class ApplicantMailService {
 		
 		String content = "<html>"
 				       + "<body>"
-				       + "안녕하세요 '" + name + "'님.<br />"
+				       + "안녕하세요 '" + userId + "'님.<br />"
 				       + "금번 진행한 채용전형에서 합격되었습니다.<br />"
 				       + "최종적으로 입사를 원하시면 아래 링크의 근로계약서를 작성하여 주십시오.<br />"
-				       + "<a href='http://localhost/gumgang/>"
-				       + "</a>"
+				       + "<a href='http://localhost:8080/geumgang/insa/applicantLogin?userId=" + userId + "'>ㅎ2ㅎ2</a>"
 				       + "</body>"
 				       + "</html>";
 		
@@ -36,7 +35,7 @@ public class ApplicantMailService {
 			msg.setHeader("content-type", "text/html; charset=UTF-8");
 			msg.setContent(content, "text/html; charset=UTF-8");
 			msg.setSubject(subject);
-			msg.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiver));
+			msg.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(userEmail));
 			mailSender.send(msg);
 		}catch(Exception e){
 			e.printStackTrace();

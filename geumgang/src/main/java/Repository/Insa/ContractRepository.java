@@ -29,4 +29,10 @@ public class ContractRepository {
 		return list;
 	}
 
+
+	public ContractDTO contractDetal(ContractDTO dto) {
+		String statement = namespace + ".contractDetail";
+		return sqlSession.selectOne(statement,dto);
+	}
+
 }

@@ -16,24 +16,24 @@ function showPopup() { window.open("#", "a", "width=400, height=300, left=100, t
 </script>
 </head>
 	<body>
-<form:form class="w3-container w3-card-4 w3-white" style="margin-left:175px"
+<form:form class="w3-container w3-card-4 w3-white" style="margin-left:182.5px"
 commandName="cc" id="frm" action="contractRegiPro" method="POST" >
 		<h2 class="w3-center">근로계약서 작성</h2>
 		<p>
 			<label class="w3-text-grey">회사명</label>
-			<form:input path="conCompany" class="w3-input w3-border w3-white"  />
+			<form:input path="conCompany" class="w3-input w3-border w3-white" />
 		</p>
 		<p>
 			<label class="w3-text-grey">회사 전화번호</label>
-			<form:input path="conPh" class="w3-input w3-border w3-white" />
+			<form:input path="conPh" class="w3-input w3-border w3-white"/>
 		</p>
 		<p>
 			<label class="w3-text-grey">회사 소재지</label>
-			<form:input path="conLocation" class="w3-input w3-border w3-white" />
+			<form:input path="conLocation" class="w3-input w3-border w3-white"/>
 		</p>
 		<p>
 			<label class="w3-text-grey">대표자명</label>
-			<form:input path="conCeo" class="w3-input w3-border w3-white"  />
+			<form:input path="conCeo" class="w3-input w3-border w3-white"/>
 		</p>
 		<p>
 			<label class="w3-text-grey">사업자 등록번호</label>
@@ -47,9 +47,15 @@ commandName="cc" id="frm" action="contractRegiPro" method="POST" >
 			<input type="date" name="conEnd" class="w3-input w3-border w3-white" style="width: 30%" />
 		</p>
 		<p>
+			<label class="w3-text-grey">연봉(숫자만 입력)</label>
+			 <form:input path="conSalary"
+				class="w3-input w3-border w3-white"  value=""
+				onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
+		</p>
+		<p>
 			<label class="w3-text-grey">인센티브(숫자만 입력)</label>
 			 <form:input path="conIncentive"
-				class="w3-input w3-border w3-white"  value="1"
+				class="w3-input w3-border w3-white"  value=""
 				onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
 		</p>
 		<p>
@@ -70,7 +76,7 @@ commandName="cc" id="frm" action="contractRegiPro" method="POST" >
 		<div class="w3-center">
 			<div class="w3-bar">
 				<input  class="w3-button w3-yellow" type="reset" value="다시 작성" />
-			    <button class="w3-button w3-teal" id="regist" onclick="showPopup();">등록</button>
+			    <button class="w3-button w3-teal" id="regist">등록</button>
 			</div>
 		</div>
 </form:form>
