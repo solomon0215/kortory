@@ -9,7 +9,10 @@
 		exploration_avail_date,exploration_avail_holi,exploration_limit_age,exploration_limit_per,exploration_condition,exploration_file,
 		exploration_submit,young_up_num
 	</sql>
-	
+	<sql id = "budgetBill">
+	BUDGET_BILL_NUM,BUDGET_BILL_SUBJECT,BUDGET_BILL_PRICE_SUM,BUDGET_BILL_LABOR_RATIO,BUDGET_BILL_LABOR_PRICE,
+	BUDGET_BILL_GOODS_PRICE,BUDGET_BILL_DATE,GWAN_RI_NUM
+	</sql>
 	<sql id = "agreementCondition">
 	AGREEMENT_CONDITION_NUM,AGREEMENT_CONDITION_SUBJECT,AGREEMENT_CONDITION_DATE,AGREEMENT_CONDITION_RATIO,
 	AGREEMENT_CONDITION_SETT,GWAN_RI_NUM
@@ -23,7 +26,16 @@
 	<result column="AGREEMENT_CONDITION_SETT" jdbcType="BIGINT" property="agreementConditionSett" />
 	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum" />
 	</resultMap>
-	
+	<resultMap type="bbDTO" id="budgetMap">
+	<id column="BUDGET_BILL_NUM" jdbcType="BIGINT" property="budgetBillNum"/> 
+	<result column="BUDGET_BILL_SUBJECT" jdbcType="VARCHAR" property="budgetBillSubject"/> 
+	<result column="BUDGET_BILL_PRICE_SUM" jdbcType="BIGINT" property="budgetBillPriceSum"/> 
+	<result column="BUDGET_BILL_LABOR_RATIO" jdbcType="FLOAT" property="budgetBillLaborRatio"/> 
+	<result column="BUDGET_BILL_LABOR_PRICE" jdbcType="BIGINT" property="budgetBillLaborPrice"/> 
+	<result column="BUDGET_BILL_GOODS_PRICE" jdbcType="BIGINT" property="budgetBillGoodsPrice"/> 
+	<result column="BUDGET_BILL_DATE" jdbcType="DATE" property="budgetBillDate"/> 
+	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/> 
+	</resultMap>
 	<resultMap type="eaDTO" id="baseExpagreeMap"> <!-- 사전답사보고서DTO+협약조건보고서DTO -->
 		<id column="AGREEMENT_CONDITION_NUM" jdbcType="BIGINT" property="agreementConditionNum" />
 		<id column="exploration_num" jdbcType="BIGINT" property="explorationNum"/> <!-- 답사보고서 번호-->
@@ -58,23 +70,12 @@
 	<insert id = "insertExp" parameterType="eaDTO">
 	insert into exploration(exploration_num)
 	values(#{explorationNum})
-	</insert>
-	
-	
-	
-<insert id = "BudgetBillInsert">
-	INSERT INTO BUDGET_BILL(BUDGET_BILL_NUM,
-	BUDGET_BILL_PRICE_SUM, BUDGET_BILL_LABOR_RATIO,
-	BUDGET_BILL_LABOR_PRICE, BUDGET_BILL_GOODS_PRICE,
-	BUDGET_BILL_DATE, GWAN_RI_NUM)
-	
-	VALUES(BUDGET_BILL_SEQ.NEXTVAL,
-	#{budget_bill_price_sum},
-	#{budget_bill_labor_ratio},
-	#{budget_bill_labor_price},
-	#{budget_bill_goods_price},
-	#{budget_bill_date},
-	#{gwan_ri_num} )
+	</insert>	
+	<!-- 예산안보고서 작성 -->
+	<insert id = "insertBudget" parameterType="bbDTO">
+	INSERT INTO BUDGET_BILL(<include refid="budgetBill" />)	
+	VALUES(gwanri_seq.nextval,#{budgetBillSubject},	#{budgetBillPriceSum},#{budgetBillLaborRatio},
+	#{budgetBillLaborPrice}, #{budgetBillGoodsPrice},#{budgetBillDate},#{gwanRiNum} )
 </insert>
 
 </mapper>

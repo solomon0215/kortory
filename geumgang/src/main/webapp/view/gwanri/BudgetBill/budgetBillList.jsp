@@ -19,30 +19,27 @@
      <table class="w3-table-all w3-centered">
       <tr class="w3-green">
         <th>번호</th>
-         <th>행사명</th>
+         <th>제목</th>
+          <th>작성자</th>
         <th>작성일</th>
       </tr>
     </thead>
-    <tr>
-      <td>1</td>
-      <td>Smith</td>
-           <td>Smith</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jackson</td>
-           <td>Smith</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Johnson</td>
-           <td>Smith</td>
-    </tr>
-  
+   <tbody>
+						<c:forEach var="budget" items="${budget}" varStatus="status">
+							<tr>
+								<td>${status.count }</td>
+								<td><a
+									href='<c:url value='/gwanri/budgetBillView?num=${budget.budgetBillNum }'/>'${budget.budgetBillNum}'>${budget.budgetBillSubject }</a></td>
+								<td>${authName}</td>
+								<td>${budget.budgetBillDate }</td>
+
+							</tr>
+						</c:forEach>
+					</tbody>
   </table>
   </dvi>
   <div class="w3-container" align="center">
-   <a href="#" class="w3-btn w3-green">등록</a>
+   <a href="budgetBillWrite" class="w3-btn w3-green">작성</a>
 </div>
   
 </div>

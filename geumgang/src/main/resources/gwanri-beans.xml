@@ -7,8 +7,7 @@
 	<!-- Service  -->
 <bean id = "gwanriLoginService" class ="Service.Gwanri.GwanriLoginService"/> 
 <bean id = "gwanriLogoutService" class ="Service.Gwanri.GwanriLogoutService"/>
-<bean id = "budgetBillListService" class ="Service.Gwanri.BudgetBillListService"/>
-<bean id = "budgetBillWriteService" class ="Service.Gwanri.BudgetBillWriteService"/>
+<bean id = "budgetBillService" class ="Service.Gwanri.BudgetBillService"/>
 <bean id = "coopContractService" class ="Service.Gwanri.CoopContractService"/>
 
    <!-- Repositopry -->

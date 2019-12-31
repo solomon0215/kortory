@@ -50,7 +50,7 @@ function goToCompleDetail(expNum){
 				<table class="w3-table-all w3-centered">
 
 					<thead>
-						<tr class="w3-green">
+						<tr class="w3-pale-red">
 							<th>번호</th>
 							<th>업체 이름</th>
 							<th>업체유형</th>
@@ -76,7 +76,7 @@ function goToCompleDetail(expNum){
 			<br>
 			<table class="w3-table-all w3-centered">
 				<thead>
-					<tr class="w3-green">
+					<tr class="w3-pale-blue">
 							<th>번호</th>
 							<th>업체 이름</th>
 							<th>업체유형</th>

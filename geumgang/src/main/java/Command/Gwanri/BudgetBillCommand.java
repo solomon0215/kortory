@@ -1,26 +1,31 @@
 package Command.Gwanri;
 
-import java.sql.Date;
-
 public class BudgetBillCommand {
-	Long budgetBillNum; 
-	Long budgetBillPriceSum; 
-	Float budgetBillLaborRatio;
-	Long budgetBillLaborPrice;
-	Long budgetBillGoodsPrice;
-	Date budgetBillDate; 
-	String gwanRiNum;
+	private Integer budgetBillNum;
+	private String budgetBillSubject;
+	private Integer budgetBillPriceSum;
+	private Float budgetBillLaborRatio;
+	private Integer budgetBillLaborPrice;
+	private Integer budgetBillGoodsPrice;
+	private java.sql.Date budgetBillDate;
+	private String gwanRiNum;
 	
-	public Long getBudgetBillNum() {
+	public Integer getBudgetBillNum() {
 		return budgetBillNum;
 	}
-	public void setBudgetBillNum(Long budgetBillNum) {
+	public void setBudgetBillNum(Integer budgetBillNum) {
 		this.budgetBillNum = budgetBillNum;
 	}
-	public Long getBudgetBillPriceSum() {
+	public String getBudgetBillSubject() {
+		return budgetBillSubject;
+	}
+	public void setBudgetBillSubject(String budgetBillSubject) {
+		this.budgetBillSubject = budgetBillSubject;
+	}
+	public Integer getBudgetBillPriceSum() {
 		return budgetBillPriceSum;
 	}
-	public void setBudgetBillPriceSum(Long budgetBillPriceSum) {
+	public void setBudgetBillPriceSum(Integer budgetBillPriceSum) {
 		this.budgetBillPriceSum = budgetBillPriceSum;
 	}
 	public Float getBudgetBillLaborRatio() {
@@ -29,22 +34,22 @@ public class BudgetBillCommand {
 	public void setBudgetBillLaborRatio(Float budgetBillLaborRatio) {
 		this.budgetBillLaborRatio = budgetBillLaborRatio;
 	}
-	public Long getBudgetBillLaborPrice() {
+	public Integer getBudgetBillLaborPrice() {
 		return budgetBillLaborPrice;
 	}
-	public void setBudgetBillLaborPrice(Long budgetBillLaborPrice) {
+	public void setBudgetBillLaborPrice(Integer budgetBillLaborPrice) {
 		this.budgetBillLaborPrice = budgetBillLaborPrice;
 	}
-	public Long getBudgetBillGoodsPrice() {
+	public Integer getBudgetBillGoodsPrice() {
 		return budgetBillGoodsPrice;
 	}
-	public void setBudgetBillGoodsPrice(Long budgetBillGoodsPrice) {
+	public void setBudgetBillGoodsPrice(Integer budgetBillGoodsPrice) {
 		this.budgetBillGoodsPrice = budgetBillGoodsPrice;
 	}
-	public Date getBudgetBillDate() {
+	public java.sql.Date getBudgetBillDate() {
 		return budgetBillDate;
 	}
-	public void setBudgetBillDate(Date budgetBillDate) {
+	public void setBudgetBillDate(java.sql.Date budgetBillDate) {
 		this.budgetBillDate = budgetBillDate;
 	}
 	public String getGwanRiNum() {
@@ -52,6 +57,8 @@ public class BudgetBillCommand {
 	}
 	public void setGwanRiNum(String gwanRiNum) {
 		this.gwanRiNum = gwanRiNum;
-	}	
+	}
 	
+	
+
 }

@@ -3,23 +3,27 @@ package Model.GwanriDTO;
 import java.io.Serializable;
 
 
-import java.sql.Date;
-
 @SuppressWarnings("serial")
 public class BudgetBillDTO implements Serializable {
 	private Integer budgetBillNum;
+	private String budgetBillSubject;
 	private Integer budgetBillPriceSum;
 	private Float budgetBillLaborRatio;
 	private Integer budgetBillLaborPrice;
 	private Integer budgetBillGoodsPrice;
-	private Date budgetBillDate;
+	private java.sql.Date budgetBillDate;
 	private String gwanRiNum;
-	
 	public Integer getBudgetBillNum() {
 		return budgetBillNum;
 	}
 	public void setBudgetBillNum(Integer budgetBillNum) {
 		this.budgetBillNum = budgetBillNum;
+	}
+	public String getBudgetBillSubject() {
+		return budgetBillSubject;
+	}
+	public void setBudgetBillSubject(String budgetBillSubject) {
+		this.budgetBillSubject = budgetBillSubject;
 	}
 	public Integer getBudgetBillPriceSum() {
 		return budgetBillPriceSum;
@@ -45,10 +49,10 @@ public class BudgetBillDTO implements Serializable {
 	public void setBudgetBillGoodsPrice(Integer budgetBillGoodsPrice) {
 		this.budgetBillGoodsPrice = budgetBillGoodsPrice;
 	}
-	public Date getBudgetBillDate() {
+	public java.sql.Date getBudgetBillDate() {
 		return budgetBillDate;
 	}
-	public void setBudgetBillDate(Date budgetBillDate) {
+	public void setBudgetBillDate(java.sql.Date budgetBillDate) {
 		this.budgetBillDate = budgetBillDate;
 	}
 	public String getGwanRiNum() {
@@ -57,4 +61,6 @@ public class BudgetBillDTO implements Serializable {
 	public void setGwanRiNum(String gwanRiNum) {
 		this.gwanRiNum = gwanRiNum;
 	}
+	
+	
 }

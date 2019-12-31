@@ -27,9 +27,6 @@
 <div class="w3-bar w3-teal">
 <div class="w3-container w3-lobster w3-xlarge">
   <a href="main" class="w3-bar-item w3-button">메인으로</a>
-  <a href="#" class="w3-bar-item w3-button">인사부</a>
-  <a href="#" class="w3-bar-item w3-button">영업부</a>
-  <a href="#" class="w3-bar-item w3-button">기획부</a>
    <a href="logout"  class="w3-bar-item w3-button w3-right">로그아웃</a>
 </div>
 </div>
@@ -44,10 +41,7 @@
 	             <a href="#" style="text-decoration:none" >협력업체 관련 업무</a>
 	            <ul>
 	            	<li><a href="http://localhost:8080/geumgang/gwanri/expList" style="text-decoration:none">사전답사 보고서 목록</a></li>
-	                <li><a href="http://localhost:8080/geumgang/gwanri/agreementConditionList" style="text-decoration:none">협약조건안 목록</a></li>
-	                <li>협약조건보고서 목록</li>
-	                <li><a href="http://localhost:8080/geumgang/gwanri/violation" style="text-decoration:none">계약 위반처리</a></li>
-	                <li>협력업체계약서 목록</li>
+	                <li>협력업체 계약서 목록</li>
 	            </ul>
 	        </li> 
 	        <br/>

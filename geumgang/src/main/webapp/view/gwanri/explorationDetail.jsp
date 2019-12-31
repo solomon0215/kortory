@@ -17,11 +17,12 @@
 <body>
 
 <dvi class =" w3-container" >
-		<center><h2>사전답사보고서 상세내역</h2></center>
+		<center><h2>사전답사보고서/계약서 상세내역</h2></center>
 </dvi>	
 <thead> 
 <div class="w3-container" >
     <table class="w3-table-all w3-centered" >
+    
      <tr><th>보고서 번호</th> <td>${detail.explorationNum}</td></tr>
        <tr><th>업체 아이디</th><td>${detail.companyId }</td></tr>
        <tr> <th>업체 사업자번호</th> <td>${detail.companyRegNum }</td></tr>

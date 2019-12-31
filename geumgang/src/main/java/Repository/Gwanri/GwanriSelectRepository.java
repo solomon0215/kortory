@@ -30,11 +30,18 @@ public class GwanriSelectRepository {
 		
 		return result;
 	}	
-	/** 예산안 보고서 게시판 - 목록 조회  */
-    public List<BudgetBillDTO> boardList(BudgetBillDTO bbdto){
-    	String statement =  namespace + ".boardList";
-		return sqlSession.selectList(statement, bbdto);
+	/** 예산안 보고서 게시판 - 리스트  */
+    public List<BudgetBillDTO> budgetAllSelect() {
+    	String statement =  namespace + ".budgetList";
+    	List<BudgetBillDTO> list = sqlSession.selectList(statement);
+		return list;
     }
+	/** 예산안 보고서 게시판 - 디테일  */
+    public BudgetBillDTO budgetDetail(BudgetBillDTO dto){ 
+    	String statement =  namespace + ".budgetDetail";
+        return sqlSession.selectOne(statement, dto);
+    }
+    
     /** 협약 조건안 게시판 - 상세 보기 */    
     
     public AgreementConditionDTO agreeDetail(AgreementConditionDTO dto){ 

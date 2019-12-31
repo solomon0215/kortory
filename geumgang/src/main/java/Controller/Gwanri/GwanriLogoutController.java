@@ -16,7 +16,7 @@ public class GwanriLogoutController {
 		@Autowired
 		private GwanriLogoutService gls; 
 		
-		@RequestMapping("staff/logout")
+		@RequestMapping("gwanri/logout")
 		public String logout(HttpSession session,
 				HttpServletResponse response, Model model) {
 			gls.logout(session, response);

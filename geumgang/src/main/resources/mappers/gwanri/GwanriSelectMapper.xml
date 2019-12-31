@@ -4,11 +4,31 @@
 <mapper namespace="gwanriSelectMapper">
 	
 <cache />
-<sql id = "agreementCondition">
+	<sql id = "agreementCondition">
 	AGREEMENT_CONDITION_NUM,AGREEMENT_CONDITION_SUBJECT,AGREEMENT_CONDITION_DATE,AGREEMENT_CONDITION_RATIO,
 	AGREEMENT_CONDITION_SETT,GWAN_RI_NUM
 	</sql>
 	
+	<sql id = "budgetBill">
+	BUDGET_BILL_NUM,BUDGET_BILL_SUBJECT,BUDGET_BILL_PRICE_SUM,BUDGET_BILL_LABOR_RATIO,BUDGET_BILL_LABOR_PRICE,
+	BUDGET_BILL_GOODS_PRICE,BUDGET_BILL_DATE,GWAN_RI_NUM
+	</sql>
+	<resultMap type="bbDTO" id="budgetMap">
+	<id column="BUDGET_BILL_NUM" jdbcType="BIGINT" property="budgetBillNum"/> 
+	<result column="BUDGET_BILL_SUBJECT" jdbcType="VARCHAR" property="budgetBillSubject"/> 
+	<result column="BUDGET_BILL_PRICE_SUM" jdbcType="BIGINT" property="budgetBillPriceSum"/> 
+	<result column="BUDGET_BILL_LABOR_RATIO" jdbcType="FLOAT" property="budgetBillLaborRatio"/> 
+	<result column="BUDGET_BILL_LABOR_PRICE" jdbcType="BIGINT" property="budgetBillLaborPrice"/> 
+	<result column="BUDGET_BILL_GOODS_PRICE" jdbcType="BIGINT" property="budgetBillGoodsPrice"/> 
+	<result column="BUDGET_BILL_DATE" jdbcType="DATE" property="budgetBillDate"/> 
+	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/> 
+	</resultMap>
+	
+	<select id="budgetList" parameterType="string" resultMap="budgetMap">
+		select 
+		<include refid="budgetBill" />
+		from BUDGET_BILL
+	</select>
 	<sql id="exl">
 		exp.COMPANY_ID,COMPANY_REG_NUM,COMPANY_NAME,COMPANY_ADDR,COMPANY_PH,COMPANY_TYPE,COMPANY_EMAIL,
 		exploration_num,exploration_type,exploration_schedule,exploration_effect,exploration_mana_name,exploration_avail_time,
@@ -106,6 +126,13 @@
 		FROM AGREEMENT_CONDITION 
 		WHERE AGREEMENT_CONDITION_NUM = #{agreementConditionNum}
 </select>
+	<!-- 예산안보고서 디테일 -->
+	<select id="budgetDetail" resultMap="budgetMap" parameterType="Integer">
+  		SELECT <include refid="budgetBill" />
+		FROM BUDGET_BILL 
+		WHERE BUDGET_BILL_NUM = #{budgetBillNum}
+</select>
+
 
 	<select id="expAllSelect" resultMap="exlMap">
 		select <include refid="exl"/>
