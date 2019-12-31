@@ -21,7 +21,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <body>
 <!-- PAGE CONTENT -->
 <div class="w3-main" >
-<h3>기획부</h3>
+<h3><b>기획부</b></h3>
 <div class="w3-card-4 " style="width:80%">
     <header class="w3-container w3-white">
       <h4 class="w3-text-blue-gray"><b>컨셉 기획서 목록</b></h4>

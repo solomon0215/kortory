@@ -96,7 +96,7 @@ ul{
 <body>
 <!-- PAGE CONTENT -->
 <form action="conceptWritePro" id="frm" name="frm" method="POST">
-<h3>컨셉 기획서</h3>
+<h3><b>컨셉 기획서</b></h3>
 <div class="container" >
   <div class="row">
     <div class="col-30">

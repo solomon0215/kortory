@@ -20,6 +20,9 @@ public class ConceptController {
 	
 	@RequestMapping("/kihoek/conceptForm")
 	public String conceptForm(Model model, HttpServletRequest request) {
+		if (request.getSession().getAttribute("authLog") == null) {
+			return "redirect:../staff/login";
+		}
 		conceptWriteService.kihoekName(request, model);
 		model.addAttribute("pageName", "../kihoek/conceptForm.jsp");
 		return "Main/kihoekMain";
@@ -29,6 +32,9 @@ public class ConceptController {
 	public String conceptWrite(ConceptCommand conceptCommand, HttpServletRequest request , HttpSession session, Model model,
 			@RequestParam(value = "conceptScale",required = false) Long conceptScale
 			) {
+		if (request.getSession().getAttribute("authLog") == null) {
+			return "redirect:../staff/login";
+		}
 		conceptWriteService.insertConcept(conceptCommand, request, session, model, conceptScale);
 		System.out.println(conceptCommand + "form1");
 		model.addAttribute("pageName", "../kihoek/conceptList.jsp");

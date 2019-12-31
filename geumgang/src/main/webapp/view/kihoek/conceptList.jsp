@@ -31,7 +31,7 @@ ul{
 <body>
 <!-- PAGE CONTENT -->
 <form action="#">
-<h3>컨셉 기획서 목록</h3>
+<h3><b>컨셉 기획서 목록</b></h3>
 <div class="container" >
 	<div class="row">
 	<div class="w3-ul w3-hoverable">

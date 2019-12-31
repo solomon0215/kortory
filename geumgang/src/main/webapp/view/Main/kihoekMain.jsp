@@ -86,12 +86,12 @@ a {text-decoration: none; !important}
 </head>
 <body>
 <div class="navbar">
-<div class="w3-top w3-bar w3-red">
+<div class="w3-top w3-bar w3-red w3-card">
   <div class="active">
-  <a class="w3-bar-item w3-button w3-hover-red" href="../main">KORTORY</a></div>
-  <a class="w3-bar-item" href="../kihoek/main">MAIN</a>
-  <a class="w3-bar-item" href="conceptForm">CONCEPT</a>
-  <a class="w3-bar-item" href="#">EVENT</a>
+  <a class="w3-bar-item w3-button w3-hover-sand" href="../main">KORTORY</a></div>
+  <a class="w3-bar-item w3-button w3-hover-sand" href="../kihoek/main">MAIN</a>
+  <a class="w3-bar-item w3-button w3-hover-sand" href="conceptForm">CONCEPT</a>
+  <a class="w3-bar-item w3-button w3-hover-sand" href="eventForm">EVENT</a>
 </div>
 </div>
 <div style="background-color:#white;">
@@ -129,7 +129,7 @@ a {text-decoration: none; !important}
 		행사 상품<i class="fa fa-caret-down"></i>
 		</a>
 		<div id="productItem" class="w3-bar-block w3-hide w3-padding w3-text-deep-orange ">
-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>행사 상품 등록</a>
+			<a href="eventForm" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>행사 상품 등록</a>
 			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>행사 상품 목록</a>
     	</div>
     	

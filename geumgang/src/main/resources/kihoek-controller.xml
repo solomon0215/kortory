@@ -12,4 +12,5 @@
 	<bean class="Controller.Kihoek.KihoekMainContoller"/>
 	<bean class="Controller.Kihoek.ConceptController"/>
 	<bean class="Controller.Kihoek.ConceptListController"/>
+	<bean class="Controller.Kihoek.EventController"/>
 </beans>
