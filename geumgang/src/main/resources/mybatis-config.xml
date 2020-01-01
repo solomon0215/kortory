@@ -5,7 +5,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="Model.GwanriDTO.GwanriDTO" alias ="gwanriDTO"/>
-		<typeAlias type="Model.GwanriDTO.AgreementConditionDTO" alias ="acDTO"/>
 		<typeAlias type="Model.GwanriDTO.ExpagreeDTO" alias ="eaDTO"/>
 		<typeAlias type="Model.GwanriDTO.CoopContractDTO" alias ="ccDTO"/>
 		<typeAlias type="Model.GwanriDTO.BudgetBillDTO" alias ="bbDTO"/>

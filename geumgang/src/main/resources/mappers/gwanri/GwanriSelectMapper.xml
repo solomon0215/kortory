@@ -4,10 +4,35 @@
 <mapper namespace="gwanriSelectMapper">
 	
 <cache />
-	<sql id = "agreementCondition">
-	AGREEMENT_CONDITION_NUM,AGREEMENT_CONDITION_SUBJECT,AGREEMENT_CONDITION_DATE,AGREEMENT_CONDITION_RATIO,
-	AGREEMENT_CONDITION_SETT,GWAN_RI_NUM
+	<sql id = "coopContract">
+	COOP_CONTRACT_NUM,COOP_CONTRACT_DATE,COMPANY_SELECT_DATE,COOP_CONTRACT_SUPP_RATIO,COOP_CONTRACT_MAR_RATIO,
+	COOP_CONTRACT_CAL_DATE,COOP_CONTRACT_SUBJECT,COOP_CONTRACT_WRITE,COOP_CONTRACT_STATE,COOP_CONDITION_AVAIL_DATE,
+	COOP_CONDITION_AVAIL_TIME,COOP_CONDITION_LIMIT_PER,COOP_CONTRACT_RATIO,COOP_CONTRACT_SETT,COOP_CONTRACT_METHOD,
+	COOP_CONTRACT_END_DATE,COOP_KIND,COMPANY_ID,GWAN_RI_NUM
 	</sql>
+	
+	<resultMap type="ccDTO" id="coopMap">
+	<id column="COOP_CONTRACT_NUM" jdbcType="BIGINT" property="coopContractNum"/> 
+	<result column="COOP_CONTRACT_DATE" jdbcType="DATE" property="coopContractDate"/> 
+	<result column="COMPANY_SELECT_DATE" jdbcType="DATE" property="companySelectDate"/> 
+	<result column="COOP_CONTRACT_SUPP_RATIO" jdbcType="FLOAT" property="coopContractSuppRatio"/> 
+	<result column="COOP_CONTRACT_MAR_RATIO" jdbcType="FLOAT" property="coopContractMarRatio"/> 
+	<result column="COOP_CONTRACT_CAL_DATE" jdbcType="DATE" property="coopContractCalDate"/> 
+	<result column="COOP_CONTRACT_SUBJECT" jdbcType="VARCHAR" property="coopContractSubject"/> 
+	<result column="COOP_CONTRACT_WRITE" jdbcType="DATE" property="coopContractWrite"/> 
+	<result column="COOP_CONTRACT_STATE" jdbcType="VARCHAR" property="coopContractState"/> 
+	<result column="COOP_CONDITION_AVAIL_DATE" jdbcType="VARCHAR" property="coopConditionAvailDate"/> 
+	<result column="COOP_CONDITION_AVAIL_TIME" jdbcType="VARCHAR" property="coopConditionAvailTime"/> 
+	<result column="COOP_CONDITION_LIMIT_PER" jdbcType="BIGINT" property="coopConditionLimitPer"/> 
+	<result column="COOP_CONTRACT_RATIO" jdbcType="FLOAT" property="coopContractRatio"/> 
+	<result column="COOP_CONTRACT_SETT" jdbcType="BIGINT" property="coopContractSett"/> 
+	<result column="COOP_CONTRACT_METHOD" jdbcType="VARCHAR" property="coopContractMethod"/> 
+	<result column="COOP_CONTRACT_END_DATE" jdbcType="DATE" property="coopContractEndDate"/> 
+	<result column="COOP_KIND" jdbcType="VARCHAR" property="coopKind"/> 
+	<result column="COMPANY_ID" jdbcType="VARCHAR" property="companyId"/> 
+	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/> 
+	</resultMap>
+	
 	
 	<sql id = "budgetBill">
 	BUDGET_BILL_NUM,BUDGET_BILL_SUBJECT,BUDGET_BILL_PRICE_SUM,BUDGET_BILL_LABOR_RATIO,BUDGET_BILL_LABOR_PRICE,
@@ -23,12 +48,6 @@
 	<result column="BUDGET_BILL_DATE" jdbcType="DATE" property="budgetBillDate"/> 
 	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/> 
 	</resultMap>
-	
-	<select id="budgetList" parameterType="string" resultMap="budgetMap">
-		select 
-		<include refid="budgetBill" />
-		from BUDGET_BILL
-	</select>
 	<sql id="exl">
 		exp.COMPANY_ID,COMPANY_REG_NUM,COMPANY_NAME,COMPANY_ADDR,COMPANY_PH,COMPANY_TYPE,COMPANY_EMAIL,
 		exploration_num,exploration_type,exploration_schedule,exploration_effect,exploration_mana_name,exploration_avail_time,
@@ -60,39 +79,7 @@
 		<result column="exploration_submit" jdbcType="VARCHAR" property="explorationSubmit"/> <!-- 제출여부	여부	 -->
 		</resultMap>
 		
-		<resultMap type="eaDTO" id="baseExpagreeMap"> <!-- 사전답사보고서DTO+협약조건보고서DTO -->
-		<id column="AGREEMENT_CONDITION_NUM" jdbcType="BIGINT" property="agreementConditionNum" />
-		<id column="exploration_num" jdbcType="BIGINT" property="explorationNum"/> <!-- 답사보고서 번호-->
-		<result column="COMPANY_ID" jdbcType="VARCHAR" property="companyId"/> <!-- 업체 아이디 ()-->
-		<result column="AGREEMENT_CONDITION_SUBJECT" jdbcType="VARCHAR" property="agreementConditionSubject" />	
-		<result column="AGREEMENT_CONDITION_DATE" jdbcType="DATE" property="agreementConditionDate" />
-		<result column="AGREEMENT_CONDITION_RATIO" jdbcType="FLOAT" property="agreementConditionRatio" />
-		<result column="AGREEMENT_CONDITION_SETT" jdbcType="BIGINT" property="agreementConditionSett" />
-		<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum" />
-		<result column="exploration_type" jdbcType="VARCHAR" property="explorationType"/> <!-- 업체 유형	 -->
-		<result column="exploration_schedule" jdbcType="DATE" property="explorationSchedule"/> <!-- 사전답사 예정일 -->
-		<result column="exploration_effect" jdbcType="DATE" property="explorationEffect"/> <!-- 사전답사 실시일 -->
-		<result column="exploration_mana_name" jdbcType="VARCHAR" property="explorationManaName"/> <!-- 업체담당자 이름 -->
-		<result column="exploration_avail_time" jdbcType="VARCHAR" property="explorationAvailTime"/> <!-- 업체 방문 가능시간 -->
-		<result column="exploration_avail_date" jdbcType="VARCHAR" property="explorationAvailDate"/> <!-- 업체 사용가능 날짜 -->
-		<result column="exploration_avail_holi" jdbcType="VARCHAR" property="explorationAvailHoli"/> <!-- 공휴일 사용 가능 여부 -->
-		<result column="exploration_limit_age" jdbcType="BIGINT" property="explorationLimitAge"/> <!-- 업체 방문 제한 나이 -->
-		<result column="exploration_limit_per" jdbcType="BIGINT" property="explorationLimitPer"/> <!-- 업체 방무문 제한 인원 -->
-		<result column="exploration_condition" jdbcType="VARCHAR" property="explorationCondition"/> <!-- 업체 방문 제한 조건	 -->
-		<result column="exploration_file" jdbcType="VARCHAR" property="explorationFile"/> <!-- 증빙자료	자료	 -->
-		<result column="exploration_submit" jdbcType="VARCHAR" property="explorationSubmit"/> <!-- 제출여부	여부	 -->
-		<result column="YOUNG_UP_NUM" jdbcType="VARCHAR" property="youngUpNum"/> <!-- 사원번호 -->
-		</resultMap>
-		
-	<resultMap type="acDTO" id="baseAgreementMap">
-	<id column="AGREEMENT_CONDITION_NUM" jdbcType="BIGINT" property="agreementConditionNum" />	
-	<result column="AGREEMENT_CONDITION_SUBJECT" jdbcType="VARCHAR" property="agreementConditionSubject" />
-	<result column="AGREEMENT_CONDITION_DATE" jdbcType="DATE" property="agreementConditionDate" />
-	<result column="AGREEMENT_CONDITION_RATIO" jdbcType="FLOAT" property="agreementConditionRatio" />
-	<result column="AGREEMENT_CONDITION_SETT" jdbcType="BIGINT" property="agreementConditionSett" />
-	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum" />
-	
-	</resultMap>
+
 <sql id="basecolumn">
 		GWAN_RI_NUM, GWAN_RI_ID, GWAN_RI_PW, GWAN_RI_BIRTH, GWAN_RI_NAME,
 		GWAN_RI_GENDER, GWAN_RI_PH, GWAN_RI_REGIST, GWAN_RI_EMAIL
@@ -108,31 +95,37 @@
 		<result column="GWAN_RI_BIRTH" jdbcType="DATE" property="gwanRiBirth"/><!-- 생일 -->
 		<result column="GWAN_RI_GENDER" jdbcType="CHAR" property="gwanRiGender"/><!-- 성별 -->
 	</resultMap>
+	
 	<!-- 로그인  조회 -->
 	<select id="gwanriLog" resultMap="gwanriDTOForm" parameterType="gwanriDTO">
 		select <include refid="basecolumn"/>
 		from GWAN_RI
-		where GWAN_RI_ID = #{gwanRiId} 
-		
+		where GWAN_RI_ID = #{gwanRiId} 		
 	</select>
-	<select id="agreeAllSelect" parameterType="string" resultMap="baseAgreementMap">
+	
+	<select id="coopAllSelect" parameterType="string" resultMap="coopMap">
 		select 
-		<include refid="agreementCondition" />
-		from AGREEMENT_CONDITION
+		<include refid="coopContract" />
+		from COOP_CONTRACT
 	</select>
+	
 	<!-- 협약조건안 디테일 -->
-	<select id="agreeDetail" resultMap="baseAgreementMap" parameterType="Integer">
-  		SELECT <include refid="agreementCondition" />
-		FROM AGREEMENT_CONDITION 
-		WHERE AGREEMENT_CONDITION_NUM = #{agreementConditionNum}
-</select>
+	<select id="coopDetail" resultMap="coopMap" parameterType="Integer">
+  		SELECT <include refid="coopContract" />
+		FROM COOP_CONTRACT 
+		WHERE COOP_CONTRACT_NUM = #{coopContractNum}
+	</select>
 	<!-- 예산안보고서 디테일 -->
 	<select id="budgetDetail" resultMap="budgetMap" parameterType="Integer">
   		SELECT <include refid="budgetBill" />
 		FROM BUDGET_BILL 
 		WHERE BUDGET_BILL_NUM = #{budgetBillNum}
-</select>
-
+	</select>
+	<select id="budgetList" parameterType="string" resultMap="budgetMap">
+		select 
+		<include refid="budgetBill" />
+		from BUDGET_BILL
+	</select>
 
 	<select id="expAllSelect" resultMap="exlMap">
 		select <include refid="exl"/>

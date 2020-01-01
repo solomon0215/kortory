@@ -51,15 +51,14 @@ public class BudgetBillController {
 		model.addAttribute("pageName", "../gwanri/BudgetBill/budgetBillDetail.jsp");
 		return "Main/gwanriMain";
 	}
-	/*
+/*	
 	@RequestMapping("gwanri/budgetBillModify") //협약조건안 수정?
-	public String agreeModify(@RequestParam(value="num",required = false) Integer agreementConditionNum
-			, Model model){		
-		bbls.budgetModify(model, agreementConditionNum);
+	public String budgetModify(BudgetBillCommand bbc, HttpServletRequest request , HttpSession session, Model model){		
+		bbs.budgetModify(bbc, request, session, model);
 		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_modify.jsp");
 		return "Main/gwanriMain";
 	}
-	
+	/*
 	@RequestMapping(value="gwanri/expList", method=RequestMethod.GET) // 사전답사보고서 리스트
 	public String expList(Model model, HttpSession session){
 		acls.expList(model, session);

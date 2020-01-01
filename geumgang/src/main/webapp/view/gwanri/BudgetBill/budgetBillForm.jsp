@@ -20,6 +20,7 @@
 </script>
 </head>
 <body>
+<div class="w3-container" style="margin-top: 5%;">
 	<form:form action="budgetBillWritePro" method="POST" commandName="bbc">
 		
 		<table class="w3-table-all w3-centered">
@@ -32,7 +33,7 @@
 		    	<tr class="w3-white">
 					<td>예산안보고서 제목</td>
 					<td>
-						<form:input path="budgetBillSubject" type="text"/>
+						<form:input path="budgetBillSubject" style="width:500px;" type="text"/>
 					</td>
 				</tr>
 				<tr class="w3-white">
@@ -67,10 +68,10 @@
 				</tr>
 				
 		    </tbody>
-		</table>
+		</table><br/>
 		<div class="w3-center">
 			<button class="w3-button w3-white w3-border w3-hover-amber" type="submit">작성</button>
 		</div>
-		</form:form>
+		</form:form></div>
 </body>
 </html>

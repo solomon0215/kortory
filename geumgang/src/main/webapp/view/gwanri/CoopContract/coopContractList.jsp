@@ -12,41 +12,34 @@
 </head>
 <body>
 	<dvi class =" w3-container">
-		<center><h2>세금 납부 신고서 목록</h2></center><br/>
+		<center><h2>협력업체 계약서 목록</h2></center><br/>
 			
 			<table class="w3-table-all">
     <thead>
      <table class="w3-table-all w3-centered">
       <tr class="w3-green">
         <th>번호</th>
-         <th>납부명</th>
-         <th>담당자</th>
+         <th>제목</th>
+          <th>작성자</th>
         <th>작성일</th>
       </tr>
     </thead>
-    <tr>
-      <td>1</td>
-      <td>증여세 납부</td>
-           <td>이준혁</td>
-            <td>2019-08-05</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>연말정산 납부</td>
-           <td>이준혁</td>
-             <td>2019-12-31</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>원천세 신고</td>
-           <td>이준혁</td>
-               <td>2019-12-31</td>
-    </tr>
-  
+   <tbody>
+						<c:forEach var="budget" items="${budget}" varStatus="status">
+							<tr>
+								<td>${status.count }</td>
+								<td><a
+									href='<c:url value='/gwanri/budgetBillView?num=${budget.budgetBillNum }'/>'${budget.budgetBillNum}'>${budget.budgetBillSubject }</a></td>
+								<td>${authName}</td>
+								<td>${budget.budgetBillDate }</td>
+
+							</tr>
+						</c:forEach>
+					</tbody>
   </table>
   </dvi>
   <div class="w3-container" align="center">
-   <a href="#" class="w3-btn w3-green">등록</a>
+   <a href="budgetBillWrite" class="w3-btn w3-green">작성</a>
 </div>
   
 </div>

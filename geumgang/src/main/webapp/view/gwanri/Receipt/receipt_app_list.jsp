@@ -19,24 +19,28 @@
      <table class="w3-table-all w3-centered">
       <tr class="w3-green">
         <th>번호</th>
-         <th>영수증</th>
+         <th>영수증 제목</th>
+           <th>담당자</th>
         <th>요청일</th>
       </tr>
     </thead>
     <tr>
       <td>1</td>
-      <td>Smith</td>
-           <td>Smith</td>
+      <td>조식</td>
+      <td>이한경</td>
+           <td>2019-12-15</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>Jackson</td>
-           <td>Smith</td>
+      <td>숙박</td>
+       <td>이한경</td>
+           <td>2019-12-31</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>Johnson</td>
-           <td>Smith</td>
+      <td>중식</td>
+       <td>이한경</td>
+           <td>2020-01-02</td>
     </tr>
   
   </table>

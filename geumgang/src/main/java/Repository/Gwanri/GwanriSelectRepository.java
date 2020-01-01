@@ -4,6 +4,7 @@ import java.util.List;
 
 
 
+
 import org.apache.ibatis.session.SqlSession;
 
 
@@ -11,8 +12,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import Model.GwanriDTO.AgreementConditionDTO;
 import Model.GwanriDTO.BudgetBillDTO;
+import Model.GwanriDTO.CoopContractDTO;
 import Model.GwanriDTO.GwanriDTO;
 import Model.InsaDTO.RecruitDTO;
 import Model.YoungupDTO.ExplorListDTO;
@@ -44,15 +45,14 @@ public class GwanriSelectRepository {
     
     /** 협약 조건안 게시판 - 상세 보기 */    
     
-    public AgreementConditionDTO agreeDetail(AgreementConditionDTO dto){ 
-    	System.out.println(dto.getAgreementConditionNum()+"-------------------------------");
-    	String statement =  namespace + ".agreeDetail";
+    public CoopContractDTO coopDetail(CoopContractDTO dto){ 
+    	String statement =  namespace + ".coopDetail";
         return sqlSession.selectOne(statement, dto);
     }
     /** 협약 조건안 게시판 - 리스트  */
-    public List<AgreementConditionDTO> agreeAllSelect() {
-		String statement = namespace + ".agreeAllSelect";
-		List<AgreementConditionDTO> list = sqlSession.selectList(statement);
+    public List<CoopContractDTO> coopAllSelect() {
+		String statement = namespace + ".coopAllSelect";
+		List<CoopContractDTO> list = sqlSession.selectList(statement);
 		return list;
 	}
     public List<ExplorListDTO> expAllSelect() {

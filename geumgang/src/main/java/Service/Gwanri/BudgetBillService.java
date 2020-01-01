@@ -2,6 +2,7 @@ package Service.Gwanri;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -11,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import Command.Gwanri.BudgetBillCommand;
-import Model.GwanriDTO.AgreementConditionDTO;
 import Model.GwanriDTO.BudgetBillDTO;
 import Model.GwanriDTO.ExpagreeDTO;
 import Model.GwanriDTO.GwanriAuthInfo;
@@ -58,7 +58,21 @@ public class BudgetBillService{
 		model.addAttribute("detail", detail);
 		// detail		
 	}
-	
+	/*public int budgetModify(BudgetBillCommand bbc, HttpServletRequest request, HttpSession session, Model model) {
+		BudgetBillDTO dto = new BudgetBillDTO();
+		GwanriAuthInfo auth = (GwanriAuthInfo) request.getSession().getAttribute("authLog");
+		dto.setGwanRiNum(auth.getgwanRiNum());
+		dto.setBudgetBillSubject(bbc.getBudgetBillSubject());
+		dto.setBudgetBillPriceSum(bbc.getBudgetBillPriceSum());
+		dto.setBudgetBillDate(bbc.getBudgetBillDate());
+		dto.setBudgetBillGoodsPrice(bbc.getBudgetBillGoodsPrice());
+		dto.setBudgetBillLaborPrice(bbc.getBudgetBillLaborPrice());
+		dto.setBudgetBillLaborRatio(bbc.getBudgetBillLaborRatio());
+		dto.setBudgetBillNum(bbc.getBudgetBillNum());		
+		
+		return gwanriUpdateRepository.budgetModify(dto);
+		*/
+		
 }
 	
 	

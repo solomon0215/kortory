@@ -5,6 +5,7 @@ package Service.Gwanri;
 import java.text.SimpleDateFormat;
 
 
+
 import java.util.Date;
 import java.util.List;
 
@@ -18,9 +19,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
+import Command.Gwanri.CoopContractCommand;
 import Command.Gwanri.ExpWriteCommand;
+import Command.Youngup.ExplorNewWriteCommand;
 import Model.CompanyDTO.CompanyAuth;
-import Model.GwanriDTO.AgreementConditionDTO;
+import Model.GwanriDTO.CoopContractDTO;
 import Model.GwanriDTO.ExpagreeDTO;
 import Model.GwanriDTO.GwanriAuthInfo;
 import Model.GwanriDTO.GwanriDTO;
@@ -42,68 +45,56 @@ public class CoopContractService {
 	GwanriSelectRepository gwanriSelectRepository;
 	@Autowired
 	GwanriUpdateRepository gwanriUpdateRepository;
-	@Autowired
-	private YoungupSelectRepository youngSelRepo;
 	
-	public void agreeList(Model model, HttpSession session) {
-		List<AgreementConditionDTO> agreeList = gwanriSelectRepository.agreeAllSelect();
+	public void coopList(Model model, HttpSession session) {
+		List<CoopContractDTO> coop = gwanriSelectRepository.coopAllSelect();
 				String authName = ((GwanriAuthInfo)session.getAttribute("authLog")).getName();
 		model.addAttribute("authName", authName);
-		model.addAttribute("agree", agreeList);
+		model.addAttribute("coop", coop);
 	}
 	
-	public Integer agreeInsert(HttpServletRequest request, HttpSession session, Model model, String agreementConditionSubject, java.sql.Date agreementConditionDate, Integer agreementConditionSett, float agreementConditionRatio, Integer explorationNum) {
-		ExpagreeDTO dto = new ExpagreeDTO();
+	public Integer coopInsert(String companyId, CoopContractCommand ccc, HttpServletRequest request, HttpSession session, Model model) {
+		CoopContractDTO ccdto = new CoopContractDTO();
+		ExplorListDTO expdto = new ExplorListDTO();
 		GwanriAuthInfo auth = (GwanriAuthInfo) request.getSession().getAttribute("authLog");
-		dto.setGwanRiNum(auth.getgwanRiNum());
-		dto.setAgreementConditionSubject(agreementConditionSubject);
-		dto.setAgreementConditionDate(agreementConditionDate);
-		dto.setAgreementConditionSett(agreementConditionSett);
-		dto.setAgreementConditionRatio(agreementConditionRatio);
-		dto.setExplorationNum(explorationNum);
-		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_list.jsp");
-		gwanriInsertRepository.agreeInsert(dto);
-		gwanriInsertRepository.expInsert(dto);
+		expdto.setCompanyId(companyId);
+		ccdto.setGwanRiNum(auth.getgwanRiNum());
+		ccdto.setCompanySelectDate(ccdto.getCompanySelectDate());
+		ccdto.setCoopConditionAvailDate(ccdto.getCoopConditionAvailDate());
+		ccdto.setCoopConditionAvailTime(ccdto.getCoopConditionAvailTime());
+		ccdto.setCoopConditionLimitPer(ccdto.getCoopConditionLimitPer());
+		ccdto.setCoopContractCalDate(ccdto.getCoopContractCalDate());
+		ccdto.setCoopContractDate(ccdto.getCoopContractDate());
+		ccdto.setCoopContractEndDate(ccdto.getCoopContractEndDate());
+		ccdto.setCoopContractMarRatio(ccdto.getCoopContractMarRatio());
+		ccdto.setCoopContractMethod(ccdto.getCoopContractMethod());
+		ccdto.setCoopContractNum(ccdto.getCoopContractNum());
+		ccdto.setCoopContractRatio(ccdto.getCoopContractRatio());
+		ccdto.setCoopContractSett(ccdto.getCoopContractSett());
+		ccdto.setCoopContractState(ccdto.getCoopContractState());
+		ccdto.setCoopContractSubject(ccdto.getCoopContractSubject());
+		ccdto.setCoopContractSuppRatio(ccdto.getCoopContractSuppRatio());
+		ccdto.setCoopContractWrite(ccdto.getCoopContractWrite());
+		ccdto.setCoopKind(ccdto.getCoopKind());
 		
-		return gwanriInsertRepository.agreeInsert(dto);
+		model.addAttribute("pageName", "../gwanri/CoopContract/coopContractList.jsp");
+				
+		return gwanriInsertRepository.coopInsert(ccdto,expdto);
 		
 	}
-	public void agreeDetail(Model model, Integer agreementConditionNum) {
+	public void coopDetail(Model model, Integer coopContractNum) {
 		
-		AgreementConditionDTO dto = new AgreementConditionDTO();
-		dto.setAgreementConditionNum(agreementConditionNum);
-		AgreementConditionDTO detail = gwanriSelectRepository.agreeDetail(dto);
-		model.addAttribute("detail", detail);
+		CoopContractDTO dto = new CoopContractDTO();
+		dto.setCoopContractNum(coopContractNum);
+		CoopContractDTO coop = gwanriSelectRepository.coopDetail(dto);
+		model.addAttribute("coop", coop);
 		// detail		
 	}
 	
-	public void agreeModify(Model model, Integer agreementConditionNum) {
-		AgreementConditionDTO dto = new AgreementConditionDTO();
-		dto.setAgreementConditionNum(agreementConditionNum);
-		int modify = gwanriUpdateRepository.agreeModify(dto);
+	public void agreeModify(Model model, Integer coopContractNum) {
+		CoopContractDTO dto = new CoopContractDTO();
+		dto.setCoopContractNum(coopContractNum);
+		int modify = gwanriUpdateRepository.coopModify(dto);
 		model.addAttribute("modify", modify);
 		}
-	
-	public void expList(Model model, HttpSession session) {
-		ExplorListDTO dto = new ExplorListDTO();
-		dto.setExplorationSubmit("YES");
-		List<ExplorListDTO> complete = youngSelRepo.selectKindExp(dto); 
-		model.addAttribute("complete", complete);
-		}
-	public void expDetail(Model model, Integer explorationNum) {
-		System.out.println(explorationNum+"====================");
-		ExplorationDTO dto = new ExplorationDTO();
-		dto.setExplorationNum(explorationNum);
-		ExplorListDTO detail = gwanriSelectRepository.selectExpDetail(dto);
-		model.addAttribute("detail", detail);
-	}
-	public void expDetail2(Model model, Integer explorationNum) {
-		System.out.println(explorationNum+"====================");
-		ExplorationDTO dto = new ExplorationDTO();
-		dto.setExplorationNum(explorationNum);
-		ExplorListDTO detail2 = gwanriSelectRepository.selectExpDetail2(dto);
-		model.addAttribute("detail2", detail2);
-	}
-	
-	
 	}

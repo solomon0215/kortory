@@ -17,7 +17,7 @@
 <body>
 
 <dvi class =" w3-container" >
-		<center><h2>사전답사보고서/계약서 상세내역</h2></center>
+		<center><h2>사전답사보고서 상세내역</h2></center>
 </dvi>	
 <thead> 
 <div class="w3-container" >
@@ -50,7 +50,7 @@
   </thead>
   <br/>
   <div class="w3-container " style="margin-left: 43%;">
-   <a href="http://localhost:8080/geumgang/gwanri/agreementConditionWrite" class="w3-btn w3-green">협약조건안 작성</a>
+   <a href="http://localhost:8080/geumgang/gwanri/coopWrite" class="w3-btn w3-green">계약서 작성</a>
 </div>
 
 </body>

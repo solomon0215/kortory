@@ -9,7 +9,7 @@
 	<bean class="Controller.Gwanri.GwanriLogoutController"/> <!--로그아웃 컨트롤러 -->
 	<bean class="Controller.Gwanri.BudgetBillController"/> <!--예산안조건안 컨트롤러 -->
 	<bean class="Controller.Gwanri.CoopContractController"/> <!--협력업체 계약서 컨트롤러 -->
-	
+	<bean class="Controller.Gwanri.AgreementConditionController"/> <!--협력업체 계약서 컨트롤러 -->
 	
 	
 	<bean class="Controller.Gwanri.CalculateController"/><!-- 정산 선택창 컨트롤러 -->
