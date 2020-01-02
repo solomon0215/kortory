@@ -5,13 +5,26 @@
 
 	<cache />
 	<sql id="baseContract">
-		CON_NUM, CON_COMPANY, CON_PH, CON_LOCATION, CON_CEO, CON_REGI_NUM, CON_START,
-		CON_SALARY, CON_END, CON_INCENTIVE, CON_DETAIL, RESUME_NUM, USER_ID
+		WORK_CON_NUM, WORK_CON_COMPANY, WORK_CON_PH, WORK_CON_LOCATION, WORK_CON_CEO, WORK_CON_REGI_NUM,
+		WORK_CON_START, WORK_CON_SALARY, WORK_CON_END, WORK_CON_INCENTIVE, WORK_CON_DETAIL1,
+		RESUME_NUM, USER_ID
 	</sql>
+	<sql id="baseResume">
+	RESUME_NUM, USER_ID, RESUME_FILE, RESUME_NATIONAL, RESUME_BOHUN, RESUME_DISORDER, RESUME_ARMY,
+	RESUME_HIGHSCHOOL, RESUME_UNIVERCITY, RESUME_SCHOOL_START1, RESUME_SCHOOL_END1, RESUME_SCHOOL_START2, 
+	RESUME_SCHOOL_END2, RESUME_MAJOR, RESUME_GRADE_POINT, RESUME_EXP_OVER,
+	RESUME_LANGUAGE, RESUME_LANGUAGE_GRADE, RESUME_LICENSE, RESUME_FORMER_WORK, RESUME_FORMER_POSITION,
+	RESUME_FORMER_START, RESUME_FORMER_END, RESUME_FORMER_SALARY, RESUME_FORMER_TASK, RESUME_FORMER_INTRO,
+	RESUME_GROW, RESUME_GOOD, RESUME_BAD, RESUME_PER_INFO
+	</sql>
+	<sql id="baseUser">
+	USER_ID, USER_PW, USER_EMAIL, USER_PH, USER_ADDR, USER_NAME, USER_BIRTH, USER_GENDER
+	</sql>
+	
 	<resultMap type="contractDTO" id="baseContractMap">
 	<id column="WORK_CON_NUM" jdbcType="BIGINT" property="conNum" />
 	<result column="WORK_CON_COMPANY" jdbcType="VARCHAR" property="conCompany" />
-	<result column="WORK_CON_PH" jdbcType="BIGINT" property="conPh" />
+	<result column="WORK_CON_PH" jdbcType="VARCHAR" property="conPh" />
 	<result column="WORK_CON_LOCATION" jdbcType="VARCHAR" property="conLocation" />
 	<result column="WORK_CON_CEO" jdbcType="VARCHAR" property="conCeo" />
 	<result column="WORK_CON_REGI_NUM" jdbcType="VARCHAR" property="conRegiNum" />
@@ -19,11 +32,19 @@
 	<result column="WORK_CON_SALARY" jdbcType="BIGINT" property="conSalary" />
 	<result column="WORK_CON_END" jdbcType="DATE" property="conEnd" />
 	<result column="WORK_CON_INCENTIVE" jdbcType="BIGINT" property="conIncentive" />
-	<result column="WORK_CON_DETAIL" jdbcType="VARCHAR" property="conDetail" />
+	<result column="WORK_CON_DETAIL1" jdbcType="VARCHAR" property="conDetail" />
 	<result column="RESUME_NUM" jdbcType="BIGINT" property="resumeNum" />
 	<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
-	
 	</resultMap>
+	
+	<resultMap type="Model.InsaDTO.ApplicantDTO" id="userContractMap">
+		<id column="WORK_CON_NUM" jdbcType="BIGINT" property="contractDTO.conNum" />
+		<id column="USER_ID" jdbcType="VARCHAR" property="userDTO.userId" />
+		<result column="RESUME_NUM" jdbcType="BIGINT" property="resumeDTO.resumeNum" />
+		<result column="USER_NAME" jdbcType="VARCHAR" property="userDTO.userName"/>
+	</resultMap>
+	
+	
 	<insert id="insertContract" parameterType="contractDTO">
 	insert into work_con(
 	<include refid="baseContract" />
@@ -32,17 +53,22 @@
 	#{conStart}, #{conSalary}, #{conEnd}, #{conIncentive}, #{conDetail}, #{resumeNum}, #{userId})
 	</insert>
 	
-	<select id="contractAllSelect" parameterType="string" resultMap="baseContractMap">
+	<select id="contractAllSelect" parameterType="string" resultMap="userContractMap">
 	select
-	<include refid="baseContract" />
-	from contract
+	c.WORK_CON_NUM, u.USER_ID,u.USER_NAME, r.RESUME_NUM
+	from contract c, resume r, kortory_user u
+	<where>
+	c.user_id = u.user_id
+	</where> 
 	</select>
 	
-	<select id="contractDetail" resultMap="baseContractMap" parameterType="Integer">
-	select
-	<include refid="baseContract" />
-	from work_con
-	where WORK_CON_NUM = #{conNum}
+	<select id="contractDetail" resultMap="baseContractMap" parameterType="userDTO">
+	select * 
+	from (select
+		<include refid="baseContract" />
+		from work_con
+		where USER_ID = #{userId} order by WORK_CON_NUM DESC)
+	    where ROWNUM &lt;= 1
 	</select>
 	
 </mapper>

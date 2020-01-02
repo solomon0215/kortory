@@ -30,32 +30,32 @@ public class ResumeController {
 		return "insa/insaPage";
 	}
 
-	@RequestMapping(value = "/insa/apply", method = RequestMethod.GET) // 이력서메인 include
+	@RequestMapping(value = "/user/apply", method = RequestMethod.GET) // 이력서메인 include
 	public String resumeMain(Model model) {
-		model.addAttribute("pageName", "../insa/resumeMain.jsp");
-		return "Main/basicMain";
+		model.addAttribute("userPage", "../User/resumeMain.jsp");
+		return "User/userMain";
 	}
 
-	@RequestMapping(value = "/insa/resume1", method = RequestMethod.GET) // 이력서1 include
+	@RequestMapping(value = "/user/resume1", method = RequestMethod.GET) // 이력서1 include
 	public String resume1(ResumeCommand rc, Model model) {
 		model.addAttribute("rc", rc);
-		model.addAttribute("pageName", "../insa/resume1.jsp");
-		return "Main/basicMain";
+		model.addAttribute("userPage", "../User/resume1.jsp");
+		return "User/userMain";
 	}
 
-	@RequestMapping(value = "/insa/resume2", method = RequestMethod.GET) // 이력서2 include
+	@RequestMapping(value = "/user/resume2", method = RequestMethod.GET) // 이력서2 include
 	public String resume2(ResumeCommand rc, Model model) {
-		model.addAttribute("pageName", "../insa/resume2.jsp");
-		return "Main/basicMain";
+		model.addAttribute("userPage", "../User/resume2.jsp");
+		return "User/userMain";
 	}
 
-	@RequestMapping(value = "/insa/resumeInsert1", method = RequestMethod.POST) // 이력서1 작성메소드
+	@RequestMapping(value = "/user/resumeInsert1", method = RequestMethod.POST) // 이력서1 작성메소드
 	public String resume1Write(ResumeCommand rc, HttpSession session, HttpServletRequest request) {
 		Integer result = resumeService.resumeRegist1(rc, session, request);
 		return "insa/resume1";
 	}
 
-	@RequestMapping(value = "/insa/resumeInsert2", method = RequestMethod.POST) // 이력서 2 작성 메소드
+	@RequestMapping(value = "/user/resumeInsert2", method = RequestMethod.POST) // 이력서 2 작성 메소드
 	public String resume2Write(ResumeCommand rc, HttpSession session, HttpServletRequest request) {
 		Integer result = resumeService.resumeRegist2(rc, session, request);
 		return "insa/resume2";

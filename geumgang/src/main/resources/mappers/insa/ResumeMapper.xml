@@ -115,5 +115,5 @@
 	from kortory_user
 	where user_id = #{userId}
 	</select>
-	
+
 	</mapper>

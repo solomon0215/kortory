@@ -15,4 +15,5 @@
 <bean class="Controller.Insa.ApplicantMailController" />
 <bean class="Controller.Insa.ApplicantLoginController" />
 <bean class="Controller.Insa.RegistController"/>
+<bean class="Controller.Insa.EvaluationController" />
 </beans>

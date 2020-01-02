@@ -20,7 +20,7 @@ import Service.Insa.InsaMainService;
 
 @Controller
 public class InsaMainController {
-	@RequestMapping("/insa/main")
+	@RequestMapping("/insa/main") //인사부 아이디 확인 후 메인으로 이동
 	public String form(HttpSession session, HttpServletRequest request,Model model) { 
 		session = request.getSession();
 		System.out.println(session.getAttribute("authLog") );

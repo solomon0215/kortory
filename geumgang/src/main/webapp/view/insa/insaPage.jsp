@@ -100,19 +100,6 @@ function myAccFunc6() {
     <a href="contractList" class="w3-bar-item w3-button">근로계약서 목록</a>
     <a href="#" class="w3-bar-item w3-button">인사고과 열람</a>
   </div>
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc3()">
-  사원교육 <i class="fa fa-caret-down"></i>
-  </button>
-  <div id="demoAcc3" class="w3-hide w3-white w3-card">
-    <a href="#" class="w3-bar-item w3-button">기초교육안 작성</a>
-    <a href="#" class="w3-bar-item w3-button">행사교육안 작성</a>
-  </div>
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc4()">
-  사원배치 <i class="fa fa-caret-down"></i>
-  </button>
-  <div id="demoAcc4" class="w3-hide w3-white w3-card">
-    <a href="#" class="w3-bar-item w3-button">행사일정 확인 및 배치</a>
-  </div>
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc5()">
   사원평가 <i class="fa fa-caret-down"></i>
   </button>

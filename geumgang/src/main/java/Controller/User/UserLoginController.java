@@ -25,6 +25,7 @@ public class UserLoginController {
 			return "Main/basicMain";
 		}
 		
-		return userLogService.userLog(model, userLogCommand,session ,errors);
+		userLogService.userLog(model, userLogCommand,session ,errors);
+		return "User/userLogPro";
 	}
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="EvaluationMapper">
+
+<cache />
+<sql id="baseEvaluation">
+	WORK_EVALUATION_NUM, WORK_CON_NUM, WORK_EVALUATION_ACHIVE, WORK_EVALUATION_QUALITY,
+	WORK_EVALUATION_IMPROVE, WORK_EVALUATION_KNOWLEDGE, WORK_EVALUATION_CREATIVITY,
+	WORK_EVALUATION_JUDGEMENT, WORK_EVALUATION_PRACTICAL, WORK_EVALUATION_RESPONSIBILITY,
+	WORK_EVALUATION_COOP, WORK_EVALUATION_ATTI, WORK_EVALUATION_DILI, WORK_EVALUATION_GRADUATE,
+	IN_SA_NUM
+	</sql>
+	
+	<resultMap type="EvaluationDTO" id="baseEvaluation">
+	<id column="WORK_EVALUATION_NUM" jdbcType="BIGINT" property="evalNum" />
+	<id column="WORK_CON_NUM" jdbcType="BIGINT" property="conNum" />
+	<result column="WORK_EVALUATION_ACHIVE" jdbcType="BIGINT" property="achive" />
+	<result column="WORK_EVALUATION_QUALITY" jdbcType="BIGINT" property="quality" />
+	<result column="WORK_EVALUATION_IMPROVE" jdbcType="BIGINT" property="improve" />
+	<result column="WORK_EVALUATION_KNOWLEDGE" jdbcType="BIGINT" property="knowledge" />
+	<result column="WORK_EVALUATION_CREATIVITY" jdbcType="BIGINT" property="creativity" />
+	<result column="WORK_EVALUATION_JUDGEMENT" jdbcType="BIGINT" property="judgement" />
+	<result column="WORK_EVALUATION_PRACTICAL" jdbcType="BIGINT" property="practical" />
+	<result column="WORK_EVALUATION_RESPONSIBILITY" jdbcType="BIGINT" property="responsibility" />
+	<result column="WORK_EVALUATION_COOP" jdbcType="BIGINT" property="coop" />
+	<result column="WORK_EVALUATION_ATTI" jdbcType="BIGINT" property="atti" />
+	<result column="WORK_EVALUATION_DELI" jdbcType="BIGINT" property="deli" />
+	<result column="WORK_EVALUATION_GRADUATE" jdbcType="CHAR" property="graduate" />
+	<result column="IN_SA_NUM" jdbcType="VARCHAR" property="inSaNum" />
+	</resultMap>
+	
+	<insert id="insertEvaluation" parameterType="evaluationDTO">
+	insert into work_evaluation(
+	<include refid="baseEvaluation" />
+	)
+	values(insa_seq.nextval, #{evalNum}, #{conNum}, #{achive}, #{quality}, #{improve},
+	 #{knowledge}, #{creativity}, #{judgement}, #{practical}, #{responsibility}, #{coop},
+	  #{atti}, #{deli}, #{graduate},#{inSaNum})
+	</insert>
+	
+	
+	
+	
+
+</mapper>	

@@ -9,8 +9,9 @@ public class ContractCommand {
 	String conCeo;
 	String conRegiNum;
 	Date conStart;
-	Integer conSalary;
 	Date conEnd;
+	Integer conSalary;
+	
 	Integer conIncentive;
 	String conDetail;
 	Integer resumeNum;

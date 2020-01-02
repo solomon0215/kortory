@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import Model.InsaDTO.ContractDTO;
+import Model.InsaDTO.UserContractDTO;
+import Model.UserDTO.UserDTO;
 @Repository
 public class ContractRepository {
 	@Autowired
@@ -16,6 +18,7 @@ public class ContractRepository {
 	
 
 	public Integer contractInsert(ContractDTO contract) {
+		System.out.println("contractInsert : " + contract.getUserId());
 		Integer result = null;
 		String statement = namespace + ".insertContract";
 		result = sqlSession.insert(statement, contract);
@@ -23,16 +26,18 @@ public class ContractRepository {
 	}
 
 
-	public List<ContractDTO> contractAllSelect() {
+	public List<UserContractDTO> contractAllSelect() {
 		String statement = namespace + ".contractAllSelect";
-		List<ContractDTO> list = sqlSession.selectList(statement);
+		List<UserContractDTO> list = sqlSession.selectList(statement);
 		return list;
 	}
 
 
-	public ContractDTO contractDetal(ContractDTO dto) {
+	public ContractDTO contractDetail(UserDTO dto) {
+		System.out.println("--------------------------Á¦¹ß---------------------------------");
 		String statement = namespace + ".contractDetail";
 		return sqlSession.selectOne(statement,dto);
 	}
+
 
 }

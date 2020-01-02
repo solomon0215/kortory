@@ -27,7 +27,7 @@ public class ApplicantMailService {
 				       + "안녕하세요 '" + userId + "'님.<br />"
 				       + "금번 진행한 채용전형에서 합격되었습니다.<br />"
 				       + "최종적으로 입사를 원하시면 아래 링크의 근로계약서를 작성하여 주십시오.<br />"
-				       + "<a href='http://localhost:8080/geumgang/insa/applicantLogin?userId=" + userId + "'>ㅎ2ㅎ2</a>"
+				       + "<a href='http://localhost:8080/geumgang/insa/applicantLogin?userId=" + userId + "'>근로계약서 작성하러 가기</a>"
 				       + "</body>"
 				       + "</html>";
 		

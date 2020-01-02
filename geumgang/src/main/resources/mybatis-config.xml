@@ -21,5 +21,6 @@
 		<typeAlias type="Model.KihoekDTO.KihoekDTO" alias ="kihoekDTO"/>
 		<typeAlias type="Model.KihoekDTO.ConceptDTO" alias ="conceptDTO"/>
 		<typeAlias type="Model.KihoekDTO.CoopComDTO" alias ="coopComDTO"/>
+		<typeAlias type="Model.InsaDTO.EvaluationDTO" alias ="evaluationDTO" />
 	</typeAliases>
 </configuration>

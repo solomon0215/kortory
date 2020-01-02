@@ -14,7 +14,7 @@
 <title>Insert title here</title>
 </head>
 <form:form class="w3-container w3-card-4 w3-white"
-	style="margin-left:175px" commandName="ec" id="frm"
+	style="margin-left:220px" commandName="ec" id="frm"
 	action="employeeRegiPro" method="POST">
 	<h2 class="w3-center">사원 등록</h2>
 <%-- 	<p>

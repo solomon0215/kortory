@@ -33,9 +33,7 @@ public class RecruitRegiService {
 		recruit.setRecruitCost(recruitCommand.getRegiCost());
 		recruit.setInSaNum(((InsaAuthInfo)session.getAttribute("authLog")).getInSaNum());
 		
-		String str1 = recruit.getRecruitContent().toString(); // 諛붿씠�듃瑜� �엳�뒗 洹몃옒�룄 臾몄옄濡� ���옣
-		String  str = new String(recruit.getRecruitContent());//諛붿씠�듃瑜� 臾몄옄濡� �빐�꽍�빐�꽌 ���옣
-		System.out.println(str1);
+		String  str = new String(recruit.getRecruitContent());//바이트를 문자로 해석하여 저장
 		System.out.println(str);
 		SimpleDateFormat dt = new SimpleDateFormat("yyyyMMdd");
 		try {

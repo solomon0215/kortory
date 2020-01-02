@@ -3,15 +3,20 @@ package Service.Insa;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.Phaser;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import Command.Insa.ContractCommand;
+import Command.User.UserLogCommand;
 import Model.InsaDTO.ContractDTO;
+import Model.InsaDTO.UserContractDTO;
+import Model.UserDTO.UserDTO;
 import Repository.Insa.ContractRepository;
 
 @Service
@@ -21,6 +26,7 @@ public class ContractService {
 
 	public Integer contractRegist(ContractCommand cc, HttpServletRequest request) {
 		ContractDTO contract = new ContractDTO();
+		contract.setConDetail(cc.getConDetail());
 		contract.setConCeo(cc.getConCeo());
 		contract.setConCompany(cc.getConCompany());
 		contract.setConIncentive(cc.getConIncentive());
@@ -30,23 +36,27 @@ public class ContractService {
 		contract.setConSalary(cc.getConSalary());
 		contract.setConStart(cc.getConStart());
 		contract.setConEnd(cc.getConEnd());
+		contract.setResumeNum(cc.getResumeNum());
+		contract.setUserId(cc.getUserId());
 		
-		String detail = contract.getConDetail().toString();
+		
+		String detail = new String(contract.getConDetail().toString());
 		
 		return contractRepository.contractInsert(contract);
 	}
 	
 	public void contractSelect(Model model) {
-		List<ContractDTO> contractList = contractRepository.contractAllSelect();
+		List<UserContractDTO> contractList = contractRepository.contractAllSelect();
 		model.addAttribute("contract",contractList);
 	}
 
-	public void contractDetail(Model model, Integer conNum) {
-		ContractDTO dto = new ContractDTO();
-		dto.setConNum(conNum);
-		ContractDTO detail = contractRepository.contractDetal(dto);
+	public void contractDetail(Model model, UserLogCommand userLogCommand, HttpSession session) {
+		UserDTO dto = new UserDTO();
+		dto.setUserId(userLogCommand.getUserId());
+		ContractDTO detail = contractRepository.contractDetail(dto);
+		System.out.println("detail:" + detail.getUserId());
 		model.addAttribute("con",detail);
-		
+		model.addAttribute("userId", session.getAttribute("userId"));
 		
 	}
 

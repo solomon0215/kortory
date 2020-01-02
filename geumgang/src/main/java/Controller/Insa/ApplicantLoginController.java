@@ -18,16 +18,18 @@ public class ApplicantLoginController {
 	@Autowired
 	ApplicantLogService applicantLogService;
 	
-	@RequestMapping(value = "/insa/applicantLogin")
-	public String applicantLogin(@RequestParam(value = "userId") String userId, UserLogCommand userLogCommand) {
-
-		return "insa/applicantLogin";
+	@RequestMapping(value = "/insa/applicantLogin") //링크로 로그인 (해당 합격자 아이디 전달)
+	public String applicantLogin(@RequestParam(value = "userId") String userId, UserLogCommand userLogCommand, Model model) {
+		
+		model.addAttribute("pageName","../insa/applicantLogin.jsp");
+		return "Main/basicMain";
 	}
 	
-	@RequestMapping(value = "/insa/applicantLogPro")
-	public String applicantLogPro(UserLogCommand userLogCommand) {
+	@RequestMapping(value = "/insa/applicantLogPro") //로그인 성공 시 근로계약서 열람
+	public String applicantLogPro(UserLogCommand userLogCommand, Model model, HttpSession session) {
 		
-		return "insa/contractDetail";
+		model.addAttribute("pageName","../insa/applicantContract.jsp");
+		return "insa/applicantContract";
 	}
 	
 }

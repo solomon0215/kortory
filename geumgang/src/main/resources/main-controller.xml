@@ -13,4 +13,5 @@
 	<bean class="Controller.User.CompanyLoginController"/> <!-- 업체가 로그인 하는 컨트롤러 -->
 	<bean class="Controller.User.CompanyLogoutController"/> <!-- 업체가 로그아웃 하는 컨트롤러 -->
 	<bean class="Controller.Company.CompanyMainController"/> <!-- 업체 메인으로 가는 컨트롤러-->
+	<bean class="Controller.User.UserMainController" /> <!-- 회원 메인으로 가는 컨트롤러 -->
 </beans>

@@ -16,7 +16,7 @@ function showPopup() { window.open("#", "a", "width=400, height=300, left=100, t
 </script>
 </head>
 	<body>
-<form:form class="w3-container w3-card-4 w3-white" style="margin-left:182.5px"
+<form:form class="w3-container w3-card-4 w3-white" style="margin-left:220px"
 commandName="cc" id="frm" action="contractRegiPro" method="POST" >
 		<h2 class="w3-center">근로계약서 작성</h2>
 		<p>

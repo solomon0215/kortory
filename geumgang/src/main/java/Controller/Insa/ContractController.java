@@ -1,6 +1,7 @@
 package Controller.Insa;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import Command.Insa.ContractCommand;
+import Command.User.UserLogCommand;
 import Service.Insa.ContractService;
 
 @Controller
@@ -27,8 +29,11 @@ public class ContractController {
 
 	@RequestMapping(value="/insa/contractRegiPro", method=RequestMethod.POST) //근로계약서 작성 값 전송
 	public String write(@ModelAttribute("cc") ContractCommand cc,HttpServletRequest request) {
-		contractService.contractRegist(cc, request);
-		return "redirect:/contractList";
+		Integer result = contractService.contractRegist(cc, request);
+		if(result == 0) { //insert 실패시
+			return "insa/registFailed";
+		}
+		return "insa/registSuccess";
 	}
 	
 	@RequestMapping(value="/insa/contractRegist", method=RequestMethod.GET) //근로계약서 작성 페이지 보기
@@ -37,11 +42,12 @@ public class ContractController {
 		return "insa/insaPage";
 	}
 	
-	@RequestMapping(value="insa/contractDetail") //디테일
-	public String contractDetail(@RequestParam(value="num",required=false) Integer conNum, Model model) {
-		contractService.contractDetail(model, conNum);
-		model.addAttribute("insaPage","../insa/contractDetail.jsp");
-		return "insa/insaPage";
-	}
+//	@RequestMapping(value="/insa/applicantContract") //디테일
+//	public String contractDetail(UserLogCommand userLogCommand, Model model, HttpSession session) {
+//		System.out.println("------------------------------controller------------------------");
+//		contractService.contractDetail(model, userLogCommand, session);
+//		model.addAttribute("insaPage","../insa/applicantContract.jsp");
+//		return "insa/insaPage";
+//	}
 
 }

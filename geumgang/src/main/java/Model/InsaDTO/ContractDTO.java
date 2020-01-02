@@ -15,15 +15,15 @@ public class ContractDTO implements Serializable {
 	private Integer conSalary;
 	private java.sql.Date conEnd;
 	private Integer conIncentive;
-	private byte [] conDetail;
-	private String resumeNum;
+	private String conDetail;
+	private Integer resumeNum;
 	private String userId;
 	
 	public ContractDTO() {}
 
 	public ContractDTO(Integer conNum, String conCompany, String conPh, String conLocation, String conCeo,
-			String conRegiNum, Date conStart, Integer conSalary, Date conEnd, Integer conIncentive, byte[] conDetail,
-			String resumeNum, String userId) {
+			String conRegiNum, Date conStart, Integer conSalary, Date conEnd, Integer conIncentive, String conDetail,
+			Integer resumeNum, String userId) {
 		super();
 		this.conNum = conNum;
 		this.conCompany = conCompany;
@@ -120,19 +120,19 @@ public class ContractDTO implements Serializable {
 		this.conIncentive = conIncentive;
 	}
 
-	public byte[] getConDetail() {
+	public String getConDetail() {
 		return conDetail;
 	}
 
-	public void setConDetail(byte[] conDetail) {
+	public void setConDetail(String conDetail) {
 		this.conDetail = conDetail;
 	}
 
-	public String getResumeNum() {
+	public Integer getResumeNum() {
 		return resumeNum;
 	}
 
-	public void setResumeNum(String resumeNum) {
+	public void setResumeNum(Integer resumeNum) {
 		this.resumeNum = resumeNum;
 	}
 

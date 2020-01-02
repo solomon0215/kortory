@@ -67,7 +67,6 @@ public class ResumeService {
 	//이력서 목록
 	public void resumeSelect(Model model, HttpSession session) {
 		List<ApplicantDTO> resumeList = resumeRepository.resumeAllSelect();
-		System.out.println("아이구");
 		model.addAttribute("resume",resumeList);
 	}
 
