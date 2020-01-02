@@ -68,6 +68,10 @@
 		                 <li>가이드의 문의 대화</li>
 		            </ul>
 		        </li>
+		        <br>
+		        <li class="menu">
+		             <a href="http://localhost:8080/geumgang/youngup/expSchedule" style="text-decoration:none" class="w3-large">사전답사 일정 확인하러 가기!</a>
+		        </li>
 		    </ul>
 		</div>
 	</div>

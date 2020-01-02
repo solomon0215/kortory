@@ -43,5 +43,10 @@ public class YoungupSelectRepository {
 		System.out.println(searchDto.getExplorationSubmit());
 		return sqlSession.selectOne(statement, searchDto);
 	}
+	public List<ExplorListDTO> incomSchedule(ExplorationDTO searchDto) {//오늘의 업무량 조회 메소드
+		String statement = namespace + ".incomSchedule";
+		return sqlSession.selectList(statement, searchDto);
+	}
+	
 	
 }

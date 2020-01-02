@@ -97,6 +97,20 @@
 			<if test="explorationSubmit !=  null">
 				AND EXPLORATION_SUBMIT != #{explorationSubmit}
 			</if>
+			<if test="youngUpNum != null">
+				AND YOUNG_UP_NUM = #{youngUpNum}
+			</if>
+		</where> 
+	</select>
+	<!-- 일정 가져오기 -->
+	<select id="incomSchedule" parameterType="expDTO" resultMap="exlMap">
+		select <include refid="exl"/>
+		from exploration exp,company com
+		<where>
+			EXPLORATION_SCHEDULE= #{explorationSchedule}
+			<if test="youngUpNum != null">
+				AND YOUNG_UP_NUM = #{youngUpNum}
+			</if>
 		</where> 
 	</select>
 
