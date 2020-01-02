@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="KihoekUpdateMapper">
+<cache />
+ 	<sql id="conceptColumn">
+ 		CONCEPT_NUM, CONCEPT_SUBJECT, CONCEPT_HISTORY, CONCEPT_QUARTER,
+		CONCEPT_PLACE, CONCEPT_SCALE, CONCEPT_TARGET_AGE, CONCEPT_STATE, KI_HOEK_NUM
+ 	</sql>
+	<resultMap type="conceptDTO" id="conceptInfo"> <!-- conceptDTO에 담는resultMap -->
+ 		<id column="CONCEPT_NUM" jdbcType="BIGINT" property="conceptNum"/>
+		<result column="CONCEPT_SUBJECT" jdbcType="VARCHAR" property="conceptSubject"/>
+		<result column="CONCEPT_HISTORY" jdbcType="VARCHAR" property="conceptHistory"/>
+		<result column="CONCEPT_QUARTER" jdbcType = "VARCHAR" property="conceptQuarter"/>
+		<result column="CONCEPT_PLACE" jdbcType="VARCHAR" property="conceptPlace"/>
+		<result column="CONCEPT_SCALE" jdbcType="BIGINT" property="conceptScale"/>
+		<result column="CONCEPT_TARGET_AGE" jdbcType="VARCHAR" property="conceptTargetAge"/>
+		<result column="CONCEPT_STATE" jdbcType="VARCHAR" property="conceptState"/>
+		<result column="KI_HOEK_NUM" jdbcType="VARCHAR" property="kiHoekNum"/>
+	</resultMap>
+	<update id="conceptModify">
+		update CONCEPT	
+		set
+		CONCEPT_SUBJECT=#{conceptSubject}, 
+		CONCEPT_HISTORY=#{conceptHistory},
+		CONCEPT_QUARTER=#{conceptQuarter}
+		CONCEPT_PLACE=#{conceptPlace}
+		CONCEPT_SCALE=#{conceptScale}
+		CONCEPT_TARGET_AGE=##{conceptTargetAge}
+		where CONCEPT_NUM=#{conceptNum}
+</update>
+	
+</mapper>

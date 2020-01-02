@@ -42,9 +42,8 @@ public class ConceptWriteService {
 		cDto.setConceptScale(conceptScale);
 		cDto.setConceptTargetAge(conceptCommand.getConceptTargetAge());
 		cDto.setKiHoekNum(conceptCommand.getKiHoekNum());
-		model.addAttribute("concept", cDto);
-		Integer result = kihoekInsertRepository.insertConcept(cDto);
-		return result;
+		model.addAttribute("pageName", "../gwanri/CoopContract/coopContractList.jsp");
+		return kihoekInsertRepository.insertConcept(cDto);
 	}
 
 }

@@ -95,7 +95,6 @@ table {
 </head>
 <body>
 <!-- PAGE CONTENT -->
-<form action="#">
 <h3><b>컨셉 기획서 목록</b></h3>
 <div class="container" >
 	<div class="row">
@@ -125,7 +124,7 @@ table {
   	<c:forEach var="concept" items="${concept}" varStatus="status">
   	<tr class="w3-hoverable w3-center">
 		<td>${status.count }</td>
-		<td><a href='<c:url value='/kihoek/conceptDetail?num=${concept.conceptSubject }'/>'${concept.conceptSubject }'>${concept.conceptSubject }</a>
+		<td><a href='<c:url value='/kihoek/conceptDetail?num=${concept.conceptNum }'/>'${concept.conceptNum }'>${concept.conceptSubject }</a></td>
 		<td>${authName }</td>
 		<td>${concept.conceptState}</td>
 	</tr>
@@ -134,6 +133,5 @@ table {
 	</table>
 	</div>
 </div>
-</form>
 </body>
 </html>

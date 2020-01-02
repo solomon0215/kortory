@@ -14,9 +14,11 @@
 	<bean id="conceptWriteService" class="Service.Kihoek.ConceptWriteService"/> 
 	<bean id="conceptListService" class="Service.Kihoek.ConceptListService"/>
 	<bean id="eventWriteService" class="Service.Kihoek.EventWriteService"/>
+	<bean id="conceptDetailService" class="Service.Kihoek.ConceptDetailService"/>
 	<bean id="tourPlaceSelectService" class="Service.Kihoek.TourPlaceSelectService"/>
 	
 	<!-- Repository -->
 	<bean id="kihoekSelectRepository" class="Repository.Kihoek.KihoekSelectRepository"/> 
 	<bean id="kihoekInsertRepository" class="Repository.Kihoek.KihoekInsertRepository"/>
+	<bean id="kihoekUpdateRepository" class="Repository.Kihoek.KihoekUpdateRepository"/>
 </beans>

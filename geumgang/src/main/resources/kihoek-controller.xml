@@ -13,5 +13,6 @@
 	<bean class="Controller.Kihoek.ConceptController"/>
 	<bean class="Controller.Kihoek.ConceptListController"/>
 	<bean class="Controller.Kihoek.EventController"/>
+	<bean class="Controller.Kihoek.ConceptDetailController"/>
 	<bean class="Controller.Kihoek.TourPlaceSelectController"/>
 </beans>

@@ -28,6 +28,11 @@ public class KihoekSelectRepository {
 		return list;
 	}
 	
+	public ConceptDTO conceptDetail(ConceptDTO dto){ 
+		String statement =  namespace + ".conceptDetail";
+		return sqlSession.selectOne(statement, dto);
+	}
+	
 	public List<ConceptDTO> stateSelect(ConceptDTO dto){ 
 		String statement = namespace + ".conceptState";
 		return sqlSession.selectList(statement, dto);

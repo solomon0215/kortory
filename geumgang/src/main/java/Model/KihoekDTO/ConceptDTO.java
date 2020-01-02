@@ -3,7 +3,7 @@ package Model.KihoekDTO;
 import java.io.Serializable;
 
 public class ConceptDTO implements Serializable{
-	Long conceptNum;
+	Integer conceptNum;
 	String conceptSubject;
 	String conceptHistory;
 	String conceptQuarter;
@@ -13,10 +13,10 @@ public class ConceptDTO implements Serializable{
 	String conceptState;
 	String kiHoekNum;
 	
-	public Long getConceptNum() {
+	public Integer getConceptNum() {
 		return conceptNum;
 	}
-	public void setConceptNum(Long conceptNum) {
+	public void setConceptNum(Integer conceptNum) {
 		this.conceptNum = conceptNum;
 	}
 	public String getConceptSubject() {

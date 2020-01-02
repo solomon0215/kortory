@@ -1,7 +1,7 @@
 package Command.Kihoek;
 
 public class ConceptCommand {
-	private long conceptNum;
+	private Integer conceptNum;
 	private String conceptSubject;
 	private String conceptHistory;
 	private String conceptQuarter;
@@ -11,10 +11,10 @@ public class ConceptCommand {
 	private String conceptState;
 	private String kiHoekNum;
 	
-	public long getConceptNum() {
+	public Integer getConceptNum() {
 		return conceptNum;
 	}
-	public void setConceptNum(long conceptNum) {
+	public void setConceptNum(Integer conceptNum) {
 		this.conceptNum = conceptNum;
 	}
 	public String getConceptSubject() {

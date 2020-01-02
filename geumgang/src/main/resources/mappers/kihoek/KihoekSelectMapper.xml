@@ -75,8 +75,8 @@
 	</select>
 	
 	<sql id="conceptColumn">
- 		CONCEPT_SUBJECT, CONCEPT_HISTORY, CONCEPT_QUARTER,
-		CONCEPT_PLACE, CONCEPT_SCALE, CONCEPT_TARGET_AGE, CONCEPT_STATE
+ 		CONCEPT_NUM, CONCEPT_SUBJECT, CONCEPT_HISTORY, CONCEPT_QUARTER,
+		CONCEPT_PLACE, CONCEPT_SCALE, CONCEPT_TARGET_AGE, CONCEPT_STATE, KI_HOEK_NUM
  	</sql>
 	<resultMap type="conceptDTO" id="conceptInfo">
  		<id column="CONCEPT_NUM" jdbcType="BIGINT" property="conceptNum"/>
@@ -89,10 +89,17 @@
 		<result column="CONCEPT_STATE" jdbcType="VARCHAR" property="conceptState"/>
 		<result column="KI_HOEK_NUM" jdbcType="VARCHAR" property="kiHoekNum"/>
 	</resultMap>
-	<select id="conceptAllList" parameterType="conceptDTO" resultMap="conceptInfo">
+	<select id="conceptAllList" parameterType="string" resultMap="conceptInfo">
 		SELECT <include refid="conceptColumn"/>
 		FROM CONCEPT
 	</select>
+	
+	<select id="conceptDetail" parameterType="Integer" resultMap="conceptInfo">
+		SELECT <include refid="conceptColumn"/>
+		FROM CONCEPT
+		WHERE CONCEPT_NUM = #{conceptNum}
+	</select>
+	
 	<select id="conceptState" parameterType="conceptDTO" resultMap="conceptInfo">
 		SELECT <include refid="conceptColumn"/>
 		FROM CONCEPT

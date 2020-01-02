@@ -22,9 +22,9 @@ public class ConceptListService {
 	KihoekSelectRepository kihoekSelectRepository;
 	
 	@Transactional
-	public void conceptAllList(HttpServletRequest request, HttpSession session, Model model) {
+	public void conceptAllList(HttpSession session, Model model) {
 		List<ConceptDTO> cDto = kihoekSelectRepository.conceptAllList();
-		String authName = ((KihoekAuthInfo)request.getSession().getAttribute("authLog")).getName();
+		String authName = ((KihoekAuthInfo)session.getAttribute("authLog")).getName();
 		model.addAttribute("authName", authName);
 		model.addAttribute("concept", cDto);
 	}

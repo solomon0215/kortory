@@ -28,15 +28,15 @@ public class ConceptController {
 		return "Main/kihoekMain";
 	}
 	
-	@RequestMapping(value="/kihoek/conceptWritePro", method=RequestMethod.POST)
+	@RequestMapping("/kihoek/conceptWritePro")
 	public String conceptWrite(ConceptCommand conceptCommand, HttpServletRequest request , HttpSession session, Model model,
 			@RequestParam(value = "conceptScale",required = false) Long conceptScale
 			) {
+		conceptWriteService.insertConcept(conceptCommand, request, session, model, conceptScale);
+		model.addAttribute("pageName", "../kihoek/conceptList.jsp");
 		if (request.getSession().getAttribute("authLog") == null) {
 			return "redirect:../staff/login";
 		}
-		conceptWriteService.insertConcept(conceptCommand, request, session, model, conceptScale);
-		model.addAttribute("pageName", "../kihoek/conceptList.jsp");
 		return "Main/kihoekMain";
 	}
 }
