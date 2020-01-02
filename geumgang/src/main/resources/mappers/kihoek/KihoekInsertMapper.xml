@@ -5,7 +5,7 @@
 <cache />
  	<sql id="conceptColumn">
  		CONCEPT_NUM, CONCEPT_SUBJECT, CONCEPT_HISTORY, CONCEPT_QUARTER,
-		CONCEPT_PLACE, CONCEPT_SCALE, CONCEPT_TARGET_AGE, KI_HOEK_NUM
+		CONCEPT_PLACE, CONCEPT_SCALE, CONCEPT_TARGET_AGE, CONCEPT_STATE, KI_HOEK_NUM
  	</sql>
 	<resultMap type="conceptDTO" id="conceptInfo"> <!-- conceptDTO에 담는resultMap -->
  		<id column="CONCEPT_NUM" jdbcType="BIGINT" property="conceptNum"/>
@@ -15,11 +15,12 @@
 		<result column="CONCEPT_PLACE" jdbcType="VARCHAR" property="conceptPlace"/>
 		<result column="CONCEPT_SCALE" jdbcType="BIGINT" property="conceptScale"/>
 		<result column="CONCEPT_TARGET_AGE" jdbcType="VARCHAR" property="conceptTargetAge"/>
+		<result column="CONCEPT_STATE" jdbcType="VARCHAR" property="conceptState"/>
 		<result column="KI_HOEK_NUM" jdbcType="VARCHAR" property="kiHoekNum"/>
 	</resultMap>
 	<insert id="conceptInsert" parameterType="conceptDTO">
 		INSERT INTO CONCEPT(<include refid="conceptColumn"/>)
 		VALUES(KIHOEK_SEQ.nextval, #{conceptSubject}, #{conceptHistory}, #{conceptQuarter}, 
-			#{conceptPlace}, #{conceptScale}, #{conceptTargetAge}, #{kiHoekNum})
+			#{conceptPlace}, #{conceptScale}, #{conceptTargetAge}, '미진행', #{kiHoekNum})
 	</insert>
 </mapper>

@@ -1,6 +1,7 @@
 package Controller.Kihoek;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +16,8 @@ public class ConceptListController {
 	ConceptListService conceptListService;
 	
 	@RequestMapping("/kihoek/conceptList")
-	public String conceptList(Model model, HttpServletRequest request) {
+	public String conceptList(HttpServletRequest request, HttpSession session, Model model) {
+		conceptListService.conceptAllList(request, session, model);
 		model.addAttribute("pageName", "../kihoek/conceptList.jsp");
 		return "Main/kihoekMain";
 	}

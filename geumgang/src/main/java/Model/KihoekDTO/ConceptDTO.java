@@ -1,6 +1,8 @@
 package Model.KihoekDTO;
 
-public class ConceptDTO {
+import java.io.Serializable;
+
+public class ConceptDTO implements Serializable{
 	Long conceptNum;
 	String conceptSubject;
 	String conceptHistory;
@@ -8,12 +10,13 @@ public class ConceptDTO {
 	String conceptPlace;
 	Long conceptScale;
 	String conceptTargetAge;
+	String conceptState;
 	String kiHoekNum;
 	
-	public long getConceptNum() {
+	public Long getConceptNum() {
 		return conceptNum;
 	}
-	public void setConceptNum(long conceptNum) {
+	public void setConceptNum(Long conceptNum) {
 		this.conceptNum = conceptNum;
 	}
 	public String getConceptSubject() {
@@ -40,10 +43,10 @@ public class ConceptDTO {
 	public void setConceptPlace(String conceptPlace) {
 		this.conceptPlace = conceptPlace;
 	}
-	public long getConceptScale() {
+	public Long getConceptScale() {
 		return conceptScale;
 	}
-	public void setConceptScale(long conceptScale) {
+	public void setConceptScale(Long conceptScale) {
 		this.conceptScale = conceptScale;
 	}
 	public String getConceptTargetAge() {
@@ -52,10 +55,17 @@ public class ConceptDTO {
 	public void setConceptTargetAge(String conceptTargetAge) {
 		this.conceptTargetAge = conceptTargetAge;
 	}
+	public String getConceptState() {
+		return conceptState;
+	}
+	public void setConceptState(String conceptState) {
+		this.conceptState = conceptState;
+	}
 	public String getKiHoekNum() {
 		return kiHoekNum;
 	}
 	public void setKiHoekNum(String kiHoekNum) {
 		this.kiHoekNum = kiHoekNum;
 	}
+	
 }

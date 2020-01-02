@@ -101,7 +101,7 @@ ul{
 <div class="container">
 	<div class="row">
     <div class="col-30">
-      <label for="kiHoekName"><b>작성자 이름</b></label>
+      <label><b>작성자 이름</b></label>
     </div>
     <div class="col-70">
     <input type="hidden" name="kiHoekNum" value='<c:out value="${kihoek.kiHoekNum }"/>'>
@@ -110,15 +110,15 @@ ul{
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egName"><b>상품 이름</b></label>
+      <label><b>상품 이름</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egName" name="egName" placeholder="행사 상품의 이름을 적어주세요">
+      <input type="text" id="eventGoodsName" name="eventGoodsName" placeholder="행사 상품의 이름을 적어주세요">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egPlanNum"><b>일정 번호</b></label>
+      <label><b>일정 번호</b></label>
     </div>
     <div class="col-70">
     
@@ -127,86 +127,86 @@ ul{
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egExp"><b>상품 설명</b></label>
+      <label><b>상품 설명</b></label>
     </div>
     <div class="col-70">
-      <textarea id="egExp" name="egExp" style="height:200px" placeholder="행사 상품의 설명을 적어주세요 "></textarea>
+      <textarea id="eventGoodsExp" name="eventGoodsExp" style="height:200px" placeholder="행사 상품의 설명을 적어주세요 "></textarea>
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egSchedule"><b>행사 일정</b></label>
+      <label><b>행사 일정</b></label>
     </div>
     <div class="col-70">
-    <input type="date" id="egDate" name="egDate">
+    <input type="date" id="eventGoodsDate" name="eventGoodsDate">
     
     
     </div>
   </div>
    <div class="row">
     <div class="col-30">
-      <label for="egDate"><b>행사 날짜</b></label>
+      <label><b>행사 날짜</b></label>
     </div>
     <div class="col-70">
-      <input type="date" id="egDate" name="egDate">
+      <input type="date" id="eventGoodsDate" name="eventGoodsDate">
       &nbsp;&nbsp;부터&nbsp;&nbsp;
-      <input type="date" id="egDate" name="egDate">
+      <input type="date" id="eventGoodsDate" name="eventGoodsDate">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egPrice"><b>행사 가격</b></label>
+      <label><b>행사 가격</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egPrice" name="egPrice" placeholder="행사 상품의 가격을 적어주세요 ">
+      <input type="text" id="eventGoodsPrice" name="eventGoodsPrice" placeholder="행사 상품의 가격을 적어주세요 ">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egStartDate"><b>행사 참여 모집 시작일</b></label>
+      <label><b>행사 참여 모집 시작일</b></label>
     </div>
     <div class="col-70">
-      <input type="date" id="egStartDate" name="egStartDate">
+      <input type="date" id="eventGoodsStartDate" name="eventGoodsStartDate">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egEndDate"><b>행사 참여 모집 종료일</b></label>
+      <label><b>행사 참여 모집 종료일</b></label>
     </div>
     <div class="col-70">
-      <input type="date" id="egEndDate" name="egEndDate">
+      <input type="date" id="eventGoodsEndDate" name="eventGoodsEndDate">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egMin"><b>최소 참여 인원</b></label>
+      <label><b>최소 참여 인원</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egMin" name="egMin" placeholder="행사 상품의 최소 참여 인원을 적어주세요 ">
+      <input type="text" id="eventGoodsMin" name="eventGoodsMin" placeholder="행사 상품의 최소 참여 인원을 적어주세요 ">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egMax"><b>최대 참여 인원</b></label>
+      <label><b>최대 참여 인원</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egMax" name="egMax" placeholder="행사 상품의 최대 참여 인원을 적어주세요 ">
+      <input type="text" id="eventGoodsMax" name="eventGoodsMax" placeholder="행사 상품의 최대 참여 인원을 적어주세요 ">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egAge"><b>참여 가능 연령</b></label>
+      <label><b>참여 가능 연령</b></label>
     </div>
     <div class="col-70">
-      <input type="text" id="egAge" name="egAge" placeholder="최소 00세 이상 ">
+      <input type="text" id="eventGoodsAge" name="eventGoodsAge" placeholder="최소 00세 이상 ">
     </div>
   </div>
   <div class="row">
     <div class="col-30">
-      <label for="egCaution"><b>상품 이용 유의 사항</b></label>
+      <label><b>상품 이용 유의 사항</b></label>
     </div>
     <div class="col-70">
-      <textarea id="egCaution" name="egCaution" style="height:100px" placeholder="행사 상품의 이용 유의 사항을 적어주세요 "></textarea>
+      <textarea id="eventGoodsCaution" name="eventGoodsCaution" style="height:100px" placeholder="행사 상품의 이용 유의 사항을 적어주세요 "></textarea>
     </div>
   </div>
   <div class="row">

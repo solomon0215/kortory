@@ -25,6 +25,7 @@
 <body>
 <!-- Header -->
 <header class="w3-margin-top ">
+<a href="../geumgang/main" style="text-decoration: none;">
 <div class="header">
 <br>
   <h1 class="w3-jumbo">
@@ -37,6 +38,7 @@
   <b style="color:lime">Y</b></h1>
   <b>"역사와 함께 떠나는 여행"</b>
 </div>
+</a>
 <div class="menubar" style="margin-bottom:3%;">
 	<div class="w3-bar w3-black w3-text-center">
 	  <a href="http://localhost:8080/geumgang/main"  class="w3-bar-item w3-button fa fa-home w3-hover-red" 

@@ -20,6 +20,6 @@
 		<typeAlias type="Model.YoungupDTO.ExplorationDTO" alias = "expDTO"/>
 		<typeAlias type="Model.KihoekDTO.KihoekDTO" alias ="kihoekDTO"/>
 		<typeAlias type="Model.KihoekDTO.ConceptDTO" alias ="conceptDTO"/>
-		
+		<typeAlias type="Model.KihoekDTO.CoopComDTO" alias ="coopComDTO"/>
 	</typeAliases>
 </configuration>

@@ -8,7 +8,7 @@
 		KI_HOEK_NUM, KI_HOEK_ID, KI_HOEK_PW, KI_HOEK_NAME, KI_HOEK_BIRTH,
 		KI_HOEK_GENDER, KI_HOEK_EMAIL, KI_HOEK_REGIST, KI_HOEK_PH
  	</sql>
- 	<resultMap type="kihoekDTO" id="kihoekInfo"> <!-- KihoekDTO에 담는resultMap -->
+ 	<resultMap type="kihoekDTO" id="kihoekInfo">
  		<id column="KI_HOEK_NUM" jdbcType="VARCHAR" property="kiHoekNum"/>
 		<result column="KI_HOEK_ID" jdbcType="VARCHAR" property="kiHoekId"/>
 		<result column="KI_HOEK_PW" jdbcType="VARCHAR" property="kiHoekPw"/>
@@ -20,10 +20,86 @@
 		<result column="KI_HOEK_PH" jdbcType="VARCHAR" property="kiHoekPh"/>
 	</resultMap>
 	<select id="logConfirm" parameterType="kihoekDTO" resultMap="kihoekInfo"><!-- 로그인 정보 대조하기 위해서 검색하는 select -->
-		select <include refid="kiBaseColumn"/> 
-		from KI_HOEK
+		SELECT <include refid="kiBaseColumn"/> 
+		FROM KI_HOEK
 		<where>
 			KI_HOEK_ID = #{kiHoekId} and KI_HOEK_PW = #{kiHoekPw}
+		</where>
+	</select>
+	
+	<sql id = "coopContract">
+	COOP_CONTRACT_DATE, COOP_CONTRACT_STATE, COOP_CONDITION_AVAIL_DATE, COOP_CONDITION_AVAIL_TIME,
+	COOP_CONDITION_LIMIT_PER, COOP_CONTRACT_END_DATE, COOP_KIND
+	</sql>
+	<resultMap type="coopComDTO" id="coopComMap">
+	<id column="COOP_CONTRACT_NUM" jdbcType="BIGINT" property="coopContractNum"/> 
+	<result column="COOP_CONTRACT_DATE" jdbcType="DATE" property="coopContractDate"/> 
+	<result column="COMPANY_SELECT_DATE" jdbcType="DATE" property="companySelectDate"/> 
+	<result column="COOP_CONTRACT_SUPP_RATIO" jdbcType="FLOAT" property="coopContractSuppRatio"/> 
+	<result column="COOP_CONTRACT_MAR_RATIO" jdbcType="FLOAT" property="coopContractMarRatio"/> 
+	<result column="COOP_CONTRACT_CAL_DATE" jdbcType="DATE" property="coopContractCalDate"/> 
+	<result column="COOP_CONTRACT_SUBJECT" jdbcType="VARCHAR" property="coopContractSubject"/> 
+	<result column="COOP_CONTRACT_WRITE" jdbcType="DATE" property="coopContractWrite"/> 
+	<result column="COOP_CONTRACT_STATE" jdbcType="VARCHAR" property="coopContractState"/> 
+	<result column="COOP_CONDITION_AVAIL_DATE" jdbcType="VARCHAR" property="coopConditionAvailDate"/> 
+	<result column="COOP_CONDITION_AVAIL_TIME" jdbcType="VARCHAR" property="coopConditionAvailTime"/> 
+	<result column="COOP_CONDITION_LIMIT_PER" jdbcType="BIGINT" property="coopConditionLimitPer"/> 
+	<result column="COOP_CONTRACT_RATIO" jdbcType="FLOAT" property="coopContractRatio"/> 
+	<result column="COOP_CONTRACT_SETT" jdbcType="BIGINT" property="coopContractSett"/> 
+	<result column="COOP_CONTRACT_METHOD" jdbcType="VARCHAR" property="coopContractMethod"/> 
+	<result column="COOP_CONTRACT_END_DATE" jdbcType="DATE" property="coopContractEndDate"/> 
+	<result column="COOP_KIND" jdbcType="VARCHAR" property="coopKind"/> 
+	<result column="COMPANY_ID" jdbcType="VARCHAR" property="companyId"/> 
+	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/> 
+	</resultMap>
+	<select id="tourPlaceSelect" parameterType="coopComDTO" resultMap="coopComMap">
+		SELECT <include refid="coopContract"/>
+		FROM COOP_CONTRACT
+		<where>
+			COOP_KIND = '관광'
+		</where>
+	</select>
+	<select id="accomSelect" parameterType="coopComDTO" resultMap="coopComMap">
+		SELECT <include refid="coopContract"/>
+		FROM COOP_CONTRACT
+		<where>
+			COOP_KIND = '숙박'
+		</where>
+	</select>
+	<select id="transportSelect" parameterType="coopComDTO" resultMap="coopComMap">
+		SELECT <include refid="coopContract"/>
+		FROM COOP_CONTRACT
+		<where>
+			COOP_KIND = '이동'
+		</where>
+	</select>
+	
+	<sql id="conceptColumn">
+ 		CONCEPT_SUBJECT, CONCEPT_HISTORY, CONCEPT_QUARTER,
+		CONCEPT_PLACE, CONCEPT_SCALE, CONCEPT_TARGET_AGE, CONCEPT_STATE
+ 	</sql>
+	<resultMap type="conceptDTO" id="conceptInfo">
+ 		<id column="CONCEPT_NUM" jdbcType="BIGINT" property="conceptNum"/>
+		<result column="CONCEPT_SUBJECT" jdbcType="VARCHAR" property="conceptSubject"/>
+		<result column="CONCEPT_HISTORY" jdbcType="VARCHAR" property="conceptHistory"/>
+		<result column="CONCEPT_QUARTER" jdbcType = "VARCHAR" property="conceptQuarter"/>
+		<result column="CONCEPT_PLACE" jdbcType="VARCHAR" property="conceptPlace"/>
+		<result column="CONCEPT_SCALE" jdbcType="BIGINT" property="conceptScale"/>
+		<result column="CONCEPT_TARGET_AGE" jdbcType="VARCHAR" property="conceptTargetAge"/>
+		<result column="CONCEPT_STATE" jdbcType="VARCHAR" property="conceptState"/>
+		<result column="KI_HOEK_NUM" jdbcType="VARCHAR" property="kiHoekNum"/>
+	</resultMap>
+	<select id="conceptAllList" parameterType="conceptDTO" resultMap="conceptInfo">
+		SELECT <include refid="conceptColumn"/>
+		FROM CONCEPT
+	</select>
+	<select id="conceptState" parameterType="conceptDTO" resultMap="conceptInfo">
+		SELECT <include refid="conceptColumn"/>
+		FROM CONCEPT
+		<where>
+			<if test="#{conceptState !=null}">
+				CONCEPT_STATE = #{conceptState}
+			</if>
 		</where>
 	</select>
 </mapper>

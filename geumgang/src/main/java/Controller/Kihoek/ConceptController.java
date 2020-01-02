@@ -36,7 +36,6 @@ public class ConceptController {
 			return "redirect:../staff/login";
 		}
 		conceptWriteService.insertConcept(conceptCommand, request, session, model, conceptScale);
-		System.out.println(conceptCommand + "form1");
 		model.addAttribute("pageName", "../kihoek/conceptList.jsp");
 		return "Main/kihoekMain";
 	}

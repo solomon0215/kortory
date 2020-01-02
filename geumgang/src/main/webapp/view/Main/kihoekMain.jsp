@@ -112,7 +112,7 @@ a {text-decoration: none; !important}
 		행사 업체 선정 <i class="fa fa-caret-down"></i>
 		</a>
 		<div id="selectItem" class="w3-bar-block w3-hide w3-padding w3-text-deep-orange ">
-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>관광지 업체 선정</a>
+			<a href="tourPlaceSelect" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>관광지 업체 선정</a>
 			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>숙소 업체 선정</a>
 			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>이동수단 업체 선정</a>
     	</div>
@@ -121,6 +121,7 @@ a {text-decoration: none; !important}
 		행사 준비 확인 <i class="fa fa-caret-down"></i>
 		</a>
 		<div id="checkItem" class="w3-bar-block w3-hide w3-padding w3-text-deep-orange ">
+			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>행사 업체 일정 확인</a>
 			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>가이드 배치 보고서 확인</a>
 			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-caret-right w3-margin-right"></i>예산안 보고서 확인</a>
     	</div>

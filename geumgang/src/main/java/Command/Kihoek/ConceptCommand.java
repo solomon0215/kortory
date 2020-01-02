@@ -8,6 +8,7 @@ public class ConceptCommand {
 	private String conceptPlace;
 	private long conceptScale;
 	private String conceptTargetAge;
+	private String conceptState;
 	private String kiHoekNum;
 	
 	public long getConceptNum() {
@@ -52,10 +53,17 @@ public class ConceptCommand {
 	public void setConceptTargetAge(String conceptTargetAge) {
 		this.conceptTargetAge = conceptTargetAge;
 	}
+	public String getConceptState() {
+		return conceptState;
+	}
+	public void setConceptState(String conceptState) {
+		this.conceptState = conceptState;
+	}
 	public String getKiHoekNum() {
 		return kiHoekNum;
 	}
 	public void setKiHoekNum(String kiHoekNum) {
 		this.kiHoekNum = kiHoekNum;
 	}
+	
 }

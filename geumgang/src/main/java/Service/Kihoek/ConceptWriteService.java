@@ -13,12 +13,15 @@ import Model.KihoekDTO.ConceptDTO;
 import Model.KihoekDTO.KihoekAuthInfo;
 import Model.KihoekDTO.KihoekDTO;
 import Repository.Kihoek.KihoekInsertRepository;
+import Repository.Kihoek.KihoekSelectRepository;
 
 
 @Service
 public class ConceptWriteService {
 	@Autowired
 	KihoekInsertRepository kihoekInsertRepository;
+	@Autowired
+	KihoekSelectRepository kihoekSelectRepository;
 	
 	@Transactional
 	public void kihoekName(HttpServletRequest request, Model model) {

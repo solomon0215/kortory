@@ -1,9 +1,13 @@
 package Repository.Kihoek;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Model.KihoekDTO.ConceptDTO;
+import Model.KihoekDTO.CoopComDTO;
 import Model.KihoekDTO.KihoekDTO;
 
 @Repository
@@ -15,6 +19,22 @@ public class KihoekSelectRepository {
 	
 	public KihoekDTO logConfirm(KihoekDTO kDto) {
 		String statement = namespace + ".logConfirm";
-		return sqlSession.selectOne(statement, kDto) ;
+		return sqlSession.selectOne(statement, kDto);
+	}
+	
+	public List<ConceptDTO> conceptAllList(){ 
+		String statement = namespace + ".conceptAllList";
+		List<ConceptDTO> list = sqlSession.selectList(statement);
+		return list;
+	}
+	
+	public List<ConceptDTO> stateSelect(ConceptDTO dto){ 
+		String statement = namespace + ".conceptState";
+		return sqlSession.selectList(statement, dto);
+	}
+	
+	public List<CoopComDTO> tourPlaceSelect(CoopComDTO ccDto) {
+		String statement = namespace + ".tourPlaceSelect";
+		return sqlSession.selectList(statement, ccDto);
 	}
 }
