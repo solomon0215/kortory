@@ -20,7 +20,7 @@ public class CompanyFormController {
 	@Autowired
 	CompanyFormService companyFormService;
 	
-	//��û�� �ۼ� ������ ����
+	//업체 등록 페이지
 	@RequestMapping("/user/companyForm")
 	public String companyForm(Model model,CompanyFormCommand companyFormCommand) {
 		model.addAttribute("pageName", "../Company/companyForm.jsp");
@@ -28,7 +28,7 @@ public class CompanyFormController {
 	}
 	
 	
-	//��ü���
+	//업체 정보 인설트
 	@RequestMapping(value="/user/companyInsert", method=RequestMethod.POST)
 	public String companyInsert(CompanyFormCommand companyFormCommand,Errors errors,Model model) { 
 		new CompanyFormCommandValidator().validate(companyFormCommand, errors);
@@ -46,7 +46,7 @@ public class CompanyFormController {
 		return "Company/failedPage"; //����������
 	}
 	
-	//�ߺ�Ȯ�� 
+	//업체 아이디 확인
 	@RequestMapping("/user/companyIdConfirm")
 	public String companyIdConfirm(@RequestParam("userId") String userId) {
 		return companyFormService.idConfirm(userId);

@@ -47,39 +47,39 @@ h2{
   <h2 class="w3-myfont w3-center" id="welcome">오늘도 이렇게 많은 업체들이 있어요!</h2>
   <h2 class="w3-myfont w3-center w3-red" id="msg">${msg}</h2>
   <br>
-		<table class="w3-table-all w3-tiny w3-centered">
-	<thead>
-	    <tr>
-	      <th>업체명</th><th>업체유형</th><th>주소</th><th>사업자번호</th><th>이메일주소</th><th>선택</th>
-	    </tr>
-    </thead>
-    <tbody>
-    	<c:if test="${newComList != null }">
-    	<form:form action="newCompanyPro" commandName="newComListCommand" method="POST">
-	    	<c:forEach items="${newComList}" var="list">
-	    	<tr class="w3-pale-blue" id="${list.companyId}">
-		      <td>${list.companyId}</td>
-		      <td>${list.companyType}</td>
-		      <td>${list.companyAddr}</td>
-		      <td>${list.companyRegNum}</td>
-		      <td>${list.companyEmail}</td>
-		      <td><form:checkbox path="check" value="${list.companyId}"/></td>
+	<table class="w3-table-all w3-tiny w3-centered">
+		<thead>
+		    <tr>
+		      <th>업체명</th><th>업체유형</th><th>주소</th><th>사업자번호</th><th>이메일주소</th><th>선택</th>
 		    </tr>
-	    	</c:forEach>
-	    	<tr>
-	    		<td colspan="6">
-	    			<button class="w3-button w3-white w3-border w3-hover-amber" type="submit" >업무 가져오기</button>
-	    		</td>
-	    	</tr>
-	    </form:form>
-	    
-    	</c:if>
-    	<c:if test="${newComList == null }">
-	    	<tr class="w3-pale-blue">
-		      <td colspan="6"><h2>오늘은 여기까지가  끝이네요</h2></td>
-		    </tr>
-    	</c:if>
-    </tbody>
+	    </thead>
+	    <tbody>
+	    	<c:if test="${newComList != null }">
+	    	<form:form action="newCompanyPro" commandName="newComListCommand" method="POST">
+		    	<c:forEach items="${newComList}" var="list">
+		    	<tr class="w3-pale-blue" id="${list.companyId}">
+			      <td>${list.companyId}</td>
+			      <td>${list.companyType}</td>
+			      <td>${list.companyAddr}</td>
+			      <td>${list.companyRegNum}</td>
+			      <td>${list.companyEmail}</td>
+			      <td><form:checkbox path="check" value="${list.companyId}"/></td>
+			    </tr>
+		    	</c:forEach>
+		    	<tr>
+		    		<td colspan="6">
+		    			<button class="w3-button w3-white w3-border w3-hover-amber" type="submit" >업무 가져오기</button>
+		    		</td>
+		    	</tr>
+		    </form:form>
+		    
+	    	</c:if>
+	    	<c:if test="${newComList == null }">
+		    	<tr class="w3-pale-blue">
+			      <td colspan="6"><h2>오늘은 여기까지가  끝이네요</h2></td>
+			    </tr>
+	    	</c:if>
+	    </tbody>
 	</table>
 </div>
 </body>

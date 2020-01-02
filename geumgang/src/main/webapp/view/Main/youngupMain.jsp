@@ -41,8 +41,6 @@
 		            <ul>
 		                <li><a href="http://localhost:8080/geumgang/youngup/newcompany" style="text-decoration:none">신규업체</a></li>
 		                <li><a href="http://localhost:8080/geumgang/youngup/explorList" style="text-decoration:none">사전답사 보고서</a></li>
-		                <li>협력 조건안</li>
-		                <li>업체 계약서</li>
 		            </ul>
 		        </li>
 		        <br/>
