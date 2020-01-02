@@ -10,7 +10,10 @@
 	<bean id = "newComSer" class ="Service.Youngup.NewCompanyService"/><!-- 영업부 신규업체 리스트 보기-->
 	<bean id = "expWriteSer" class ="Service.Youngup.ExplorWriteService"/><!-- 신규 사전답사 보고서 작성 서비스--> 
 	<bean id = "expInSer" class ="Service.Youngup.ExplorIncomService"/><!-- 미완료 사전답사 보고서 서비스-->
-	<bean id = "expComSer" class ="Service.Youngup.ExplorComService"/><!-- 완료 사전답사 보고서 서비스--> 
+	<bean id = "expComSer" class ="Service.Youngup.ExplorComService"/><!-- 완료 사전답사 보고서 서비스-->
+	<bean id = "youngMainSer" class ="Service.Youngup.YoungupMainService"/><!-- 영업 메인 업무표 서비스-->
+	<bean id = "youngScheSer" class ="Service.Youngup.YoungupScheduleService"/><!-- 영업 사전답사 일정--> 
+	
 	 
 
    	<!-- Repositopry -->

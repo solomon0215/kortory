@@ -25,21 +25,19 @@
 				      <th>업체 업무 종류</th>
 				      <th>신규업체</th>
 				      <th>미완료 사전보고서</th>
-				      <th>미완료 협력 조건안</th>
 				    </tr>
 			    </thead>
 			    <tbody>
 				    <tr class="w3-pale-blue">
 				      <td>건수</td>
 				      <td>15</td>
-				      <td>20</td>
-				      <td>1</td>
+				      <td>${nowIncom}</td>
 				    </tr>
 			    </tbody>
 			  </table>
 			  <div class="w3-margin-top w3-round" >
-			  	<label>업체 업무 완료%</label>
-			    <div class="w3-container w3-blue w3-round" style="width:25%">25%</div>
+			  	<label>미완료 사전답사 업무 완료%</label>
+			    <div class="w3-container w3-blue w3-round" style="width:${incomPer}%">${incomPer}%</div>
 			  </div>
 			  <br>
 		</div>

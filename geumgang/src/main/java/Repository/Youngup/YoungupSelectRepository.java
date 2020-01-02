@@ -19,23 +19,29 @@ public class YoungupSelectRepository {
 	private SqlSession sqlSession;
 	private final String namespace = "youngupSelectMapper";
 	
-	public YoungupDTO youngupLog( YoungupDTO dto1) { //·Î±×ÀÎ 
+	public YoungupDTO youngupLog( YoungupDTO dto1) { //ï¿½Î±ï¿½ï¿½ï¿½ 
 		String statement = namespace + ".youngupLog";
 		return sqlSession.selectOne(statement, dto1);
 	}
 	
-	public List<ExplorListDTO> selectExplorList(){ //¸ğµç  Á¾·ùÀÇ »çÀü´ä»ç º¸°í¼­
+	public List<ExplorListDTO> selectExplorList(){ //ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		String statement = namespace + ".explorList";
 		return sqlSession.selectList(statement);
 	}
 	
-	public List<ExplorListDTO> selectKindExp(ExplorListDTO dto){ //½Å±Ô ´ã´ç ¾÷Ã¼  »çÀü´ä»ç º¸°í¼­ °¡Á®¿À±â
+	public List<ExplorListDTO> selectKindExp(ExplorListDTO dto){ //ï¿½Å±ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		String statement = namespace + ".kindExp";
 		return sqlSession.selectList(statement, dto);
 	}
 	
-	public ExplorListDTO selectExpDetail(ExplorationDTO dto) {//º¸°í¼­ ¹øÈ£·Î ÇÏ³ª¸¸ °¡Á®¿À±â
+	public ExplorListDTO selectExpDetail(ExplorationDTO dto) {//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		String statement = namespace + ".expDetail";
 		return sqlSession.selectOne(statement,dto);
 	}
+	public Integer selectToday(ExplorationDTO searchDto) {//ì˜¤ëŠ˜ì˜ ì—…ë¬´ëŸ‰ ì¡°íšŒ ë©”ì†Œë“œ
+		String statement = namespace + ".workingCount";
+		System.out.println(searchDto.getExplorationSubmit());
+		return sqlSession.selectOne(statement, searchDto);
+	}
+	
 }

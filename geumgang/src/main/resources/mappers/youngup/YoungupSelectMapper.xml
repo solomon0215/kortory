@@ -89,4 +89,15 @@
 			</if>
 		</where>
 	</select>
+	<!-- 오늘의 사전답사 보고서 업무 양 조회 -->
+	<select id="workingCount" parameterType="expDTO" resultType="integer">
+		SELECT count(*) FROM EXPLORATION 
+		<where>
+			EXPLORATION_SCHEDULE= #{explorationSchedule}
+			<if test="explorationSubmit !=  null">
+				AND EXPLORATION_SUBMIT != #{explorationSubmit}
+			</if>
+		</where> 
+	</select>
+
 </mapper>
