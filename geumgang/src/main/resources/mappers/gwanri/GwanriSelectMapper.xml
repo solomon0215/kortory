@@ -156,4 +156,9 @@
 			
 		</where>
 	</select>
+	<select id="expDetail3" resultMap="coopMap" parameterType="Integer">
+  		SELECT <include refid="coopContract" />
+		FROM COOP_CONTRACT 
+		WHERE COOP_CONTRACT_NUM = #{coopContractNum}
+	</select>
 </mapper>

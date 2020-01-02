@@ -1,6 +1,9 @@
 package Model.GwanriDTO;
 
-public class CoopContractDTO {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class CoopContractDTO implements Serializable {
 	Integer coopContractNum;
 	java.sql.Date coopContractDate;
 	java.sql.Date companySelectDate;

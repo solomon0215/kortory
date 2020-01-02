@@ -17,8 +17,8 @@ public class GwanriDeleteRepository {
 	private final String namespace = "gwanriDeleteMapper";
 	
 		   /** 게시판 - 삭제  */
-    public Integer deleteBoard(BudgetBillDTO dto) {
-    	String statement = namespace + ".deleteBoard";
+    public Integer budgetDelete(BudgetBillDTO dto) {
+    	String statement = namespace + ".budgetDelete";
 		Integer result = sqlSession.insert(statement, dto);
 		return result;
         

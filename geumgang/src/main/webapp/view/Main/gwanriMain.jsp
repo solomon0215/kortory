@@ -55,14 +55,14 @@
 	         <li class="menu">
 	             <a href="#tabContent03" style="text-decoration:none"  >정산 관련 업무</a>
 	            <ul>
-	                <li><a href="http://localhost:8080/geumgang/gwanri/calculate" style="text-decoration:none">정산</a></li>
+	                <li><a href="http://localhost:8080/geumgang/gwanri/calculate" style="text-decoration:none">정산 목록</a></li>
 	            </ul>
 	        </li>
 	        <br/>
 	         <li class="menu">
 	             <a href="#tabContent04" style="text-decoration:none" >영수처리 관련 업무</a>
 	            <ul>
-	                <li><a href="http://localhost:8080/geumgang/gwanri/receiptAppList" style="text-decoration:none">신청서 목록</a></li>
+	                <li><a href="http://localhost:8080/geumgang/gwanri/receiptAppList" style="text-decoration:none">영수처리 신청서 목록</a></li>
 	            </ul>
 	        </li>
 	        <br/>

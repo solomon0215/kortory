@@ -24,25 +24,18 @@
         <th>요청일</th>
       </tr>
     </thead>
-    <tr>
-      <td>1</td>
-      <td>조식</td>
-      <td>이한경</td>
-           <td>2019-12-15</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>숙박</td>
-       <td>이한경</td>
-           <td>2019-12-31</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>중식</td>
-       <td>이한경</td>
-           <td>2020-01-02</td>
-    </tr>
-  
+     <tbody>
+						<c:forEach var="budget" items="${budget}" varStatus="status">
+							<tr>
+								<td>${status.count }</td>
+								<td><a
+									href='<c:url value='/gwanri/budgetBillView?num=${budget.budgetBillNum }'/>'${budget.budgetBillNum}'>${budget.budgetBillSubject }</a></td>
+								<td>${authName}</td>
+								<td>${budget.budgetBillDate }</td>
+
+							</tr>
+						</c:forEach>
+					</tbody>
   </table>
   </dvi>
   

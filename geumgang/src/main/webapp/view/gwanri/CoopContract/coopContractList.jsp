@@ -25,13 +25,12 @@
       </tr>
     </thead>
    <tbody>
-						<c:forEach var="budget" items="${budget}" varStatus="status">
+						<c:forEach var="coop" items="${coop}" varStatus="status">
 							<tr>
 								<td>${status.count }</td>
-								<td><a
-									href='<c:url value='/gwanri/budgetBillView?num=${budget.budgetBillNum }'/>'${budget.budgetBillNum}'>${budget.budgetBillSubject }</a></td>
+								<td><a href='<c:url value='/gwanri/coopDetail?num=${coop.coopContractNum }'/>'${coop.coopContractNum}'>${coop.coopContractSubject }</a></td>
 								<td>${authName}</td>
-								<td>${budget.budgetBillDate }</td>
+								<td>${coop.coopContractDate }</td>
 
 							</tr>
 						</c:forEach>

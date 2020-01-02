@@ -36,5 +36,10 @@
 			and gwan_ri_id = #{gwanRiId} 
 		</trim>
 	</select>
+	<delete id ="budgetDelete" parameterType="Integer">
+	DELETE
+	FROM BUDGET_BILL
+	where BUDGET_BILL_NUM =#{budgetBillNum}
+	</delete>
 
 </mapper>

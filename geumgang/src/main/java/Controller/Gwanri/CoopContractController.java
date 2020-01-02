@@ -41,12 +41,13 @@ public class CoopContractController {
 	@RequestMapping(value="/gwanri/coopWritePro", method=RequestMethod.POST) //협력업체 계약서 등록
 	public String write(CoopContractCommand ccc, HttpServletRequest request , HttpSession session, Model model) {		
 		ccs.coopInsert(ccc, request, session, model);
+		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_form_pro.jsp");
 		if(session.getAttribute("authLog") == null) { 
 			System.out.println("authLog");
 
 			return "Main/gwanriMain";
 		}
-		return "gwanri/AgreementCondition/agreement_condition_form_pro";
+		return "Main/gwanriMain";
 	}	
 	@RequestMapping(value="gwanri/coopList", method=RequestMethod.GET) //협력업체 계약서 리스트
 	public String List(Model model, HttpSession session){

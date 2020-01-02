@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-등록완료 목록으로 ㄱㄱ
-<a href="http://localhost:8080/geumgang/gwanri/agreementConditionList">ㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱ</a>
+<body><br/><br/><br/><br/><br/><br/>
+<h2><center>등록이 완료되었습니다.</center></h2>
+<a href="http://localhost:8080/geumgang/gwanri/main"><center>메인으로 가기</center></a>
 </body>
 </html>

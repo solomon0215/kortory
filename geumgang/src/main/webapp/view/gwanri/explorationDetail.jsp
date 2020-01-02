@@ -21,7 +21,7 @@
 </dvi>	
 <thead> 
 <div class="w3-container" >
-    <table class="w3-table-all w3-centered" >
+  <table class="w3-table-all w3-half w3-centered" style="margin-left: 24%;">
     
      <tr><th>보고서 번호</th> <td>${detail.explorationNum}</td></tr>
        <tr><th>업체 아이디</th><td>${detail.companyId }</td></tr>
@@ -45,11 +45,11 @@
                 <tr> <th>제출여부</th> <td>${detail.explorationSubmit }</td></tr>
 
 
-  </table>
+  </table> 
   </div>
   </thead>
   <br/>
-  <div class="w3-container " style="margin-left: 43%;">
+  <div class="w3-container " style="margin-left: 44%;">
    <a href="http://localhost:8080/geumgang/gwanri/coopWrite?num=${detail.explorationNum}&companyId=${detail.companyId }" class="w3-btn w3-green">계약서 작성</a>
 </div>
 

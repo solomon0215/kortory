@@ -22,6 +22,7 @@ import org.springframework.ui.Model;
 import Command.Gwanri.CoopContractCommand;
 import Command.Gwanri.ExpWriteCommand;
 import Model.CompanyDTO.CompanyAuth;
+import Model.GwanriDTO.CoopContractDTO;
 import Model.GwanriDTO.ExpagreeDTO;
 import Model.GwanriDTO.GwanriAuthInfo;
 import Model.GwanriDTO.GwanriDTO;
@@ -65,12 +66,15 @@ public class AgreementConditionService {
 		model.addAttribute("detail", detail);
 	}
 	public void expDetail2(Model model, Integer explorationNum) {
-		System.out.println(explorationNum+"====================");
+System.out.println(explorationNum+"====================");
+		
 		ExplorationDTO dto = new ExplorationDTO();
 		dto.setExplorationNum(explorationNum);
-		ExplorListDTO detail2 = gwanriSelectRepository.selectExpDetail2(dto);
+		ExplorListDTO detail2 = gwanriSelectRepository.selectExpDetail(dto);
+				
+		System.out.println(detail2.getCompanyId()+"id====================");
+	
 		model.addAttribute("detail2", detail2);
 	}
-	
 	
 	}

@@ -36,12 +36,13 @@ public class BudgetBillController {
 	@RequestMapping(value="/gwanri/budgetBillWritePro", method=RequestMethod.POST) // 예산안보고서 등록
 	public String write(BudgetBillCommand bbc, HttpServletRequest request , HttpSession session, Model model) {		
 		bbs.budgetInsert(bbc, request, session, model);
+		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_form_pro.jsp");
 		if(session.getAttribute("authLog") == null) { 
 			System.out.println("authLog");
 
 			return "Main/gwanriMain";
 		}
-		return "gwanri/BudgetBill/budgetBillFormPro";
+		return "Main/gwanriMain";
 	}	
 	
 	@RequestMapping("gwanri/budgetBillView") //예산안보고서 디테일
@@ -55,6 +56,12 @@ public class BudgetBillController {
 	public String budgetModify(@RequestParam(value="num",required = false) Integer budgetBillNum, BudgetBillCommand bbc, HttpServletRequest request , HttpSession session, Model model){		
 		bbs.budgetModify(bbc,budgetBillNum, request, session, model);
 		model.addAttribute("pageName", "../gwanri/BudgetBill/budgetBillModify.jsp");
+		return "Main/gwanriMain";
+	}
+	@RequestMapping("gwanri/budgetBillDelete") //예산안보고서 삭제
+	public String budgetDelete(@RequestParam(value="num",required = false) Integer budgetBillNum
+			, Model model) {
+		bbs.budgetDelete(model,budgetBillNum);
 		return "Main/gwanriMain";
 	}
 	/*

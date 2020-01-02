@@ -53,13 +53,13 @@
 				<tr class="w3-white">
 					<td>공급률</td>
 					<td>
-						<form:input path="coopContractSuppRatio" type="float"/>
+						<form:input path="coopContractSuppRatio" type="float"/>%
 					</td>
 				</tr>
 				<tr class="w3-white">
 					<td>마진률</td>
 					<td>
-						<form:input path="coopContractMarRatio" type="float"/>
+						<form:input path="coopContractMarRatio" type="float"/>%
 					</td>
 				</tr>
 				<tr class="w3-white">
@@ -71,31 +71,31 @@
 				<tr class="w3-white">
 					<td>사용 날짜</td>
 					<td>
-						<form:input path="coopConditionAvailDate" type="text"/>
+						<form:input path="coopConditionAvailDate" type="text"/>일
 					</td>
 				</tr>
 				<tr class="w3-white">
 					<td>사용 시간</td>
 					<td>
-						<form:input path="coopConditionAvailTime" type="text"/>
+						<form:input path="coopConditionAvailTime" type="text"/>시간
 					</td>
 				</tr>
 				<tr class="w3-white">
 					<td>사용 인원</td>
 					<td>
-						<form:input path="coopConditionLimitPer" type="number"/>
+						<form:input path="coopConditionLimitPer" type="number"/>명
 					</td>
 				</tr>
 				<tr class="w3-white">
 					<td>업체희망 정산비율</td>
 					<td>
-						<form:input path="coopContractRatio" type="float"/>
+						<form:input path="coopContractRatio" type="float"/>%
 					</td>
 				</tr>
 				<tr class="w3-white">
-					<td>정신기준시간</td>
+					<td>정산기준시간</td>
 					<td>
-						<form:input path="coopContractSett" type="number"/>
+						<form:input path="coopContractSett" type="number"/>시
 					</td>
 				</tr>
 				<tr class="w3-white">
@@ -125,9 +125,13 @@
 				<tr class="w3-white">
 					<td>계약서 상태</td>
 					<td>
-						<form:input path="coopContractState" type="text"/>
-					</td>
-				</tr>
+						<form:select path="coopContractState">
+							<form:option value="0" label="------계약서 상태 선택------"/>
+							<form:option value="저장" label="저장"/>
+							<form:option value="임시저장" label="임시저장"/>
+						</form:select>						
+					</td>	
+					
 				<tr class="w3-white">
 					<td>작성일</td>
 					<td>

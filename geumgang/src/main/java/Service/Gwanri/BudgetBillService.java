@@ -14,6 +14,7 @@ import Command.Gwanri.BudgetBillCommand;
 import Model.GwanriDTO.BudgetBillDTO;
 import Model.GwanriDTO.ExpagreeDTO;
 import Model.GwanriDTO.GwanriAuthInfo;
+import Repository.Gwanri.GwanriDeleteRepository;
 import Repository.Gwanri.GwanriInsertRepository;
 import Repository.Gwanri.GwanriSelectRepository;
 import Repository.Gwanri.GwanriUpdateRepository;
@@ -27,6 +28,8 @@ public class BudgetBillService {
 	GwanriSelectRepository gwanriSelectRepository;
 	@Autowired
 	GwanriUpdateRepository gwanriUpdateRepository;
+	@Autowired
+	GwanriDeleteRepository gwanriDeleteRepository;
 
 	public void budgetList(Model model, HttpSession session) {
 		List<BudgetBillDTO> budget = gwanriSelectRepository.budgetAllSelect();
@@ -77,5 +80,12 @@ public class BudgetBillService {
 		bbc.setBudgetBillNum(dto.getBudgetBillNum());
 		model.addAttribute("bbc", bbc);
 
+	}
+	public void budgetDelete(Model model, Integer budgetBillNum) {
+
+		BudgetBillDTO dto = new BudgetBillDTO();
+		dto.setBudgetBillNum(budgetBillNum);
+		gwanriDeleteRepository.budgetDelete(dto);
+		// detail
 	}
 }

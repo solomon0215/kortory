@@ -58,6 +58,7 @@ function goToCompleDetail(expNum){
 						</tr>
 					</thead>
 					<tbody>
+						<c:if test="${complete !=null}">
 						<c:forEach var="complete" items="${complete}" varStatus="status"> <!--영업부에서 받아온 complete -->
 							<tr>
 								<td>${status.count }</td>
@@ -66,7 +67,8 @@ function goToCompleDetail(expNum){
 								<td>${complete.explorationManaName}</td>
 							</tr>
 						</c:forEach>
-					</tbody>
+						</c:if>
+									</tbody>
 				</table>
 		</div>
 		<div id="complete" class="w3-container w3-display-container explor"
@@ -84,14 +86,7 @@ function goToCompleDetail(expNum){
 						</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="complete" items="${complete}" varStatus="status">
-							<tr>
-								<td>${status.count }</td>
-								<td><a href='<c:url value='/gwanri/expDetail2?num=${complete.explorationNum }'/>'${complete.explorationNum}')">${complete.companyName }</a></td>
-								<td>${complete.explorationType }</td>
-								<td>${complete.explorationManaName}</td>
-							</tr>
-						</c:forEach>
+					
 				</tbody>
 			</table>
 		</div>

@@ -8,6 +8,8 @@
 		<typeAlias type="Model.GwanriDTO.ExpagreeDTO" alias ="eaDTO"/>
 		<typeAlias type="Model.GwanriDTO.CoopContractDTO" alias ="ccDTO"/>
 		<typeAlias type="Model.GwanriDTO.BudgetBillDTO" alias ="bbDTO"/>
+		<typeAlias type="Model.GwanriDTO.ReceiptDTO" alias ="rDTO"/>
+		<typeAlias type="Model.GwanriDTO.TaxDTO" alias ="tDTO"/>
 		<typeAlias type="Model.InsaDTO.InsaDTO" alias ="insaDTO"/>
 		<typeAlias type="Model.InsaDTO.RecruitDTO" alias = "recruitDTO"/>
 		<typeAlias type="Model.InsaDTO.EmployeeDTO" alias = "employeeDTO"/>

@@ -18,32 +18,77 @@
 
 	<dvi class=" w3-container">
 	<center>
-		<h2>사전답사보고서 및 계약서 상세내역</h2>
+		<h2>계약서/사전답사보고서 상세내역</h2>
 	</center>
 	</dvi>
 	<thead>
 		<div class="w3-container">
 			<table class="w3-table-all w3-centered">
 				<tr>
-					<th>보고서 번호</th>
-					<td>${detail2.agreementConditionNum}</td>
+					<th>계약서 제목</th>
+					<td>${detail3.coopContractSubject}</td>
 				</tr>
 				<tr>
-					<th>업체 희망 정산 비율</th>
-					<td>${detail2.agreementConditionRatio}</td>
+					<th>계약체결 일자</th>
+					<td>${detail3.coopContractDate }</td>
 				</tr>
 				<tr>
-					<th>정산 기준 시간</th>
-					<td>${detail2.agreementConditionSett}</td>
+					<th>업체 분류날짜</th>
+					<td>${detail3.companySelectDate }</td>
+				</tr>
+				<tr>
+					<th>공급률</th>
+					<td>${detail3.coopContractSuppRatio }</td>
+				</tr>
+				<tr>
+					<th>마진률</th>
+					<td>${detail3.coopContractMarRatio}</td>
+				</tr>
+				<tr>
+					<th>정산일자</th>
+					<td>${detail3.coopContractCalDate}</td>
+				</tr>
+				<tr>
+					<th>사용 날짜</th>
+					<td>${detail3.coopConditionAvailDate }</td>
+				</tr>
+				<tr>
+					<th>사용 시간</th>
+					<td>${detail3.coopConditionAvailTime }</td>
+				</tr>
+				<tr>
+					<th>사용 인원</th>
+					<td>${detail3.coopConditionLimitPer}</td>
+				</tr>
+				<tr>
+					<th>업체희망 정산비율</th>
+					<td>${detail3.coopContractRatio }</td>
+				</tr>
+				<tr>
+					<th>정산기준시간</th>
+					<td>${detail3.coopContractSett }</td>
+				</tr>
+				<tr>
+					<th>정산방법</th>
+					<td>${detail3.coopContractMethod }</td>
+				</tr>
+				<tr>
+					<th>계약종료 일자</th>
+					<td>${detail3.coopContractEndDate }</td>
+				</tr>
+				<tr>
+					<th>분류유형</th>
+					<td>${detail3.coopKind }</td>
+				</tr>
+				<tr>
+					<th>계약서 상태</th>
+					<td>${detail3.coopContractState }</td>
 				</tr>
 				<tr>
 					<th>작성일</th>
-					<td>${detail2.agreementConditionDate}</td>
+					<td>${detail3.coopContractWrite }</td>
 				</tr>
-				<tr>
-					<th>보고서 번호</th>
-					<td>${detail2.explorationNum}</td>
-				</tr>
+				
 				<tr>
 					<th>업체 아이디</th>
 					<td>${detail2.companyId }</td>
