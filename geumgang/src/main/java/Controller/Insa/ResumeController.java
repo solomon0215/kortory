@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -50,15 +51,17 @@ public class ResumeController {
 	}
 
 	@RequestMapping(value = "/user/resumeInsert1", method = RequestMethod.POST) // 이력서1 작성메소드
-	public String resume1Write(ResumeCommand rc, HttpSession session, HttpServletRequest request) {
+	public String resume1Write(@ModelAttribute("rc") ResumeCommand rc, HttpSession session, HttpServletRequest request, Model model) {
 		Integer result = resumeService.resumeRegist1(rc, session, request);
-		return "insa/resume1";
+		model.addAttribute("userPage","../User/save.jsp");
+		return "User/userMain";
 	}
 
 	@RequestMapping(value = "/user/resumeInsert2", method = RequestMethod.POST) // 이력서 2 작성 메소드
-	public String resume2Write(ResumeCommand rc, HttpSession session, HttpServletRequest request) {
-		Integer result = resumeService.resumeRegist2(rc, session, request);
-		return "insa/resume2";
+	public String resume2Write(@ModelAttribute("rc") ResumeCommand rc, HttpSession session, HttpServletRequest request, Model model) {
+		Integer result1 = resumeService.resumeRegist2(rc, session, request);
+		model.addAttribute("userPage","../User/save.jsp");
+		return "User/userMain";
 	}
 
 	@RequestMapping(value = "/insa/resumeDetailView") // 이력서 상세보기

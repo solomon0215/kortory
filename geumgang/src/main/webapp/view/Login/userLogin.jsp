@@ -30,7 +30,7 @@ $(function(){
 			</div>
 			<label>비밀번호</label>
 			<div class="w3-center">
-				<form:input path="userPw" class="w3-input"/>
+				<form:password path="userPw" class="w3-input"/>
 				<form:errors path="userPw" class="w3-text-red"/>
 			</div>  	
 			<br>

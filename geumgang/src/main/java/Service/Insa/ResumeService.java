@@ -27,6 +27,7 @@ public class ResumeService {
 		
 		session = request.getSession();
 		resume.setUserId(((UserAuth)session.getAttribute("authLog")).getId());
+		System.out.println("userId: " + ((UserAuth)session.getAttribute("authLog")).getId());
 		resume.setResumeFile(rc.getFile());
 		resume.setResumeNational(rc.getNational());
 		resume.setResumeBohun(rc.getBohun());

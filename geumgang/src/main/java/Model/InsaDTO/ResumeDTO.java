@@ -20,7 +20,7 @@ public class ResumeDTO implements Serializable {
 	private java.sql.Date schoolStart2;
 	private java.sql.Date schoolEnd2;
 	private String resumeMajor;
-	private double resumePoint;
+	private float resumePoint;
 	private String resumeLanguage;
 	private String resumeGrade;
 	private String resumeLicense;
@@ -40,7 +40,7 @@ public class ResumeDTO implements Serializable {
 	public ResumeDTO(Integer resumeNum, String userId, String resumeFile, String resumeNational, String resumeBohun,
 			String resumeDisorder, String resumeArmy, String resumeExpOver, String resumeHighschool,
 			String resumeUnivercity, Date schoolStart1, Date schoolEnd1, Date schoolStart2, Date schoolEnd2,
-			String resumeMajor, double resumePoint, String resumeLanguage, String resumeGrade, String resumeLicense,
+			String resumeMajor, float resumePoint, String resumeLanguage, String resumeGrade, String resumeLicense,
 			String formerWork, String formerPosition, Date formerStart, Date formerEnd, Integer formerSalary,
 			String formerTask, String formerIntro, String resumeGrow, String resumeGood, String resumeBad,
 			String resumePerInfo) {
@@ -143,10 +143,10 @@ public class ResumeDTO implements Serializable {
 	public void setResumeMajor(String resumeMajor) {
 		this.resumeMajor = resumeMajor;
 	}
-	public double getResumePoint() {
+	public float getResumePoint() {
 		return resumePoint;
 	}
-	public void setResumePoint(double resumePoint) {
+	public void setResumePoint(float resumePoint) {
 		this.resumePoint = resumePoint;
 	}
 	public String getResumeLanguage() {

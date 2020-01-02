@@ -32,7 +32,7 @@
 	<result column="RESUME_SCHOOL_START2" jdbcType="DATE" property="schoolStart2"/>
 	<result column="RESUME_SCHOOL_END2" jdbcType="DATE" property="schoolEnd2"/>
 	<result column="RESUME_MAJOR" jdbcType="VARCHAR" property="resumeMajor"/>
-	<result column="RESUME_GRADE_POINT" jdbcType="DOUBLE" property="resumePoint"/>
+	<result column="RESUME_GRADE_POINT" jdbcType="NUMERIC" property="resumePoint"/>
 	<result column="RESUME_EXP_OVER" jdbcType="VARCHAR" property="resumeExpOver"/>
 	<result column="RESUME_LANGUAGE" jdbcType="VARCHAR" property="resumeLanguage" />
 	<result column="RESUME_LANGUAGE_GRADE" jdbcType="VARCHAR" property="resumeGrade" />

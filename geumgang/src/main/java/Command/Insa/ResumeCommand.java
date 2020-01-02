@@ -16,7 +16,7 @@ public class ResumeCommand {
 	Date schoolStart2;
 	Date schoolEnd2;
 	String major;
-	double point;
+	float point;
 	String language;
 	String grade;
 	String license;
@@ -96,10 +96,10 @@ public class ResumeCommand {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	public double getPoint() {
+	public float getPoint() {
 		return point;
 	}
-	public void setPoint(double Point) {
+	public void setPoint(float Point) {
 		this.point = Point;
 	}
 	public String getLicense() {

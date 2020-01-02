@@ -10,25 +10,30 @@
 <meta charset="UTF-8">
 <title>인사고과 작성</title>
 </head>
+<style>
+      
+     
+    </style>
 <body>
-	
-		<table class="w3-table w3-border">
+	<form:form class="w3-table w3-bordered" commandName="ec" id="frm" action="evaluationPro" method="POST" 
+	style="margin-left:13%">
+		<table class="w3-table w3-border" >
 			<tr>
-				<td class="w3-border" rowspan="4">인사고과</td>
-				<td class="w3-border w3-light-gray">부서명</td>
-				<td class="w3-border">인사부</td>
+				<td class="w3-border-right" rowspan="4">인사고과</td>
+				<td class="w3-border-right w3-light-gray">부서명</td>
+				<td class="w3-border-right" height="30">인사부</td>
 			</tr>
 			<tr>
-				<td class="w3-border w3-light-gray">작성자</td>
-				<td class="w3-border">김지유</td>
+				<td class="w3-border-right w3-light-gray">작성자</td>
+				<td class="w3-border-right">김지유</td>
 			</tr>
 			<tr>
-				<td class="w3-border w3-light-gray">사원명</td>
-				<td class="w3-border">ooo</td>
+				<td class="w3-border-right w3-light-gray">사원명</td>
+				<td class="w3-border-right">ooo</td>
 			</tr>
 			<tr>
-				<td class="w3-border w3-light-gray">아이디</td>
-				<td class="w3-border">ooo</td>
+				<td class="w3-border-right w3-light-gray">아이디</td>
+				<td class="w3-border-right">ooo</td>
 			</tr>			
 		</table>
 		
@@ -174,6 +179,8 @@
 			<td class="w3-border-right">D</td>
 		</tr>
 		</table>
-			
+		<br />
+		<br />
+	</form:form>		
 </body>
 </html>

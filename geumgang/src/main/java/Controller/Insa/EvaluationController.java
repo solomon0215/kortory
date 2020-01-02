@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,6 +24,12 @@ public class EvaluationController {
 			return "insa/registFailed";
 		}
 		return "insa/registSuccess";
+	}
+	
+	@RequestMapping(value="/insa/evaluationInsert", method=RequestMethod.GET)
+	public String view(EvaluationCommand ec, Model model) {
+		model.addAttribute("insaPage","../insa/evaluationForm.jsp");
+		return "insa/insaPage";
 	}
 
 }
