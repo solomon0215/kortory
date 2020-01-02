@@ -36,7 +36,8 @@ public class GwanriInsertRepository {
     }
 	/** 협약조건안 게시판 - 등록  
 	 * @param expdto */    
-    public Integer coopInsert(CoopContractDTO dto, ExplorListDTO expdto){
+    public Integer coopInsert(CoopContractDTO dto){
+    	
     	String statement = namespace + ".insertCoop";    	
     	Integer result = sqlSession.insert(statement, dto);
     	

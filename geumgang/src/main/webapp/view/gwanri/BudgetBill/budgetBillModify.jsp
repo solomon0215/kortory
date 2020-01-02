@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,49 +15,33 @@
 </script>	
 </head>
 <body>
-<dvi class =" w3-container">
-		<center><h2>예산안 보고서 상세내역</h2></center><br/>
-			
-<form:form name ="frm" id ="frm" method = "post" 
-	commandName = "memberCommand" action ="memberModifyPro">
-<table border = 1  width = 600 align = "center" cellpadding = 3 >
-		<tr><td >번호<spring:message code="userId.userPw" /></td>
-		<td >&nbsp;</td></tr>
-	<tr><td>총 예산금액<spring:message code="userModify" /></td>
-		<td><input type="password" id="pw" name ="userPw" />원<br />
-	        <form:errors path ="userPw"/>
-		  </td>
-	<tr><td>인건비 비율<spring:message code="password" /></td>
-		<td><input type="password" id="pw" name ="userPw" />%<br />
-	        <form:errors path ="userPw"/>
-		  </td>
-	</tr>
-	<tr><td >인건비 금액<spring:message code="defaultInfo" /></td>
-		<td><input type="password" id="pw" name ="userPw" />원<br />
-	        <form:errors path ="userPw"/>
-		  </td>
-	<tr><td>희망상품 금액<spring:message code="name" /></td>
-		<td><input type="password" id="pw" name ="userPw" />원<br />
-	        <form:errors path ="userPw"/>
-		  </td>
-	</tr>
-	<tr><td>작성일<spring:message code="birth.gender" /></td>
-		<td >&nbsp;</td></tr>
-	
-	
-	
 
+<dvi class =" w3-container" >
+		<center><h2>예산안보고서 상세내역</h2></center>
 		
-			
-</table>
-<br />
-  <div class="w3-container" align="center">
-   <a href="#" class="w3-btn w3-blue">수정</a>
-    <a href="#" class="w3-btn w3-blue">삭제</a>
+</dvi>	
+<form:form action="budgetBillModify" method="POST" commandName="bbc">
+<thead> 
+<div class="w3-container" style="margin-left: 30%;">
+    <table class="w3-table-all w3-half w3-centered" >
+     <tr><th>번호</th> <td>${detail.budgetBillNum}</td></tr>
+     
+     <tr><th>제목</th><td><form:input path=budgetBillSubject style="width:100%" type="text"/></td></tr>
+     <tr><th>총 예산금액</th> <td><form:input path=budgetBillPriceSum type="number"/></td></tr>
+     <tr><th>인건비 비율</th><td><form:input path=budgetBillLaborRatio type="flaot"/></td></tr>
+     <tr><th>인건비 금액</th> <td><form:input path=budgetBillLaborPrice type="number"/></td></tr>
+     <tr><th>희망상품 금액</th> <td><form:input path=budgetBillGoodsPrice type="number"/></td></tr>
+     <tr><th>작성일</th> <td>${detail.budgetBillDate }</td></tr>
+
+
+  </table>
+  </div>
+  </thead>
+  <br/>
+  <div class="w3-container " style="margin-left: 43%;">
+   <a href="http://localhost:8080/geumgang/gwanri/budgetBillModify" class="w3-btn w3-green">수정</a>
+    <a href="#" class="w3-btn w3-green">삭제</a>
 </div>
 </form:form>
-
-</dvi>
 </body>
-
 </html>

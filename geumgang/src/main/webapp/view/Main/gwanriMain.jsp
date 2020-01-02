@@ -41,7 +41,7 @@
 	             <a href="#" style="text-decoration:none" >협력업체 관련 업무</a>
 	            <ul>
 	            	<li><a href="http://localhost:8080/geumgang/gwanri/expList" style="text-decoration:none">사전답사 보고서 목록</a></li>
-	                <li>협력업체 계약서 목록</li>
+	                <li><a href="http://localhost:8080/geumgang/gwanri/coopList" style="text-decoration:none">협력업체 계약서 목록</a></li>
 	            </ul>
 	        </li> 
 	        <br/>

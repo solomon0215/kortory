@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
+import Command.Gwanri.CoopContractCommand;
 import Command.Gwanri.ExpWriteCommand;
 import Model.CompanyDTO.CompanyAuth;
 import Model.GwanriDTO.ExpagreeDTO;
@@ -52,11 +53,15 @@ public class AgreementConditionService {
 		List<ExplorListDTO> complete = youngSelRepo.selectKindExp(dto); 
 		model.addAttribute("complete", complete);
 		}
-	public void expDetail(Model model, Integer explorationNum) {
+	public void expDetail(Model model, Integer explorationNum) { //사전답사보고서 디테일
 		System.out.println(explorationNum+"====================");
+		
 		ExplorationDTO dto = new ExplorationDTO();
 		dto.setExplorationNum(explorationNum);
 		ExplorListDTO detail = gwanriSelectRepository.selectExpDetail(dto);
+				
+		System.out.println(detail.getCompanyId()+"id====================");
+	
 		model.addAttribute("detail", detail);
 	}
 	public void expDetail2(Model model, Integer explorationNum) {

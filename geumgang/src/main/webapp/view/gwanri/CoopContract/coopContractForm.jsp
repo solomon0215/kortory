@@ -107,7 +107,7 @@
 				<tr class="w3-white">
 					<td>계약종료 일자</td>
 					<td>
-						<form:input path="coopContractMethod" type="date"/>
+						<form:input path="coopContractEndDate" type="date"/>
 					</td>
 				</tr>
 				<tr class="w3-white">
@@ -134,8 +134,7 @@
 						<form:input path="coopContractWrite" type="date"/>
 					</td>
 				</tr>
-				<form:hidden  path="coopContractNum" value="${detail.coopContractNum}" />
-			    <form:hidden path="companyId" value="${detail.companyId}" />
+			    <form:hidden path="companyId" />
 		    </tbody>
 		</table><br/>
 		<div class="w3-center">

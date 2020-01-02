@@ -50,7 +50,7 @@
   </thead>
   <br/>
   <div class="w3-container " style="margin-left: 43%;">
-   <a href="http://localhost:8080/geumgang/gwanri/coopWrite" class="w3-btn w3-green">계약서 작성</a>
+   <a href="http://localhost:8080/geumgang/gwanri/coopWrite?num=${detail.explorationNum}&companyId=${detail.companyId }" class="w3-btn w3-green">계약서 작성</a>
 </div>
 
 </body>

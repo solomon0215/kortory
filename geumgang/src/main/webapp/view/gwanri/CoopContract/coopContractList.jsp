@@ -38,10 +38,7 @@
 					</tbody>
   </table>
   </dvi>
-  <div class="w3-container" align="center">
-   <a href="budgetBillWrite" class="w3-btn w3-green">작성</a>
-</div>
-  
+ 
 </div>
 </body>
 </html>

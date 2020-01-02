@@ -22,14 +22,26 @@
 		<result column="GWAN_RI_EMAIL" jdbcType="VARCHAR" property="gwanRiEmail"/>
 	</resultMap>
 
+	<resultMap type="bbDTO" id="budgetMap">
+	<id column="BUDGET_BILL_NUM" jdbcType="BIGINT" property="budgetBillNum"/> 
+	<result column="BUDGET_BILL_SUBJECT" jdbcType="VARCHAR" property="budgetBillSubject"/> 
+	<result column="BUDGET_BILL_PRICE_SUM" jdbcType="BIGINT" property="budgetBillPriceSum"/> 
+	<result column="BUDGET_BILL_LABOR_RATIO" jdbcType="FLOAT" property="budgetBillLaborRatio"/> 
+	<result column="BUDGET_BILL_LABOR_PRICE" jdbcType="BIGINT" property="budgetBillLaborPrice"/> 
+	<result column="BUDGET_BILL_GOODS_PRICE" jdbcType="BIGINT" property="budgetBillGoodsPrice"/> 
+	<result column="BUDGET_BILL_DATE" jdbcType="DATE" property="budgetBillDate"/> 
+	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/> 
+	</resultMap>
 <!-- 수정 -->
-	<update id="agreeModify">
-		update AGREEMENT_CONDITION		
+	<update id="budgetModify">
+		update BUDGET_BILL		
 		set
-		AGREEMENT_CONDITION_SUBJECT=#{agreementConditionSubject}, 
-		AGREEMENT_CONDITION_SETT=#{agreementConditionSett},
-		AGREEMENT_CONDITION_LATIO=#{agreementConditionLatio}
-		where AGREEMENT_CONDITION_NUM=#{agreementConditionNum}
+		BUDGET_BILL_SUBJECT=#{budgetBillSubject}, 
+		BUDGET_BILL_PRICE_SUM=#{budgetBillPriceSum},
+		BUDGET_BILL_LABOR_RATIO=#{budgetBillLaborRatio}
+		BUDGET_BILL_LABOR_PRICE=#{budgetBillLaborPrice}
+		BUDGET_BILL_GOODS_PRICE=#{budgetBillGoodsPrice}
+		where BUDGET_BILL_NUM=#{budgetBillNum}
 </update>
 
 </mapper>

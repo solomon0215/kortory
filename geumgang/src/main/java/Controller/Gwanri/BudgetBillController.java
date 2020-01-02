@@ -51,11 +51,10 @@ public class BudgetBillController {
 		model.addAttribute("pageName", "../gwanri/BudgetBill/budgetBillDetail.jsp");
 		return "Main/gwanriMain";
 	}
-/*	
 	@RequestMapping("gwanri/budgetBillModify") //협약조건안 수정?
-	public String budgetModify(BudgetBillCommand bbc, HttpServletRequest request , HttpSession session, Model model){		
-		bbs.budgetModify(bbc, request, session, model);
-		model.addAttribute("pageName", "../gwanri/AgreementCondition/agreement_condition_modify.jsp");
+	public String budgetModify(@RequestParam(value="num",required = false) Integer budgetBillNum, BudgetBillCommand bbc, HttpServletRequest request , HttpSession session, Model model){		
+		bbs.budgetModify(bbc,budgetBillNum, request, session, model);
+		model.addAttribute("pageName", "../gwanri/BudgetBill/budgetBillModify.jsp");
 		return "Main/gwanriMain";
 	}
 	/*

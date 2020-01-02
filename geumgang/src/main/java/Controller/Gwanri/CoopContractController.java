@@ -29,14 +29,18 @@ public class CoopContractController {
 	CoopContractService ccs;
 	
 	@RequestMapping("gwanri/coopWrite") // 협력업체 계약서 작성 폼
-	public String form(CoopContractCommand ccc, HttpServletRequest request , HttpSession session, Model model){		
+	public String form(@RequestParam(value="companyId",required = false) String companyId ,
+			@RequestParam(value="num",required = false) Integer num,
+			CoopContractCommand ccc, HttpServletRequest request , HttpSession session, Model model){		
 		model.addAttribute("pageName", "../gwanri/CoopContract/coopContractForm.jsp");
+		ccc.setCompanyId(companyId);
+		ccc.setCoopContractNum(num);
 		model.addAttribute("ccc", ccc);
 		return "Main/gwanriMain";
 	}
 	@RequestMapping(value="/gwanri/coopWritePro", method=RequestMethod.POST) //협력업체 계약서 등록
-	public String write(@RequestParam(value="companyId",required = false) String companyId ,CoopContractCommand ccc, HttpServletRequest request , HttpSession session, Model model) {		
-		ccs.coopInsert(companyId, ccc, request, session, model);
+	public String write(CoopContractCommand ccc, HttpServletRequest request , HttpSession session, Model model) {		
+		ccs.coopInsert(ccc, request, session, model);
 		if(session.getAttribute("authLog") == null) { 
 			System.out.println("authLog");
 
@@ -47,6 +51,7 @@ public class CoopContractController {
 	@RequestMapping(value="gwanri/coopList", method=RequestMethod.GET) //협력업체 계약서 리스트
 	public String List(Model model, HttpSession session){
 		ccs.coopList(model, session);
+	
 		model.addAttribute("pageName", "../gwanri/CoopContract/coopContractList.jsp");
 		return "Main/gwanriMain";
 	}

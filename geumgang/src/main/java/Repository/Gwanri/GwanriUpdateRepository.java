@@ -26,5 +26,10 @@ public class GwanriUpdateRepository {
 		return sqlSession.update(statement, dto);
 		
     }	
+    public int budgetModify(BudgetBillDTO dto){
+    	String statement = namespace + ".budgetModify";
+		return sqlSession.update(statement, dto);
+		
+    }	
 
 }

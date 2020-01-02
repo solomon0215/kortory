@@ -53,33 +53,50 @@ public class CoopContractService {
 		model.addAttribute("coop", coop);
 	}
 	
-	public Integer coopInsert(String companyId, CoopContractCommand ccc, HttpServletRequest request, HttpSession session, Model model) {
+	public Integer coopInsert(CoopContractCommand ccc, HttpServletRequest request, HttpSession session, Model model) {
 		CoopContractDTO ccdto = new CoopContractDTO();
-		ExplorListDTO expdto = new ExplorListDTO();
 		GwanriAuthInfo auth = (GwanriAuthInfo) request.getSession().getAttribute("authLog");
-		expdto.setCompanyId(companyId);
+		ccdto.setCompanyId(ccc.getCompanyId());
 		ccdto.setGwanRiNum(auth.getgwanRiNum());
-		ccdto.setCompanySelectDate(ccdto.getCompanySelectDate());
-		ccdto.setCoopConditionAvailDate(ccdto.getCoopConditionAvailDate());
-		ccdto.setCoopConditionAvailTime(ccdto.getCoopConditionAvailTime());
-		ccdto.setCoopConditionLimitPer(ccdto.getCoopConditionLimitPer());
-		ccdto.setCoopContractCalDate(ccdto.getCoopContractCalDate());
-		ccdto.setCoopContractDate(ccdto.getCoopContractDate());
-		ccdto.setCoopContractEndDate(ccdto.getCoopContractEndDate());
-		ccdto.setCoopContractMarRatio(ccdto.getCoopContractMarRatio());
-		ccdto.setCoopContractMethod(ccdto.getCoopContractMethod());
-		ccdto.setCoopContractNum(ccdto.getCoopContractNum());
-		ccdto.setCoopContractRatio(ccdto.getCoopContractRatio());
-		ccdto.setCoopContractSett(ccdto.getCoopContractSett());
-		ccdto.setCoopContractState(ccdto.getCoopContractState());
-		ccdto.setCoopContractSubject(ccdto.getCoopContractSubject());
-		ccdto.setCoopContractSuppRatio(ccdto.getCoopContractSuppRatio());
-		ccdto.setCoopContractWrite(ccdto.getCoopContractWrite());
-		ccdto.setCoopKind(ccdto.getCoopKind());
-		
+		ccdto.setCompanySelectDate(ccc.getCompanySelectDate());
+		ccdto.setCoopConditionAvailDate(ccc.getCoopConditionAvailDate());
+		ccdto.setCoopConditionAvailTime(ccc.getCoopConditionAvailTime());
+		ccdto.setCoopConditionLimitPer(ccc.getCoopConditionLimitPer());
+		ccdto.setCoopContractCalDate(ccc.getCoopContractCalDate());
+		ccdto.setCoopContractDate(ccc.getCoopContractDate());
+		ccdto.setCoopContractEndDate(ccc.getCoopContractEndDate());
+		ccdto.setCoopContractMarRatio(ccc.getCoopContractMarRatio());
+		ccdto.setCoopContractMethod(ccc.getCoopContractMethod());
+		ccdto.setCoopContractNum(ccc.getCoopContractNum());
+		ccdto.setCoopContractRatio(ccc.getCoopContractRatio());
+		ccdto.setCoopContractSett(ccc.getCoopContractSett());
+		ccdto.setCoopContractState(ccc.getCoopContractState());
+		ccdto.setCoopContractSubject(ccc.getCoopContractSubject());
+		ccdto.setCoopContractSuppRatio(ccc.getCoopContractSuppRatio());
+		ccdto.setCoopContractWrite(ccc.getCoopContractWrite());
+		ccdto.setCoopKind(ccc.getCoopKind());
+		System.out.println(ccdto.getCompanyId());
+    	System.out.println(ccdto.getGwanRiNum());
+    	System.out.println(ccdto.getCompanySelectDate());
+    	System.out.println(ccdto.getCoopConditionAvailDate());
+    	System.out.println(ccdto.getCoopConditionAvailTime());
+    	System.out.println(ccdto.getCoopConditionLimitPer());
+    	System.out.println(ccdto.getCoopContractCalDate());
+    	System.out.println(ccdto.getCoopContractDate());
+    	System.out.println(ccdto.getCoopContractEndDate());
+    	System.out.println(ccdto.getCoopContractMarRatio());
+    	System.out.println(ccdto.getCoopContractMethod());
+    	System.out.println(ccdto.getCoopContractNum());
+    	System.out.println(ccdto.getCoopContractRatio());
+    	System.out.println(ccdto.getCoopContractSett());
+    	System.out.println(ccdto.getCoopContractState());
+    	System.out.println(ccdto.getCoopContractSubject());
+    	System.out.println(ccdto.getCoopContractSuppRatio());
+    	System.out.println(ccdto.getCoopContractWrite());
+    	System.out.println(ccdto.getCoopKind());
 		model.addAttribute("pageName", "../gwanri/CoopContract/coopContractList.jsp");
 				
-		return gwanriInsertRepository.coopInsert(ccdto,expdto);
+		return gwanriInsertRepository.coopInsert(ccdto);
 		
 	}
 	public void coopDetail(Model model, Integer coopContractNum) {

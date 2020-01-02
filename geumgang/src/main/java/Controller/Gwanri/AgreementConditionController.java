@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import Command.Gwanri.CoopContractCommand;
 import Command.Gwanri.ExpWriteCommand;
 import Service.Gwanri.AgreementConditionService;
 import Service.Gwanri.CoopContractService;
@@ -35,8 +36,7 @@ public class AgreementConditionController {
 		return "Main/gwanriMain";
 	}
 	@RequestMapping("gwanri/expDetail") // 사전답사보고서 미확인 디테일
-	public String expDetail(@RequestParam(value="num",required = false) Integer explorationNum
-			, Model model) {
+	public String expDetail(@RequestParam(value="num",required = false) Integer explorationNum, Model model) {
 		System.out.println(explorationNum);
 		acls.expDetail(model,explorationNum);
 		model.addAttribute("pageName", "../gwanri/explorationDetail.jsp");

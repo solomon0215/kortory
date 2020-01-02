@@ -36,7 +36,7 @@
   </thead>
   <br/>
   <div class="w3-container " style="margin-left: 43%;">
-   <a href="http://localhost:8080/geumgang/gwanri/agreementConditionModify" class="w3-btn w3-green">수정</a>
+   <a href="http://localhost:8080/geumgang/gwanri/budgetBillModify" class="w3-btn w3-green">수정</a>
     <a href="#" class="w3-btn w3-green">삭제</a>
 </div>
 
