@@ -42,4 +42,14 @@ public class KihoekSelectRepository {
 		String statement = namespace + ".tourPlaceSelect";
 		return sqlSession.selectList(statement, ccDto);
 	}
+	
+	public List<CoopComDTO> transportSelect(CoopComDTO ccDto) {
+		String statement = namespace + ".transportSelect";
+		return sqlSession.selectList(statement, ccDto);
+	}
+	
+	public List<CoopComDTO> accomSelect(CoopComDTO ccDto) {
+		String statement = namespace + ".accomSelect";
+		return sqlSession.selectList(statement, ccDto);
+	}
 }
