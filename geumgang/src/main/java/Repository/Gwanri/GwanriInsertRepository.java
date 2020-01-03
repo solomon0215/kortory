@@ -13,6 +13,7 @@ import Model.GwanriDTO.BudgetBillDTO;
 import Model.GwanriDTO.CoopContractDTO;
 import Model.GwanriDTO.ExpagreeDTO;
 import Model.GwanriDTO.GwanriDTO;
+import Model.GwanriDTO.TaxDTO;
 import Model.YoungupDTO.ExplorListDTO;
 
 @Repository
@@ -39,6 +40,20 @@ public class GwanriInsertRepository {
     public Integer coopInsert(CoopContractDTO dto){
     	
     	String statement = namespace + ".insertCoop";    	
+    	Integer result = sqlSession.insert(statement, dto);
+    	
+		return result;    	
+    }
+    public Integer taxInsert(TaxDTO dto){
+    	System.out.println(dto.getGwanRiNum());
+    	System.out.println(dto.getTaxProofFile());
+    	System.out.println(dto.getTaxSubject());
+    	System.out.println(dto.getTaxCost());
+    	System.out.println(dto.getTaxDate());
+    	System.out.println(dto.getTaxNum());
+    	System.out.println(dto.getTaxPeriod());
+    	System.out.println(dto.getTaxProofDate());
+    	String statement = namespace + ".insertTax";    	
     	Integer result = sqlSession.insert(statement, dto);
     	
 		return result;    	

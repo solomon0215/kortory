@@ -17,19 +17,18 @@
 <body>
 
 <dvi class =" w3-container" >
-		<center><h2>예산안보고서 상세내역</h2></center>
+		<center><h2>세금납부 신고서 상세내역</h2></center>
 </dvi>	
 <thead> 
 <div class="w3-container" style="margin-left: 33%;">
     <table class="w3-table-all w3-half w3-centered" >
-     <tr><th>번호</th> <td>${detail.budgetBillNum}</td></tr>
-     <tr><th>제목</th><td>${detail.budgetBillSubject }</td></tr>
-     <tr><th>총 예산금액</th> <td>${detail.budgetBillPriceSum }원</td></tr>
-     <tr><th>인건비 비율</th><td>${detail.budgetBillLaborRatio }%</td></tr>
-     <tr><th>인건비 금액</th> <td>${detail.budgetBillLaborPrice }원</td></tr>
-     <tr><th>희망상품 금액</th> <td>${detail.budgetBillGoodsPrice }원</td></tr>
-     <tr><th>작성일</th> <td>${detail.budgetBillDate }</td></tr>
-
+     <tr><th>번호</th> <td>${detail.taxNum}</td></tr>
+     <tr><th>납부신고 제목</th><td>${detail.taxSubject }</td></tr>
+     <tr><th>납부 산정기간</th> <td>${detail.taxPeriod }일</td></tr>
+     <tr><th>확인일</th><td>${detail.taxProofDate }</td></tr>
+     <tr><th>신고일자</th> <td>${detail.taxDate }</td></tr>
+     <tr><th>납부금액</th> <td>${detail.taxCost }원</td></tr>
+     
 
   </table>
   </div>

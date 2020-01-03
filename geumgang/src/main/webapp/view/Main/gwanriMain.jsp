@@ -60,18 +60,20 @@
 	        </li>
 	        <br/>
 	         <li class="menu">
+	             <a href="#tabContent05" style="text-decoration:none" >세금 관련 업무</a>
+	            <ul>
+	                <li><a href="http://localhost:8080/geumgang/gwanri/taxList" style="text-decoration:none">세금 신고서 목록</a></li>
+	            </ul>
+	        </li>
+	        <br/>
+	         <li class="menu">
 	             <a href="#tabContent04" style="text-decoration:none" >영수처리 관련 업무</a>
 	            <ul>
 	                <li><a href="http://localhost:8080/geumgang/gwanri/receiptAppList" style="text-decoration:none">영수처리 신청서 목록</a></li>
 	            </ul>
 	        </li>
 	        <br/>
-	         <li class="menu">
-	             <a href="#tabContent05" style="text-decoration:none" >세금 관련 업무</a>
-	            <ul>
-	                <li><a href="http://localhost:8080/geumgang/gwanri/taxList" style="text-decoration:none">세금 신고서 목록</a></li>
-	            </ul>
-	        </li>
+	        
 	    </ul>
 	</div>
 </div>

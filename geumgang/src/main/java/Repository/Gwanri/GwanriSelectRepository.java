@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 import Model.GwanriDTO.BudgetBillDTO;
 import Model.GwanriDTO.CoopContractDTO;
 import Model.GwanriDTO.GwanriDTO;
+import Model.GwanriDTO.TaxDTO;
 import Model.InsaDTO.RecruitDTO;
 import Model.YoungupDTO.ExplorListDTO;
 import Model.YoungupDTO.ExplorationDTO;
@@ -68,7 +69,21 @@ public class GwanriSelectRepository {
 		String statement = namespace + ".expDetail2";
 		return sqlSession.selectOne(statement,dto);
 	}
-    
+	/** 예산안 보고서 게시판 - 리스트  */
+    public List<TaxDTO> taxAllSelect() {
+    	String statement =  namespace + ".taxList";
+    	List<TaxDTO> list = sqlSession.selectList(statement);
+		return list;
+    }
+	/** 예산안 보고서 게시판 - 디테일  */
+    public TaxDTO taxDetail(TaxDTO dto){ 
+    	String statement =  namespace + ".taxDetail";
+        return sqlSession.selectOne(statement, dto);
+    }
+	public List<TaxDTO> noticeList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
 }
 	

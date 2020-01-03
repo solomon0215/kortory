@@ -10,14 +10,14 @@
 <body>
 
 <div class="w3-content w3-section" style="max-width:100%;max-height:20%">
-  <img class="mySlides w3-round  w3-animate-opacity" src="../images/1.jpg" alt="mainImage" style="width:100%;height: 50%;">
-  <img class="mySlides w3-round  w3-animate-opacity" src="../images/5.jpg" alt="mainImage" style="width:100%;height: 50%;">
-  <img class="mySlides w3-round  w3-animate-opacity" src="../images/2.jpg" alt="mainImage" style="width:100%;height: 50%;">
-  <img class="mySlides w3-round  w3-animate-opacity" src="../images/6.jpg" alt="mainImage" style="width:100%;height: 50%;">
-  <img class="mySlides w3-round  w3-animate-opacity" src="../images/3.jpg" alt="mainImage" style="width:100%;height: 50%;">
-  <img class="mySlides w3-round  w3-animate-opacity" src="../images/7.jpg" alt="mainImage" style="width:100%;height: 50%;">
-  <img class="mySlides w3-round  w3-animate-opacity" src="../images/4.jpg" alt="mainImage" style="width:100%;height: 50%;">
-  <img class="mySlides w3-round  w3-animate-opacity" src="../images/8.jpg" alt="mainImage" style="width:100%;height: 50%;">
+  <img class="mySlides w3-round  w3-animate-opacity" src="images/1.jpg" alt="mainImage" style="width:100%;height: 50%;">
+  <img class="mySlides w3-round  w3-animate-opacity" src="images/5.jpg" alt="mainImage" style="width:100%;height: 50%;">
+  <img class="mySlides w3-round  w3-animate-opacity" src="images/2.jpg" alt="mainImage" style="width:100%;height: 50%;">
+  <img class="mySlides w3-round  w3-animate-opacity" src="images/6.jpg" alt="mainImage" style="width:100%;height: 50%;">
+  <img class="mySlides w3-round  w3-animate-opacity" src="images/3.jpg" alt="mainImage" style="width:100%;height: 50%;">
+  <img class="mySlides w3-round  w3-animate-opacity" src="images/7.jpg" alt="mainImage" style="width:100%;height: 50%;">
+  <img class="mySlides w3-round  w3-animate-opacity" src="images/4.jpg" alt="mainImage" style="width:100%;height: 50%;">
+  <img class="mySlides w3-round  w3-animate-opacity" src="images/8.jpg" alt="mainImage" style="width:100%;height: 50%;">
 </div>
 <script>
 var myIndex = 0;

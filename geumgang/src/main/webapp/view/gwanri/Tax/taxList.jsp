@@ -24,29 +24,21 @@
         <th>작성일</th>
       </tr>
     </thead>
-    <tr>
-      <td>1</td>
-      <td>증여세 납부</td>
-           <td>이준혁</td>
-            <td>2019-08-05</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>연말정산 납부</td>
-           <td>이준혁</td>
-             <td>2019-12-31</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>원천세 신고</td>
-           <td>이준혁</td>
-               <td>2019-12-31</td>
-    </tr>
-  
+    	<c:forEach var="tax" items="${tax}" varStatus="status">
+							<tr>
+								<td>${status.count }</td>
+								<td><a
+									href='<c:url value='/gwanri/taxView?num=${tax.taxNum }'/>'${tax.taxNum}'>${tax.taxSubject }</a></td>
+								<td>${authName}</td>
+								<td>${tax.taxDate }</td>
+
+							</tr>
+						</c:forEach>
+					</tbody>
   </table>
   </dvi>
   <div class="w3-container" align="center">
-   <a href="#" class="w3-btn w3-green">등록</a>
+   <a href="taxWrite" class="w3-btn w3-green">등록</a>
 </div>
   
 </div>

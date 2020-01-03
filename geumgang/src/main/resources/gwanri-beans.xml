@@ -10,6 +10,7 @@
 <bean id = "budgetBillService" class ="Service.Gwanri.BudgetBillService"/>
 <bean id = "coopContractService" class ="Service.Gwanri.CoopContractService"/>
 <bean id = "agreementConditionService" class ="Service.Gwanri.AgreementConditionService"/>
+<bean id = "taxService" class ="Service.Gwanri.TaxService"/>
 
    <!-- Repositopry -->
 <bean id = "gwanriDeleteRepository" class ="Repository.Gwanri.GwanriDeleteRepository"/>

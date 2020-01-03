@@ -77,8 +77,7 @@ function openZipSearch() {
 </head>
 <body>
 	<!-- 회원 등록 작성 페이지 -->
-	<div class="w3-container w3-display-middle w3-col m8"
-		style="max-height: 80%;">
+	<div class="w3-container" style="margin: 0px auto; width:80%;">
 		<form:form
 			class="w3-container w3-light-grey w3-text-dark-gray w3-margin"
 			commandName="userFormCommand" id="frm" action="userInsert"

@@ -21,7 +21,7 @@
 </head>
 <body>
 <div class="w3-container" style="margin-top: 5%;">
-	<form:form action="budgetBillWritePro" method="POST" commandName="bbc">
+	<form:form action="taxWritePro" method="POST" commandName="tc" enctype="multipart/form-data">
 		
 		<table class="w3-table-all w3-centered">
 			<thead>
@@ -31,39 +31,34 @@
 		    </thead>
 		    <tbody>
 		    	<tr class="w3-white">
-					<td>예산안보고서 제목</td>
+					<td>납부신고 제목</td>
 					<td>
-						<form:input path="budgetBillSubject" style="width:500px;" type="text"/>
+						<form:input path="taxSubject" style="width:500px;" type="text"/>
 					</td>
 				</tr>
 				<tr class="w3-white">
-					<td>총 예산금액</td>
+					<td>납부 산정기간</td>
 					<td>
-						<form:input path="budgetBillPriceSum" type="number"/>원
+						<form:input path="taxPeriod" type="number"/>일
 					</td>
 				</tr>
 				<tr class="w3-white">
-					<td>인건비 비율</td>
+					<td>확인일</td>
 					<td>
-						<form:input path="budgetBillLaborRatio" type="float"/>%
+						<form:input path="taxProofDate" type="date"/>
+					</td>
+				</tr>
+				
+				<tr class="w3-white">
+					<td>신고일자</td>
+					<td>
+						<form:input path="taxDate" type="date"/>
 					</td>
 				</tr>
 				<tr class="w3-white">
-					<td>인건비 금액</td>
+					<td>납부금액</td>
 					<td>
-						<form:input path="budgetBillLaborPrice" type="number"/>원
-					</td>
-				</tr>
-				<tr class="w3-white">
-					<td>희망상품 금액</td>
-					<td>
-						<form:input path="budgetBillGoodsPrice" type="number"/>원
-					</td>
-				</tr>
-				<tr class="w3-white">
-					<td>작성일</td>
-					<td>
-						<form:input path="budgetBillDate" type="date"/>
+						<form:input path="taxCost" type="number"/>원
 					</td>
 				</tr>
 				

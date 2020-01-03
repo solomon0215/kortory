@@ -33,17 +33,17 @@ public class CompanyFormController {
 	public String companyInsert(CompanyFormCommand companyFormCommand,Errors errors,Model model) { 
 		new CompanyFormCommandValidator().validate(companyFormCommand, errors);
 		if(errors.hasErrors()) {
-			return "Company/companyForm";//�Է� ����
+			return "Company/companyForm";
 		}
 		Integer i = companyFormService.insert(companyFormCommand);
 		if(i != null) {
 			if(i>0) {
-				companyFormService.infoEmail(companyFormCommand); //���� ������
+				companyFormService.infoEmail(companyFormCommand); 
 				model.addAttribute("command", companyFormCommand);
-				return "Company/welcomeCompany";//��ϿϷ�
+				return "Company/welcomeCompany";
 			}
 		}
-		return "Company/failedPage"; //����������
+		return "Company/failedPage"; 
 	}
 	
 	//업체 아이디 확인
