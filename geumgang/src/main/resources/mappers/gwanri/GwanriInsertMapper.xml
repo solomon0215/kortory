@@ -4,6 +4,9 @@
 <mapper namespace="gwanriInsertMapper">
 
 	<cache />
+	<sql id = "tax">
+	TAX_NUM,TAX_SUBJECT,TAX_PERIOD,TAX_PROOF_DATE,TAX_DATE,TAX_COST,GWAN_RI_NUM
+	</sql>
 	<sql id="exploration">
 		exploration_num,company_id,exploration_type,exploration_schedule,exploration_effect,exploration_mana_name,exploration_avail_time,
 		exploration_avail_date,exploration_avail_holi,exploration_limit_age,exploration_limit_per,exploration_condition,exploration_file,
@@ -46,6 +49,13 @@
 	INSERT INTO BUDGET_BILL(<include refid="budgetBill" />)	
 	VALUES(gwanri_seq.nextval,#{budgetBillSubject},	#{budgetBillPriceSum},#{budgetBillLaborRatio},
 	#{budgetBillLaborPrice}, #{budgetBillGoodsPrice},#{budgetBillDate},#{gwanRiNum} )
+</insert>
+
+<!-- 예산안보고서 작성 -->
+	<insert id = "insertTax" parameterType="tDTO">
+	INSERT INTO TAX(<include refid="tax" />)	
+	VALUES(gwanri_seq.nextval,#{taxSubject},#{taxPeriod},#{taxProofDate},
+	 #{taxDate},#{taxCost},#{gwanRiNum} )
 </insert>
 
 </mapper>

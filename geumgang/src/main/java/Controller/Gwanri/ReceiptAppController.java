@@ -10,7 +10,7 @@ public class ReceiptAppController {
 	@RequestMapping("gwanri/receiptAppList")
 	public String boardList(@RequestParam(value="page" ,
 	required = false) Integer page, Model model){		
-		model.addAttribute("pageName", "../gwanri/Receipt/receipt_app_list.jsp");
+		model.addAttribute("pageName", "../gwanri/Receipt/receiptAppList.jsp");
 		return "Main/gwanriMain";
 	}
 }

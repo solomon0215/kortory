@@ -12,7 +12,6 @@ public class CompanyInsertRepository {
 	private SqlSession sqlSession;
 	private final String namespace = "companyInsertMapper";
 	
-	//Company(업체등록신청서) 테이블 인설트
 	public Integer companyInsert(CompanyDTO dto) {
 		String statement = namespace + ".companyInsert";
 		return sqlSession.insert(statement, dto);

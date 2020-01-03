@@ -69,11 +69,11 @@
 		</div>
 		<div class="w3-row w3-section">
 				<div class="w3-container w3-col m6">
-					<form:input path="companyPw" class="w3-input w3-border"  placeholder="비밀번호 영어 소문자/숫자 6~16자리"/>
+					<form:password path="companyPw" class="w3-input w3-border"  placeholder="비밀번호 영어 소문자/숫자 6~16자리"/>
 					<form:errors class="w3-red" path="companyPw"/>
 				</div>
 				<div class="w3-container w3-col m6">
-					<form:input path="companyPwCon" class="w3-input w3-border"  placeholder="비밀번호 확인 영어 소문자/숫자 6~16자리"/>
+					<form:password path="companyPwCon" class="w3-input w3-border"  placeholder="비밀번호 확인 영어 소문자/숫자 6~16자리"/>
 					<form:errors class="w3-red" path="companyPwCon"/>
 				</div>	
 		</div>

@@ -24,21 +24,30 @@
         <th>요청일</th>
       </tr>
     </thead>
-     <tbody>
-						<c:forEach var="budget" items="${budget}" varStatus="status">
-							<tr>
-								<td>${status.count }</td>
-								<td><a
-									href='<c:url value='/gwanri/budgetBillView?num=${budget.budgetBillNum }'/>'${budget.budgetBillNum}'>${budget.budgetBillSubject }</a></td>
-								<td>${authName}</td>
-								<td>${budget.budgetBillDate }</td>
-
-							</tr>
-						</c:forEach>
-					</tbody>
+    <tr>
+  <td>1</td>
+  <td>조식</td>
+  <td>이한경 가이드</td>
+  <td>2019-12-10</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>호텔 숙박</td>
+  <td>이한경 가이드</td>
+  <td>2019-12-10</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>석식</td>
+  <td>이한경 가이드</td>
+  <td>2019-12-13</td>
+</tr>
   </table>
   </dvi>
-  
+ 
+</div>
+ <div class="w3-container" align="center" style="margin-left: 15%;">
+   <a href="#" class="w3-btn w3-green">등록</a>
 </div>
 </body>
 </html>

@@ -33,6 +33,19 @@
 	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/> 
 	</resultMap>
 	
+	<sql id = "tax">
+	TAX_NUM,TAX_SUBJECT,TAX_PERIOD,TAX_PROOF_DATE,TAX_PROOF_FILE,TAX_DATE,TAX_COST,GWAN_RI_NUM
+	</sql>
+	<resultMap type="tDTO" id="taxMap">
+	<id column="TAX_NUM" jdbcType="BIGINT" property="taxNum"/> 
+	<result column="TAX_SUBJECT" jdbcType="VARCHAR" property="taxSubject"/> 
+	<result column="TAX_PERIOD" jdbcType="BIGINT" property="taxPeriod"/> 
+	<result column="TAX_PROOF_DATE" jdbcType="DATE" property="taxProofDate"/> 
+	<result column="TAX_PROOF_FILE" jdbcType="VARCHAR" property="taxProofFile"/> 
+	<result column="TAX_DATE" jdbcType="DATE" property="taxDate"/> 
+	<result column="TAX_COST" jdbcType="BIGINT" property="taxCost"/> 
+	<result column="GWAN_RI_NUM" jdbcType="VARCHAR" property="gwanRiNum"/> 
+	</resultMap>
 	
 	<sql id = "budgetBill">
 	BUDGET_BILL_NUM,BUDGET_BILL_SUBJECT,BUDGET_BILL_PRICE_SUM,BUDGET_BILL_LABOR_RATIO,BUDGET_BILL_LABOR_PRICE,
@@ -125,6 +138,17 @@
 		select 
 		<include refid="budgetBill" />
 		from BUDGET_BILL
+	</select>
+	<!-- 예산안보고서 디테일 -->
+	<select id="taxDetail" resultMap="taxMap" parameterType="Integer">
+  		SELECT <include refid="tax" />
+		FROM TAX 
+		WHERE TAX_NUM = #{taxNum}
+	</select>
+	<select id="taxList" parameterType="string" resultMap="taxMap">
+		select 
+		<include refid="tax" />
+		from TAX
 	</select>
 
 	<select id="expAllSelect" resultMap="exlMap">

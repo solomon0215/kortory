@@ -19,7 +19,7 @@ public class CompanySelectRepository {
 	private SqlSession sqlSession;
 	private final String namespace = "companySelectMapper";
 	
-	public Integer idConfirm(String userId) {//Áßº¹È®ÀÎ
+	public Integer idConfirm(String userId) {//ì¤‘ë³µí™•ì¸
 		String statement = namespace + ".idConfirm";
 		String id = sqlSession.selectOne(statement, userId) ;
 		if(id != null) {
@@ -27,12 +27,12 @@ public class CompanySelectRepository {
 		}
 		return 0;
 	}
-	public CompanyDTO comlogin(CompanyDTO dto1) { //¾÷Ã¼ ·Î±×ÀÎ ÇÏ±â 
+	public CompanyDTO comlogin(CompanyDTO dto1) { //ï¿½ï¿½Ã¼ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ï±ï¿½ 
 		String statement = namespace + ".companyLogin";
 		return sqlSession.selectOne(statement, dto1);
 	}
 	
-	public List<CompanyDTO> selectNewCom(List<ExplorListDTO> expList){//½Å±Ô¾÷Ã¼ ºÒ·¯¿À±â
+	public List<CompanyDTO> selectNewCom(List<ExplorListDTO> expList){//ï¿½Å±Ô¾ï¿½Ã¼ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
 		String statement = namespace + ".newComList";
 		Map< String, Object> param = new HashMap<String, Object>();
 		param.put("exp",expList);
